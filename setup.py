@@ -2,19 +2,18 @@ from setuptools import setup, find_packages
 
 setup(
     name="VibeGravityKit",
-    version="1.0.0",
-    packages=find_packages(),
-    py_modules=["vibe_cli"],
+    version="2.0.0",
+    packages=["VibeGravityKit"],
     include_package_data=True,
     install_requires=[
         "requests",
         "beautifulsoup4",
-        "click",  # For CLI
+        "click",
     ],
     entry_points={
         "console_scripts": [
-            "vibe=vibe_cli:main",
-            "vibegravity=vibe_cli:main",
+            "vibe=VibeGravityKit.cli:main",
+            "vibegravity=VibeGravityKit.cli:main",
         ],
     },
     author="Vibe Coding Team",

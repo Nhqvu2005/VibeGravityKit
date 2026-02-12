@@ -1,3 +1,0 @@
-[console_scripts]
-vibe = vibe_cli:main
-vibegravity = vibe_cli:main

@@ -18,7 +18,9 @@ def main():
 def init(ide):
     """Initialize VibeGravityKit in the current directory."""
     target_dir = Path.cwd() / ".agent"
-    source_agent_dir = SOURCE_ROOT / ".agent"
+    
+    # When installed as a package, .agent is inside VibeGravityKit module
+    source_agent_dir = Path(__file__).resolve().parent / ".agent"
 
     if target_dir.exists():
         click.echo("⚠️  .agent directory already exists here!")
@@ -47,7 +49,8 @@ def init(ide):
 @main.command()
 def list():
     """List available AI Agents and their roles."""
-    workflows_dir = SOURCE_ROOT / ".agent" / "workflows"
+    # .agent is inside vibecore package
+    workflows_dir = Path(__file__).resolve().parent / ".agent" / "workflows"
     if not workflows_dir.exists():
         click.echo("❌ .agent/workflows directory not found.")
         return
@@ -124,21 +127,25 @@ def update():
     click.echo("⬇️  Checking for updates from GitHub...")
     try:
         # Check if we are in a git repo
-        if not (SOURCE_ROOT / ".git").exists():
+        # If installed as package, __file__ is inside vibecore/cli.py
+        # Git root should be 2 levels up: vibecore -> repo root
+        git_root = Path(__file__).resolve().parent.parent
+        
+        if not (git_root / ".git").exists():
              click.echo("⚠️  This installation is not a git repository. Cannot auto-update.")
              return
 
         # Fetch and pull
-        subprocess.run(["git", "fetch"], cwd=SOURCE_ROOT, check=True)
-        status = subprocess.run(["git", "status", "-uno"], cwd=SOURCE_ROOT, capture_output=True, text=True)
+        subprocess.run(["git", "fetch"], cwd=git_root, check=True)
+        status = subprocess.run(["git", "status", "-uno"], cwd=git_root, capture_output=True, text=True)
         
         if "behind" in status.stdout:
             click.echo("🚀 New version available! Updating...")
-            subprocess.run(["git", "pull"], cwd=SOURCE_ROOT, check=True)
+            subprocess.run(["git", "pull"], cwd=git_root, check=True)
             click.echo("✅ Updated to latest version.")
             
             # Show new version
-            version_file = SOURCE_ROOT / "VERSION"
+            version_file = Path(__file__).resolve().parent / "VERSION"
             if version_file.exists():
                 with open(version_file, "r") as f:
                     click.echo(f"📦 Current Version: {f.read().strip()}")
@@ -151,7 +158,7 @@ def update():
 @main.command()
 def version():
     """Show current VibeGravityKit version."""
-    version_file = SOURCE_ROOT / "VERSION"
+    version_file = Path(__file__).resolve().parent / "VERSION"
     if version_file.exists():
         with open(version_file, "r") as f:
             click.echo(f"v{f.read().strip()}")
