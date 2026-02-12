@@ -19,3 +19,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+ACKNOWLEDGEMENTS & THIRD PARTY NOTICES
+
+This project incorporates concepts and logic patterns from the open-source community:
+
+1. ui-ux-pro-max-skill
+   - Source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+   - Credit: Foundation for the Data-Driven Implementation of user interfaces.
