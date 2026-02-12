@@ -8,7 +8,7 @@
 ## 🎩 What is VibeGravityKit?
 
 Imagine having a full-stack engineering team living inside your IDE. 
-**VibeGravityKit** isn't just a collection of scripts; it's a philosophy. It turns your LLM (Claude, GPT-4, Gemini) into a coordinated squad of **11 specialized agents**, from the **Architect** who designs your database, to the **Security Engineer** who guards your keys.
+**VibeGravityKit** turns your LLM (Claude, GPT-4, Gemini) into a coordinated squad of **11 specialized agents**, from the **Architect** who designs your database, to the **Security Engineer** who guards your keys.
 
 But here's the killer feature: **We hate wasting tokens.**
 - **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
@@ -16,63 +16,86 @@ But here's the killer feature: **We hate wasting tokens.**
 
 ---
 
-## 🚀 Key Roles
+## ️ Installation
 
-1.  **Strategy**: Leader, Planner, Market Analyst, Tech Stack Advisor.
-2.  **Creative**: Designer (Tailwind Systems), Mobile Wizard, Tech Writer.
-3.  **Engineering**: Frontend/Backend Dev, QA, Security, DevOps.
-
----
-
-## 🛠️ Installation & Usage
-
-### 1. Global Setup (Run Once)
-Turn `VibeGravityKit` into a command everywhere on your machine.
 ```bash
 git clone https://github.com/Nhqvu2005/VibeGravityKit.git
 cd VibeGravityKit
 pip install .
 ```
-*(Make sure you have **Python 3.9+** and **Node.js 18+** installed)*
-> **Why Node.js?** Some skills like `mobile-wizard` (Expo), `ui-ux-pro-max` (Tailwind), and `api-designer` rely on standard Node.js tools.
+*(Requires Python 3.9+ & Node.js 18+)*
 
-### 2. Deploy to a Project
-Go to any project folder (new or existing) and summon your team:
+**Usage in a new project:**
 ```bash
-cd my-new-project
+cd my-project
 vibe init antigravity
 ```
-*Boom! The `.agent` folder is created, and your 11 agents are ready to work.*
 
 ---
 
-## 🎮 Agentic Workflow (How to Chat)
+## 🎮 The 11 Agents (Usage Examples)
 
-In VibeGravityKit, **You are the Boss.** You talk, Agents work.
+In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` mentions.
 
-### 👑 The Leader Flow (Full Project Management)
-When you want to start a big feature or project, call the **Leader**.
-> **You**: "@[/leader] I want to add a 'Dark Mode' feature to the app."
-> **Leader**:
-> 1. Calls `planner` to break down tasks.
-> 2. Calls `designer` to update the Design System.
-> 3. Assigns `frontend-dev` to implement the switch.
-> 4. Assigns `qa-engineer` to test it.
+### 1. Strategy Team 🧠
+**@[/leader]** (The Boss's Right Hand)
+> "I want to build a Spotify clone. Orchestrate the entire plan."
+*(Orchestrates Planner, Architect, and Devs automatically)*
 
-### 🧩 Calling Individual Agents (Micromanagement)
- sometimes you just need a specialist.
+**@[/planner]** (Project Manager)
+> "Break down the 'User Profile' feature into 5 user stories with acceptance criteria."
+*(Generates: `user-stories.md`)*
 
-#### 1. The Architect (Database & API)
-> **You**: "@[/architect] Update the `User` schema to include `phoneNumber` and regenerate the OpenAPI spec."
-> **Agent**: Runs `db-designer` (Prisma) and `api-designer` (Swagger).
+**@[/market-trend-analyst]** (Researcher)
+> "Analyze the top 3 competitors for a clear-to-do list app in 2025."
+*(Generates: `market-analysis.md`)*
 
-#### 2. The Frontend Developer (Coding)
-> **You**: "@[/frontend-dev] Refactor the `Button` component to match the new Design System."
-> **Agent**: Uses `context-manager` to read the file, then `diff-applier` to patch it safely.
+**@[/tech-stack-advisor]** (CTO)
+> "Recommend a tech stack for a high-frequency trading bot in Python."
+*(Generates: `tech-stack.md`)*
 
-#### 3. The Tech Writer (Documentation)
-> **You**: "@[/tech-writer] Write a `RELEASE_NOTES.md` for this version."
-> **Agent**: Scans the git log and generates a beautiful changelog.
+### 2. Design & Product Team 🎨
+**@[/architect]** (System Architect)
+> "Design a Prisma schema for a multi-tenant SaaS with subscription billing."
+*(Generates: `schema.prisma`)*
+
+**@[/designer]** (UI/UX Expert)
+> "Create a dark-mode optimized color palette and Tailwind config for a crypto dashboard."
+*(Generates: `tailwind.config.js`)*
+
+**@[/mobile-wizard]** (Mobile Lead)
+> "Scaffold a new Expo Router project with TypeScript and NativeWind."
+*(Runs: `npx create-expo-app`)*
+
+### 3. Engineering Team 💻
+**@[/frontend-dev]** (Web Developer)
+> "Implement the 'Login with Google' button using NextAuth.js."
+*(Updates: `src/components/Login.tsx` using `diff-applier`)*
+
+**@[/backend-dev]** (API Developer)
+> "Create a POST /api/orders endpoint that validates input with Zod."
+*(Updates: `src/app/api/route.ts`)*
+
+**@[/devops]** (Infra Engineer)
+> "Generate a Dockerfile and docker-compose.yml for this Next.js + Postgres app."
+*(Generates: `Dockerfile`, `docker-compose.yml`)*
+
+### 4. Quality & Support Team 🛡️
+**@[/qa-engineer]** (Tester)
+> "Generate unit tests for the `calculateTax` function in `utils.ts`."
+*(Generates: `tests/utils.test.ts`)*
+
+**@[/security-engineer]** (Security Officer)
+> "Scan the project for hardcoded secrets and OWASP vulnerabilities."
+*(Runs: `vuln_scan.py`)*
+
+**@[/tech-writer]** (Docs Specialist)
+> "Write a RELEASE_NOTES.md for version 1.0 explaining the new features."
+*(Generates: `RELEASE_NOTES.md`)*
+
+**@[/seo-specialist]** (Growth Hacker)
+> "Check `index.html` for missing meta tags and open graph data."
+*(Runs: `seo_check.py`)*
 
 ---
 
