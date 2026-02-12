@@ -18,6 +18,7 @@ But here's the killer feature: **We hate wasting tokens.**
 
 ## ️ Installation
 
+### Global Install (Recommended)
 ```bash
 git clone https://github.com/Nhqvu2005/VibeGravityKit.git
 cd VibeGravityKit
@@ -28,8 +29,17 @@ pip install .
 **Usage in a new project:**
 ```bash
 cd my-project
+vibegravity init antigravity
+# OR simply:
 vibe init antigravity
 ```
+
+## 🛠️ CLI Commands
+
+- **`vibegravity list`** (or `vibe list`): List all 13 specialized agents.
+- **`vibegravity doctor`**: Check your environment health (Python, Node, Git, etc.).
+- **`vibegravity update`**: Auto-update VibeGravityKit to the latest version (works via Git or Pip).
+- **`vibegravity version`**: Show current version (v2.0.0).
 
 ---
 
