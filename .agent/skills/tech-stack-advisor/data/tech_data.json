@@ -1,0 +1,189 @@
+{
+    "categories": {
+        "frontend": {
+            "react": {
+                "name": "React",
+                "type": "Library",
+                "description": "Component-based UI library by Facebook.",
+                "pros": [
+                    "Huge ecosystem",
+                    "Flexible",
+                    "Strong community"
+                ],
+                "cons": [
+                    "Boilerplate",
+                    "Requires external libraries for routing/state",
+                    "Learning curve"
+                ],
+                "use_cases": [
+                    "SPA",
+                    "Complex UI",
+                    "Large teams"
+                ],
+                "popularity": 95
+            },
+            "vue": {
+                "name": "Vue.js",
+                "type": "Framework",
+                "description": "Progressive, approachable framework.",
+                "pros": [
+                    "Easy learning curve",
+                    "Detailed docs",
+                    "Integrated tooling"
+                ],
+                "cons": [
+                    "Smaller ecosystem than React",
+                    "Market demand lower"
+                ],
+                "use_cases": [
+                    "Medium apps",
+                    "Rapid prototyping",
+                    "Solo devs"
+                ],
+                "popularity": 85
+            },
+            "angular": {
+                "name": "Angular",
+                "type": "Framework",
+                "description": "Platform for building mobile and desktop web applications.",
+                "pros": [
+                    "Full-featured",
+                    "TypeScript default",
+                    "Opinionated structure"
+                ],
+                "cons": [
+                    "Complex",
+                    "Steep learning curve",
+                    "Verbose"
+                ],
+                "use_cases": [
+                    "Enterprise apps",
+                    "Large scale",
+                    "Strict standards"
+                ],
+                "popularity": 80
+            },
+            "svelte": {
+                "name": "Svelte",
+                "type": "Compiler",
+                "description": "Cybernetically enhanced web apps.",
+                "pros": [
+                    "No virtual DOM",
+                    "Correction: Fast",
+                    "Less code"
+                ],
+                "cons": [
+                    "Smaller ecosystem",
+                    "Newer paradigms"
+                ],
+                "use_cases": [
+                    "Performance critical",
+                    "Interactive visualizations"
+                ],
+                "popularity": 75
+            }
+        },
+        "backend": {
+            "nodejs": {
+                "name": "Node.js (Express/Nest)",
+                "type": "Runtime",
+                "description": "JavaScript on server-side.",
+                "pros": [
+                    "Functions sharing logic with FE",
+                    "Non-blocking I/O",
+                    "Huge package repo"
+                ],
+                "cons": [
+                    "Callback hell (historical)",
+                    "Single threaded constraints"
+                ],
+                "use_cases": [
+                    "Real-time apps",
+                    "Microservices",
+                    "API Gateways"
+                ],
+                "popularity": 90
+            },
+            "python": {
+                "name": "Python (Django/FastAPI)",
+                "type": "Language",
+                "description": "Powerful, versatile language.",
+                "pros": [
+                    "Excellent for AI/ML",
+                    "Readable syntax",
+                    "Fast development"
+                ],
+                "cons": [
+                    "Slower execution speed",
+                    "GIL"
+                ],
+                "use_cases": [
+                    "Data Science",
+                    "AI Integration",
+                    "Quick MVPs"
+                ],
+                "popularity": 92
+            },
+            "go": {
+                "name": "Go (Golang)",
+                "type": "Language",
+                "description": "Statically typed, compiled language by Google.",
+                "pros": [
+                    "High performance",
+                    "Concurrency (Goroutines)",
+                    "Simple syntax"
+                ],
+                "cons": [
+                    "Verbose error handling",
+                    "Lack of generics (historical)"
+                ],
+                "use_cases": [
+                    "High-performance systems",
+                    "Microservices",
+                    "Tools"
+                ],
+                "popularity": 85
+            }
+        },
+        "database": {
+            "postgresql": {
+                "name": "PostgreSQL",
+                "type": "C Relational",
+                "pros": [
+                    "Advanced features",
+                    "JSON support",
+                    "Reliable"
+                ],
+                "cons": [
+                    "Complex setup",
+                    "Resource heavy"
+                ],
+                "use_cases": [
+                    "General purpose",
+                    "Complex queries",
+                    "Data integrity"
+                ],
+                "popularity": 90
+            },
+            "mongodb": {
+                "name": "MongoDB",
+                "type": "NoSQL",
+                "pros": [
+                    "Flexible schema",
+                    "JSON native",
+                    "Scale out"
+                ],
+                "cons": [
+                    "No joins",
+                    "Data consistency harder"
+                ],
+                "use_cases": [
+                    "Content management",
+                    "Rapid changes",
+                    "Big Data"
+                ],
+                "popularity": 88
+            }
+        }
+    }
+}

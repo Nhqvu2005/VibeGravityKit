@@ -1,0 +1,57 @@
+{
+    "observability_stack": {
+        "metrics": {
+            "stack": "Prometheus + Grafana",
+            "key_metrics": [
+                "Request Rate (RPS)",
+                "Error Rate (%)",
+                "Latency (p95, p99)",
+                "CPU/Memory Usage"
+            ]
+        },
+        "logging": {
+            "stack": "ELK Stack (Elasticsearch, Logstash, Kibana) or Loki",
+            "practices": [
+                "Structured Logging (JSON)",
+                "Correlation IDs",
+                "Log Levels (INFO, WARN, ERROR)"
+            ]
+        },
+        "tracing": {
+            "stack": "Jaeger or Zipkin (OpenTelemetry)",
+            "focus": "Distributed tracing for microservices latency breakdown"
+        }
+    },
+    "incident_templates": {
+        "rca": {
+            "title": "Post-Incident Review (RCA)",
+            "sections": [
+                "Summary: What happened?",
+                "Impact: Who was affected and for how long?",
+                "Root Cause: The technical underlying cause (5 Whys)",
+                "Resolution: How was it fixed?",
+                "Action Items: How to prevent recurrence?"
+            ]
+        }
+    },
+    "performance_tuning": {
+        "database": [
+            "Avoid SELECT *",
+            "Add indexes to WHERE/JOIN columns",
+            "Use connection pooling",
+            "Analyze Query Plan (EXPLAIN ANALYZE)"
+        ],
+        "backend": [
+            "Enable Gzip/Brotli compression",
+            "Cache expensive computations",
+            "Use async I/O for external calls",
+            "Profile code to find hotspots"
+        ],
+        "frontend": [
+            "Code splitting",
+            "Lazy loading images",
+            "Minimize bundle size",
+            "Use CDN"
+        ]
+    }
+}

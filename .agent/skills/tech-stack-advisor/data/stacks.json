@@ -1,0 +1,390 @@
+[
+    {
+        "id": "web-nextjs-supabase",
+        "name": "Next.js + Supabase",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "seo",
+            "ecommerce",
+            "auth",
+            "realtime",
+            "saas",
+            "react"
+        ],
+        "components": {
+            "Frontend": "Next.js 14 (App Router)",
+            "Backend": "Supabase (PostgreSQL + Auth + Edge Functions)",
+            "Database": "PostgreSQL",
+            "Hosting": "Vercel / Netlify"
+        },
+        "pros": [
+            "All-in-one: Auth, DB, Realtime, Storage built-in",
+            "Excellent SEO with Server-Side Rendering (SSR)",
+            "Rapid development speed",
+            "Robust free tier"
+        ],
+        "cons": [
+            "Vendor lock-in (Supabase/Vercel)",
+            "Edge functions have limitations compared to full backend",
+            "Cold starts on free tier"
+        ],
+        "best_for": "SaaS startups, MVP, Ecommerce, Blogs"
+    },
+    {
+        "id": "web-mert-stack",
+        "name": "MERT Stack (MongoDB, Express, React, Tailwind)",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "spa",
+            "nosql",
+            "flexible",
+            "javascript"
+        ],
+        "components": {
+            "Frontend": "React + Vite + Tailwind CSS",
+            "Backend": "Node.js + Express",
+            "Database": "MongoDB",
+            "Hosting": "Render / Vercel + Atlas"
+        },
+        "pros": [
+            "Full JavaScript/TypeScript stack",
+            "Flexible schema (NoSQL)",
+            "Huge ecosystem",
+            "Complete control over backend"
+        ],
+        "cons": [
+            "SEO requires additional setup (SSR not default)",
+            "Managing database connections manually",
+            "Callback hell if not using async/await properly"
+        ],
+        "best_for": "Dashboards, Social Media Apps, Real-time Chat, internal tools"
+    },
+    {
+        "id": "web-t3-stack",
+        "name": "T3 Stack (Next.js, tRPC, Tailwind)",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "typescript",
+            "type-safe",
+            "seo",
+            "modern"
+        ],
+        "components": {
+            "Frontend": "Next.js",
+            "Backend": "Next.js API + tRPC",
+            "Database": "SQL (Prisma + PlanetScale/Railway)",
+            "Styling": "Tailwind CSS"
+        },
+        "pros": [
+            "End-to-end type safety (Frontend <-> Backend)",
+            "Best-in-class Developer Experience (DX)",
+            "Modular architecture",
+            "Standardized patterns"
+        ],
+        "cons": [
+            "Learning curve for tRPC/Prisma",
+            "Overkill for very simple sites"
+        ],
+        "best_for": "Complex Web Apps, Enterprise SaaS, heavy interactivity"
+    },
+    {
+        "id": "web-astro",
+        "name": "Astro + Islands Architecture",
+        "category": "web",
+        "tags": [
+            "content",
+            "static",
+            "fast",
+            "seo",
+            "blog",
+            "portfolio"
+        ],
+        "components": {
+            "Frontend": "Astro (supports React/Vue/Svelte islands)",
+            "Backend": "API Routes / CMS (Sanity/Contentful)",
+            "Database": "Optional",
+            "Hosting": "Any static host (Netlify, Vercel)"
+        },
+        "pros": [
+            "Zero JS by default (extremely fast)",
+            "Great for content-heavy sites",
+            "Use any UI framework (React, Svelte, Vue) together",
+            "Perfect SEO"
+        ],
+        "cons": [
+            "Not ideal for complex state management apps",
+            "Server-side interactivity limited compared to Next.js"
+        ],
+        "best_for": "Blogs, Portfolios, Marketing Sites, Documentation"
+    },
+    {
+        "id": "mobile-flutter",
+        "name": "Flutter (Dart)",
+        "category": "mobile",
+        "tags": [
+            "cross-platform",
+            "ios",
+            "android",
+            "performance",
+            "ui"
+        ],
+        "components": {
+            "Framework": "Flutter",
+            "Language": "Dart",
+            "Backend": "Firebase / Custom API",
+            "State": "Bloc / Riverpod"
+        },
+        "pros": [
+            "Near-native performance",
+            "Single codebase for iOS, Android, Web, Desktop",
+            "Beautiful, consistent UI widgets",
+            "Hot Reload"
+        ],
+        "cons": [
+            "Large app size",
+            "Dart language learning curve",
+            "Platform-specific features can be harder to implement"
+        ],
+        "best_for": "Visual-heavy apps, branding-focused apps, quick MVP"
+    },
+    {
+        "id": "mobile-react-native",
+        "name": "React Native + Expo",
+        "category": "mobile",
+        "tags": [
+            "cross-platform",
+            "ios",
+            "android",
+            "javascript",
+            "react"
+        ],
+        "components": {
+            "Framework": "React Native (Expo)",
+            "Language": "TypeScript / JavaScript",
+            "Backend": "Any REST/GraphQL API",
+            "Navigation": "Expo Router"
+        },
+        "pros": [
+            "Huge ecosystem and library support",
+            "Code sharing with Web (React)",
+            "Over-the-air updates (EAS Update)",
+            "Native modules access easier than Flutter"
+        ],
+        "cons": [
+            "Performance can struggle with complex animations",
+            "Updates can break dependencies",
+            "JS bridge bottleneck (though improving with New Arch)"
+        ],
+        "best_for": "General purpose apps, connecting to existing web backends"
+    },
+    {
+        "id": "mobile-swiftui",
+        "name": "Native iOS (SwiftUI)",
+        "category": "mobile",
+        "tags": [
+            "native",
+            "ios",
+            "apple",
+            "performance"
+        ],
+        "components": {
+            "Framework": "SwiftUI",
+            "Language": "Swift",
+            "Database": "SwiftData / CoreData",
+            "Backend": "CloudKit / Firebase"
+        },
+        "pros": [
+            "Best possible performance on iOS",
+            "Access to latest Apple APIs immediately",
+            "Native look and feel",
+            "Great integration with Apple ecosystem"
+        ],
+        "cons": [
+            "iOS only (need separate Android codebase)",
+            "Slower development than cross-platform",
+            "Requires Mac for development"
+        ],
+        "best_for": "Premium iOS apps, AR/VR, heavy hardware usage"
+    },
+    {
+        "id": "ai-python-simple",
+        "name": "Python AI Starter",
+        "category": "ai",
+        "tags": [
+            "ai",
+            "ml",
+            "python",
+            "scripting",
+            "automation"
+        ],
+        "components": {
+            "Language": "Python 3.11+",
+            "Libraries": "OpenAI API, LangChain, Pandas",
+            "Interface": "Streamlit / Gradio",
+            "Environment": "Poetry / Conda"
+        },
+        "pros": [
+            "Standard language for AI",
+            "Quick prototyping with Streamlit",
+            "Access to massive AI libraries",
+            "Easy to integrate APIs"
+        ],
+        "cons": [
+            "Not optimizing for production scale",
+            "Streamlit UI is limited"
+        ],
+        "best_for": "Prototypes, Internal Tools, Data Analysis scripts"
+    },
+    {
+        "id": "ai-production-rag",
+        "name": "Production RAG Stack",
+        "category": "ai",
+        "tags": [
+            "ai",
+            "rag",
+            "vector",
+            "search",
+            "enterprise"
+        ],
+        "components": {
+            "LLM": "OpenAI / Anthropic / Llama 3",
+            "Orchestration": "LangChain / LlamaIndex",
+            "Vector DB": "Pinecone / Weaviate / Qdrant",
+            "Backend": "FastAPI (Python)",
+            "Frontend": "Next.js"
+        },
+        "pros": [
+            "Enterprise-grade architecture",
+            "Scalable vector search",
+            "Separation of concerns (Frontend/Backend)",
+            "High performance API"
+        ],
+        "cons": [
+            "Complex setup and maintenance",
+            "Higher cost (Vector DB, API tokens)"
+        ],
+        "best_for": "Chatbots with custom knowledge base, Semantic Search, Enterprise AI"
+    },
+    {
+        "id": "desktop-electron",
+        "name": "Electron",
+        "category": "desktop",
+        "tags": [
+            "desktop",
+            "cross-platform",
+            "windows",
+            "mac",
+            "linux",
+            "web-tech"
+        ],
+        "components": {
+            "Core": "Electron (Chromium + Node.js)",
+            "Frontend": "React / Vue / Angular",
+            "Build": "Electron Builder"
+        },
+        "pros": [
+            "Use web technologies for desktop",
+            "Massive community (VS Code, Slack, Discord)",
+            "Full OS access",
+            "Auto-update support"
+        ],
+        "cons": [
+            "Heavy resource usage (RAM/CPU)",
+            "Large installer size",
+            "Security concerns if not configured right"
+        ],
+        "best_for": "Complex desktop apps, cross-platform tools"
+    },
+    {
+        "id": "desktop-tauri",
+        "name": "Tauri (Rust)",
+        "category": "desktop",
+        "tags": [
+            "desktop",
+            "lightweight",
+            "rust",
+            "secure",
+            "modern"
+        ],
+        "components": {
+            "Core": "Tauri (Rust)",
+            "Frontend": "Any Web Framework (React/Svelte...)",
+            "WebView": "OS Native Webview (WebView2/WebKit)"
+        },
+        "pros": [
+            "Tiny binary size (<3MB vs Electron 50MB+)",
+            "Low memory usage",
+            "High security (Rust)",
+            "Use any frontend framework"
+        ],
+        "cons": [
+            "WebView differences across OS",
+            "Rust learning curve for backend logic",
+            "Smaller ecosystem than Electron"
+        ],
+        "best_for": "Security-focused apps, system utilities, lightweight tools"
+    },
+    {
+        "id": "backend-go",
+        "name": "Go (Golang) Microservices",
+        "category": "backend",
+        "tags": [
+            "backend",
+            "performance",
+            "concurrency",
+            "microservices",
+            "scale"
+        ],
+        "components": {
+            "Language": "Go",
+            "Framework": "Gin / Echo / Fiber",
+            "Protocol": "gRPC / REST",
+            "Database": "PostgreSQL / MongoDB"
+        },
+        "pros": [
+            "Incredible performance & concurrency",
+            "Small binary size, easy deploy",
+            "Simple language syntax",
+            "Great for heavy loads"
+        ],
+        "cons": [
+            "Verbose error handling (if err != nil)",
+            "Smaller ecosystem than Node/Python",
+            "Less flexible than dynamic languages"
+        ],
+        "best_for": "High-performance APIs, Microservices, Real-time systems"
+    },
+    {
+        "id": "backend-rust-axum",
+        "name": "Rust (Axum/Actix)",
+        "category": "backend",
+        "tags": [
+            "backend",
+            "safety",
+            "speed",
+            "wasm",
+            "system"
+        ],
+        "components": {
+            "Language": "Rust",
+            "Framework": "Axum / Actix-web",
+            "Runtime": "Tokio",
+            "Database": "SQLx (PostgreSQL)"
+        },
+        "pros": [
+            "Memory safety without garbage collector",
+            "Blazing fast performance",
+            "Powerful type system",
+            "Growing ecosystem"
+        ],
+        "cons": [
+            "Steep learning curve",
+            "Log compile times",
+            "Verbose syntax"
+        ],
+        "best_for": "Critical infrastructure, high-security APIs, system programming"
+    }
+]
