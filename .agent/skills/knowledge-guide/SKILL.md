@@ -6,19 +6,19 @@ description: Code explainer and idea capturer. Helps users understand the codeba
 # Knowledge Guide Skill
 
 ## Overview
-Skill này giúp agent đóng vai trò người hướng dẫn:
-1. Đọc và giải thích code.
-2. Ghi chú lại ý tưởng (Note Taking).
-3. Chuẩn bị context để handoff cho dev khác.
+This skill enables the agent to act as a guide:
+1. Read and explain code.
+2. Take notes (Note Taking).
+3. Prepare context for handoff to other developers.
 
 ## Scripts
 
 ### `scripts/note_taker.py`
-Ghi chú ý tưởng vào file `.agent/memory/ideas_inbox.md` theo format chuẩn.
+Records ideas into `.agent/memory/ideas_inbox.md` in a standardized format.
 
 **Usage:**
 ```bash
-python scripts/note_taker.py --title "Refactor Auth" --content "Chuyển từ JWT sang Session" --tags "auth,backend"
+python scripts/note_taker.py --title "Refactor Auth" --content "Switch from JWT to Session" --tags "auth,backend"
 ```
 
 **Output (Append to file):**
@@ -27,8 +27,8 @@ python scripts/note_taker.py --title "Refactor Auth" --content "Chuyển từ JW
 **Tags:** #auth #backend
 **Status:** New
 
-Chuyển từ JWT sang Session để tăng security...
+Switch from JWT to Session to improve security...
 ```
 
 ## Data
-Không có data file tĩnh, agent dựa vào codebase hiện tại và `ideas_inbox.md`.
+No static data files; the agent relies on the current codebase and `ideas_inbox.md`.
