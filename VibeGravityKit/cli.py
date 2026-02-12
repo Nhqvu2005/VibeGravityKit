@@ -132,7 +132,12 @@ def update():
         git_root = Path(__file__).resolve().parent.parent
         
         if not (git_root / ".git").exists():
-             click.echo("⚠️  This installation is not a git repository. Cannot auto-update.")
+             click.echo("⚠️  Not a git repository. Attempting update via Pip...")
+             subprocess.run([
+                 "pip", "install", "--upgrade", 
+                 "git+https://github.com/Nhqvu2005/VibeGravityKit.git"
+             ], check=True)
+             click.echo("✅ Updated to latest version via Pip.")
              return
 
         # Fetch and pull
