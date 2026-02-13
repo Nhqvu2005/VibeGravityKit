@@ -148,7 +148,6 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 ### v2.2.0
 - New skill: `env-manager` — auto-scan codebase and generate `.env.example`
 - New skill: `i18n-manager` — extract hardcoded strings for translation
-- New skill: `cost-tracker` — estimate AI token costs per model (10 models supported)
 - Agent Memory: `project_context.json` template for storing project knowledge and decisions
 
 ### v2.1.0
