@@ -41,6 +41,24 @@ vibe init antigravity
 - **`vibegravity update`**: Auto-update VibeGravityKit to the latest version (works via Git or Pip).
 - **`vibegravity version`**: Show current version (v2.0.0).
 
+## 🌐 Multi-IDE Support
+
+VibeGravityKit works natively with **4 AI IDEs**:
+
+| IDE | Command | Creates |
+|-----|---------|---------|
+| **Antigravity** | `vibegravity init antigravity` | `.agent/` (workflows + skills) |
+| **Cursor** | `vibegravity init cursor` | `.cursor/rules/*.mdc` |
+| **Windsurf** | `vibegravity init windsurf` | `.windsurf/rules/*.md` |
+| **Cline** | `vibegravity init cline` | `.clinerules/*.md` |
+
+```bash
+# Example: Setup for Cursor IDE
+cd my-project
+vibegravity init cursor
+# → 14 agent rules installed in .cursor/rules/
+```
+
 ---
 
 ## 🎮 The 13 Agents (Usage Examples)

@@ -16,32 +16,69 @@ def main():
 @main.command()
 @click.argument('ide', default='antigravity', required=False)
 def init(ide):
-    """Initialize VibeGravityKit in the current directory."""
-    target_dir = Path.cwd() / ".agent"
+    """Initialize VibeGravityKit in the current directory.
     
-    # When installed as a package, .agent is inside VibeGravityKit module
-    source_agent_dir = Path(__file__).resolve().parent / ".agent"
-
+    Supported IDEs: antigravity (default), cursor, windsurf, cline
+    """
+    package_dir = Path(__file__).resolve().parent
+    
+    # IDE configuration mapping
+    ide_config = {
+        "antigravity": {
+            "source": package_dir / ".agent",
+            "target": Path.cwd() / ".agent",
+            "label": ".agent/ (workflows + skills)",
+        },
+        "cursor": {
+            "source": package_dir / "ide-adapters" / "cursor",
+            "target": Path.cwd() / ".cursor" / "rules",
+            "label": ".cursor/rules/ (Cursor IDE)",
+        },
+        "windsurf": {
+            "source": package_dir / "ide-adapters" / "windsurf",
+            "target": Path.cwd() / ".windsurf" / "rules",
+            "label": ".windsurf/rules/ (Windsurf IDE)",
+        },
+        "cline": {
+            "source": package_dir / "ide-adapters" / "cline",
+            "target": Path.cwd() / ".clinerules",
+            "label": ".clinerules/ (Cline IDE)",
+        },
+    }
+    
+    if ide not in ide_config:
+        click.echo(f"❌ Unknown IDE: '{ide}'")
+        click.echo(f"   Supported: {', '.join(ide_config.keys())}")
+        return
+    
+    config = ide_config[ide]
+    source_dir = config["source"]
+    target_dir = config["target"]
+    
     if target_dir.exists():
-        click.echo("⚠️  .agent directory already exists here!")
+        click.echo(f"⚠️  {config['label']} already exists here!")
         if not click.confirm("Do you want to overwrite it?"):
             return
 
     click.echo(f"🚀 Initializing VibeGravityKit for {ide}...")
     
     try:
-        # Copy the .agent folder
-        if source_agent_dir.exists():
+        if source_dir.exists():
             if target_dir.exists():
                 shutil.rmtree(target_dir)
-            shutil.copytree(source_agent_dir, target_dir)
-            click.echo("✅ Copied .agent/ workflows and skills.")
+            target_dir.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(source_dir, target_dir)
+            click.echo(f"✅ Copied {config['label']}")
         else:
-            click.echo(f"❌ Error: Could not find source .agent folder at {source_agent_dir}")
+            click.echo(f"❌ Error: Source not found at {source_dir}")
             return
 
-        click.echo("\n✨ VibeGravityKit installed successfully!")
-        click.echo("👉 You can now mention @[/planner], @[/architect], etc. in your AI chat.")
+        click.echo(f"\n✨ VibeGravityKit installed for {ide}!")
+        
+        if ide == "antigravity":
+            click.echo("👉 Use @[/planner], @[/architect], etc. in your AI chat.")
+        else:
+            click.echo(f"👉 {ide.capitalize()} will auto-load the agent rules.")
         
     except Exception as e:
         click.echo(f"❌ Installation failed: {str(e)}")
