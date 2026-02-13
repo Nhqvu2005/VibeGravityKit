@@ -68,28 +68,58 @@ When Manager shares an idea:
 
 ---
 
-## Phase 1–3: Planning → Architecture → Design
+## Phase 1: Planning
 
-Each phase follows the same pattern:
-1. **Handoff** to agent (using template below).
-2. **Pass artifacts** from previous phase (file paths only).
-3. **Report to Manager**: 3-5 bullet points max.
-4. **Wait for approval.**
-
-| Phase | Agent | Input | Output |
-|-------|-------|-------|--------|
-| Planning | `@[/planner]` | User's idea | PRD, user stories |
-| Architecture | `@[/architect]` | PRD | Schema, API spec |
-| Design | `@[/designer]` | PRD + Architecture | Design system |
+1. Handoff to `@[/planner]`.
+2. Wait for output: PRD, user stories.
+3. Report to Manager → wait for approval.
 
 ---
 
-## Phase 4: Development
+## Phase 2–3: Architecture + Design ⚡ PARALLEL
 
-1. Handoff to `@[/frontend-dev]` and/or `@[/backend-dev]`.
-2. If mobile → also `@[/mobile-dev]`.
-3. Pass: PRD + Architecture + Design (file paths only).
-4. Proceed to QA when done.
+> **These agents are INDEPENDENT — call them at the same time.**
+
+Use `## Parallel Handoff` to dispatch both simultaneously:
+
+```
+## Parallel Handoff
+
+### → @[/architect]
+Task: Design DB schema + API endpoints based on PRD
+Files: .agent/brain/prd.md
+Expected Output: schema.prisma, api_spec.yaml
+
+### → @[/designer]
+Task: Create design system and component specs from PRD
+Files: .agent/brain/prd.md
+Expected Output: design_system.md, components.md
+```
+
+Wait for **both** to complete → report to Manager.
+
+---
+
+## Phase 4: Development ⚡ PARALLEL
+
+> **Frontend and Backend are INDEPENDENT — call them at the same time.**
+
+```
+## Parallel Handoff
+
+### → @[/backend-dev]
+Task: Implement API + database from architecture spec
+Files: schema.prisma, api_spec.yaml
+Expected Output: working backend with endpoints
+
+### → @[/frontend-dev]
+Task: Build UI components from design system
+Files: design_system.md, components.md, api_spec.yaml
+Expected Output: working frontend with API integration
+```
+
+If mobile → add `@[/mobile-dev]` as a 3rd parallel agent.
+Wait for **all** to complete → proceed to QA.
 
 ---
 
@@ -105,13 +135,35 @@ Each phase follows the same pattern:
 
 ---
 
-## Phase 6: Launch & Polish
+## Phase 6: Launch & Polish ⚡ PARALLEL
 
-1. `@[/security-engineer]` → audit
-2. `@[/seo-specialist]` → SEO (if web)
-3. `@[/devops]` → Docker, CI/CD
-4. `@[/tech-writer]` → docs
-5. Final report to Manager (bullets only).
+> **All 4 agents are INDEPENDENT — call them at the same time.**
+
+```
+## Parallel Handoff
+
+### → @[/security-engineer]
+Task: Security audit on codebase
+Files: src/
+Expected Output: security_report.md
+
+### → @[/seo-specialist]
+Task: SEO optimization check (if web)
+Files: src/pages/
+Expected Output: seo_report.md
+
+### → @[/devops]
+Task: Setup Docker + CI/CD pipeline
+Files: package.json, src/
+Expected Output: Dockerfile, docker-compose.yml, .github/workflows/
+
+### → @[/tech-writer]
+Task: Generate API docs + README
+Files: api_spec.yaml, src/
+Expected Output: docs/, README.md
+```
+
+Wait for **all** to complete → final report to Manager (bullets only).
 
 ---
 

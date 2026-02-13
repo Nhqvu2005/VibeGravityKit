@@ -1114,5 +1114,580 @@
             "Fan membership platform (alternative to Patreon)",
             "Content calendar with AI suggestions"
         ]
+    },
+    {
+        "id": "telecom",
+        "name": "Telecommunications",
+        "pain_points": [
+            "Complex billing and plan management",
+            "Poor customer service experience",
+            "Network coverage gaps",
+            "High churn rate",
+            "Legacy infrastructure modernization"
+        ],
+        "opportunities": [
+            "eSIM management platform",
+            "Network analytics dashboard",
+            "Customer self-service portal",
+            "5G-enabled applications",
+            "IoT connectivity management"
+        ],
+        "trends": [
+            "5G rollout and edge computing",
+            "Network slicing",
+            "AI-powered network optimization",
+            "Open RAN",
+            "Satellite internet (Starlink competitors)"
+        ],
+        "target_users": [
+            "Telecom operators",
+            "Enterprise IT teams",
+            "IoT device manufacturers",
+            "Mobile consumers",
+            "Rural communities"
+        ],
+        "example_ideas": [
+            "eSIM activation and management app",
+            "Network quality monitoring tool",
+            "AI chatbot for telecom support",
+            "5G-powered AR/VR experience platform"
+        ]
+    },
+    {
+        "id": "energy-utilities",
+        "name": "Energy & Utilities",
+        "pain_points": [
+            "High energy costs for consumers",
+            "Grid reliability and outages",
+            "Carbon emission tracking",
+            "Complex regulatory compliance",
+            "Aging infrastructure"
+        ],
+        "opportunities": [
+            "Smart meter analytics",
+            "Solar/EV charging management",
+            "Energy trading platform",
+            "Carbon footprint tracker",
+            "Home energy optimization"
+        ],
+        "trends": [
+            "Renewable energy adoption",
+            "Battery storage technology",
+            "Vehicle-to-grid (V2G)",
+            "Smart grid and microgrids",
+            "Green hydrogen"
+        ],
+        "target_users": [
+            "Homeowners",
+            "Building managers",
+            "Energy companies",
+            "EV owners",
+            "Sustainability officers"
+        ],
+        "example_ideas": [
+            "Home energy usage dashboard with AI tips",
+            "Solar panel ROI calculator",
+            "EV charging station finder and scheduler",
+            "Corporate carbon offset marketplace"
+        ]
+    },
+    {
+        "id": "dating-relationships",
+        "name": "Dating & Relationships",
+        "pain_points": [
+            "Superficial matching (swipe fatigue)",
+            "Safety concerns (catfishing, harassment)",
+            "Low-quality conversations",
+            "Burnout from too many options",
+            "Different intentions (casual vs serious)"
+        ],
+        "opportunities": [
+            "AI-powered deeper matching",
+            "Video-first dating",
+            "Niche communities (interests, values)",
+            "Relationship coaching integration",
+            "Event-based matching (speed dating online)"
+        ],
+        "trends": [
+            "Slow dating (quality over quantity)",
+            "Voice/video before meeting",
+            "AI matchmaking assistants",
+            "Safety verification (ID check)",
+            "Community-based dating"
+        ],
+        "target_users": [
+            "Singles (18-35)",
+            "Divorced/Widowed adults",
+            "LGBTQ+ community",
+            "Expats and travelers",
+            "Niche interest groups"
+        ],
+        "example_ideas": [
+            "Values-based matching app",
+            "Group date organizer",
+            "Video dating with conversation prompts",
+            "Post-breakup recovery community",
+            "AI date idea generator by location"
+        ]
+    },
+    {
+        "id": "marketing-adtech",
+        "name": "Marketing & AdTech",
+        "pain_points": [
+            "Rising ad costs (CAC inflation)",
+            "Cookie deprecation and privacy changes",
+            "Attribution complexity (multi-touch)",
+            "Content creation at scale",
+            "Measuring ROI across channels"
+        ],
+        "opportunities": [
+            "AI ad creative generator",
+            "First-party data platform",
+            "Influencer marketing automation",
+            "Contextual advertising (post-cookie)",
+            "Marketing attribution tool"
+        ],
+        "trends": [
+            "AI-generated ad creatives",
+            "Privacy-first marketing",
+            "Short-form video ads (TikTok, Reels)",
+            "Retail media networks",
+            "Conversational marketing (chatbots)"
+        ],
+        "target_users": [
+            "Digital marketers",
+            "Growth hackers",
+            "SMB owners",
+            "E-commerce brands",
+            "Agencies"
+        ],
+        "example_ideas": [
+            "AI ad copy and creative generator",
+            "Multi-channel attribution dashboard",
+            "Landing page A/B testing tool",
+            "Social media scheduler with AI captions",
+            "Competitor ad spy tool"
+        ]
+    },
+    {
+        "id": "hospitality",
+        "name": "Hospitality & Hotels",
+        "pain_points": [
+            "Staff shortages and high turnover",
+            "OTA dependency (Booking.com commission 15-25%)",
+            "Last-minute cancellations",
+            "Guest experience personalization",
+            "Revenue management complexity"
+        ],
+        "opportunities": [
+            "Direct booking engine",
+            "Guest experience platform",
+            "Revenue management AI",
+            "Contactless check-in/out",
+            "Staff scheduling optimization"
+        ],
+        "trends": [
+            "Experiential travel",
+            "Bleisure (business + leisure)",
+            "Smart rooms (IoT)",
+            "Sustainable hospitality",
+            "AI concierge"
+        ],
+        "target_users": [
+            "Hotel owners/managers",
+            "Boutique hotels",
+            "Vacation rental hosts",
+            "Travel agencies",
+            "Business travelers"
+        ],
+        "example_ideas": [
+            "AI-powered dynamic pricing for hotels",
+            "Guest feedback analyzer",
+            "Direct booking website builder for hotels",
+            "Smart room control app (IoT)"
+        ]
+    },
+    {
+        "id": "govtech",
+        "name": "Government & GovTech",
+        "pain_points": [
+            "Bureaucratic processes and paperwork",
+            "Outdated legacy systems",
+            "Citizen engagement is low",
+            "Data silos between departments",
+            "Cybersecurity threats on public infrastructure"
+        ],
+        "opportunities": [
+            "Digital citizen services (e-government)",
+            "Open data platform",
+            "Smart city management",
+            "Public safety analytics",
+            "Document digitization and automation"
+        ],
+        "trends": [
+            "Digital identity (eID)",
+            "AI for public policy",
+            "Smart city IoT integration",
+            "Blockchain for public records",
+            "Civic engagement platforms"
+        ],
+        "target_users": [
+            "Government agencies",
+            "City officials",
+            "Citizens",
+            "Public safety departments",
+            "Policy makers"
+        ],
+        "example_ideas": [
+            "Citizen request management system",
+            "Permit and licensing portal",
+            "Public budget transparency dashboard",
+            "AI-powered document processing for government"
+        ]
+    },
+    {
+        "id": "elderly-care",
+        "name": "Elderly Care & Aging",
+        "pain_points": [
+            "Social isolation among seniors",
+            "Medication management complexity",
+            "Fall detection and emergency response",
+            "Caregiver burnout",
+            "Navigating healthcare systems"
+        ],
+        "opportunities": [
+            "Remote health monitoring",
+            "Companion AI/robot",
+            "Caregiver coordination platform",
+            "Simplified tech interfaces for seniors",
+            "Memory and cognitive training"
+        ],
+        "trends": [
+            "Aging-in-place technology",
+            "Wearable health monitors",
+            "Voice-first interfaces (Alexa, Google)",
+            "Telemedicine for seniors",
+            "Intergenerational connection platforms"
+        ],
+        "target_users": [
+            "Seniors (65+)",
+            "Family caregivers",
+            "Nursing homes",
+            "Home health aides",
+            "Geriatricians"
+        ],
+        "example_ideas": [
+            "Medication reminder with refill ordering",
+            "Video call app simplified for seniors",
+            "Caregiver shift scheduling and notes",
+            "Daily wellness check-in chatbot"
+        ]
+    },
+    {
+        "id": "music-audio",
+        "name": "Music & Audio",
+        "pain_points": [
+            "Low streaming payouts for artists",
+            "Music discovery overload",
+            "Expensive production tools",
+            "Copyright and licensing complexity",
+            "Fan engagement beyond streaming"
+        ],
+        "opportunities": [
+            "AI music generation and remixing",
+            "Direct-to-fan platforms",
+            "Podcast hosting and monetization",
+            "Music collaboration tools",
+            "Audio branding for businesses"
+        ],
+        "trends": [
+            "AI-generated music (Suno, Udio)",
+            "Spatial audio (Dolby Atmos)",
+            "Podcast explosion continues",
+            "Stem separation technology",
+            "Music NFTs and direct ownership"
+        ],
+        "target_users": [
+            "Independent musicians",
+            "Podcasters",
+            "Music producers",
+            "Content creators (need background music)",
+            "Brands (audio branding)"
+        ],
+        "example_ideas": [
+            "AI beat maker for content creators",
+            "Royalty-free music marketplace",
+            "Podcast analytics and monetization platform",
+            "Music collaboration studio (online DAW)",
+            "AI voice cloning for personalized audio"
+        ]
+    },
+    {
+        "id": "remote-work",
+        "name": "Remote Work & Future of Work",
+        "pain_points": [
+            "Team coordination across time zones",
+            "Loneliness and isolation",
+            "Productivity tracking without micromanaging",
+            "Onboarding remote employees",
+            "Meeting fatigue (Zoom fatigue)"
+        ],
+        "opportunities": [
+            "Async communication tools",
+            "Virtual office / spatial audio workspace",
+            "Remote team culture builder",
+            "Time zone coordination",
+            "AI meeting summarizer"
+        ],
+        "trends": [
+            "Hybrid work models",
+            "AI meeting assistants",
+            "Digital nomad infrastructure",
+            "Asynchronous-first culture",
+            "Employee experience platforms"
+        ],
+        "target_users": [
+            "Remote teams",
+            "Digital nomads",
+            "HR managers",
+            "Freelancers",
+            "Distributed companies"
+        ],
+        "example_ideas": [
+            "AI meeting notes and action items",
+            "Virtual water cooler for remote teams",
+            "Time zone overlap finder for scheduling",
+            "Remote team mood/pulse survey tool",
+            "Co-working space finder for nomads"
+        ]
+    },
+    {
+        "id": "biotech-pharma",
+        "name": "Biotech & Pharmaceuticals",
+        "pain_points": [
+            "Drug development takes 10+ years",
+            "Clinical trial recruitment is slow",
+            "Regulatory approval complexity",
+            "High R&D costs ($2B+ per drug)",
+            "Supply chain for cold-chain biologics"
+        ],
+        "opportunities": [
+            "AI drug discovery",
+            "Clinical trial management",
+            "Patient recruitment platform",
+            "Lab information management (LIMS)",
+            "Regulatory compliance automation"
+        ],
+        "trends": [
+            "AI-accelerated drug discovery",
+            "mRNA platform technology",
+            "Personalized medicine (genomics)",
+            "Digital biomarkers",
+            "Decentralized clinical trials"
+        ],
+        "target_users": [
+            "Pharmaceutical companies",
+            "Biotech startups",
+            "Research labs",
+            "Clinical researchers",
+            "Regulatory affairs teams"
+        ],
+        "example_ideas": [
+            "AI molecule screening platform",
+            "Clinical trial patient matching",
+            "Lab experiment tracking dashboard",
+            "Drug interaction checker API"
+        ]
+    },
+    {
+        "id": "transportation-mobility",
+        "name": "Transportation & Mobility",
+        "pain_points": [
+            "Traffic congestion in cities",
+            "Last-mile delivery challenge",
+            "Public transit reliability",
+            "Parking availability",
+            "EV charging infrastructure gaps"
+        ],
+        "opportunities": [
+            "Mobility-as-a-Service (MaaS)",
+            "Micro-mobility (e-scooter, e-bike)",
+            "Fleet management platform",
+            "Smart parking solutions",
+            "Autonomous vehicle infrastructure"
+        ],
+        "trends": [
+            "Electric vehicles mainstream",
+            "Autonomous driving (L2-L4)",
+            "Micro-mobility expansion",
+            "Mobility hubs (multi-modal)",
+            "Drone delivery"
+        ],
+        "target_users": [
+            "Commuters",
+            "Delivery companies",
+            "City planners",
+            "Fleet operators",
+            "EV owners"
+        ],
+        "example_ideas": [
+            "Multi-modal trip planner (bus + bike + walk)",
+            "EV charging network finder + reservation",
+            "Fleet tracking and optimization dashboard",
+            "Smart parking availability app"
+        ]
+    },
+    {
+        "id": "food-tech",
+        "name": "Food Tech & Restaurant Tech",
+        "pain_points": [
+            "High food waste (30% of production)",
+            "Rising ingredient costs",
+            "Staff shortages in restaurants",
+            "Delivery commission cuts profits (30%)",
+            "Customer loyalty in saturated market"
+        ],
+        "opportunities": [
+            "Ghost kitchen / cloud kitchen platform",
+            "Food waste reduction AI",
+            "Restaurant POS and management",
+            "Meal planning and prep tools",
+            "Direct ordering (bypass aggregators)"
+        ],
+        "trends": [
+            "Ghost kitchens",
+            "Plant-based and lab-grown meat",
+            "AI inventory and demand forecasting",
+            "Robot cooking / automated kitchens",
+            "Hyper-personalized nutrition"
+        ],
+        "target_users": [
+            "Restaurant owners",
+            "Ghost kitchen operators",
+            "Home cooks",
+            "Food delivery drivers",
+            "Nutrition-conscious consumers"
+        ],
+        "example_ideas": [
+            "Restaurant direct ordering app (no commission)",
+            "AI recipe generator from fridge contents",
+            "Food waste marketplace (surplus deals)",
+            "Smart kitchen inventory tracker"
+        ]
+    },
+    {
+        "id": "photo-video",
+        "name": "Photography & Video Production",
+        "pain_points": [
+            "Time-consuming editing workflows",
+            "Storage and backup costs (TB of files)",
+            "Client communication and proofing",
+            "Pricing and quote complexity",
+            "Copyright protection"
+        ],
+        "opportunities": [
+            "AI photo/video editing",
+            "Client gallery and proofing platform",
+            "Stock content marketplace",
+            "Automated video highlights",
+            "AI-powered color grading"
+        ],
+        "trends": [
+            "AI image generation (Midjourney, DALL-E)",
+            "AI video editing (auto-cut, auto-caption)",
+            "Drone cinematography",
+            "Virtual production (LED walls)",
+            "User-generated content for brands"
+        ],
+        "target_users": [
+            "Professional photographers",
+            "Videographers",
+            "Social media content creators",
+            "Marketing teams",
+            "Wedding industry"
+        ],
+        "example_ideas": [
+            "AI photo culling tool (auto-select best shots)",
+            "Client gallery with integrated booking",
+            "Auto-captioning tool for videos",
+            "AI backdrop remover and replacer",
+            "Stock footage marketplace with AI search"
+        ]
+    },
+    {
+        "id": "smart-city",
+        "name": "Smart City & Urban Tech",
+        "pain_points": [
+            "Data silos between city departments",
+            "Infrastructure monitoring is manual",
+            "Citizen engagement is low",
+            "Emergency response coordination",
+            "Environmental pollution tracking"
+        ],
+        "opportunities": [
+            "City dashboard (real-time data)",
+            "Smart waste management",
+            "Air quality monitoring network",
+            "Digital twin of city infrastructure",
+            "Citizen engagement platform"
+        ],
+        "trends": [
+            "Digital twins for urban planning",
+            "IoT sensor networks",
+            "AI traffic management",
+            "Smart street lighting",
+            "15-minute city concept"
+        ],
+        "target_users": [
+            "City governments",
+            "Urban planners",
+            "Infrastructure companies",
+            "Citizens",
+            "Environmental agencies"
+        ],
+        "example_ideas": [
+            "City operations dashboard",
+            "Smart waste bin monitoring system",
+            "Air quality real-time map",
+            "Public infrastructure defect reporting app"
+        ]
+    },
+    {
+        "id": "nonprofit-ngo",
+        "name": "Nonprofit & NGO",
+        "pain_points": [
+            "Fundraising and donor retention",
+            "Impact measurement and reporting",
+            "Volunteer management complexity",
+            "Limited tech budget",
+            "Grant application is time-consuming"
+        ],
+        "opportunities": [
+            "Online fundraising platform",
+            "Donor management CRM",
+            "Impact tracking and visualization",
+            "Volunteer matching and scheduling",
+            "Grant writing AI assistant"
+        ],
+        "trends": [
+            "Peer-to-peer fundraising",
+            "Crypto/blockchain donations",
+            "Impact investing",
+            "AI for social good",
+            "Micro-donations (round-up)"
+        ],
+        "target_users": [
+            "Nonprofit organizations",
+            "NGO workers",
+            "Volunteers",
+            "Donors",
+            "Grant-making foundations"
+        ],
+        "example_ideas": [
+            "Donation platform with impact visualization",
+            "Volunteer hour tracker and certification",
+            "AI grant proposal writer",
+            "Nonprofit website builder (free tier)"
+        ]
     }
 ]
