@@ -29,9 +29,8 @@ pip install .
 **Usage in a new project:**
 ```bash
 cd my-project
-vibegravity init antigravity
-# OR simply:
-vibe init antigravity
+vibegravity init
+# → Installs for ALL IDEs at once (Antigravity + Cursor + Windsurf + Cline)
 ```
 
 ## 🛠️ CLI Commands
