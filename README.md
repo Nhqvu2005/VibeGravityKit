@@ -87,7 +87,7 @@ Quickstart: "✅ Done! Here's your report: 12 features built, 47/50 tests passin
 ## 🎩 What is VibeGravityKit?
 
 Imagine having a full-stack engineering team living inside your IDE.
-**VibeGravityKit** turns your IDE into a coordinated squad of **15 specialized agents**, from the **Architect** who designs your database, to the **Meta Thinker** who expands your vision.
+**VibeGravityKit** turns your IDE into a coordinated squad of **18 specialized agents**, from the **Architect** who designs your database, to the **Researcher** who searches the web with DuckDuckGo.
 
 But here's the killer feature: **We hate wasting tokens.**
 - **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
@@ -115,7 +115,7 @@ vibegravity init
 
 ## 🛠️ CLI Commands
 
-- **`vibegravity list`** (or `vibe list`): List all 17 specialized agents.
+- **`vibegravity list`** (or `vibe list`): List all 18 specialized agents.
 - **`vibegravity doctor`**: Check your environment health (Python, Node, Git, etc.).
 - **`vibegravity update`**: Auto-update VibeGravityKit to the latest version (works via Git or Pip).
 - **`vibegravity version`**: Show current version.
@@ -135,12 +135,12 @@ VibeGravityKit works natively with **4 AI IDEs**:
 # Example: Setup for Cursor IDE
 cd my-project
 vibegravity init cursor
-# → 17 agent rules installed in .cursor/rules/
+# → 18 agent rules installed in .cursor/rules/
 ```
 
 ---
 
-## 🎮 The 17 Agents (Usage Examples)
+## 🎮 The 18 Agents (Usage Examples)
 
 In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` mentions.
 
@@ -161,9 +161,15 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 > "Break down the 'User Profile' feature into 5 user stories with acceptance criteria."
 *(Generates: `user-stories.md`)*
 
-**@[/market-trend-analyst]** (Researcher)
-> "Analyze the top 3 competitors for a clear-to-do list app in 2025."
-*(Generates: `market-analysis.md`)*
+**@[/researcher]** (Web Researcher)
+> "Search for AI SaaS trends 2025 and top competitors."
+*(Uses **DuckDuckGo API** — zero dependencies, stdlib only. `--compact` mode for token-efficient output)*
+
+```bash
+# Token-efficient search (for AI agents):
+python .agent/skills/market-trend-analyst/scripts/web_search.py -q "AI trends 2025" --compact --max 5
+# Output: 1 line per result → title | url
+```
 
 **@[/tech-stack-advisor]** (CTO)
 > "Recommend a tech stack for a high-frequency trading bot in Python."
@@ -268,9 +274,10 @@ python .agent/skills/template-marketplace/scripts/template_engine.py --action sh
 ## 📋 Changelog
 
 ### v2.7.0
-- ⚡ **Parallel Agent Delegation** — Leader calls multiple agents simultaneously (Arch+Design, FE+BE, Security+SEO+DevOps+Docs). Up to **4x faster** builds.
-- **Meta Thinker expanded** — 45 industries, 15 frameworks, 25 archetypes, 16 monetization models, 23 feature categories (300+ ideas)
-- **Leader Token Discipline** — Anti-overthinking rules, mandatory handoff template (5 lines max)
+- ⚡ **Parallel Agent Delegation** — Leader calls multiple agents simultaneously. Up to **4x faster** builds.
+- 🔍 **Researcher Agent + DuckDuckGo Web Search** — Live web search using only Python stdlib (no pip, no API key). `--compact` mode for token-efficient output.
+- **Meta Thinker expanded** — 45 industries, 15 frameworks, 25 archetypes, 16 monetization models, 300+ feature ideas
+- **18 agents** total (was 17)
 
 ### v2.6.0
 - **Smart Context Protocol** — Universal data query router across 34+ data sources (saves ~70% tokens)

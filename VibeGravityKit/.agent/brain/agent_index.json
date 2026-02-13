@@ -178,6 +178,24 @@
             "skills": [
                 "release-manager"
             ]
+        },
+        "researcher": {
+            "role": "Researcher — Market analysis, web search, trend discovery",
+            "when_to_call": "Research competitors, validate ideas, discover trends, find best practices, gather information",
+            "output": "research_report.md, market-analysis.md, competitor data, web search results",
+            "skills": [
+                "market-trend-analyst",
+                "competitor-analyzer"
+            ],
+            "capabilities": {
+                "web_search": "DuckDuckGo API (zero dependencies, stdlib only)",
+                "modes": [
+                    "--compact (token-efficient)",
+                    "--json",
+                    "--output (markdown)",
+                    "--instant-only"
+                ]
+            }
         }
     },
     "infrastructure": {
