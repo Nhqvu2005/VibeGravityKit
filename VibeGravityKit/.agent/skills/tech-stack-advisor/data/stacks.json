@@ -386,5 +386,342 @@
             "Verbose syntax"
         ],
         "best_for": "Critical infrastructure, high-security APIs, system programming"
+    },
+    {
+        "id": "web-django-htmx",
+        "name": "Django + HTMX + Alpine.js",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "python",
+            "seo",
+            "admin",
+            "rapid",
+            "crud"
+        ],
+        "components": {
+            "Backend": "Django 5",
+            "Frontend": "HTMX + Alpine.js",
+            "Database": "PostgreSQL",
+            "Admin": "Django Admin (built-in)"
+        },
+        "pros": [
+            "Batteries-included (auth, admin, ORM, forms)",
+            "No separate frontend build step",
+            "SEO by default (server-rendered)",
+            "Django Admin saves weeks of development"
+        ],
+        "cons": [
+            "Limited SPA-like interactivity",
+            "Python performance ceiling",
+            "Less modern frontend DX"
+        ],
+        "best_for": "Admin dashboards, CRUD apps, internal tools, startups with Python team"
+    },
+    {
+        "id": "web-laravel-vue",
+        "name": "Laravel + Inertia.js + Vue",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "php",
+            "rapid",
+            "seo",
+            "ecommerce",
+            "monolith"
+        ],
+        "components": {
+            "Backend": "Laravel 11",
+            "Frontend": "Vue 3 + Inertia.js",
+            "Database": "MySQL/PostgreSQL",
+            "Hosting": "Laravel Forge / Vapor (AWS)"
+        },
+        "pros": [
+            "Incredible DX (Artisan CLI, Eloquent ORM)",
+            "Inertia bridges SPA feel with server-side routing",
+            "Laravel ecosystem (Cashier, Sanctum, Scout)",
+            "Excellent documentation"
+        ],
+        "cons": [
+            "PHP stigma in some markets",
+            "Monolithic architecture by default",
+            "Fewer React developers familiar with it"
+        ],
+        "best_for": "SaaS, E-commerce, CMS, startups needing rapid development"
+    },
+    {
+        "id": "web-nuxt",
+        "name": "Nuxt 3 + Supabase",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "vue",
+            "seo",
+            "typescript",
+            "modern"
+        ],
+        "components": {
+            "Frontend": "Nuxt 3 (Vue meta-framework)",
+            "Backend": "Nitro (built-in server engine)",
+            "Database": "Supabase (PostgreSQL)",
+            "Hosting": "Vercel / Netlify / Cloudflare"
+        },
+        "pros": [
+            "SSR/SSG/ISR support with Vue",
+            "Auto-imports and file-based routing",
+            "Nitro server engine (edge-ready)",
+            "Vue ecosystem (Pinia, VueUse)"
+        ],
+        "cons": [
+            "Smaller community than Next.js",
+            "Breaking changes in Nuxt 3 transition",
+            "Vue market share lower than React"
+        ],
+        "best_for": "SEO-heavy Vue apps, content sites, Vue teams building fullstack"
+    },
+    {
+        "id": "web-remix",
+        "name": "Remix (React Router v7)",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "react",
+            "seo",
+            "progressive",
+            "web-standards"
+        ],
+        "components": {
+            "Frontend": "React (Remix/React Router v7)",
+            "Backend": "Remix loaders/actions (Web Fetch API)",
+            "Database": "Prisma + PostgreSQL",
+            "Hosting": "Fly.io / Cloudflare Workers"
+        },
+        "pros": [
+            "Web standards first (Fetch, FormData)",
+            "Nested routing with data loading",
+            "Progressive enhancement (works without JS)",
+            "Edge deployment ready"
+        ],
+        "cons": [
+            "Smaller community than Next.js",
+            "Merging with React Router created confusion",
+            "Less middleware ecosystem"
+        ],
+        "best_for": "Progressive web apps, edge-deployed apps, form-heavy applications"
+    },
+    {
+        "id": "web-elixir-phoenix",
+        "name": "Elixir Phoenix + LiveView",
+        "category": "web",
+        "tags": [
+            "fullstack",
+            "realtime",
+            "elixir",
+            "scalable",
+            "websockets"
+        ],
+        "components": {
+            "Backend": "Phoenix Framework (Elixir)",
+            "Frontend": "Phoenix LiveView (server-rendered reactive UI)",
+            "Database": "PostgreSQL",
+            "Runtime": "BEAM (Erlang VM)"
+        },
+        "pros": [
+            "Real-time UI without JavaScript framework",
+            "Handle millions of concurrent connections",
+            "Fault-tolerant (Erlang OTP)",
+            "Hot code upgrades"
+        ],
+        "cons": [
+            "Elixir learning curve (functional programming)",
+            "Smaller talent pool",
+            "Fewer libraries than Node/Python"
+        ],
+        "best_for": "Real-time apps (chat, gaming, IoT), high-availability systems, telecom"
+    },
+    {
+        "id": "ai-agent-stack",
+        "name": "AI Agent Stack (LangGraph + FastAPI)",
+        "category": "ai",
+        "tags": [
+            "ai",
+            "agents",
+            "llm",
+            "rag",
+            "automation",
+            "enterprise"
+        ],
+        "components": {
+            "LLM": "GPT-4 / Claude / Llama 3",
+            "Orchestration": "LangGraph / CrewAI",
+            "Backend": "FastAPI (Python)",
+            "Vector DB": "Qdrant / ChromaDB",
+            "Frontend": "Next.js + Vercel AI SDK"
+        },
+        "pros": [
+            "Multi-agent orchestration",
+            "Tool calling and function execution",
+            "Memory and context management",
+            "Streaming responses"
+        ],
+        "cons": [
+            "Complex debugging (non-deterministic)",
+            "High API costs",
+            "Prompt engineering required",
+            "Hallucination handling needed"
+        ],
+        "best_for": "AI assistants, autonomous agents, workflow automation, AI SaaS"
+    },
+    {
+        "id": "backend-kotlin-spring",
+        "name": "Kotlin + Spring Boot",
+        "category": "backend",
+        "tags": [
+            "backend",
+            "jvm",
+            "enterprise",
+            "kotlin",
+            "microservices"
+        ],
+        "components": {
+            "Language": "Kotlin",
+            "Framework": "Spring Boot 3",
+            "Database": "PostgreSQL + Spring Data JPA",
+            "Build": "Gradle (Kotlin DSL)"
+        },
+        "pros": [
+            "Modern syntax on battle-tested JVM",
+            "Spring ecosystem (Security, Cloud, Batch)",
+            "Coroutines for async",
+            "Java interoperability"
+        ],
+        "cons": [
+            "JVM memory usage",
+            "Spring complexity",
+            "Gradle build times"
+        ],
+        "best_for": "Enterprise microservices, Android companion APIs, banking/finance"
+    },
+    {
+        "id": "cms-wordpress-headless",
+        "name": "WordPress Headless + Next.js",
+        "category": "web",
+        "tags": [
+            "cms",
+            "wordpress",
+            "headless",
+            "seo",
+            "content"
+        ],
+        "components": {
+            "CMS": "WordPress (WPGraphQL)",
+            "Frontend": "Next.js (App Router)",
+            "API": "GraphQL / REST API",
+            "Hosting": "WordPress hosting + Vercel"
+        },
+        "pros": [
+            "WordPress editor for content teams",
+            "Next.js for modern frontend",
+            "SEO-friendly",
+            "Huge WordPress plugin ecosystem"
+        ],
+        "cons": [
+            "Two systems to maintain",
+            "WordPress security patches",
+            "GraphQL setup complexity"
+        ],
+        "best_for": "Content-heavy businesses, media sites, blogs with custom frontends"
+    },
+    {
+        "id": "serverless-aws",
+        "name": "Serverless (AWS Lambda + API Gateway)",
+        "category": "backend",
+        "tags": [
+            "serverless",
+            "aws",
+            "lambda",
+            "event-driven",
+            "scale-to-zero"
+        ],
+        "components": {
+            "Compute": "AWS Lambda",
+            "API": "API Gateway / AppSync",
+            "Database": "DynamoDB / Aurora Serverless",
+            "IaC": "SST / Serverless Framework / CDK"
+        },
+        "pros": [
+            "Scale to zero (pay per invocation)",
+            "No server management",
+            "Auto-scaling",
+            "Event-driven architecture"
+        ],
+        "cons": [
+            "Cold starts",
+            "Vendor lock-in (AWS)",
+            "Debugging difficulty",
+            "Execution time limits"
+        ],
+        "best_for": "Event-driven apps, APIs with variable traffic, cost-sensitive startups"
+    },
+    {
+        "id": "iot-stack",
+        "name": "IoT Stack (MQTT + Node.js + InfluxDB)",
+        "category": "iot",
+        "tags": [
+            "iot",
+            "mqtt",
+            "sensors",
+            "realtime",
+            "time-series"
+        ],
+        "components": {
+            "Protocol": "MQTT (Mosquitto broker)",
+            "Backend": "Node.js / Python",
+            "Database": "InfluxDB / TimescaleDB",
+            "Dashboard": "Grafana",
+            "Edge": "Raspberry Pi / ESP32"
+        },
+        "pros": [
+            "MQTT is lightweight for IoT devices",
+            "Time-series DB optimized for sensor data",
+            "Grafana for beautiful dashboards",
+            "Works on low-power devices"
+        ],
+        "cons": [
+            "Complex distributed architecture",
+            "Device management overhead",
+            "Security challenges"
+        ],
+        "best_for": "Smart home, industrial IoT, sensor monitoring, fleet management"
+    },
+    {
+        "id": "data-pipeline",
+        "name": "Data Pipeline (Airflow + dbt + Snowflake)",
+        "category": "data",
+        "tags": [
+            "data",
+            "etl",
+            "analytics",
+            "warehouse",
+            "pipeline"
+        ],
+        "components": {
+            "Orchestration": "Apache Airflow / Prefect",
+            "Transform": "dbt (data build tool)",
+            "Warehouse": "Snowflake / BigQuery / Redshift",
+            "Visualization": "Metabase / Looker / Superset"
+        },
+        "pros": [
+            "Industry-standard ETL pipeline",
+            "dbt for SQL-based transformations",
+            "Scalable cloud warehouses",
+            "Reproducible analytics"
+        ],
+        "cons": [
+            "Complex setup",
+            "Cost at scale (cloud warehouses)",
+            "Airflow maintenance overhead"
+        ],
+        "best_for": "Business intelligence, data warehousing, analytics platforms, ML pipelines"
     }
 ]
