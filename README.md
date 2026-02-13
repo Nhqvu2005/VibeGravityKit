@@ -1,7 +1,7 @@
 # 🌌 VibeGravityKit
 
 > **The AI-Native Software House in a Box.**
-> *Build enterprise-grade software with a team of 17 AI Agents — optimized for maximum speed and minimum token costs.*
+> *Build enterprise-grade software with a team of 17 AI Agents — with **parallel delegation** for maximum speed and minimum token costs.*
 
 ---
 
@@ -23,17 +23,17 @@ You → Leader → Agents → Report back per phase → You approve → Next pha
 3. **You approve the plan** ✅
 4. Leader **auto-delegates** to the right agents:
 
-| Phase | Agent | What Happens |
-|-------|-------|-------------|
-| 📋 Planning | `@[/planner]` | PRD, user stories, timeline |
-| 🏗️ Architecture | `@[/architect]` | DB schema, API design, diagrams |
-| 🎨 Design | `@[/designer]` | UI/UX system, components, palette |
-| 💻 Development | `@[/frontend-dev]` `@[/backend-dev]` | Build the product |
-| 🧪 QA & Fix | `@[/qa-engineer]` | Test → Find bugs → Fix → Retest |
-| 🚀 Launch | `@[/devops]` `@[/security-engineer]` | Deploy, audit, docs |
+| Phase | Agent | What Happens | Mode |
+|-------|-------|-------------|------|
+| 📋 Planning | `@[/planner]` | PRD, user stories, timeline | Sequential |
+| 🏗️ Architecture + 🎨 Design | `@[/architect]` + `@[/designer]` | DB schema + UI/UX system | ⚡ **PARALLEL** |
+| 💻 Development | `@[/frontend-dev]` + `@[/backend-dev]` | Build frontend + backend simultaneously | ⚡ **PARALLEL** |
+| 🧪 QA & Fix | `@[/qa-engineer]` | Test → Find bugs → Fix → Retest | Sequential |
+| 🚀 Launch | `@[/devops]` + `@[/security]` + `@[/seo]` + `@[/docs]` | Deploy, audit, SEO, docs — all at once | ⚡ **PARALLEL** |
 
 5. **After each phase**, Leader reports results and waits for your approval.
-6. **QA Smart Loop**: If a bug can't be fixed, Leader calls `@[/meta-thinker]` + `@[/planner]` to rethink the approach. Max **3 retries** — then reports to you with analysis.
+6. **⚡ Parallel Delegation**: Architecture + Design run at the same time. Frontend + Backend run at the same time. Security + SEO + DevOps + Docs run at the same time. **Up to 4x faster** than sequential.
+7. **QA Smart Loop**: If a bug can't be fixed, Leader calls `@[/meta-thinker]` + `@[/planner]` to rethink the approach. Max **3 retries** — then reports to you with analysis.
 
 **Example:**
 ```
@@ -77,9 +77,9 @@ Quickstart: "✅ Done! Here's your report: 12 features built, 47/50 tests passin
 | | `@[/leader]` | `@[/quickstart]` |
 |---|---|---|
 | **User involvement** | Approve each phase | None (fully auto) |
+| **Parallel agents** | ⚡ Yes (up to 4x faster) | ⚡ Yes |
 | **Bug fix retries** | 3 max | 5 max |
 | **Smart rethinking** | ✅ Meta Thinker + Planner | ✅ Meta Thinker + Planner |
-| **Speed** | Careful & thorough | Fast |
 | **Best for** | Production apps, critical projects | MVPs, prototypes, demos |
 
 ---
@@ -267,22 +267,21 @@ python .agent/skills/template-marketplace/scripts/template_engine.py --action sh
 
 ## 📋 Changelog
 
+### v2.7.0
+- ⚡ **Parallel Agent Delegation** — Leader calls multiple agents simultaneously (Arch+Design, FE+BE, Security+SEO+DevOps+Docs). Up to **4x faster** builds.
+- **Meta Thinker expanded** — 45 industries, 15 frameworks, 25 archetypes, 16 monetization models, 23 feature categories (300+ ideas)
+- **Leader Token Discipline** — Anti-overthinking rules, mandatory handoff template (5 lines max)
+
 ### v2.6.0
 - **Smart Context Protocol** — Universal data query router across 34+ data sources (saves ~70% tokens)
 - **Code Reviewer Agent** (`@[/code-reviewer]`) — Regex-based code quality scanner with 20 rules
 - **Release Manager Agent** (`@[/release-manager]`) — Auto changelog, semver bumping, release notes
 - **Template Marketplace** — 7 pre-built templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile)
-- Agent count updated to **17**
 
 ### v2.5.0
 - **Leader Orchestration Mode** — Leader auto-delegates to agents, reports per phase, QA loop with smart retries (max 3)
 - **Quickstart Autopilot Mode** — Fully automated end-to-end project build, QA auto-fix (max 5 retries)
 - **Smart Bug Fix Rethinking** — Failed fixes trigger Meta Thinker + Planner to brainstorm alternative approaches
-
-### v2.4.0
-- `agent_index.json` — Leader reads 1 file to know all agents, their roles, skills, and when to call each
-- `codebase-navigator` upgraded — full function signatures + `--action outline` for compact overview
-- Handoff template for standardized task delegation between agents
 
 ## ❤️ Credits
 Special thanks to **[ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** for pioneering the data-driven approach to UI/UX generation.
