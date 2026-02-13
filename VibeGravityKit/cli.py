@@ -205,5 +205,27 @@ def version():
     else:
         click.echo("Version info not found.")
 
+@main.command(context_settings=dict(ignore_unknown_options=True, allow_extra_args=True))
+@click.pass_context
+def brain(ctx):
+    """Manage project brain — context, decisions, conventions."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "brain-manager" / "scripts" / "brain.py"
+    if not script.exists():
+        click.echo("❌ brain-manager skill not found. Run 'vibegravity init' first.")
+        return
+    sp.run(["python", str(script)] + ctx.args)
+
+@main.command(context_settings=dict(ignore_unknown_options=True, allow_extra_args=True))
+@click.pass_context
+def journal(ctx):
+    """Knowledge journal — capture lessons, bugs, insights."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "journal-manager" / "scripts" / "journal.py"
+    if not script.exists():
+        click.echo("❌ journal-manager skill not found. Run 'vibegravity init' first.")
+        return
+    sp.run(["python", str(script)] + ctx.args)
+
 if __name__ == "__main__":
     main()

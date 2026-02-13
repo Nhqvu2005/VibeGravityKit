@@ -145,6 +145,12 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 
 ## 📋 Changelog
 
+### v2.3.0
+- New skill: `brain-manager` — project context, architecture decisions, export/import brain
+- New skill: `journal-manager` — 2-tier knowledge journal (index + entries)
+- CLI commands: `vibegravity brain show`, `vibegravity brain add-decision`, `vibegravity journal add`, `vibegravity journal search`
+- Auto-save triggers for journal (≥3 attempts, ≥5 files, rollback)
+
 ### v2.2.0
 - New skill: `env-manager` — auto-scan codebase and generate `.env.example`
 - New skill: `i18n-manager` — extract hardcoded strings for translation
