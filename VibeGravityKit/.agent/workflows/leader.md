@@ -48,6 +48,46 @@ PostgreSQL with Prisma ORM as we discussed in the planning phase...
 2. **Report every phase** — short bullet points, not essays.
 3. **Quality first** — always call QA before reporting to Manager.
 4. **Auto-delegation** — once plan is approved, work autonomously.
+5. **Parallel when possible** — use parallel tool calls to speed up independent work.
+
+---
+
+## ⚡ How Parallel Delegation Works (Technically)
+
+> AI IDEs support **parallel tool calls** — multiple tool calls in a single response turn.
+> Use this to read skills + execute work for independent agents simultaneously.
+
+### Step 1: Read all skill files in parallel
+When a phase has multiple independent agents, read ALL their skill/workflow files at the same time:
+```
+# ❌ SLOW — sequential reads:
+view_file(.agent/workflows/architect.md)   → wait → done
+view_file(.agent/workflows/designer.md)    → wait → done
+
+# ✅ FAST — parallel reads (same response turn):
+view_file(.agent/workflows/architect.md)   ← simultaneous
+view_file(.agent/workflows/designer.md)    ← simultaneous
+view_file(.agent/skills/db-designer/SKILL.md)  ← simultaneous
+view_file(.agent/skills/product-designer/SKILL.md) ← simultaneous
+```
+
+### Step 2: Execute outputs in parallel
+After reading all instructions, create outputs for all agents at the same time:
+```
+# ❌ SLOW — sequential writes:
+write_to_file(schema.prisma)    → wait → done
+write_to_file(design_system.md) → wait → done
+
+# ✅ FAST — parallel writes:
+write_to_file(schema.prisma)    ← simultaneous
+write_to_file(design_system.md) ← simultaneous
+run_command(validate schema)    ← simultaneous
+```
+
+### When to use parallel:
+- ✅ Agents that DON'T depend on each other's output (Architect + Designer)
+- ✅ Reading skill files + data files at the start of a phase
+- ❌ Agent B needs Agent A's output first (Planner → Architect)
 
 ---
 
