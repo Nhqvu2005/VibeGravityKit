@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Progress Tracker — Parse task.md và tạo báo cáo tiến độ.
+Progress Tracker — Parse task.md and generate progress report.
 
 Usage:
     python tracker.py --task-file "path/to/task.md"
@@ -15,16 +15,16 @@ from pathlib import Path
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Progress Tracker")
-    parser.add_argument("--task-file", type=str, required=True, help="Đường dẫn tới file task.md")
-    parser.add_argument("--json", action="store_true", help="Output dạng JSON")
+    parser.add_argument("--task-file", type=str, required=True, help="Path to task.md file")
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
     return parser.parse_args()
 
 
 def parse_task_file(filepath):
-    """Parse task.md và trích xuất trạng thái từng task."""
+    """Parse task.md and extract status of each task."""
     path = Path(filepath)
     if not path.exists():
-        return {"error": f"File không tồn tại: {filepath}"}
+        return {"error": f"File not found: {filepath}"}
 
     content = path.read_text(encoding="utf-8")
     lines = content.split("\n")
@@ -75,7 +75,7 @@ def parse_task_file(filepath):
 
 
 def print_readable(result):
-    """In báo cáo tiến độ dạng dễ đọc."""
+    """Print progress report in a readable format."""
     if "error" in result:
         print(f"❌ {result['error']}")
         return
@@ -85,31 +85,31 @@ def print_readable(result):
     bar = "█" * bar_filled + "░" * (20 - bar_filled)
 
     print("=" * 60)
-    print("📊 BÁO CÁO TIẾN ĐỘ")
+    print("📊 PROGRESS REPORT")
     print("=" * 60)
     print(f"\n  [{bar}] {pct}%")
-    print(f"\n  Tổng tasks:     {result['total']}")
-    print(f"  ✅ Hoàn thành:  {result['completed']}")
-    print(f"  🔄 Đang làm:    {result['in_progress']}")
-    print(f"  ⏳ Chưa bắt đầu: {result['pending']}")
+    print(f"\n  Total tasks:    {result['total']}")
+    print(f"  ✅ Completed:   {result['completed']}")
+    print(f"  🔄 In Progress: {result['in_progress']}")
+    print(f"  ⏳ Pending:     {result['pending']}")
 
     if result["details"]["completed"]:
         print(f"\n{'─' * 60}")
-        print("  ✅ ĐÃ HOÀN THÀNH:")
+        print("  ✅ COMPLETED:")
         for t in result["details"]["completed"]:
             section = f" [{t['section']}]" if t["section"] else ""
             print(f"    ✓ {t['text']}{section}")
 
     if result["details"]["in_progress"]:
         print(f"\n{'─' * 60}")
-        print("  🔄 ĐANG THỰC HIỆN:")
+        print("  🔄 IN PROGRESS:")
         for t in result["details"]["in_progress"]:
             section = f" [{t['section']}]" if t["section"] else ""
             print(f"    → {t['text']}{section}")
 
     if result["details"]["pending"]:
         print(f"\n{'─' * 60}")
-        print("  ⏳ TIẾP THEO:")
+        print("  ⏳ NEXT UP:")
         for t in result["details"]["pending"]:
             section = f" [{t['section']}]" if t["section"] else ""
             print(f"    ○ {t['text']}{section}")

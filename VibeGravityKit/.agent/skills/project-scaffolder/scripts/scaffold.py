@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Project Scaffolder — Generate danh sách commands và files cần tạo cho project.
+Project Scaffolder — Generate commands and files to bootstrap a project.
 
 Usage:
     python scaffold.py --stack "nextjs-supabase" --name "my-app" --path "./my-app"
@@ -10,7 +10,7 @@ import argparse
 import json
 import sys
 
-# === Templates cho từng stack ===
+# === Templates per stack ===
 SCAFFOLDS = {
     "nextjs-supabase": {
         "display_name": "Next.js + Supabase",
@@ -123,7 +123,7 @@ SCAFFOLDS = {
             "fonts"
         ],
         "files": {
-            "index.html": '<!DOCTYPE html>\n<html lang="vi">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta name="description" content="">\n  <title>{name}</title>\n  <link rel="stylesheet" href="css/style.css">\n</head>\n<body>\n  <header id="header"></header>\n  <main id="main"></main>\n  <footer id="footer"></footer>\n  <script src="js/app.js"></script>\n</body>\n</html>',
+            "index.html": '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta name="description" content="">\n  <title>{name}</title>\n  <link rel="stylesheet" href="css/style.css">\n</head>\n<body>\n  <header id="header"></header>\n  <main id="main"></main>\n  <footer id="footer"></footer>\n  <script src="js/app.js"></script>\n</body>\n</html>',
             "css/style.css": "/* Design tokens */\n:root {\n  --color-primary: #6366f1;\n  --color-bg: #0f172a;\n  --color-text: #f8fafc;\n  --font-sans: 'Inter', system-ui, sans-serif;\n}\n\n/* Reset */\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: var(--font-sans);\n  background: var(--color-bg);\n  color: var(--color-text);\n  line-height: 1.6;\n}",
             "js/app.js": "// {name} — Main application\n'use strict';\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log('{name} loaded');\n});",
             ".gitignore": ".DS_Store\nThumbs.db\n*.log"
@@ -135,9 +135,9 @@ SCAFFOLDS = {
 def parse_args():
     parser = argparse.ArgumentParser(description="Project Scaffolder")
     parser.add_argument("--stack", type=str, required=True, help="Stack ID: nextjs-supabase, vite-react, python-fastapi, html-css-js")
-    parser.add_argument("--name", type=str, required=True, help="Tên dự án")
-    parser.add_argument("--path", type=str, required=True, help="Đường dẫn tạo project")
-    parser.add_argument("--json", action="store_true", help="Output dạng JSON")
+    parser.add_argument("--name", type=str, required=True, help="Project Name")
+    parser.add_argument("--path", type=str, required=True, help="Target path to create project")
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
     return parser.parse_args()
 
 
@@ -145,7 +145,7 @@ def generate_scaffold(stack_id, project_name, target_path):
     """Generate scaffold instructions."""
     if stack_id not in SCAFFOLDS:
         available = ", ".join(SCAFFOLDS.keys())
-        return {"error": f"Stack '{stack_id}' không hợp lệ. Các stack có sẵn: {available}"}
+        return {"error": f"Invalid stack '{stack_id}'. Available stacks: {available}"}
 
     template = SCAFFOLDS[stack_id]
     result = {
@@ -158,7 +158,7 @@ def generate_scaffold(stack_id, project_name, target_path):
     # Step 1: Init commands
     result["steps"].append({
         "step": 1,
-        "title": "Khởi tạo project",
+        "title": "Initialize Project",
         "commands": [cmd.format(path=target_path, name=project_name) for cmd in template["init_commands"]]
     })
 
@@ -166,14 +166,14 @@ def generate_scaffold(stack_id, project_name, target_path):
     if template["extra_packages"]:
         result["steps"].append({
             "step": 2,
-            "title": "Cài thêm packages (tùy chọn)",
+            "title": "Install Extra Packages (Optional)",
             "packages": {k: cmd.format(path=target_path) for k, cmd in template["extra_packages"].items()}
         })
 
     # Step 3: Create directories
     result["steps"].append({
         "step": 3,
-        "title": "Tạo thư mục",
+        "title": "Create Directories",
         "directories": template["directories"]
     })
 
@@ -184,7 +184,7 @@ def generate_scaffold(stack_id, project_name, target_path):
 
     result["steps"].append({
         "step": 4,
-        "title": "Tạo files cấu hình",
+        "title": "Create Configuration Files",
         "files": files
     })
 
@@ -203,9 +203,9 @@ def generate_scaffold(stack_id, project_name, target_path):
 
 
 def print_readable(result):
-    """In kết quả dạng dễ đọc."""
+    """Print results in a readable format."""
     if "error" in result:
-        print(f"❌ Lỗi: {result['error']}")
+        print(f"❌ Error: {result['error']}")
         return
 
     print("=" * 60)
@@ -216,7 +216,7 @@ def print_readable(result):
 
     for step in result["steps"]:
         print(f"\n{'─' * 60}")
-        print(f"  Bước {step['step']}: {step['title']}")
+        print(f"  Step {step['step']}: {step['title']}")
         print(f"{'─' * 60}")
 
         if "commands" in step:
@@ -236,7 +236,7 @@ def print_readable(result):
                 print(f"  📄 {f}")
 
     print(f"\n{'=' * 60}")
-    print("✅ Scaffold ready! Chạy các commands ở trên theo thứ tự.")
+    print("✅ Scaffold ready! Run the commands above in order.")
 
 
 if __name__ == "__main__":

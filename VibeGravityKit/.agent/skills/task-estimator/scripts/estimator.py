@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Task Estimator — Chia nhỏ features thành tasks, gán nhân viên, ước lượng.
+Task Estimator — Break down features into tasks, assign roles, and estimate effort.
 
 Usage:
     python estimator.py --features "login,product listing,cart,checkout" --stack "nextjs-supabase"
@@ -10,17 +10,17 @@ import argparse
 import json
 import sys
 
-# === Mapping: feature → tasks cụ thể ===
+# === Mapping: feature → specific tasks ===
 TASK_TEMPLATES = {
     "login": [
-        {"task": "Design trang Login UI", "assignee": "🎨 Designer", "size": "S", "phase": "Design"},
-        {"task": "Implement Login page component", "assignee": "⚛️ Frontend Dev", "size": "M", "phase": "Frontend"},
+        {"task": "Design Login Page UI", "assignee": "🎨 Designer", "size": "S", "phase": "Design"},
+        {"task": "Implement Login component", "assignee": "⚛️ Frontend Dev", "size": "M", "phase": "Frontend"},
         {"task": "API: POST /auth/login", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
         {"task": "Setup auth middleware + session/JWT", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
         {"task": "Test login flow (happy + error cases)", "assignee": "🧪 Tester", "size": "M", "phase": "Testing"},
     ],
     "register": [
-        {"task": "Design trang Register UI", "assignee": "🎨 Designer", "size": "S", "phase": "Design"},
+        {"task": "Design Register Page UI", "assignee": "🎨 Designer", "size": "S", "phase": "Design"},
         {"task": "Implement Register page + form validation", "assignee": "⚛️ Frontend Dev", "size": "M", "phase": "Frontend"},
         {"task": "API: POST /auth/register + email verification", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
         {"task": "DB: Create users table + migration", "assignee": "🏗️ Architect", "size": "S", "phase": "Setup"},
@@ -30,7 +30,7 @@ TASK_TEMPLATES = {
         {"task": "Design product card + listing layout", "assignee": "🎨 Designer", "size": "M", "phase": "Design"},
         {"task": "Implement product listing page + grid/list view", "assignee": "⚛️ Frontend Dev", "size": "L", "phase": "Frontend"},
         {"task": "Implement filter & sort UI", "assignee": "⚛️ Frontend Dev", "size": "M", "phase": "Frontend"},
-        {"task": "API: GET /products với pagination, filter, sort", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
+        {"task": "API: GET /products with pagination, filter, sort", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
         {"task": "DB: Create products, categories tables", "assignee": "🏗️ Architect", "size": "M", "phase": "Setup"},
         {"task": "Seed demo products data", "assignee": "⚙️ Backend Dev", "size": "S", "phase": "Backend"},
         {"task": "Test product listing + filters", "assignee": "🧪 Tester", "size": "M", "phase": "Testing"},
@@ -70,7 +70,7 @@ TASK_TEMPLATES = {
     "search": [
         {"task": "Design search UI (search bar + results page)", "assignee": "🎨 Designer", "size": "S", "phase": "Design"},
         {"task": "Implement search component + auto-suggest", "assignee": "⚛️ Frontend Dev", "size": "M", "phase": "Frontend"},
-        {"task": "API: GET /search với full-text search", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
+        {"task": "API: GET /search with full-text search", "assignee": "⚙️ Backend Dev", "size": "M", "phase": "Backend"},
         {"task": "Test search functionality", "assignee": "🧪 Tester", "size": "S", "phase": "Testing"},
     ],
     "dashboard": [
@@ -90,10 +90,10 @@ TASK_TEMPLATES = {
 # Common setup tasks added to every project
 COMMON_TASKS = {
     "Setup": [
-        {"task": "Thiết kế System Architecture", "assignee": "🏗️ Architect", "size": "L"},
-        {"task": "Thiết kế Database Schema (ERD)", "assignee": "🏗️ Architect", "size": "L"},
-        {"task": "Thiết kế API Contract", "assignee": "🏗️ Architect", "size": "M"},
-        {"task": "Tạo Design System (colors, typography, spacing)", "assignee": "🎨 Designer", "size": "L"},
+        {"task": "Design System Architecture", "assignee": "🏗️ Architect", "size": "L"},
+        {"task": "Design Database Schema (ERD)", "assignee": "🏗️ Architect", "size": "L"},
+        {"task": "Design API Contract", "assignee": "🏗️ Architect", "size": "M"},
+        {"task": "Create Design System (colors, typography, spacing)", "assignee": "🎨 Designer", "size": "L"},
         {"task": "Setup base components (Button, Input, Card, Modal)", "assignee": "🎨 Designer", "size": "L"},
     ],
     "QA & Launch": [
@@ -112,14 +112,14 @@ SIZE_EFFORT = {"S": 1, "M": 2, "L": 4, "XL": 8}
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Task Estimator")
-    parser.add_argument("--features", type=str, required=True, help="Danh sách features, phân cách bằng dấu phẩy")
+    parser.add_argument("--features", type=str, required=True, help="List of features, comma-separated")
     parser.add_argument("--stack", type=str, default="nextjs-supabase", help="Tech stack ID")
-    parser.add_argument("--json", action="store_true", help="Output dạng JSON")
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
     return parser.parse_args()
 
 
 def find_matching_tasks(feature_query):
-    """Tìm tasks phù hợp với feature query."""
+    """Find tasks matching the feature query."""
     query = feature_query.lower().strip()
 
     # Direct match
@@ -210,7 +210,7 @@ def estimate(features):
 
 
 def print_readable(result):
-    """In task breakdown dạng dễ đọc."""
+    """Print task breakdown in a readable format."""
     print("=" * 70)
     print("📋 TASK BREAKDOWN")
     print("=" * 70)
@@ -231,17 +231,17 @@ def print_readable(result):
     # Summary
     s = result["summary"]
     print(f"\n{'=' * 70}")
-    print("  📊 TỔNG KẾT")
+    print("  📊 SUMMARY")
     print(f"{'=' * 70}")
-    print(f"  Tổng tasks: {s['total_tasks']}")
+    print(f"  Total tasks: {s['total_tasks']}")
     print(f"  Effort points: {s['total_effort_points']}")
     print(f"  S: {s['by_size']['S']} | M: {s['by_size']['M']} | L: {s['by_size']['L']}")
 
-    print(f"\n  👥 Phân bổ theo nhân viên:")
+    print(f"\n  👥 Assignment by Role:")
     for assignee, count in sorted(s["by_assignee"].items()):
         print(f"    {assignee}: {count} tasks")
 
-    print(f"\n  📌 Phân bổ theo phase:")
+    print(f"\n  📌 Distribution by Phase:")
     for phase, count in s["by_phase"].items():
         print(f"    {phase}: {count} tasks")
 

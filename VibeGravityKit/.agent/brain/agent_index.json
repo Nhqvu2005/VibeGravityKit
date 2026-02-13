@@ -1,13 +1,49 @@
 {
     "agents": {
         "leader": {
-            "role": "Team Lead — Orchestrates the entire team",
-            "when_to_call": "Complex tasks that need multiple agents working together",
-            "output": "Delegates tasks to specialized agents, tracks progress",
+            "role": "Team Lead — Orchestrates the entire team with per-phase reporting",
+            "when_to_call": "Complex tasks that need multiple agents. User approves each phase before proceeding.",
+            "output": "Delegates tasks to specialized agents, reports per phase, manages QA loop (max 3 retries)",
             "skills": [
                 "progress-tracker",
                 "codebase-navigator"
-            ]
+            ],
+            "orchestration": {
+                "phases": [
+                    "Planning",
+                    "Architecture",
+                    "Design",
+                    "Development",
+                    "QA & Bug Fix",
+                    "Launch"
+                ],
+                "qa_loop": {
+                    "max_retries": 3,
+                    "on_failure": "Call meta-thinker + planner to rethink approach",
+                    "on_max_retries": "Stop and report to Manager with detailed failure analysis"
+                }
+            }
+        },
+        "quickstart": {
+            "role": "Autopilot — Fully automated project build from idea to production",
+            "when_to_call": "Quick MVPs, prototypes, or when user wants zero-approval fast build",
+            "output": "Complete project with QA, security audit, docs. Final report with all results.",
+            "skills": [],
+            "orchestration": {
+                "phases": [
+                    "Auto-Plan",
+                    "Architecture",
+                    "Design",
+                    "Development",
+                    "QA & Auto-Fix",
+                    "Polish"
+                ],
+                "qa_loop": {
+                    "max_retries": 5,
+                    "on_failure": "Call meta-thinker + planner to rethink approach",
+                    "on_max_retries": "Log unresolved bug, continue with remaining work"
+                }
+            }
         },
         "planner": {
             "role": "Analyzes requirements, writes PRD, breaks down tasks",

@@ -2,8 +2,8 @@
     {
         "id": "freemium",
         "name": "Freemium",
-        "description": "Miễn phí cơ bản, trả phí cho tính năng nâng cao",
-        "how_it_works": "User dùng free → yêu thích → upgrade lên paid cho features, storage, hoặc limits cao hơn",
+        "description": "Free for basic use, pay for advanced features",
+        "how_it_works": "User uses free version → loves it → upgrades to paid for features, storage, or higher limits",
         "examples": [
             "Spotify",
             "Notion",
@@ -12,14 +12,14 @@
             "Slack"
         ],
         "pros": [
-            "Rào cản thấp, dễ acquire user",
-            "Viral growth qua free tier",
-            "Upsell tự nhiên"
+            "Low barrier to entry, easy user acquisition",
+            "Viral growth via free tier",
+            "Natural upsell path"
         ],
         "cons": [
-            "Conversion rate thấp (2-5%)",
-            "Phải balance free vs paid",
-            "Server cost cho free users"
+            "Low conversion rate (2-5%)",
+            "Hard to balance free vs paid",
+            "Server cost for free users"
         ],
         "best_for": [
             "SaaS",
@@ -32,13 +32,13 @@
             "ARPU",
             "Time to upgrade"
         ],
-        "pricing_tips": "Free tier phải đủ giá trị để giữ user, nhưng thiếu đủ để tạo nhu cầu upgrade"
+        "pricing_tips": "Free tier must be valuable enough to keep users, but limited enough to drive upgrades"
     },
     {
         "id": "subscription",
         "name": "Subscription (Monthly/Yearly)",
-        "description": "Trả phí định kỳ để sử dụng dịch vụ",
-        "how_it_works": "User đăng ký monthly/yearly plan, tự động gia hạn. Thường có 2-3 tiers (Basic, Pro, Enterprise)",
+        "description": "Recurring fee for service access",
+        "how_it_works": "User subscribes to monthly/yearly plan. Usually 2-3 tiers (Basic, Pro, Enterprise)",
         "examples": [
             "Netflix",
             "ChatGPT Plus",
@@ -47,13 +47,13 @@
             "Duolingo Plus"
         ],
         "pros": [
-            "Recurring revenue ổn định (MRR)",
-            "Dễ forecast",
-            "LTV cao"
+            "Stable recurring revenue (MRR)",
+            "Predictable forecasting",
+            "High LTV"
         ],
         "cons": [
             "Churn risk",
-            "Phải liên tục ship value",
+            "Must continuously ship value",
             "Price sensitivity"
         ],
         "best_for": [
@@ -68,13 +68,13 @@
             "LTV:CAC ratio",
             "Net revenue retention"
         ],
-        "pricing_tips": "Yearly plan giảm 20% so với monthly → lock-in + cash flow tốt hơn"
+        "pricing_tips": "Yearly plan 20% discount vs monthly → better lock-in + cash flow"
     },
     {
         "id": "per-seat",
         "name": "Per-Seat / Per-User",
-        "description": "Tính phí theo số người dùng trong team",
-        "how_it_works": "Mỗi user thêm = thêm phí. Thường có minimum seats và volume discount",
+        "description": "Charge per user in a team",
+        "how_it_works": "More users = more fee. Often has minimum seats and volume discounts",
         "examples": [
             "Slack",
             "Jira",
@@ -83,14 +83,14 @@
             "Monday.com"
         ],
         "pros": [
-            "Revenue scale theo adoption",
-            "Upsell tự nhiên khi team grow",
+            "Revenue scales with adoption",
+            "Natural upsell as team grows",
             "Transparent pricing"
         ],
         "cons": [
             "Seat sharing/abuse",
-            "Barrier cho team lớn",
-            "Khó áp dụng cho B2C"
+            "Barrier for large teams",
+            "Hard for B2C"
         ],
         "best_for": [
             "B2B SaaS",
@@ -103,13 +103,13 @@
             "Expansion revenue",
             "Net dollar retention"
         ],
-        "pricing_tips": "Offer free seats cho small teams (3-5) để hook, rồi charge khi scale"
+        "pricing_tips": "Offer free seats for small teams (3-5) to hook, then charge when scaling"
     },
     {
         "id": "usage-based",
         "name": "Usage-Based / Pay-as-you-go",
-        "description": "Trả phí theo lượng sử dụng thực tế",
-        "how_it_works": "Charge theo API calls, tokens, storage, bandwidth, hoặc transactions",
+        "description": "Pay for what you use",
+        "how_it_works": "Charge by API calls, tokens, storage, bandwidth, or transactions",
         "examples": [
             "AWS",
             "OpenAI API",
@@ -123,8 +123,8 @@
             "Revenue aligns with value"
         ],
         "cons": [
-            "Revenue biến động",
-            "Khó forecast",
+            "Unpredictable revenue",
+            "Hard to forecast",
             "Billing complexity"
         ],
         "best_for": [
@@ -138,13 +138,13 @@
             "Revenue per unit",
             "Gross margin"
         ],
-        "pricing_tips": "Cho free tier (1000 calls/month) để developers thử, charge khi production"
+        "pricing_tips": "Give free tier (1000 calls/month) for devs to test, charge for production"
     },
     {
         "id": "marketplace-commission",
         "name": "Marketplace Commission",
-        "description": "Lấy % phí trên mỗi giao dịch giữa buyer và seller",
-        "how_it_works": "Platform kết nối buyer-seller, lấy 10-30% commission mỗi transaction",
+        "description": "Take % fee on each transaction",
+        "how_it_works": "Platform connects buyer-seller, takes 10-30% commission per transaction",
         "examples": [
             "Shopee (10-15%)",
             "Airbnb (3% host + 14% guest)",
@@ -153,7 +153,7 @@
             "App Store (30%)"
         ],
         "pros": [
-            "Revenue scale theo GMV",
+            "Revenue scales with GMV",
             "No inventory risk",
             "Network effects"
         ],
@@ -179,7 +179,7 @@
     {
         "id": "advertising",
         "name": "Advertising / Ads",
-        "description": "Miễn phí cho user, kiếm tiền từ quảng cáo",
+        "description": "Free for users, monetize via ads",
         "how_it_works": "Build audience → sell ad space. Models: CPM, CPC, CPA, sponsored content",
         "examples": [
             "Google",
@@ -189,12 +189,12 @@
             "Reddit"
         ],
         "pros": [
-            "Free cho user → massive scale",
+            "Free for user → massive scale",
             "Data-driven targeting",
-            "High margin khi scale"
+            "High margin at scale"
         ],
         "cons": [
-            "Cần millions of users",
+            "Need millions of users",
             "Ad blockers",
             "Privacy concerns",
             "User experience trade-off"
@@ -211,15 +211,15 @@
             "Ad revenue per user (ARPU)",
             "Time on platform"
         ],
-        "pricing_tips": "Niche audiences có CPM cao hơn (developer, finance > general)"
+        "pricing_tips": "Niche audiences have higher CPM (developer, finance > general)"
     },
     {
         "id": "one-time-purchase",
         "name": "One-Time Purchase",
-        "description": "Mua 1 lần, sử dụng mãi mãi",
-        "how_it_works": "User trả 1 lần để sở hữu vĩnh viễn. Có thể charge cho major updates",
+        "description": "Buy once, use forever",
+        "how_it_works": "User pays once for lifetime license. Can charge for major updates (v2, v3)",
         "examples": [
-            "Sketch (trước đây)",
+            "Sketch (formerly)",
             "Sublime Text",
             "Things 3",
             "Affinity Designer",
@@ -231,8 +231,8 @@
             "Lower refund pressure"
         ],
         "cons": [
-            "Không có recurring revenue",
-            "Phải liên tục acquire new users",
+            "No recurring revenue",
+            "Must constantly acquire new users",
             "Hard to sustain long-term"
         ],
         "best_for": [
@@ -252,8 +252,8 @@
     {
         "id": "in-app-purchase",
         "name": "In-App Purchase (IAP)",
-        "description": "Mua items, credits, hoặc features bên trong app",
-        "how_it_works": "App free download, kiếm tiền từ virtual goods, cosmetics, power-ups, content unlock",
+        "description": "Buy items, credits, or features inside the app",
+        "how_it_works": "App free download, monetize via virtual goods, cosmetics, power-ups, content",
         "examples": [
             "Duolingo (Super)",
             "Tinder (Boost)",
@@ -288,8 +288,8 @@
     {
         "id": "affiliate",
         "name": "Affiliate / Referral Revenue",
-        "description": "Kiếm commission khi giới thiệu user sang sản phẩm khác",
-        "how_it_works": "Link affiliate → user mua hàng từ partner → nhận commission 5-30%",
+        "description": "Earn commission by referring users to other products",
+        "how_it_works": "Affiliate link → user buys from partner → earn 5-30% commission",
         "examples": [
             "NerdWallet",
             "The Wirecutter",
@@ -319,13 +319,13 @@
             "Revenue per click",
             "Partner diversity"
         ],
-        "pricing_tips": "Diversify partners để giảm risk và tăng relevant recommendations"
+        "pricing_tips": "Diversify partners to reduce risk and increase relevant recommendations"
     },
     {
         "id": "data-licensing",
         "name": "Data Licensing / Insights",
-        "description": "Bán data hoặc insights thu thập từ platform",
-        "how_it_works": "Aggregate anonymized data → sell reports, benchmarks, hoặc API access cho businesses",
+        "description": "Sell aggregated data or insights",
+        "how_it_works": "Aggregate anonymized data → sell reports, benchmarks, or API access to businesses",
         "examples": [
             "LinkedIn (Talent Insights)",
             "SEMrush",
@@ -360,7 +360,7 @@
     {
         "id": "white-label",
         "name": "White-Label / Licensing",
-        "description": "Bán phần mềm/platform cho người khác tự brand và bán lại",
+        "description": "Sell software for others to rebrand and resell",
         "how_it_works": "Build once → license to multiple clients → they rebrand and sell to their customers",
         "examples": [
             "Sharetribe (marketplace)",
@@ -394,8 +394,8 @@
     {
         "id": "donation-sponsorship",
         "name": "Donation / Sponsorship / Open Source",
-        "description": "Kiếm tiền từ donations, sponsorships, hoặc premium support",
-        "how_it_works": "Product miễn phí, kiếm tiền qua GitHub Sponsors, Patreon, Open Collective, hoặc enterprise support",
+        "description": "Monetize via donations, sponsorships, or premium support",
+        "how_it_works": "Free product, revenue via GitHub Sponsors, Patreon, Open Collective, or enterprise support",
         "examples": [
             "Vue.js",
             "Wikipedia",

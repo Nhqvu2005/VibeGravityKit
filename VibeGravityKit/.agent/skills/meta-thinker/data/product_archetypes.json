@@ -2,7 +2,7 @@
     {
         "id": "marketplace",
         "name": "Marketplace",
-        "description": "Nền tảng kết nối người mua và người bán",
+        "description": "Platform connecting buyers and sellers",
         "examples": [
             "Shopee",
             "Tiki",
@@ -41,7 +41,7 @@
     {
         "id": "saas",
         "name": "SaaS (Software as a Service)",
-        "description": "Phần mềm trả phí theo tháng/năm, chạy trên cloud",
+        "description": "Cloud-based software with recurring subscription",
         "examples": [
             "Notion",
             "Slack",
@@ -82,7 +82,7 @@
     {
         "id": "social-network",
         "name": "Social Network / Community",
-        "description": "Nền tảng kết nối người dùng, chia sẻ nội dung",
+        "description": "Platform for connecting users and sharing content",
         "examples": [
             "Facebook",
             "Twitter/X",
@@ -122,7 +122,7 @@
     {
         "id": "content-platform",
         "name": "Content Platform",
-        "description": "Nền tảng tạo, chia sẻ và tiêu thụ nội dung",
+        "description": "Platform for creating, sharing, and consuming content",
         "examples": [
             "Medium",
             "YouTube",
@@ -162,7 +162,7 @@
     {
         "id": "utility-tool",
         "name": "Utility / Tool",
-        "description": "Công cụ giải quyết 1 vấn đề cụ thể, nhanh gọn",
+        "description": "Tool that solves a specific problem quickly",
         "examples": [
             "Canva",
             "Remove.bg",
@@ -202,7 +202,7 @@
     {
         "id": "on-demand",
         "name": "On-Demand / Gig Economy",
-        "description": "Dịch vụ theo yêu cầu, kết nối provider và consumer",
+        "description": "Service on demand connecting providers and consumers",
         "examples": [
             "Grab",
             "Uber",
@@ -242,7 +242,7 @@
     {
         "id": "edtech",
         "name": "EdTech / Learning Platform",
-        "description": "Nền tảng học tập trực tuyến",
+        "description": "Online learning platform",
         "examples": [
             "Coursera",
             "Duolingo",
@@ -281,7 +281,7 @@
     {
         "id": "fintech",
         "name": "FinTech / Payment",
-        "description": "Ứng dụng tài chính, thanh toán, quản lý tiền",
+        "description": "Finance, payment, money management app",
         "examples": [
             "MoMo",
             "ZaloPay",
@@ -322,7 +322,7 @@
     {
         "id": "healthtech",
         "name": "HealthTech / Wellness",
-        "description": "Ứng dụng sức khỏe, y tế, wellness",
+        "description": "Health, medical, wellness app",
         "examples": [
             "MyFitnessPal",
             "Calm",
@@ -363,7 +363,7 @@
     {
         "id": "ai-powered",
         "name": "AI-Powered Product",
-        "description": "Sản phẩm lấy AI làm core value",
+        "description": "Product with AI as core value",
         "examples": [
             "ChatGPT",
             "Midjourney",
@@ -405,7 +405,7 @@
     {
         "id": "gaming",
         "name": "Game / Gamification",
-        "description": "Game hoặc ứng dụng với gamification elements",
+        "description": "Game or app with gamification elements",
         "examples": [
             "Wordle",
             "Duolingo",
@@ -447,7 +447,7 @@
     {
         "id": "iot-smart",
         "name": "IoT / Smart Home",
-        "description": "Ứng dụng điều khiển thiết bị thông minh",
+        "description": "Smart device control app",
         "examples": [
             "Google Home",
             "Tuya Smart",
@@ -487,7 +487,7 @@
     {
         "id": "crm-erp",
         "name": "CRM / ERP / Business Tool",
-        "description": "Phần mềm quản lý doanh nghiệp",
+        "description": "Business management software",
         "examples": [
             "Salesforce",
             "HubSpot",
@@ -527,7 +527,7 @@
     {
         "id": "booking-reservation",
         "name": "Booking / Reservation",
-        "description": "Hệ thống đặt lịch, đặt chỗ",
+        "description": "Booking and reservation system",
         "examples": [
             "Booking.com",
             "OpenTable",
@@ -567,7 +567,7 @@
     {
         "id": "aggregator",
         "name": "Aggregator / Comparison",
-        "description": "Tổng hợp và so sánh thông tin từ nhiều nguồn",
+        "description": "Aggregates and compares info from multiple sources",
         "examples": [
             "Google Flights",
             "Trivago",
@@ -605,7 +605,7 @@
     {
         "id": "subscription-box",
         "name": "Subscription / D2C",
-        "description": "Sản phẩm giao hàng định kỳ hoặc bán trực tiếp",
+        "description": "Recurring delivery or direct-to-consumer sales",
         "examples": [
             "Dollar Shave Club",
             "HelloFresh",
@@ -643,7 +643,7 @@
     {
         "id": "browser-extension",
         "name": "Browser Extension",
-        "description": "Plugin cho trình duyệt, làm giàu trải nghiệm web",
+        "description": "Browser plugin optimizing web experience",
         "examples": [
             "uBlock Origin",
             "Grammarly",
@@ -680,7 +680,7 @@
     {
         "id": "desktop-app",
         "name": "Desktop Application",
-        "description": "Ứng dụng native hoặc cross-platform cho PC/Mac",
+        "description": "Native or cross-platform app for PC/Mac",
         "examples": [
             "VS Code",
             "Obsidian",
@@ -718,7 +718,7 @@
     {
         "id": "cli-tool",
         "name": "CLI Tool / DevTool",
-        "description": "Command-line tool cho developers",
+        "description": "Command-line tool for developers",
         "examples": [
             "npm",
             "Vite",
@@ -755,7 +755,7 @@
     {
         "id": "api-service",
         "name": "API-as-a-Service",
-        "description": "Cung cấp API cho developer tích hợp vào sản phẩm của họ",
+        "description": "API provider for developers to integrate",
         "examples": [
             "Stripe",
             "Twilio",

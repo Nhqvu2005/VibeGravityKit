@@ -3,11 +3,11 @@
         "id": "e-commerce",
         "name": "E-Commerce / Retail",
         "pain_points": [
-            "Quản lý tồn kho phức tạp",
-            "Chi phí vận chuyển cao",
-            "Tỷ lệ hoàn hàng cao",
-            "Cạnh tranh giá khốc liệt",
-            "Khó giữ chân khách hàng"
+            "Complex inventory management",
+            "High shipping costs",
+            "High return rates",
+            "Fierce price competition",
+            "Customer retention difficulty"
         ],
         "opportunities": [
             "Social commerce (TikTok Shop)",
@@ -24,12 +24,12 @@
             "Buy-now-pay-later"
         ],
         "target_users": [
-            "Người mua hàng online",
-            "Shop owner",
-            "Dropshipper"
+            "Online shoppers",
+            "Shop owners",
+            "Dropshippers"
         ],
         "example_ideas": [
-            "So sánh giá real-time",
+            "Real-time price comparison",
             "Virtual fitting room",
             "Group buying platform",
             "Local artisan marketplace"
@@ -39,11 +39,11 @@
         "id": "food-beverage",
         "name": "Food & Beverage",
         "pain_points": [
-            "Food waste lớn",
-            "Chuỗi cung ứng không minh bạch",
-            "Khó quản lý chất lượng",
-            "Chi phí nhân công cao",
-            "Marketing khó đo lường"
+            "High food waste",
+            "Opaque supply chain",
+            "Quality control difficulty",
+            "High labor costs",
+            "Hard-to-measure marketing"
         ],
         "opportunities": [
             "Ghost kitchen",
@@ -60,29 +60,29 @@
             "Robot delivery"
         ],
         "target_users": [
-            "Người tiêu dùng",
-            "Chủ nhà hàng",
-            "Đầu bếp",
-            "Shipper"
+            "Consumers",
+            "Restaurant owners",
+            "Chefs",
+            "Shippers"
         ],
         "example_ideas": [
-            "App đặt suất ăn healthy",
-            "Nền tảng chia sẻ đồ ăn thừa",
-            "AI lên menu theo dinh dưỡng"
+            "Healthy meal delivery app",
+            "Leftover food sharing platform",
+            "AI nutrition-based menu planner"
         ]
     },
     {
         "id": "education",
         "name": "Education / EdTech",
         "pain_points": [
-            "Học nhồi nhét thiếu tương tác",
-            "Khó đo lường hiệu quả học",
-            "Giáo viên thiếu công cụ",
-            "Học phí đắt",
-            "Content outdated"
+            "Cramming without interaction",
+            "Hard to measure learning efficiency",
+            "Lack of tools for teachers",
+            "High tuition fees",
+            "Outdated content"
         ],
         "opportunities": [
-            "AI tutor cá nhân hóa",
+            "Personalized AI tutor",
             "Gamification learning",
             "Micro-learning (5-10 min)",
             "Peer-to-peer tutoring",
@@ -96,15 +96,15 @@
             "No-degree hiring"
         ],
         "target_users": [
-            "Học sinh/sinh viên",
-            "Developer tự học",
-            "Giáo viên",
-            "Doanh nghiệp đào tạo"
+            "Students",
+            "Self-taught developers",
+            "Teachers",
+            "Training businesses"
         ],
         "example_ideas": [
-            "App flashcard AI",
-            "Platform dạy coding cho trẻ em",
-            "Quiz battle multiplayer",
+            "AI flashcard app",
+            "Coding platform for kids",
+            "Multiplayer quiz battle",
             "AI grading assistant"
         ]
     },
@@ -112,10 +112,10 @@
         "id": "healthcare",
         "name": "Healthcare / HealthTech",
         "pain_points": [
-            "Chờ khám lâu",
-            "Hồ sơ bệnh án phân tán",
-            "Thuốc giả/kém chất lượng",
-            "Thiếu bác sĩ vùng sâu",
+            "Long wait times",
+            "Fragmented medical records",
+            "Fake/poor quality medicine",
+            "Lack of doctors in remote areas",
             "Mental health stigma"
         ],
         "opportunities": [
@@ -132,27 +132,27 @@
             "Digital health passport"
         ],
         "target_users": [
-            "Bệnh nhân",
-            "Bác sĩ",
-            "Dược sĩ",
-            "Bệnh viện",
-            "Insurance company"
+            "Patients",
+            "Doctors",
+            "Pharmacists",
+            "Hospitals",
+            "Insurance companies"
         ],
         "example_ideas": [
-            "App đặt lịch khám",
-            "Theo dõi thuốc uống hàng ngày",
-            "AI phát hiện bệnh da liễu qua ảnh"
+            "Appointment booking app",
+            "Daily medication tracker",
+            "AI dermatology diagnosis via photos"
         ]
     },
     {
         "id": "fintech",
         "name": "Finance / FinTech",
         "pain_points": [
-            "Phí giao dịch quốc tế cao",
-            "Thiếu financial literacy",
-            "Khó tiếp cận tín dụng",
-            "Quản lý chi tiêu khó",
-            "Gian lận thanh toán"
+            "High international transaction fees",
+            "Lack of financial literacy",
+            "Hard access to credit",
+            "Difficult expense management",
+            "Payment fraud"
         ],
         "opportunities": [
             "Embedded finance",
@@ -170,15 +170,15 @@
             "Green finance"
         ],
         "target_users": [
-            "Gen Z tiết kiệm",
-            "Freelancer quản lý thu nhập",
-            "SMEs cần vốn",
-            "Investor mới"
+            "Gen Z savers",
+            "Freelancers managing income",
+            "SMEs needing capital",
+            "New investors"
         ],
         "example_ideas": [
-            "App chia tiền nhóm",
-            "Robo-advisor cho người mới",
-            "Quản lý chi tiêu AI",
+            "Group bill splitting app",
+            "Robo-advisor for beginners",
+            "AI expense manager",
             "Savings challenge app"
         ]
     },
@@ -186,11 +186,11 @@
         "id": "real-estate",
         "name": "Real Estate / PropTech",
         "pain_points": [
-            "Thông tin giá không minh bạch",
-            "Thủ tục phức tạp",
-            "Môi giới không đáng tin",
-            "Khó so sánh bất động sản",
-            "Quản lý cho thuê thủ công"
+            "Opaque pricing information",
+            "Complex procedures",
+            "Untrustworthy brokers",
+            "Hard to compare properties",
+            "Manual rental management"
         ],
         "opportunities": [
             "Virtual tour 3D",
@@ -206,14 +206,14 @@
             "Remote work → suburban migration"
         ],
         "target_users": [
-            "Người mua/thuê nhà",
-            "Chủ nhà cho thuê",
-            "Investor BĐS",
-            "Môi giới"
+            "Home buyers/renters",
+            "Landlords",
+            "Real estate investors",
+            "Brokers"
         ],
         "example_ideas": [
-            "So sánh giá BĐS khu vực",
-            "App quản lý phòng trọ",
+            "Area property price comparison",
+            "Rental management app",
             "Virtual tour marketplace"
         ]
     },
@@ -221,11 +221,11 @@
         "id": "travel",
         "name": "Travel / Hospitality",
         "pain_points": [
-            "Lập kế hoạch du lịch tốn thời gian",
-            "Giá vé biến động",
-            "Đánh giá giả",
-            "Rào cản ngôn ngữ",
-            "Trải nghiệm local khó tìm"
+            "Time-consuming trip planning",
+            "Fluctuating ticket prices",
+            "Fake reviews",
+            "Language barriers",
+            "Hard to find local experiences"
         ],
         "opportunities": [
             "AI trip planner",
@@ -235,33 +235,33 @@
             "Digital nomad services"
         ],
         "trends": [
-            "Blesisure (business + leisure)",
+            "Bleisure (business + leisure)",
             "Slow travel",
             "Workation",
             "Audio guides AR"
         ],
         "target_users": [
-            "Backpacker",
-            "Family traveler",
-            "Digital nomad",
-            "Tour operator",
-            "Hostel owner"
+            "Backpackers",
+            "Family travelers",
+            "Digital nomads",
+            "Tour operators",
+            "Hostel owners"
         ],
         "example_ideas": [
-            "AI lên lịch trình tự động",
-            "App kết nối khách du lịch local",
-            "Review khách sạn bằng video ngắn"
+            "Auto AI itinerary planner",
+            "App connecting with local travelers",
+            "Hotel review via short video"
         ]
     },
     {
         "id": "logistics",
         "name": "Logistics / Supply Chain",
         "pain_points": [
-            "Track & trace không real-time",
-            "Last-mile delivery đắt",
-            "Warehouse quản lý thủ công",
-            "Hàng hỏng trong vận chuyển",
-            "Cross-border phức tạp"
+            "Non-real-time track & trace",
+            "Expensive last-mile delivery",
+            "Manual warehouse management",
+            "Goods damaged in transit",
+            "Complex cross-border logistics"
         ],
         "opportunities": [
             "Route optimization AI",
@@ -277,14 +277,14 @@
             "Green logistics"
         ],
         "target_users": [
-            "E-commerce business",
-            "Warehouse operator",
-            "Driver/courier",
-            "Import/export company"
+            "E-commerce businesses",
+            "Warehouse operators",
+            "Drivers/couriers",
+            "Import/export companies"
         ],
         "example_ideas": [
             "Fleet management dashboard",
-            "App quản lý kho mini",
+            "Mini warehouse management app",
             "Last-mile delivery optimization"
         ]
     },
@@ -292,11 +292,11 @@
         "id": "hr-recruitment",
         "name": "HR / Recruitment",
         "pain_points": [
-            "Tuyển dụng mất thời gian",
+            "Time-consuming recruitment",
             "CV spam",
-            "Đánh giá ứng viên chủ quan",
-            "Onboarding rời rạc",
-            "Giữ chân nhân tài khó"
+            "Subjective candidate assessment",
+            "Fragmented onboarding",
+            "Hard to retain talent"
         ],
         "opportunities": [
             "AI resume screening",
@@ -313,14 +313,14 @@
             "Gig workforce management"
         ],
         "target_users": [
-            "HR manager",
-            "Recruiter",
-            "Job seeker",
-            "Freelancer",
-            "Small business owner"
+            "HR managers",
+            "Recruiters",
+            "Job seekers",
+            "Freelancers",
+            "Small business owners"
         ],
         "example_ideas": [
-            "Platform matching dev với startup",
+            "Platform matching devs with startups",
             "AI mock interview",
             "Employee feedback pulse app"
         ]
@@ -329,11 +329,11 @@
         "id": "agriculture",
         "name": "Agriculture / AgriTech",
         "pain_points": [
-            "Phụ thuộc thời tiết",
-            "Giá nông sản bất ổn",
-            "Trung gian nhiều tầng",
-            "Thiếu dữ liệu canh tác",
-            "Lãng phí nước/phân bón"
+            "Weather dependence",
+            "Unstable produce prices",
+            "Many intermediaries",
+            "Lack of farming data",
+            "Water/fertilizer waste"
         ],
         "opportunities": [
             "Precision farming IoT",
@@ -349,15 +349,15 @@
             "Biotech crops"
         ],
         "target_users": [
-            "Nông dân",
-            "Nhà phân phối",
-            "Người tiêu dùng sạch",
-            "Agri-investor"
+            "Farmers",
+            "Distributors",
+            "Clean consumers",
+            "Agri-investors"
         ],
         "example_ideas": [
-            "App giá nông sản real-time",
-            "IoT monitor đất/nước",
-            "Marketplace nông sản sạch"
+            "Real-time produce price app",
+            "Soil/water IoT monitor",
+            "Clean produce marketplace"
         ]
     },
     {
@@ -365,7 +365,7 @@
         "name": "Media & Entertainment",
         "pain_points": [
             "Content piracy",
-            "Creator monetization khó",
+            "Difficult creator monetization",
             "Algorithm bias",
             "Audience fragmentation",
             "Ad fatigue"
@@ -385,10 +385,10 @@
             "Decentralized social"
         ],
         "target_users": [
-            "Content creator",
-            "Viewer/Reader",
-            "Advertiser",
-            "Media company"
+            "Content creators",
+            "Viewers/Readers",
+            "Advertisers",
+            "Media companies"
         ],
         "example_ideas": [
             "AI video editor",
@@ -401,11 +401,11 @@
         "id": "legal",
         "name": "Legal / LegalTech",
         "pain_points": [
-            "Phí luật sư đắt",
-            "Hợp đồng khó hiểu",
-            "Quản lý case thủ công",
-            "Nghiên cứu pháp luật lâu",
-            "Compliance phức tạp"
+            "Expensive lawyer fees",
+            "Confusing contracts",
+            "Manual case management",
+            "Slow legal research",
+            "Complex compliance"
         ],
         "opportunities": [
             "AI contract review",
@@ -421,26 +421,26 @@
             "Online dispute resolution"
         ],
         "target_users": [
-            "SME cần pháp lý",
-            "Luật sư",
-            "Startup",
-            "Cá nhân tranh chấp"
+            "SMEs needing legal help",
+            "Lawyers",
+            "Startups",
+            "Individuals in disputes"
         ],
         "example_ideas": [
-            "AI review hợp đồng thuê nhà",
-            "Chatbot tư vấn pháp luật cơ bản",
-            "Template hợp đồng smart"
+            "AI rental contract review",
+            "Basic legal consultancy chatbot",
+            "Smart contract templates"
         ]
     },
     {
         "id": "sustainability",
         "name": "Sustainability / CleanTech",
         "pain_points": [
-            "Đo carbon footprint khó",
-            "Greenwashing phổ biến",
-            "Chi phí năng lượng cao",
-            "Recycling infrastructure yếu",
-            "Thiếu awareness"
+            "Hard to measure carbon footprint",
+            "Widespread greenwashing",
+            "High energy costs",
+            "Weak recycling infrastructure",
+            "Lack of awareness"
         ],
         "opportunities": [
             "Carbon tracking app",
@@ -456,14 +456,14 @@
             "Circular economy"
         ],
         "target_users": [
-            "Eco-conscious consumer",
-            "Corporate sustainability team",
-            "Energy manager",
-            "Government"
+            "Eco-conscious consumers",
+            "Corporate sustainability teams",
+            "Energy managers",
+            "Governments"
         ],
         "example_ideas": [
-            "Carbon footprint calculator cá nhân",
-            "App swap đồ cũ",
+            "Personal carbon footprint calculator",
+            "Second-hand swap app",
             "Solar panel ROI calculator"
         ]
     },
@@ -471,11 +471,11 @@
         "id": "automotive",
         "name": "Automotive / Mobility",
         "pain_points": [
-            "Mua xe thiếu minh bạch",
-            "Bảo trì xe phức tạp",
-            "Đỗ xe khó tìm",
-            "Giao thông tắc nghẽn",
-            "Chuyển đổi EV chậm"
+            "Opaque car buying process",
+            "Complex car maintenance",
+            "Hard to find parking",
+            "Traffic congestion",
+            "Slow EV transition"
         ],
         "opportunities": [
             "EV charging network",
@@ -491,15 +491,15 @@
             "V2X communication"
         ],
         "target_users": [
-            "Car owner",
-            "Fleet manager",
-            "EV driver",
-            "Car dealer",
-            "Ride-hailing driver"
+            "Car owners",
+            "Fleet managers",
+            "EV drivers",
+            "Car dealers",
+            "Ride-hailing drivers"
         ],
         "example_ideas": [
-            "App tìm trạm sạc EV",
-            "Marketplace xe cũ đã kiểm định",
+            "EV charging station finder app",
+            "Inspected used car marketplace",
             "Carpool matching app"
         ]
     },
@@ -507,10 +507,10 @@
         "id": "fashion-beauty",
         "name": "Fashion & Beauty",
         "pain_points": [
-            "Size không chuẩn online",
+            "Inaccurate online sizing",
             "Fast fashion waste",
-            "Khó tìm style phù hợp",
-            "Beauty product allergy",
+            "Hard to find suitable style",
+            "Beauty product allergies",
             "Fake products"
         ],
         "opportunities": [
@@ -528,10 +528,10 @@
             "AI skin analysis"
         ],
         "target_users": [
-            "Fashion-conscious shopper",
-            "Beauty enthusiast",
-            "Sustainable consumer",
-            "Fashion designer"
+            "Fashion-conscious shoppers",
+            "Beauty enthusiasts",
+            "Sustainable consumers",
+            "Fashion designers"
         ],
         "example_ideas": [
             "AI outfit recommender",
@@ -544,10 +544,10 @@
         "id": "construction",
         "name": "Construction / ConTech",
         "pain_points": [
-            "Dự toán sai lệch lớn",
-            "Tiến độ chậm",
-            "An toàn lao động",
-            "Lãng phí vật liệu",
+            "Large estimation errors",
+            "Slow progress",
+            "Occupational safety",
+            "Material waste",
             "Communication gap"
         ],
         "opportunities": [
@@ -564,26 +564,26 @@
             "Green building"
         ],
         "target_users": [
-            "Contractor",
-            "Project manager",
-            "Worker",
-            "Architect",
-            "Property developer"
+            "Contractors",
+            "Project managers",
+            "Workers",
+            "Architects",
+            "Property developers"
         ],
         "example_ideas": [
-            "App quản lý tiến độ công trình",
-            "Marketplace vật liệu xây dựng",
-            "AI dự toán chi phí"
+            "Construction progress management app",
+            "Construction material marketplace",
+            "AI cost estimation"
         ]
     },
     {
         "id": "insurance",
         "name": "Insurance / InsurTech",
         "pain_points": [
-            "Hợp đồng phức tạp",
-            "Claim process lâu",
-            "Premium đắt cho người trẻ",
-            "Thiếu personalization",
+            "Complex contracts",
+            "Long claim process",
+            "Expensive premiums for young people",
+            "Lack of personalization",
             "Fraud"
         ],
         "opportunities": [
@@ -600,15 +600,15 @@
             "Climate risk insurance"
         ],
         "target_users": [
-            "Young professional",
-            "SME owner",
-            "Gig worker",
-            "Traveler",
-            "Vehicle owner"
+            "Young professionals",
+            "SME owners",
+            "Gig workers",
+            "Travelers",
+            "Vehicle owners"
         ],
         "example_ideas": [
-            "Micro-insurance theo chuyến",
-            "AI so sánh bảo hiểm",
+            "Micro-insurance per trip",
+            "AI insurance comparison",
             "Claim process automation"
         ]
     },
@@ -616,11 +616,11 @@
         "id": "social-impact",
         "name": "Social Impact / Non-Profit",
         "pain_points": [
-            "Fundraising khó",
-            "Đo lường impact khó",
-            "Tình nguyện viên thiếu kết nối",
-            "Minh bạch quyên góp",
-            "Scale limited"
+            "Difficult fundraising",
+            "Hard to measure impact",
+            "Lack of volunteer connection",
+            "Donation transparency",
+            "Limited scale"
         ],
         "opportunities": [
             "Crowdfunding platform",
@@ -636,11 +636,11 @@
             "Community-led development"
         ],
         "target_users": [
-            "Donor",
-            "NGO",
-            "Volunteer",
-            "Social entrepreneur",
-            "Corporate CSR team"
+            "Donors",
+            "NGOs",
+            "Volunteers",
+            "Social entrepreneurs",
+            "Corporate CSR teams"
         ],
         "example_ideas": [
             "Transparent donation tracking",
@@ -652,10 +652,10 @@
         "id": "gaming-esports",
         "name": "Gaming & Esports",
         "pain_points": [
-            "Tìm đội khó",
+            "Hard to find a team",
             "Toxicity in gaming",
-            "Streamer monetization hạn chế",
-            "Tournament management phức tạp",
+            "Limited streamer monetization",
+            "Complex tournament management",
             "Game addiction"
         ],
         "opportunities": [
@@ -673,11 +673,11 @@
             "Game streaming"
         ],
         "target_users": [
-            "Casual gamer",
-            "Competitive player",
-            "Streamer",
-            "Esports team",
-            "Game developer"
+            "Casual gamers",
+            "Competitive players",
+            "Streamers",
+            "Esports teams",
+            "Game developers"
         ],
         "example_ideas": [
             "LFG (Looking for Group) app",
@@ -690,10 +690,10 @@
         "id": "pet-care",
         "name": "Pet Care",
         "pain_points": [
-            "Tìm vet gấp lúc nửa đêm",
-            "Pet sitting khi đi công tác",
-            "Nutrition advice không đáng tin",
-            "Pet adoption process dài",
+            "Urgent vet search at night",
+            "Pet sitting when traveling",
+            "Untrustworthy nutrition advice",
+            "Long pet adoption process",
             "Lost pet"
         ],
         "opportunities": [
@@ -710,14 +710,14 @@
             "Premium pet food D2C"
         ],
         "target_users": [
-            "Pet owner",
-            "Veterinarian",
-            "Pet sitter",
-            "Pet shop owner",
-            "Animal shelter"
+            "Pet owners",
+            "Veterinarians",
+            "Pet sitters",
+            "Pet shop owners",
+            "Animal shelters"
         ],
         "example_ideas": [
-            "App nhắc lịch tiêm phòng",
+            "Vaccination reminder app",
             "Pet sitter matching",
             "Lost pet notification network",
             "Pet food subscription"
@@ -727,10 +727,10 @@
         "id": "event-management",
         "name": "Event Management",
         "pain_points": [
-            "Bán vé thủ công",
+            "Manual ticketing",
             "Check-in chaos",
-            "Sponsorship management khó",
-            "Feedback collection rời rạc",
+            "Difficult sponsorship management",
+            "Fragmented feedback collection",
             "Budget overrun"
         ],
         "opportunities": [
@@ -748,15 +748,15 @@
             "Creator-led events"
         ],
         "target_users": [
-            "Event organizer",
-            "Attendee",
-            "Sponsor",
-            "Speaker",
-            "Venue owner"
+            "Event organizers",
+            "Attendees",
+            "Sponsors",
+            "Speakers",
+            "Venue owners"
         ],
         "example_ideas": [
             "Ticketing + CRM platform",
-            "Networking app cho sự kiện",
+            "Networking app for events",
             "AI-powered event agenda builder"
         ]
     },
@@ -764,9 +764,9 @@
         "id": "creative-tools",
         "name": "Creative Tools / Design",
         "pain_points": [
-            "Software đắt (Adobe)",
-            "Learning curve cao",
-            "Collaboration khó",
+            "Expensive software (Adobe)",
+            "High learning curve",
+            "Difficult collaboration",
             "Asset management chaos",
             "Export format issues"
         ],
@@ -784,11 +784,11 @@
             "Motion design democratization"
         ],
         "target_users": [
-            "Designer",
-            "Marketer",
-            "Content creator",
-            "Small business",
-            "Developer"
+            "Designers",
+            "Marketers",
+            "Content creators",
+            "Small businesses",
+            "Developers"
         ],
         "example_ideas": [
             "AI logo generator",
@@ -801,9 +801,9 @@
         "id": "parenting",
         "name": "Parenting & Kids",
         "pain_points": [
-            "Thiếu nguồn tin đáng tin",
-            "Quản lý screen time",
-            "Tìm hoạt động cho trẻ",
+            "Lack of reliable information",
+            "Screen time management",
+            "Finding activities for kids",
             "Milestone tracking guesswork",
             "Work-life balance"
         ],
@@ -824,13 +824,13 @@
             "New parents",
             "Working parents",
             "Children 3-12",
-            "Preschool teacher",
-            "Pediatrician"
+            "Preschool teachers",
+            "Pediatricians"
         ],
         "example_ideas": [
-            "App theo dõi phát triển bé",
+            "Child development tracking app",
             "Family calendar + task manager",
-            "Coding game cho trẻ em",
+            "Coding game for kids",
             "Storytime AI"
         ]
     },
@@ -838,11 +838,11 @@
         "id": "sports-fitness",
         "name": "Sports & Fitness",
         "pain_points": [
-            "Mất động lực tập",
-            "Personal trainer đắt",
-            "Dinh dưỡng phức tạp",
-            "Tìm bạn tập khó",
-            "Gym đông"
+            "Loss of workout motivation",
+            "Expensive personal trainers",
+            "Complex nutrition",
+            "Hard to find workout buddies",
+            "Crowded gyms"
         ],
         "opportunities": [
             "AI personal trainer",
@@ -859,11 +859,11 @@
             "Fitness gaming"
         ],
         "target_users": [
-            "Gym-goer",
-            "Runner",
-            "Yoga practitioner",
-            "Sports team",
-            "Personal trainer"
+            "Gym-goers",
+            "Runners",
+            "Yoga practitioners",
+            "Sports teams",
+            "Personal trainers"
         ],
         "example_ideas": [
             "AI workout planner",
@@ -876,9 +876,9 @@
         "id": "cybersecurity",
         "name": "Cybersecurity",
         "pain_points": [
-            "Phishing ngày càng tinh vi",
+            "Increasingly sophisticated phishing",
             "Password management mess",
-            "SME thiếu security budget",
+            "Lack of security budget for SMEs",
             "Compliance complexity",
             "Insider threats"
         ],
@@ -896,15 +896,15 @@
             "Cloud security posture management"
         ],
         "target_users": [
-            "IT admin",
-            "CISO",
-            "SME owner",
-            "Developer",
-            "End user"
+            "IT admins",
+            "CISOs",
+            "SME owners",
+            "Developers",
+            "End users"
         ],
         "example_ideas": [
             "Phishing simulation platform",
-            "Security posture dashboard cho SME",
+            "Security posture dashboard for SMEs",
             "AI-powered vulnerability scanner"
         ]
     }

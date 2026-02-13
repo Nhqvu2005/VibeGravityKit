@@ -2,8 +2,8 @@
 """
 Meta Thinker — Idea Engine (Zero-Token Data Retrieval)
 
-Truy xuất data sáng tạo mà không tốn token. Agent gọi script này
-để lấy keywords, trends, features, monetization models phù hợp.
+Retrieve creative data without consuming tokens. The agent calls this script
+to get relevant keywords, trends, features, and monetization models.
 
 Usage:
     python idea_engine.py --domain <domain> [--query <keywords>]
@@ -33,7 +33,7 @@ def load_json(filename):
 
 
 def search_industry(domain, query=None):
-    """Tìm ngành + pain points + opportunities theo domain."""
+    """Find industry + pain points + opportunities by domain."""
     industries = load_json("industry_database.json")
     results = []
     keywords = domain.lower().replace("-", " ").replace("_", " ").split()
@@ -79,7 +79,7 @@ def search_industry(domain, query=None):
 
 
 def search_archetype(archetype, platform=None):
-    """Tìm product archetype + features + monetization."""
+    """Find product archetype + features + monetization."""
     archetypes = load_json("product_archetypes.json")
     results = []
     arch_lower = archetype.lower()
@@ -113,7 +113,7 @@ def search_archetype(archetype, platform=None):
 
 
 def search_monetization(domain=None):
-    """Lấy monetization models, filter theo domain nếu có."""
+    """Get monetization models, filter by domain if provided."""
     models = load_json("monetization_models.json")
     if not domain:
         return [{
@@ -141,7 +141,7 @@ def search_monetization(domain=None):
 
 
 def get_framework(framework_id):
-    """Lấy chi tiết một brainstorm framework."""
+    """Get details of a brainstorm framework."""
     frameworks = load_json("brainstorm_frameworks.json")
     for f in frameworks:
         if framework_id.lower() in f["id"].lower() or framework_id.lower() in f["name"].lower():
@@ -151,7 +151,7 @@ def get_framework(framework_id):
 
 
 def get_features(category=None):
-    """Lấy feature ideas theo category."""
+    """Get feature ideas by category."""
     features = load_json("feature_ideas.json")
     if category:
         cat_lower = category.lower().replace("-", "_").replace(" ", "_")
@@ -165,7 +165,7 @@ def get_features(category=None):
 
 
 def get_platform(platform_id):
-    """Lấy platform guide chi tiết."""
+    """Get detailed platform guide."""
     platforms = load_json("platform_guide.json")
     for p in platforms:
         if platform_id.lower() in p["id"].lower() or platform_id.lower() in p["name"].lower():
@@ -175,7 +175,7 @@ def get_platform(platform_id):
 
 
 def explore(text):
-    """Tìm kiếm tự do across tất cả data files."""
+    """Free text search across all data files."""
     text_lower = text.lower()
     results = {"industries": [], "archetypes": [], "features": [], "monetization": []}
 

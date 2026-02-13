@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-User Story Generator — Tạo user stories template từ features và roles.
+User Story Generator — Generate user story templates from features and roles.
 
 Usage:
     python generator.py --features "login,product listing,cart,checkout" --roles "buyer,admin"
@@ -10,185 +10,185 @@ import argparse
 import json
 import sys
 
-# === Templates user stories theo feature type ===
+# === User Story Templates by feature type ===
 STORY_TEMPLATES = {
     "login": {
-        "title": "Đăng nhập",
+        "title": "Login",
         "stories": [
             {
                 "role": "user",
-                "action": "đăng nhập bằng email và mật khẩu",
-                "benefit": "truy cập tài khoản và sử dụng các tính năng cá nhân",
+                "action": "log in with email and password",
+                "benefit": "access my account and use personal features",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given trang login, when nhập email + password đúng, then chuyển hướng tới dashboard/trang chủ",
-                    "Given trang login, when nhập sai password 3 lần, then hiện thông báo và cho retry sau 30s",
-                    "Given chưa đăng nhập, when truy cập trang protected, then redirect tới login page",
-                    "Given đăng nhập thành công, when reload page, then vẫn giữ session"
+                    "Given login page, when correct email + password entered, then redirect to dashboard/home",
+                    "Given login page, when wrong password entered 3 times, then show error and retry after 30s",
+                    "Given not logged in, when accessing protected page, then redirect to login page",
+                    "Given logged in successfully, when reloading page, then session persists"
                 ]
             },
             {
                 "role": "user",
-                "action": "đăng nhập bằng Google/Facebook",
-                "benefit": "đăng nhập nhanh không cần nhớ mật khẩu",
+                "action": "log in with Google/Facebook",
+                "benefit": "log in quickly without remembering passwords",
                 "priority": "Should",
                 "size": "M",
                 "criteria": [
-                    "Given trang login, when click 'Đăng nhập bằng Google', then redirect tới Google OAuth",
-                    "Given OAuth thành công, when callback, then tạo/cập nhật tài khoản và đăng nhập"
+                    "Given login page, when clicking 'Log in with Google', then redirect to Google OAuth",
+                    "Given OAuth successful, when callback received, then create/update account and log in"
                 ]
             }
         ]
     },
     "register": {
-        "title": "Đăng ký tài khoản",
+        "title": "Account Registration",
         "stories": [
             {
                 "role": "user",
-                "action": "đăng ký tài khoản mới bằng email",
-                "benefit": "bắt đầu sử dụng dịch vụ",
+                "action": "register a new account with email",
+                "benefit": "start using the service",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given trang đăng ký, when nhập thông tin hợp lệ, then tạo tài khoản thành công",
-                    "Given email đã tồn tại, when đăng ký, then hiện lỗi 'Email đã được sử dụng'",
-                    "Given password yếu, when submit, then hiện yêu cầu password mạnh hơn",
-                    "Given đăng ký thành công, when hoàn tất, then gửi email xác nhận"
+                    "Given registration page, when valid info entered, then account created successfully",
+                    "Given email already exists, when registering, then show error 'Email already in use'",
+                    "Given weak password, when submitting, then require stronger password",
+                    "Given registration successful, when finished, then send confirmation email"
                 ]
             }
         ]
     },
     "product listing": {
-        "title": "Danh sách sản phẩm",
+        "title": "Product Listing",
         "stories": [
             {
                 "role": "buyer",
-                "action": "xem danh sách sản phẩm theo danh mục",
-                "benefit": "tìm được sản phẩm mình quan tâm",
+                "action": "view product list by category",
+                "benefit": "find products I am interested in",
                 "priority": "Must",
                 "size": "L",
                 "criteria": [
-                    "Given trang danh mục, when load page, then hiển thị sản phẩm dạng grid/list",
-                    "Given có nhiều sản phẩm, when scroll, then load thêm (infinite scroll hoặc pagination)",
-                    "Given mỗi sản phẩm, when hiển thị, then có ảnh, tên, giá, rating"
+                    "Given category page, when page loads, then display products in grid/list",
+                    "Given many products, when scrolling, then load more (infinite scroll or pagination)",
+                    "Given each product, when displayed, then show image, name, price, rating"
                 ]
             },
             {
                 "role": "buyer",
-                "action": "filter sản phẩm theo giá, màu, size",
-                "benefit": "nhanh chóng tìm đúng sản phẩm phù hợp",
+                "action": "filter products by price, color, size",
+                "benefit": "quickly find the right product",
                 "priority": "Should",
                 "size": "M",
                 "criteria": [
-                    "Given trang danh mục, when chọn filter giá, then chỉ hiện sản phẩm trong range",
-                    "Given nhiều filters, when chọn cùng lúc, then kết hợp AND filters",
-                    "Given filter đang active, when bỏ filter, then reset danh sách"
+                    "Given category page, when price filter selected, then only show products in range",
+                    "Given multiple filters, when selected together, then apply AND logic",
+                    "Given active filter, when removed, then reset list"
                 ]
             },
             {
                 "role": "buyer",
-                "action": "tìm kiếm sản phẩm bằng từ khóa",
-                "benefit": "tìm nhanh sản phẩm biết tên",
+                "action": "search for products by keyword",
+                "benefit": "find products by name quickly",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given search bar, when nhập keyword, then hiện kết quả liên quan",
-                    "Given keyword không match, when search, then hiện 'Không tìm thấy sản phẩm'",
-                    "Given đang gõ, when dừng 300ms, then auto-suggest kết quả"
+                    "Given search bar, when keyword entered, then show relevant results",
+                    "Given keyword mismatch, when searching, then show 'No products found'",
+                    "Given typing, when stopped for 300ms, then auto-suggest results"
                 ]
             }
         ]
     },
     "product detail": {
-        "title": "Chi tiết sản phẩm",
+        "title": "Product Detail",
         "stories": [
             {
                 "role": "buyer",
-                "action": "xem chi tiết sản phẩm với ảnh, giá, mô tả",
-                "benefit": "đánh giá sản phẩm trước khi mua",
+                "action": "view product details with image, price, description",
+                "benefit": "evaluate product before buying",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given trang chi tiết, when load, then hiện gallery ảnh, giá, mô tả đầy đủ",
-                    "Given sản phẩm có biến thể, when chọn size/màu, then cập nhật giá và tồn kho",
-                    "Given ảnh sản phẩm, when click, then zoom/lightbox"
+                    "Given detail page, when loaded, then show gallery, price, full description",
+                    "Given product variants, when size/color selected, then update price and stock",
+                    "Given product image, when clicked, then zoom/lightbox"
                 ]
             }
         ]
     },
     "cart": {
-        "title": "Giỏ hàng",
+        "title": "Shopping Cart",
         "stories": [
             {
                 "role": "buyer",
-                "action": "thêm sản phẩm vào giỏ hàng",
-                "benefit": "lưu sản phẩm muốn mua để thanh toán sau",
+                "action": "add product to cart",
+                "benefit": "save items to purchase later",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given trang chi tiết sản phẩm, when click 'Thêm vào giỏ', then sản phẩm được thêm vào cart",
-                    "Given sản phẩm đã có trong giỏ, when thêm lại, then tăng số lượng",
-                    "Given thêm thành công, when animation, then hiện badge số lượng trên cart icon"
+                    "Given product detail page, when clicking 'Add to Cart', then product added to cart",
+                    "Given product already in cart, when added again, then increase quantity",
+                    "Given add successful, when animating, then show badge count on cart icon"
                 ]
             },
             {
                 "role": "buyer",
-                "action": "xem và chỉnh sửa giỏ hàng",
-                "benefit": "review lại trước khi thanh toán",
+                "action": "view and edit shopping cart",
+                "benefit": "review before checkout",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given trang giỏ hàng, when load, then hiện danh sách sản phẩm với ảnh, tên, giá, số lượng",
-                    "Given item trong giỏ, when thay đổi số lượng, then cập nhật tổng tiền",
-                    "Given item trong giỏ, when click xóa, then remove khỏi giỏ",
-                    "Given giỏ hàng trống, when load, then hiện 'Giỏ hàng trống' + link tới shop"
+                    "Given cart page, when loaded, then show list of products with image, name, price, qty",
+                    "Given item in cart, when quantity changed, then update total price",
+                    "Given item in cart, when delete clicked, then remove from cart",
+                    "Given empty cart, when loaded, then show 'Cart is empty' + link to shop"
                 ]
             }
         ]
     },
     "checkout": {
-        "title": "Thanh toán",
+        "title": "Checkout",
         "stories": [
             {
                 "role": "buyer",
-                "action": "thanh toán đơn hàng",
-                "benefit": "hoàn tất mua sản phẩm",
+                "action": "checkout order",
+                "benefit": "complete purchase",
                 "priority": "Must",
                 "size": "L",
                 "criteria": [
-                    "Given trang checkout, when load, then hiện form địa chỉ giao hàng",
-                    "Given form hợp lệ, when chọn phương thức thanh toán, then hiện chi tiết thanh toán",
-                    "Given thanh toán thành công, when hoàn tất, then hiện trang confirmation + gửi email",
-                    "Given thanh toán thất bại, when error, then hiện thông báo lỗi + cho retry"
+                    "Given checkout page, when loaded, then show shipping address form",
+                    "Given valid form, when payment method selected, then show payment details",
+                    "Given payment successful, when completed, then show confirmation page + send email",
+                    "Given payment failed, when error, then show error message + allow retry"
                 ]
             }
         ]
     },
     "admin": {
-        "title": "Quản trị",
+        "title": "Administration",
         "stories": [
             {
                 "role": "admin",
-                "action": "quản lý sản phẩm (thêm, sửa, xóa)",
-                "benefit": "cập nhật catalog sản phẩm",
+                "action": "manage products (add, edit, delete)",
+                "benefit": "update product catalog",
                 "priority": "Must",
                 "size": "L",
                 "criteria": [
-                    "Given admin panel, when thêm sản phẩm mới, then sản phẩm hiện trên website",
-                    "Given danh sách sản phẩm, when sửa thông tin, then cập nhật ngay",
-                    "Given sản phẩm, when xóa, then confirm trước khi xóa vĩnh viễn"
+                    "Given admin panel, when adding new product, then product appears on website",
+                    "Given product list, when editing info, then update immediately",
+                    "Given product, when deleting, then confirm before permanent deletion"
                 ]
             },
             {
                 "role": "admin",
-                "action": "xem và quản lý đơn hàng",
-                "benefit": "xử lý đơn hàng kịp thời",
+                "action": "view and manage orders",
+                "benefit": "process orders timely",
                 "priority": "Must",
                 "size": "M",
                 "criteria": [
-                    "Given admin panel, when xem đơn hàng, then hiện danh sách với filter trạng thái",
-                    "Given đơn hàng mới, when cập nhật trạng thái, then thông báo cho buyer"
+                    "Given admin panel, when viewing orders, then list with status filter",
+                    "Given new order, when status updated, then notify buyer"
                 ]
             }
         ]
@@ -198,31 +198,31 @@ STORY_TEMPLATES = {
         "stories": [
             {
                 "role": "user",
-                "action": "xem dashboard với thống kê tổng quan",
-                "benefit": "nắm bắt nhanh tình hình",
+                "action": "view dashboard with overview stats",
+                "benefit": "quickly grasp status",
                 "priority": "Must",
                 "size": "L",
                 "criteria": [
-                    "Given dashboard, when load, then hiện cards thống kê (users, revenue, orders...)",
-                    "Given charts, when hover, then hiện tooltip chi tiết",
-                    "Given data thay đổi, when refresh, then cập nhật realtime"
+                    "Given dashboard, when loaded, then show stats cards (users, revenue, orders...)",
+                    "Given charts, when hovering, then show detailed tooltip",
+                    "Given data changes, when refreshing, then update realtime"
                 ]
             }
         ]
     },
     "profile": {
-        "title": "Hồ sơ cá nhân",
+        "title": "User Profile",
         "stories": [
             {
                 "role": "user",
-                "action": "xem và chỉnh sửa thông tin cá nhân",
-                "benefit": "cập nhật thông tin tài khoản",
+                "action": "view and edit personal info",
+                "benefit": "keep account details up to date",
                 "priority": "Should",
                 "size": "S",
                 "criteria": [
-                    "Given trang profile, when load, then hiện thông tin hiện tại",
-                    "Given form edit, when submit, then cập nhật và hiện thông báo thành công",
-                    "Given upload avatar, when chọn ảnh, then resize và lưu"
+                    "Given profile page, when loaded, then show current info",
+                    "Given edit form, when submitted, then update and show success message",
+                    "Given avatar upload, when image selected, then resize and save"
                 ]
             }
         ]
@@ -232,14 +232,14 @@ STORY_TEMPLATES = {
 
 def parse_args():
     parser = argparse.ArgumentParser(description="User Story Generator")
-    parser.add_argument("--features", type=str, required=True, help="Danh sách features, phân cách bằng dấu phẩy")
-    parser.add_argument("--roles", type=str, default="user", help="Danh sách roles, phân cách bằng dấu phẩy")
-    parser.add_argument("--json", action="store_true", help="Output dạng JSON")
+    parser.add_argument("--features", type=str, required=True, help="List of features, comma-separated")
+    parser.add_argument("--roles", type=str, default="user", help="List of roles, comma-separated")
+    parser.add_argument("--json", action="store_true", help="Output as JSON")
     return parser.parse_args()
 
 
 def find_matching_template(feature_query):
-    """Tìm template phù hợp nhất với feature query."""
+    """Find the best matching template for a feature query."""
     query_lower = feature_query.lower().strip()
 
     # Direct match
@@ -257,7 +257,7 @@ def find_matching_template(feature_query):
 
 
 def generate_stories(features, roles):
-    """Generate user stories từ features."""
+    """Generate user stories from features."""
     all_stories = []
     story_id = 1
 
@@ -288,13 +288,13 @@ def generate_stories(features, roles):
                 "id": f"US-{story_id:03d}",
                 "feature": feature.strip().title(),
                 "role": roles[0] if roles else "user",
-                "action": f"sử dụng tính năng {feature.strip()}",
-                "benefit": "đáp ứng nhu cầu sử dụng",
+                "action": f"use the {feature.strip()} feature",
+                "benefit": "meet my needs",
                 "priority": "Should",
                 "size": "M",
                 "criteria": [
-                    f"Given trang {feature.strip()}, when load, then hiển thị đầy đủ nội dung",
-                    f"Given {feature.strip()}, when tương tác, then phản hồi đúng mong đợi"
+                    f"Given {feature.strip()} page, when loaded, then display full content",
+                    f"Given {feature.strip()}, when interacting, then respond as expected"
                 ]
             })
             story_id += 1
@@ -303,7 +303,7 @@ def generate_stories(features, roles):
 
 
 def print_readable(stories):
-    """In user stories dạng dễ đọc."""
+    """Print user stories in a readable format."""
     priority_emoji = {"Must": "🔴", "Should": "🟡", "Could": "🟢", "Won't": "⚪"}
 
     print("=" * 60)
@@ -334,7 +334,7 @@ def print_readable(stories):
         by_priority[s["priority"]] = by_priority.get(s["priority"], 0) + 1
 
     print(f"\n{'=' * 60}")
-    print(f"  📊 Tổng: {total} stories")
+    print(f"  📊 Total: {total} stories")
     for p, count in sorted(by_priority.items()):
         emoji = priority_emoji.get(p, "⚪")
         print(f"    {emoji} {p}: {count}")

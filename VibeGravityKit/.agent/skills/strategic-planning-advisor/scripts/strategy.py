@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Strategic Planning Advisor — Tư vấn chiến lược hệ thống và kiến trúc dài hạn.
+Strategic Planning Advisor — System strategy and long-term architecture advice.
 
 Usage:
     python strategy.py --phase "mvp" --domain "ecommerce"
@@ -62,7 +62,7 @@ def print_strategy(advice):
     # Phase Advice
     if advice["phase"]:
         p = advice["phase"]
-        print(f"\n📌 GIAI ĐOẠN: {p['phase']}")
+        print(f"\n📌 PHASE: {p['phase']}")
         print(f"   Architecture: {p['architecture']}")
         print(f"   Infrastructure: {p['infrastructure']}")
         
@@ -70,7 +70,7 @@ def print_strategy(advice):
         for bp in p['best_practices']:
             print(f"      • {bp}")
             
-        print("\n   ⚠️ Anti-Patterns (Cần tránh):")
+        print("\n   ⚠️ Anti-Patterns (Avoid):")
         for ap in p['anti_patterns']:
             print(f"      ✕ {ap}")
             
@@ -80,7 +80,7 @@ def print_strategy(advice):
     if advice["domain"]:
         d = advice["domain"]
         print(f"\n" + "-"*80)
-        print(f"🏭 DOMAIN ĐẶC THÙ: {d['domain']}")
+        print(f"🏭 DOMAIN SPECIFIC: {d['domain']}")
         
         print("\n   🛡️ Critical Considerations:")
         for cc in d['critical_considerations']:
@@ -92,8 +92,8 @@ def print_strategy(advice):
 
 def main():
     parser = argparse.ArgumentParser(description="Strategic Planning Advisor")
-    parser.add_argument("--phase", type=str, default="mvp", help="Giai đoạn dự án: mvp, growth, scale")
-    parser.add_argument("--domain", type=str, default="general", help="Lĩnh vực: ecommerce, saas, collaborative...")
+    parser.add_argument("--phase", type=str, default="mvp", help="Project phase: mvp, growth, scale")
+    parser.add_argument("--domain", type=str, default="general", help="Domain: ecommerce, saas, collaborative...")
     parser.add_argument("--json", action="store_true", help="Output JSON")
     
     args = parser.parse_args()

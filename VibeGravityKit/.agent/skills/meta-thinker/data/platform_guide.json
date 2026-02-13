@@ -2,24 +2,24 @@
     {
         "id": "web",
         "name": "Web Application",
-        "description": "Ứng dụng chạy trên trình duyệt, cross-platform tự nhiên",
+        "description": "Runs on browser, naturally cross-platform",
         "pros": [
-            "Không cần cài đặt",
+            "No installation required",
             "Cross-platform by default",
             "SEO-friendly",
-            "Dễ deploy (Vercel, Netlify)",
+            "Easy to deploy (Vercel, Netlify)",
             "Hot reload/Fast iteration"
         ],
         "cons": [
-            "Offline hạn chế",
-            "Performance không bằng native",
-            "Không access hardware sâu",
+            "Limited offline capability",
+            "Performance lower than native",
+            "No deep hardware access",
             "Browser API limitations"
         ],
         "tech_stacks": [
             {
                 "name": "Next.js + Tailwind",
-                "best_for": "Full-stack web app, SEO cần thiết",
+                "best_for": "Full-stack web app, SEO critical",
                 "complexity": "medium"
             },
             {
@@ -73,29 +73,29 @@
     {
         "id": "mobile",
         "name": "Mobile Application",
-        "description": "Ứng dụng chạy trên iOS/Android, access hardware đầy đủ",
+        "description": "Runs on iOS/Android, full hardware access",
         "pros": [
-            "Push notification native",
+            "Native push notifications",
             "Camera/GPS/NFC access",
             "Offline mode",
             "App Store distribution",
-            "Better UX trên mobile"
+            "Better UX on mobile"
         ],
         "cons": [
-            "Phải build 2 platforms",
+            "Must build for 2 platforms",
             "App Store review process",
-            "Update chậm (cần user download)",
-            "Development cost cao hơn web"
+            "Slow updates (requires user download)",
+            "Higher development cost than web"
         ],
         "tech_stacks": [
             {
                 "name": "React Native + Expo",
-                "best_for": "Cross-platform nhanh, team biết React",
+                "best_for": "Fast cross-platform, React team",
                 "complexity": "medium"
             },
             {
                 "name": "Flutter",
-                "best_for": "UI đẹp, custom design, cả mobile lẫn web",
+                "best_for": "Beautiful UI, custom design, mobile + web",
                 "complexity": "medium"
             },
             {
@@ -110,7 +110,7 @@
             },
             {
                 "name": "Capacitor + Ionic",
-                "best_for": "Wrap web app thành mobile app",
+                "best_for": "Wrap web app as mobile app",
                 "complexity": "easy"
             },
             {
@@ -137,30 +137,30 @@
     {
         "id": "desktop",
         "name": "Desktop Application",
-        "description": "Ứng dụng chạy trên Windows/Mac/Linux, full system access",
+        "description": "Runs on Windows/Mac/Linux, full system access",
         "pros": [
             "Full file system access",
             "No browser limitations",
             "Offline by default",
             "System tray/menu bar",
             "Better performance",
-            "Keyboard shortcuts native"
+            "Native keyboard shortcuts"
         ],
         "cons": [
-            "Cần build cho 3 OS",
-            "Distribution khó hơn web",
-            "Auto-update phức tạp",
-            "Ít user hơn web/mobile"
+            "Build for 3 OSs",
+            "Harder distribution",
+            "Complex auto-update",
+            "Fewer users than web/mobile"
         ],
         "tech_stacks": [
             {
                 "name": "Electron + React",
-                "best_for": "Cross-platform, team biết web",
+                "best_for": "Cross-platform, web team",
                 "complexity": "medium"
             },
             {
                 "name": "Tauri + React/Svelte",
-                "best_for": "Nhẹ hơn Electron, Rust backend",
+                "best_for": "Lighter than Electron, Rust backend",
                 "complexity": "medium"
             },
             {
@@ -203,19 +203,19 @@
     {
         "id": "pwa",
         "name": "Progressive Web App (PWA)",
-        "description": "Web app với khả năng cài đặt và offline như native",
+        "description": "Installable web app with offline capabilities",
         "pros": [
-            "Installable trên home screen",
+            "Installable on home screen",
             "Offline via Service Worker",
             "Push notification",
-            "Không cần App Store",
+            "No App Store needed",
             "Auto-update",
             "Cross-platform"
         ],
         "cons": [
-            "iOS support hạn chế",
-            "Không access toàn bộ hardware",
-            "Không có App Store presence",
+            "Limited iOS support",
+            "Limited hardware access",
+            "No App Store presence",
             "Background sync limited"
         ],
         "tech_stacks": [
@@ -226,7 +226,7 @@
             },
             {
                 "name": "Vite + vite-plugin-pwa",
-                "best_for": "SPA nhanh gọn",
+                "best_for": "Fast SPA",
                 "complexity": "easy"
             },
             {
@@ -250,7 +250,7 @@
     {
         "id": "api",
         "name": "API / Backend Service",
-        "description": "Cung cấp API cho frontend hoặc third-party tích hợp",
+        "description": "API provider for frontend or third-party integration",
         "pros": [
             "Decoupled architecture",
             "Multiple clients (web, mobile, IoT)",
@@ -259,7 +259,7 @@
             "Monetizable"
         ],
         "cons": [
-            "Không có UI (cần client)",
+            "No UI (needs client)",
             "Documentation critical",
             "Versioning complexity",
             "Rate limiting needed"
@@ -313,11 +313,11 @@
     {
         "id": "extension",
         "name": "Browser Extension / IDE Plugin",
-        "description": "Plugin mở rộng chức năng cho trình duyệt hoặc IDE",
+        "description": "Add-on to extend browser/IDE functionality",
         "pros": [
-            "Nhẹ, nhanh để build",
-            "Access trang web / editor",
-            "Distribution qua stores",
+            "Lightweight, fast to build",
+            "Access to webpage / editor",
+            "Store distribution",
             "Low maintenance"
         ],
         "cons": [

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Project Management Assistant — Hỗ trợ quản lý dự án: Scope, Risk, Timeline.
+Project Management Assistant — Project estimation, risk analysis, and timeline planning.
 
 Usage:
     python pm_assistant.py --action scope --features "login,cart,checkout,admin,blog,analytics,ai-chat"

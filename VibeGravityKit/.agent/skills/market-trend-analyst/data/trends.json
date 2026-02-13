@@ -1,159 +1,159 @@
 [
     {
         "domain": "ecommerce",
-        "market_summary": "Thương mại điện tử đang chuyển dịch mạnh mẽ sang mô hình Social Commerce và siêu cá nhân hóa (Hyper-personalization).",
+        "market_summary": "E-commerce is shifting strongly towards Social Commerce and Hyper-personalization.",
         "trends": [
             {
                 "trend": "AI-Powered Personalization",
-                "description": "Gợi ý sản phẩm thông minh, chatbot tư vấn bán hàng 24/7, email marketing tự động hóa theo hành vi.",
+                "description": "Smart product recommendations, 24/7 sales chatbots, automated behavioral email marketing.",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Social Commerce & Live Shopping",
-                "description": "Mua hàng trực tiếp trên TikTok, Instagram, Facebook và livestream bán hàng.",
+                "description": "Direct purchasing on TikTok, Instagram, Facebook, and live stream selling.",
                 "impact": "High",
                 "adoption": "Growing Fast"
             },
             {
                 "trend": "Headless Commerce",
-                "description": "Tách biệt frontend và backend để linh hoạt hiển thị trên mọi thiết bị (IoT, Mobile, Web).",
+                "description": "Decoupled frontend and backend for flexible display on all devices (IoT, Mobile, Web).",
                 "impact": "Medium",
                 "adoption": "Enterprise"
             },
             {
                 "trend": "Sustainable Shopping",
-                "description": "Người dùng ưu tiên sản phẩm xanh, bao bì tái chế và minh bạch nguồn gốc.",
+                "description": "Users prioritize green products, recycled packaging, and transparent sourcing.",
                 "impact": "Medium",
                 "adoption": "Niche but Growing"
             }
         ],
         "user_expectations": [
-            "Tốc độ load trang cực nhanh (<2s).",
-            "Thanh toán một chạm (Apple Pay, Google Pay, QR Code).",
-            "Chính sách đổi trả rõ ràng và dễ dàng."
+            "Ultra-fast page load (<2s).",
+            "One-touch payment (Apple Pay, Google Pay, QR Code).",
+            "Clear and easy return policy."
         ]
     },
     {
         "domain": "saas",
-        "market_summary": "SaaS đang bão hòa, xu hướng chuyển sang Vertical SaaS (ngành dọc) và Product-Led Growth (PLG).",
+        "market_summary": "SaaS is saturating, shifting towards Vertical SaaS (niche industries) and Product-Led Growth (PLG).",
         "trends": [
             {
                 "trend": "Product-Led Growth (PLG)",
-                "description": "Sản phẩm tự bán chính nó thông qua Freemium model, self-service onboarding mà không cần sales.",
+                "description": "Product sells itself via Freemium model, self-service onboarding without sales requirement.",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Usage-Based Pricing",
-                "description": "Tính tiền theo mức sử dụng thực tế thay vì flat subscription (giống AWS, Snowflake).",
+                "description": "Pay-as-you-go based on actual usage instead of flat subscription (like AWS, Snowflake).",
                 "impact": "High",
                 "adoption": "Growing"
             },
             {
                 "trend": "GenAI Integration",
-                "description": "Tích hợp AI để tóm tắt, tạo nội dung, phân tích dữ liệu ngay trong ứng dụng.",
+                "description": "AI integration for summarization, content generation, data analysis within the app.",
                 "impact": "High",
                 "adoption": "Exploding"
             },
             {
                 "trend": "Vertical SaaS",
-                "description": "Giải pháp chuyên sâu cho từng ngành hẹp (Nha khoa, Xây dựng, Nhà hàng) thay vì All-in-one.",
+                "description": "Specialized solutions for niche industries (Dental, Construction, Restaurants) instead of All-in-one.",
                 "impact": "Medium",
                 "adoption": "Growing"
             }
         ],
         "user_expectations": [
-            "UX đơn giản, không cần training phức tạp.",
-            "Tích hợp sẵn với các tools phổ biến (Slack, Zapier).",
+            "Simple UX, no complex training needed.",
+            "Native integration with popular tools (Slack, Zapier).",
             "Dark mode."
         ]
     },
     {
         "domain": "edtech",
-        "market_summary": "Giáo dục trực tuyến chuyển từ video dài sang Micro-learning và trải nghiệm tương tác (Gamification).",
+        "market_summary": "Online education is shifting from long videos to Micro-learning and interactive experiences (Gamification).",
         "trends": [
             {
                 "trend": "Micro-learning",
-                "description": "Bài học chia nhỏ 5-10 phút, dễ tiêu thụ trên mobile.",
+                "description": "Lessons broken down into 5-10 minutes, easy to consume on mobile.",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Gamification",
-                "description": "Bảng xếp hạng, huy hiệu, streak để tăng động lực học tập.",
+                "description": "Leaderboards, badges, streaks to increase learning motivation.",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Cohort-Based Courses (CBC)",
-                "description": "Học theo nhóm, có tương tác trực tiếp và deadline cụ thể thay vì self-paced.",
+                "description": "Group learning with live interaction and specific deadlines instead of self-paced.",
                 "impact": "Medium",
                 "adoption": "Growing"
             }
         ],
         "user_expectations": [
-            "Học được trên mọi thiết bị (Sync progress).",
-            "Nội dung thực tế, áp dụng được ngay.",
-            "Chứng chỉ có giá trị (Verified Certificates)."
+            "Learn on any device (Sync progress).",
+            "Practical content, immediately applicable.",
+            "Verified Certificates."
         ]
     },
     {
         "domain": "fintech",
-        "market_summary": "Tài chính nhúng (Embedded Finance) và Neo-banking đang làm thay đổi cách người dùng quản lý tiền.",
+        "market_summary": "Embedded Finance and Neo-banking are changing how users manage money.",
         "trends": [
             {
                 "trend": "Embedded Finance",
-                "description": "Tích hợp dịch vụ tài chính (vay, bảo hiểm, thanh toán) vào ứng dụng phi tài chính (Grab, Shopee).",
+                "description": "Integrating financial services (loans, insurance, payments) into non-financial apps (Grab, Shopee).",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Buy Now Pay Later (BNPL)",
-                "description": "Mua trước trả sau chia nhỏ kỳ hạn, phổ biến với Gen Z.",
+                "description": "Installment payments, popular with Gen Z.",
                 "impact": "High",
                 "adoption": "Mainstream"
             },
             {
                 "trend": "Personal Finance Management (PFM) with AI",
-                "description": "AI phân tích chi tiêu và gợi ý tiết kiệm thông minh.",
+                "description": "AI analyzes spending and suggests smart savings.",
                 "impact": "Medium",
                 "adoption": "Growing"
             }
         ],
         "user_expectations": [
-            "Bảo mật tuyệt đối (2FA, Biometrics).",
-            "Minh bạch phí giao dịch.",
-            "UI/UX thân thiện, không khô khan như ngân hàng truyền thống."
+            "Absolute security (2FA, Biometrics).",
+            "Transparent transaction fees.",
+            "Friendly UI/UX, not dry like traditional banks."
         ]
     },
     {
         "domain": "healthtech",
-        "market_summary": "Y tế số hóa với Telemedicine và thiết bị đeo (Wearables) theo dõi sức khỏe liên tục.",
+        "market_summary": "Digital healthcare with Telemedicine and Wearables for continuous health monitoring.",
         "trends": [
             {
                 "trend": "Telemedicine 2.0",
-                "description": "Khám chữa bệnh từ xa tích hợp hồ sơ bệnh án điện tử.",
+                "description": "Remote consultation integrated with electronic health records.",
                 "impact": "High",
                 "adoption": "Standard"
             },
             {
                 "trend": "IoMT (Internet of Medical Things)",
-                "description": "Kết nối các thiết bị đo huyết áp, đường huyết, nhịp tim vào ứng dụng.",
+                "description": "Connecting blood pressure monitors, glucose meters, heart rate monitors to the app.",
                 "impact": "High",
                 "adoption": "Growing"
             },
             {
                 "trend": "Mental Health Apps",
-                "description": "Ứng dụng thiền, trị liệu tâm lý và theo dõi cảm xúc.",
+                "description": "Meditation, psychotherapy, and mood tracking apps.",
                 "impact": "Medium",
                 "adoption": "Growing"
             }
         ],
         "user_expectations": [
-            "Bảo mật dữ liệu sức khỏe (HIPAA/GDPR).",
-            "Dễ dàng đặt lịch hẹn.",
-            "Kết nối bác sĩ nhanh chóng."
+            "Health data privacy (HIPAA/GDPR).",
+            "Easy appointment booking.",
+            "Quick doctor connection."
         ]
     }
 ]

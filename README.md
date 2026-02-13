@@ -1,14 +1,93 @@
 # 🌌 VibeGravityKit
 
 > **The AI-Native Software House in a Box.**
-> *Build enterprise-grade software with a team of 13 AI Agents — optimized for maximum speed and minimum token costs.*
+> *Build enterprise-grade software with a team of 15 AI Agents — optimized for maximum speed and minimum token costs.*
+
+---
+
+## 🚀 How It Works — Two Ways to Build
+
+VibeGravityKit gives you **two powerful work modes** to build software with your AI team:
+
+### Mode 1: `@[/leader]` — Smart Delegation (Recommended)
+
+> **You are the Boss. The Leader is your right hand.**
+
+```
+You → Leader → Agents → Report back per phase → You approve → Next phase
+```
+
+**Flow:**
+1. Tell the Leader what you want to build.
+2. Leader analyzes, brainstorms, and presents a plan.
+3. **You approve the plan** ✅
+4. Leader **auto-delegates** to the right agents:
+
+| Phase | Agent | What Happens |
+|-------|-------|-------------|
+| 📋 Planning | `@[/planner]` | PRD, user stories, timeline |
+| 🏗️ Architecture | `@[/architect]` | DB schema, API design, diagrams |
+| 🎨 Design | `@[/designer]` | UI/UX system, components, palette |
+| 💻 Development | `@[/frontend-dev]` `@[/backend-dev]` | Build the product |
+| 🧪 QA & Fix | `@[/qa-engineer]` | Test → Find bugs → Fix → Retest |
+| 🚀 Launch | `@[/devops]` `@[/security-engineer]` | Deploy, audit, docs |
+
+5. **After each phase**, Leader reports results and waits for your approval.
+6. **QA Smart Loop**: If a bug can't be fixed, Leader calls `@[/meta-thinker]` + `@[/planner]` to rethink the approach. Max **3 retries** — then reports to you with analysis.
+
+**Example:**
+```
+You: "Build me a Spotify clone with Next.js"
+Leader: [Analyzes → Plans → Reports] "Here's the plan: 6 phases, 3 weeks..."
+You: "Approved ✅"
+Leader: [Auto-delegates to Planner → Architect → Designer → Dev → QA → Deploy]
+        [Reports after each phase for your review]
+```
+
+---
+
+### Mode 2: `@[/quickstart]` — Full Autopilot
+
+> **One command. Complete project. No approvals needed.**
+
+```
+You → Quickstart → [Auto-runs ALL agents] → Delivers complete project
+```
+
+**Perfect for:** MVPs, prototypes, hackathons, or when you just want results fast.
+
+**How it works:**
+1. Describe your idea.
+2. Quickstart runs **every phase automatically** — no checkpoints.
+3. Built-in **QA Auto-Fix Loop**: finds bugs → fixes them → retests. If stuck, calls `@[/meta-thinker]` + `@[/planner]` to rethink. Max **5 retries** per bug.
+4. Delivers a **complete report** at the end: what was built, test results, unresolved issues (if any), and how to run it.
+
+**Example:**
+```
+You: "@[/quickstart] Build a task management app with React + Express + PostgreSQL"
+Quickstart: [Runs everything automatically...]
+Quickstart: "✅ Done! Here's your report: 12 features built, 47/50 tests passing,
+             3 unresolved edge cases documented. Run `npm run dev` to start."
+```
+
+---
+
+### Mode Comparison
+
+| | `@[/leader]` | `@[/quickstart]` |
+|---|---|---|
+| **User involvement** | Approve each phase | None (fully auto) |
+| **Bug fix retries** | 3 max | 5 max |
+| **Smart rethinking** | ✅ Meta Thinker + Planner | ✅ Meta Thinker + Planner |
+| **Speed** | Careful & thorough | Fast |
+| **Best for** | Production apps, critical projects | MVPs, prototypes, demos |
 
 ---
 
 ## 🎩 What is VibeGravityKit?
 
-Imagine having a full-stack engineering team living inside your IDE. 
-**VibeGravityKit** turns your IDE into a coordinated squad of **13 specialized agents**, from the **Architect** who designs your database, to the **Meta Thinker** who expands your vision.
+Imagine having a full-stack engineering team living inside your IDE.
+**VibeGravityKit** turns your IDE into a coordinated squad of **15 specialized agents**, from the **Architect** who designs your database, to the **Meta Thinker** who expands your vision.
 
 But here's the killer feature: **We hate wasting tokens.**
 - **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
@@ -35,10 +114,10 @@ vibegravity init
 
 ## 🛠️ CLI Commands
 
-- **`vibegravity list`** (or `vibe list`): List all 13 specialized agents.
+- **`vibegravity list`** (or `vibe list`): List all 15 specialized agents.
 - **`vibegravity doctor`**: Check your environment health (Python, Node, Git, etc.).
 - **`vibegravity update`**: Auto-update VibeGravityKit to the latest version (works via Git or Pip).
-- **`vibegravity version`**: Show current version (v2.0.0).
+- **`vibegravity version`**: Show current version.
 
 ## 🌐 Multi-IDE Support
 
@@ -55,19 +134,23 @@ VibeGravityKit works natively with **4 AI IDEs**:
 # Example: Setup for Cursor IDE
 cd my-project
 vibegravity init cursor
-# → 14 agent rules installed in .cursor/rules/
+# → 15 agent rules installed in .cursor/rules/
 ```
 
 ---
 
-## 🎮 The 13 Agents (Usage Examples)
+## 🎮 The 15 Agents (Usage Examples)
 
 In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` mentions.
 
 ### 1. Strategy & Vision Team 🧠
 **@[/leader]** (The Boss's Right Hand)
 > "I want to build a Spotify clone. Orchestrate the entire plan."
-*(Orchestrates Planner, Architect, and Devs automatically)*
+*(Orchestrates all agents, reports per phase, manages QA loop)*
+
+**@[/quickstart]** (Full Autopilot)
+> "Build me a task management app with React and Express."
+*(Runs everything end-to-end, delivers complete project with report)*
 
 **@[/meta-thinker]** (Creative Advisor)
 > "I want to build a food delivery app but make it unique. Brainstorm ideas."
@@ -145,8 +228,14 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 
 ## 📋 Changelog
 
+### v2.5.0
+- **Leader Orchestration Mode** — Leader auto-delegates to agents, reports per phase, QA loop with smart retries (max 3)
+- **Quickstart Autopilot Mode** — Fully automated end-to-end project build, QA auto-fix (max 5 retries)
+- **Smart Bug Fix Rethinking** — Failed fixes trigger Meta Thinker + Planner to brainstorm alternative approaches
+- Agent count updated to **15** (added Quickstart)
+
 ### v2.4.0
-- `agent_index.json` — Leader reads 1 file to know all 14 agents, their roles, skills, and when to call each
+- `agent_index.json` — Leader reads 1 file to know all agents, their roles, skills, and when to call each
 - `codebase-navigator` upgraded — now captures full function signatures (params, return types)
 - New action: `--action outline` for compact codebase overview
 - Handoff template for standardized task delegation between agents
@@ -173,13 +262,13 @@ python .agent/skills/codebase-navigator/scripts/navigator.py --action search --q
 - New skill: `brain-manager` — project context, architecture decisions, export/import
 - New skill: `journal-manager` — 2-tier knowledge journal (index + entries)
 ```bash
-vibegravity brain show                              # Xem project context
-vibegravity brain add-decision "Dùng PostgreSQL"    # Ghi quyết định
-vibegravity brain set project.name "MyApp"          # Set giá trị
+vibegravity brain show                              # View project context
+vibegravity brain add-decision "Use PostgreSQL"     # Record decision
+vibegravity brain set project.name "MyApp"          # Set value
 vibegravity brain export -o backup.json             # Backup brain
-vibegravity journal add -t "Fix N+1 query" --tags "perf,db"  # Ghi bài học
-vibegravity journal list                            # Xem entries gần nhất
-vibegravity journal search "database"               # Tìm kiếm
+vibegravity journal add -t "Fix N+1 query" --tags "perf,db"  # Record lesson
+vibegravity journal list                            # View recent entries
+vibegravity journal search "database"               # Search
 ```
 
 ### v2.2.0
@@ -200,7 +289,7 @@ python .agent/skills/i18n-manager/scripts/string_extractor.py --path "src/"
 ```bash
 vibegravity init                   # Install for ALL IDEs at once
 vibegravity init cursor            # Install for Cursor only
-vibegravity list                   # List all 14 agents
+vibegravity list                   # List all 15 agents
 vibegravity doctor                 # Check environment health
 vibegravity update                 # Auto-update to latest version
 ```

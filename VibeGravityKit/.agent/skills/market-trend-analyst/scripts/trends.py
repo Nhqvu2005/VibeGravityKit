@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Market Trend Analyst — Phân tích xu hướng thị trường và kỳ vọng người dùng.
+Market Trend Analyst — Analyze market trends and user expectations.
 
 Usage:
     python trends.py --domain "ecommerce"
@@ -42,15 +42,15 @@ def print_analysis(result, domain):
     print("="*80)
 
     if not result:
-        print(f"\n⚠️  Không tìm thấy dữ liệu cho domain: '{domain}'")
-        print("   Các domains hỗ trợ: ecommerce, saas, fintech, edtech, healthtech")
+        print(f"\n⚠️  Data not found for domain: '{domain}'")
+        print("   Supported domains: ecommerce, saas, fintech, edtech, healthtech")
         print("\n" + "="*80 + "\n")
         return
 
     print(f"\n🏭 DOMAIN: {result['domain'].upper()}")
     print(f"📄 Overview: {result['market_summary']}")
     
-    print("\n🔥 Xu Hướng Nổi Bật (Trends):")
+    print("\n🔥 Key Trends:")
     print("-" * 80)
     print(f"{'Trend':<35} {'Impact':<10} {'Adoption':<15}")
     print("-" * 80)
@@ -60,7 +60,7 @@ def print_analysis(result, domain):
         print(f"   ↳ {t['description']}")
         print()
 
-    print("\n👥 Kỳ Vọng Người Dùng (User Expectations):")
+    print("\n👥 User Expectations:")
     for exp in result["user_expectations"]:
         print(f"   ❤️  {exp}")
 
@@ -68,7 +68,7 @@ def print_analysis(result, domain):
 
 def main():
     parser = argparse.ArgumentParser(description="Market Trend Analyst")
-    parser.add_argument("--domain", type=str, required=True, help="Lĩnh vực cần phân tích: ecommerce, saas, fintech...")
+    parser.add_argument("--domain", type=str, required=True, help="Domain to analyze: ecommerce, saas, fintech...")
     parser.add_argument("--json", action="store_true", help="Output JSON")
     
     args = parser.parse_args()
