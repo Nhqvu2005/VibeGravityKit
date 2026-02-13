@@ -1,7 +1,7 @@
 # 🌌 VibeGravityKit
 
 > **The AI-Native Software House in a Box.**
-> *Build enterprise-grade software with a team of 15 AI Agents — optimized for maximum speed and minimum token costs.*
+> *Build enterprise-grade software with a team of 17 AI Agents — optimized for maximum speed and minimum token costs.*
 
 ---
 
@@ -91,6 +91,7 @@ Imagine having a full-stack engineering team living inside your IDE.
 
 But here's the killer feature: **We hate wasting tokens.**
 - **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
+- **Context Router**: Queries only relevant data from 34+ data sources. (Saves ~70% tokens).
 - **Diff Applier**: Applies surgical patches instead of rewriting files. (Saves ~90% tokens).
 
 ---
@@ -114,7 +115,7 @@ vibegravity init
 
 ## 🛠️ CLI Commands
 
-- **`vibegravity list`** (or `vibe list`): List all 15 specialized agents.
+- **`vibegravity list`** (or `vibe list`): List all 17 specialized agents.
 - **`vibegravity doctor`**: Check your environment health (Python, Node, Git, etc.).
 - **`vibegravity update`**: Auto-update VibeGravityKit to the latest version (works via Git or Pip).
 - **`vibegravity version`**: Show current version.
@@ -134,12 +135,12 @@ VibeGravityKit works natively with **4 AI IDEs**:
 # Example: Setup for Cursor IDE
 cd my-project
 vibegravity init cursor
-# → 15 agent rules installed in .cursor/rules/
+# → 17 agent rules installed in .cursor/rules/
 ```
 
 ---
 
-## 🎮 The 15 Agents (Usage Examples)
+## 🎮 The 17 Agents (Usage Examples)
 
 In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` mentions.
 
@@ -215,6 +216,14 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 > "Check `index.html` for missing meta tags and open graph data."
 *(Runs: `seo_check.py`)*
 
+**@[/code-reviewer]** (Code Quality)
+> "Scan the src/ folder for anti-patterns, security issues, and naming problems."
+*(Runs: `reviewer.py` → Quality Score A-F)*
+
+**@[/release-manager]** (Release Engineer)
+> "Generate a changelog since v2.0.0 and bump the version to 2.6.0."
+*(Runs: `release.py` → CHANGELOG.md + version bump)*
+
 ---
 
 ## 📂 Project Structure
@@ -226,13 +235,49 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 └── brain/           # Project Context & Memory
 ```
 
+## 🧰 Smart Context Protocol
+
+Instead of agents reading entire data files (hundreds of lines each), they query the **Context Router** for just what they need:
+
+```bash
+# Search across ALL 34 data sources:
+python .agent/skills/context-router/scripts/context_router.py --query "fintech"
+# → Returns only matching entries (saves ~70% tokens)
+
+# Search within a specific skill:
+python .agent/skills/context-router/scripts/context_router.py --skill meta-thinker --query "SCAMPER"
+
+# List all available data:
+python .agent/skills/context-router/scripts/context_router.py --list
+```
+
+## 📦 Template Marketplace
+
+Start new projects instantly with pre-built templates:
+
+```bash
+# Browse 7 templates:
+python .agent/skills/template-marketplace/scripts/template_engine.py --action list
+
+# Get details of a template:
+python .agent/skills/template-marketplace/scripts/template_engine.py --action show --template saas
+
+# Available: saas, ecommerce, blog, api, landing, dashboard, mobile
+```
+
 ## 📋 Changelog
+
+### v2.6.0
+- **Smart Context Protocol** — Universal data query router across 34+ data sources (saves ~70% tokens)
+- **Code Reviewer Agent** (`@[/code-reviewer]`) — Regex-based code quality scanner with 20 rules
+- **Release Manager Agent** (`@[/release-manager]`) — Auto changelog, semver bumping, release notes
+- **Template Marketplace** — 7 pre-built templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile)
+- Agent count updated to **17**
 
 ### v2.5.0
 - **Leader Orchestration Mode** — Leader auto-delegates to agents, reports per phase, QA loop with smart retries (max 3)
 - **Quickstart Autopilot Mode** — Fully automated end-to-end project build, QA auto-fix (max 5 retries)
 - **Smart Bug Fix Rethinking** — Failed fixes trigger Meta Thinker + Planner to brainstorm alternative approaches
-- Agent count updated to **15** (added Quickstart)
 
 ### v2.4.0
 - `agent_index.json` — Leader reads 1 file to know all agents, their roles, skills, and when to call each
@@ -289,7 +334,7 @@ python .agent/skills/i18n-manager/scripts/string_extractor.py --path "src/"
 ```bash
 vibegravity init                   # Install for ALL IDEs at once
 vibegravity init cursor            # Install for Cursor only
-vibegravity list                   # List all 15 agents
+vibegravity list                   # List all 17 agents
 vibegravity doctor                 # Check environment health
 vibegravity update                 # Auto-update to latest version
 ```

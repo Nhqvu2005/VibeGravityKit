@@ -162,7 +162,27 @@
                 "brain-manager",
                 "journal-manager"
             ]
+        },
+        "code-reviewer": {
+            "role": "Code Reviewer — Automated code quality review",
+            "when_to_call": "Code quality check, naming review, security scan, performance audit",
+            "output": "Review report with issues (critical/warning/info) and quality score (A-F)",
+            "skills": [
+                "code-reviewer"
+            ]
+        },
+        "release-manager": {
+            "role": "Release Manager — Changelog, versioning, release notes",
+            "when_to_call": "Version bump, changelog generation, release preparation, tagging",
+            "output": "CHANGELOG.md, version bump, release notes, git tags",
+            "skills": [
+                "release-manager"
+            ]
         }
+    },
+    "infrastructure": {
+        "context-router": "Universal data query router — use before reading raw data files. Saves tokens by returning only matching entries.",
+        "template-marketplace": "Pre-built project templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile). Used by quickstart and leader."
     },
     "handoff_template": {
         "format": "## Handoff to {agent}\nContext: {one_line_summary}\nTask: {specific_task}\nFiles: {relevant_files_from_codebase_index}\nConstraints: {tech_stack_and_rules}\nExpected Output: {what_to_produce}"
