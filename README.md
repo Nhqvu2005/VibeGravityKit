@@ -146,25 +146,40 @@ In VibeGravityKit, **You are the Boss.** Just chat with your agents using `@` me
 ## 📋 Changelog
 
 ### v2.3.0
-- New skill: `brain-manager` — project context, architecture decisions, export/import brain
+- New skill: `brain-manager` — project context, architecture decisions, export/import
 - New skill: `journal-manager` — 2-tier knowledge journal (index + entries)
-- CLI commands: `vibegravity brain show`, `vibegravity brain add-decision`, `vibegravity journal add`, `vibegravity journal search`
-- Auto-save triggers for journal (≥3 attempts, ≥5 files, rollback)
+```bash
+vibegravity brain show                              # Xem project context
+vibegravity brain add-decision "Dùng PostgreSQL"    # Ghi quyết định
+vibegravity brain set project.name "MyApp"          # Set giá trị
+vibegravity brain export -o backup.json             # Backup brain
+vibegravity journal add -t "Fix N+1 query" --tags "perf,db"  # Ghi bài học
+vibegravity journal list                            # Xem entries gần nhất
+vibegravity journal search "database"               # Tìm kiếm
+```
 
 ### v2.2.0
 - New skill: `env-manager` — auto-scan codebase and generate `.env.example`
 - New skill: `i18n-manager` — extract hardcoded strings for translation
-- Agent Memory: `project_context.json` template for storing project knowledge and decisions
+- Agent Memory: `project_context.json` for project knowledge
+```bash
+python .agent/skills/env-manager/scripts/env_scanner.py --path "."
+python .agent/skills/i18n-manager/scripts/string_extractor.py --path "src/"
+```
 
 ### v2.1.0
-- 17 new data files: API patterns, DB schemas, Docker/CI-CD templates, security scanning (OWASP), SEO rules, mobile templates, task estimation, and more
-- Changelog section added to README
+- 17 new data files: API patterns, DB schemas, Docker/CI-CD templates, security scanning (OWASP), SEO rules, mobile templates, and more
 
 ### v2.0.0
-- CLI commands: `vibegravity init`, `list`, `doctor`, `update`, `version`
-- Multi-IDE support: Cursor (`.mdc`), Windsurf (`.md`), Cline (`.md`)
-- `vibegravity init` installs for all 4 IDEs at once
-- `generate_adapters.py` auto-converts workflows to IDE rule files
+- CLI: `vibegravity init`, `list`, `doctor`, `update`, `version`
+- Multi-IDE: Cursor (`.mdc`), Windsurf (`.md`), Cline (`.md`)
+```bash
+vibegravity init                   # Install for ALL IDEs at once
+vibegravity init cursor            # Install for Cursor only
+vibegravity list                   # List all 14 agents
+vibegravity doctor                 # Check environment health
+vibegravity update                 # Auto-update to latest version
+```
 
 ## ❤️ Credits
 Special thanks to **[ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** for pioneering the data-driven approach to UI/UX generation.
