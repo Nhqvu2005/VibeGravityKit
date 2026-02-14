@@ -9,18 +9,19 @@
 
 VibeGravityKit gives you **two powerful work modes** to build software with your AI team:
 
-### Mode 1: `@[/quickstart]` — Instant Build (Recommended)
+### Mode 1: `@[/quickstart]` — Instant Noodle 🍜
 
-> **Nói ý tưởng → Nhận sản phẩm hoàn chỉnh.** Đồ ăn liền cho mọi người.
+> **Describe your idea → Get a working product.** Fast, automatic, delicious.
+> Like instant noodles — just add water (your idea) and it's ready to eat.
 
 ```
 You → Leader confirms plan → Auto-build → ♻️ Verify Loop → Deploy → Done!
 ```
 
-**Perfect for:** MVPs, prototypes, demos, non-tech users who just want results.
+**Perfect for:** MVPs, prototypes, demos, hackathons, or non-tech users who just want results.
 
 **How it works:**
-1. Describe your idea — even vague is fine ("tôi muốn làm web bán hàng").
+1. Describe your idea — even vague is fine ("I want an online store").
 2. Leader auto-detects tech stack + checks template marketplace (saves ~70% tokens if match).
 3. **Leader shows you a simple checklist** — you approve/edit before building.
 4. Build runs **fully automatic** with parallel agents.
@@ -29,27 +30,30 @@ You → Leader confirms plan → Auto-build → ♻️ Verify Loop → Deploy �
 
 **Example:**
 ```
-You: "Tạo web rút gọn link đơn giản"
+You: "Build me a simple URL shortener"
 Quickstart:
-  📋 Plan: [Trang chủ ✓] [Rút gọn URL ✓] [Redirect ✓] [Copy link ✓]
-  "Bạn muốn thêm/bớt gì không?"
-You: "OK ✅"
+  📋 Plan: [Home page ✓] [Shorten URL ✓] [Redirect ✓] [Copy link ✓]
+  "Want to add or remove anything?"
+You: "Looks good ✅"
 Quickstart:
-  🔥 Đang thiết kế... → 💻 Đang code... → ♻️ Kiểm tra tính năng (2/5)...
-  🚀 Xong! https://xxx.trycloudflare.com
+  🔥 Designing... → 💻 Building... → ♻️ Verifying features (2/5)...
+  🚀 Done! https://xxx.trycloudflare.com
 ```
 
 ---
 
-### Mode 2: `@[/leader]` — Smart Delegation
+### Mode 2: `@[/leader]` — Slow & Steady 🍲
 
-> **You are the Boss. The Leader is your right hand.** Full control, approve each phase.
+> **You are the Chef. The Leader is your sous-chef.** Full control at every step.
+> Like a slow-cooked stew — takes time, but the result is production-grade quality.
 
 ```
 You → Leader → Agents → Report back per phase → You approve → Next phase
 ```
 
-**Flow:**
+**Perfect for:** Production apps, enterprise projects, or when quality matters more than speed.
+
+**How it works:**
 1. Tell the Leader what you want to build.
 2. Leader analyzes, brainstorms, and presents a plan.
 3. **You approve the plan** ✅
@@ -80,11 +84,12 @@ Leader: [Auto-delegates to Planner → Architect → Designer → Dev → QA →
 
 ### Mode Comparison
 
-| | `@[/quickstart]` | `@[/leader]` |
+| | 🍜 `@[/quickstart]` | 🍲 `@[/leader]` |
 |---|---|---|
-| **User involvement** | Approve plan only | Approve each phase |
+| **Philosophy** | Instant noodle — fast & easy | Slow-cooked — careful & thorough |
+| **User involvement** | Approve plan once | Approve each phase |
 | **Parallel agents** | ⚡ Yes | ⚡ Yes |
-| **Completion verification** | ♻️ Loop max 5 (codebase scan) | Manual per phase |
+| **Completion verification** | ♻️ Auto-loop (max 5) | Manual per phase |
 | **Auto-deploy** | ✅ Cloudflare Tunnel | Manual |
 | **Template-first** | ✅ Auto-detect | Manual |
 | **Best for** | MVPs, demos, non-tech users | Production apps, critical projects |
