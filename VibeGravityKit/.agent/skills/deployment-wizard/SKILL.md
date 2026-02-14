@@ -13,40 +13,60 @@ Perfect for demos, testing, sharing local dev servers — without hosting or dom
 1. Auto-downloads `cloudflared` binary (if not installed)
 2. Creates a temporary **Quick Tunnel** to your local port
 3. Generates a public `*.trycloudflare.com` URL
-4. Anyone can access your local site via that URL
-5. **No Cloudflare account needed. No API key. No config.**
+4. **No Cloudflare account needed. No API key. No config.**
 
 ## Usage
 
-### Deploy a local website
+### Human Mode (interactive UI)
 ```bash
-# Expose localhost:3000 to the internet
 python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000
-
-# Auto-install cloudflared if missing + start tunnel
 python .agent/skills/deployment-wizard/scripts/tunnel.py --port 8080 --install
-```
-
-### Check installation
-```bash
 python .agent/skills/deployment-wizard/scripts/tunnel.py --check
 ```
 
-### Common ports
-| Stack | Default Port | Command |
-|-------|-------------|---------|
+### Agent Mode (--quiet, machine-parseable output)
+```bash
+# Check if installed
+python .agent/skills/deployment-wizard/scripts/tunnel.py --check --quiet
+# → STATUS=installed  BINARY=/path  VERSION=...
+
+# Install automatically
+python .agent/skills/deployment-wizard/scripts/tunnel.py --install --quiet
+# → INSTALLED=/path/to/cloudflared
+
+# Start tunnel (outputs URL then keeps running)
+python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000 --quiet
+# → TUNNEL_URL=https://xxx.trycloudflare.com
+```
+
+### Agent Automation Steps
+When user says "deploy", "share my site", "make it public", follow this:
+1. `--check --quiet` → verify installation
+2. `--install --quiet` → install if needed
+3. Ensure local server is running on PORT
+4. `--port PORT --quiet` → start tunnel (background command)
+5. Parse `TUNNEL_URL=` from output → return to user
+
+### Output Format (--quiet)
+| Output | Meaning |
+|--------|---------|
+| `STATUS=installed` | cloudflared found |
+| `STATUS=not_installed` | Need to install |
+| `INSTALLED=/path` | Just installed |
+| `TUNNEL_URL=https://...` | Tunnel is live! |
+| `ERROR=message` | Something failed |
+
+### Common Ports
+| Stack | Port | Command |
+|-------|------|---------|
 | React (Vite) | 5173 | `--port 5173` |
 | Next.js | 3000 | `--port 3000` |
 | Django | 8000 | `--port 8000` |
 | Flask | 5000 | `--port 5000` |
 | Express | 3000 | `--port 3000` |
 | PHP | 8080 | `--port 8080` |
-| Hugo | 1313 | `--port 1313` |
 
 ## Requirements
 - Python 3.9+ (stdlib only — zero pip dependencies)
 - Internet connection
 - Local server running on the specified port
-
-## Output
-A public URL like: `https://random-words.trycloudflare.com`
