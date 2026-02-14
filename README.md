@@ -5,6 +5,18 @@
 
 ---
 
+## 🎩 What is VibeGravityKit?
+
+Imagine having a full-stack engineering team living inside your IDE.
+**VibeGravityKit** turns your IDE into a coordinated squad of **18 specialized agents**, from the **Architect** who designs your database, to the **Researcher** who searches the web with DuckDuckGo.
+
+But here's the killer feature: **We hate wasting tokens.**
+- **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
+- **Context Router**: Queries only relevant data from 34+ data sources. (Saves ~70% tokens).
+- **Diff Applier**: Applies surgical patches instead of rewriting files. (Saves ~90% tokens).
+
+---
+
 ## 🚀 How It Works — Two Ways to Build
 
 VibeGravityKit gives you **two powerful work modes** to build software with your AI team:
@@ -93,18 +105,6 @@ Leader: [Auto-delegates to Planner → Architect → Designer → Dev → QA →
 | **Auto-deploy** | ✅ Cloudflare Tunnel | Manual |
 | **Template-first** | ✅ Auto-detect | Manual |
 | **Best for** | MVPs, demos, non-tech users | Production apps, critical projects |
-
----
-
-## 🎩 What is VibeGravityKit?
-
-Imagine having a full-stack engineering team living inside your IDE.
-**VibeGravityKit** turns your IDE into a coordinated squad of **18 specialized agents**, from the **Architect** who designs your database, to the **Researcher** who searches the web with DuckDuckGo.
-
-But here's the killer feature: **We hate wasting tokens.**
-- **Context Manager**: Minifies your code before the AI sees it. (Saves ~50% tokens).
-- **Context Router**: Queries only relevant data from 34+ data sources. (Saves ~70% tokens).
-- **Diff Applier**: Applies surgical patches instead of rewriting files. (Saves ~90% tokens).
 
 ---
 
