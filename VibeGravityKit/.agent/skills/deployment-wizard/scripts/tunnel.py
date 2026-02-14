@@ -29,6 +29,31 @@ import tempfile
 from pathlib import Path
 
 
+# ─── Deploy Templates ──────────────────────────────────────────
+
+def load_templates():
+    """Load deploy_templates.json."""
+    data_dir = Path(__file__).parent.parent / "data"
+    templates_file = data_dir / "deploy_templates.json"
+    if templates_file.exists():
+        with open(templates_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def get_serve_cmd(stack, port=None):
+    """Get the serve command for a given stack."""
+    templates = load_templates()
+    if stack not in templates:
+        return None, list(templates.keys())
+    
+    entry = templates[stack]
+    cmd = entry["serve_cmd"]
+    if port:
+        cmd = cmd.replace("{{PORT}}", str(port))
+    return cmd, entry
+
+
 # ─── Port Detection ────────────────────────────────────────────
 
 def is_port_busy(port, host="127.0.0.1"):
@@ -426,6 +451,10 @@ Agent (--quiet) mode output format:
         help="Pre-flight: scan for a free port and return it (does NOT start tunnel)"
     )
     parser.add_argument(
+        "--serve-cmd", type=str, metavar="STACK",
+        help="Get serve command for a stack (static/react/vite/nextjs/django/flask/express/php/etc)"
+    )
+    parser.add_argument(
         "--start", type=int, default=3000,
         help="Starting port number for --find-port scan (default: 3000)"
     )
@@ -445,6 +474,20 @@ Agent (--quiet) mode output format:
         check_status(quiet=args.quiet)
         return
 
+    # Serve command lookup (can combine with --find-port)
+    serve_cmd_result = None
+    if args.serve_cmd:
+        cmd, info = get_serve_cmd(args.serve_cmd)
+        if cmd is None:
+            stacks = ", ".join(info)
+            if args.quiet:
+                print(f"ERROR=unknown_stack (available: {stacks})")
+            else:
+                print(f"\n❌ Unknown stack: {args.serve_cmd}")
+                print(f"   Available: {stacks}")
+            sys.exit(1)
+        serve_cmd_result = cmd
+
     # Pre-flight: find a free port (does NOT start tunnel or need cloudflared)
     if args.find_port:
         port = find_free_port(start=args.start)
@@ -453,7 +496,16 @@ Agent (--quiet) mode output format:
                 print(f"FREE_PORT={port}")
             else:
                 print(f"\n✅ Free port found: {port}")
-                print(f"   Use: python server.py --port {port}")
+
+            # If --serve-cmd was combined, output the command with PORT filled
+            if serve_cmd_result:
+                filled_cmd = serve_cmd_result.replace("{{PORT}}", str(port))
+                if args.quiet:
+                    print(f"SERVE_CMD={filled_cmd}")
+                else:
+                    print(f"   Serve: {filled_cmd}")
+                    print(f"   Then:  python tunnel.py --port {port}\n")
+            elif not args.quiet:
                 print(f"   Then: python tunnel.py --port {port}\n")
         else:
             if args.quiet:
@@ -461,6 +513,16 @@ Agent (--quiet) mode output format:
             else:
                 print("\n❌ No free port found in range 3000-9999")
             sys.exit(1)
+        return
+
+    # Serve command only (without --find-port)
+    if serve_cmd_result and not args.find_port:
+        if args.quiet:
+            print(f"SERVE_CMD={serve_cmd_result}")
+        else:
+            print(f"\n📋 Serve command for '{args.serve_cmd}':")
+            print(f"   {serve_cmd_result}")
+            print(f"   (Replace {{{{PORT}}}} with your port)\n")
         return
 
     # Find or install cloudflared
