@@ -20,12 +20,70 @@ import os
 import platform
 import re
 import shutil
+import socket
 import subprocess
 import sys
 import time
 import urllib.request
 import tempfile
 from pathlib import Path
+
+
+# ─── Port Detection ────────────────────────────────────────────
+
+def is_port_busy(port, host="127.0.0.1"):
+    """Check if a port is already in use."""
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(1)
+            result = s.connect_ex((host, port))
+            return result == 0  # 0 = connected = port is busy
+    except Exception:
+        return False
+
+
+def find_free_port(start=3000, end=9999, host="127.0.0.1"):
+    """Find the first available port in range."""
+    for port in range(start, end + 1):
+        if not is_port_busy(port, host):
+            return port
+    return None
+
+
+def get_port_process(port):
+    """Try to identify what's running on a port (best effort)."""
+    system = platform.system().lower()
+    try:
+        if system == "windows":
+            result = subprocess.run(
+                ["netstat", "-ano"],
+                capture_output=True, text=True, timeout=5
+            )
+            for line in result.stdout.split("\n"):
+                if f":{port}" in line and "LISTENING" in line:
+                    parts = line.strip().split()
+                    if parts:
+                        pid = parts[-1]
+                        # Get process name
+                        proc = subprocess.run(
+                            ["tasklist", "/FI", f"PID eq {pid}", "/FO", "CSV", "/NH"],
+                            capture_output=True, text=True, timeout=5
+                        )
+                        if proc.stdout.strip():
+                            name = proc.stdout.strip().split(',')[0].strip('"')
+                            return f"{name} (PID: {pid})"
+                        return f"PID: {pid}"
+        else:
+            result = subprocess.run(
+                ["lsof", "-i", f":{port}", "-t"],
+                capture_output=True, text=True, timeout=5
+            )
+            if result.stdout.strip():
+                pid = result.stdout.strip().split("\n")[0]
+                return f"PID: {pid}"
+    except Exception:
+        pass
+    return "unknown process"
 
 
 # ─── Platform Detection ────────────────────────────────────────
@@ -185,6 +243,18 @@ def start_tunnel(binary_path, port, protocol="http", metrics_port=None, quiet=Fa
     In quiet mode: outputs ONLY the URL line, then keeps tunnel alive.
     In normal mode: shows full UI with instructions.
     """
+    # ─── Server-running check ───
+    # Tunnel connects TO a local server, so the port MUST be busy.
+    # If port is free → no server is running → warn the user.
+    if not is_port_busy(port):
+        if quiet:
+            print(f"WARN=no_server (port {port} is not in use — is your server running?)")
+            sys.stdout.flush()
+        else:
+            print(f"\n⚠️  Port {port} appears to be free — no server detected!")
+            print(f"   Make sure your local server is running on port {port} first.")
+            print(f"   Starting tunnel anyway (server may start later)...\n")
+
     url = f"{protocol}://localhost:{port}"
     cmd = [binary_path, "tunnel", "--url", url]
 
@@ -313,17 +383,20 @@ Examples:
   python tunnel.py --port 3000              # Expose localhost:3000
   python tunnel.py --port 8080 --install    # Install cloudflared + start tunnel
   python tunnel.py --check                  # Check installation
+  python tunnel.py --find-port              # Pre-flight: find a free port
+  python tunnel.py --find-port --start 5000 # Find free port starting from 5000
   python tunnel.py --port 3000 --quiet      # Agent mode: output only TUNNEL_URL=...
 
-How it works:
-  1. Downloads cloudflared (if needed)
-  2. Creates a temporary Cloudflare Tunnel
-  3. Gives you a public *.trycloudflare.com URL
-  4. No account, no domain, no hosting needed!
+Agent workflow (port-safe):
+  Step 1: --find-port --quiet               → FREE_PORT=XXXX
+  Step 2: Start your server on that port
+  Step 3: --port XXXX --quiet               → TUNNEL_URL=https://...
 
 Agent (--quiet) mode output format:
+  FREE_PORT=XXXX                       (from --find-port)
   INSTALLED=/path/to/cloudflared       (if installed)
   TUNNEL_URL=https://xxx.trycloudflare.com  (when tunnel is ready)
+  ERROR=port_busy                      (port is in use)
   ERROR=message                        (if something fails)
         """
     )
@@ -349,6 +422,18 @@ Agent (--quiet) mode output format:
         help="Agent mode: output only machine-parseable lines (TUNNEL_URL=, ERROR=, STATUS=)"
     )
     parser.add_argument(
+        "--find-port", action="store_true",
+        help="Pre-flight: scan for a free port and return it (does NOT start tunnel)"
+    )
+    parser.add_argument(
+        "--start", type=int, default=3000,
+        help="Starting port number for --find-port scan (default: 3000)"
+    )
+    parser.add_argument(
+        "--auto-port", action="store_true",
+        help="If target port is busy, auto-find a free port nearby"
+    )
+    parser.add_argument(
         "--metrics-port", type=int, default=None,
         help="Port for cloudflared metrics server"
     )
@@ -358,6 +443,24 @@ Agent (--quiet) mode output format:
     # Status check
     if args.check:
         check_status(quiet=args.quiet)
+        return
+
+    # Pre-flight: find a free port (does NOT start tunnel or need cloudflared)
+    if args.find_port:
+        port = find_free_port(start=args.start)
+        if port:
+            if args.quiet:
+                print(f"FREE_PORT={port}")
+            else:
+                print(f"\n✅ Free port found: {port}")
+                print(f"   Use: python server.py --port {port}")
+                print(f"   Then: python tunnel.py --port {port}\n")
+        else:
+            if args.quiet:
+                print("ERROR=no_free_port")
+            else:
+                print("\n❌ No free port found in range 3000-9999")
+            sys.exit(1)
         return
 
     # Find or install cloudflared
@@ -380,7 +483,31 @@ Agent (--quiet) mode output format:
 
     # Start tunnel
     if args.port:
-        start_tunnel(binary, args.port, args.protocol, args.metrics_port, quiet=args.quiet)
+        port = args.port
+
+        # Auto-port: if target port is busy, find a free one nearby
+        if args.auto_port and is_port_busy(port):
+            proc_info = get_port_process(port)
+            if args.quiet:
+                print(f"WARN=port_busy (port {port} used by {proc_info})")
+            else:
+                print(f"⚠️  Port {port} is busy ({proc_info}), finding free port...")
+
+            free = find_free_port(port + 1)
+            if free:
+                if args.quiet:
+                    print(f"FREE_PORT={free}")
+                else:
+                    print(f"✅ Found free port: {free}")
+                port = free
+            else:
+                if args.quiet:
+                    print("ERROR=no_free_port")
+                else:
+                    print("❌ No free port found!")
+                sys.exit(1)
+
+        start_tunnel(binary, port, args.protocol, args.metrics_port, quiet=args.quiet)
     elif args.install:
         if args.quiet:
             print(f"INSTALLED={binary}")

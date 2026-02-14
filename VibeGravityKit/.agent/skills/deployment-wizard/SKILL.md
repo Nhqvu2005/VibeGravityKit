@@ -19,52 +19,58 @@ Perfect for demos, testing, sharing local dev servers — without hosting or dom
 
 ### Human Mode (interactive UI)
 ```bash
+python .agent/skills/deployment-wizard/scripts/tunnel.py --find-port
+# ✅ Free port found: 3000
+
 python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000
-python .agent/skills/deployment-wizard/scripts/tunnel.py --port 8080 --install
 python .agent/skills/deployment-wizard/scripts/tunnel.py --check
 ```
 
 ### Agent Mode (--quiet, machine-parseable output)
 ```bash
-# Check if installed
-python .agent/skills/deployment-wizard/scripts/tunnel.py --check --quiet
-# → STATUS=installed  BINARY=/path  VERSION=...
+# STEP 1: Pre-flight — find a free port (ALWAYS do this first!)
+python .agent/skills/deployment-wizard/scripts/tunnel.py --find-port --quiet
+# → FREE_PORT=3000
 
-# Install automatically
-python .agent/skills/deployment-wizard/scripts/tunnel.py --install --quiet
-# → INSTALLED=/path/to/cloudflared
+# STEP 2: Start your server on that port
+# (your server command here, using the FREE_PORT from step 1)
 
-# Start tunnel (outputs URL then keeps running)
+# STEP 3: Start tunnel on that port
 python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000 --quiet
 # → TUNNEL_URL=https://xxx.trycloudflare.com
 ```
 
-### Agent Automation Steps
-When user says "deploy", "share my site", "make it public", follow this:
-1. `--check --quiet` → verify installation
-2. `--install --quiet` → install if needed
-3. Ensure local server is running on PORT
-4. `--port PORT --quiet` → start tunnel (background command)
+### Port Safety
+> ⚠️ **NEVER start a server or tunnel on a port without checking first.**
+
+The `--find-port` command scans ports 3000-9999 and returns the first free one.
+Use `--start <N>` to search from a specific port: `--find-port --start 5000`
+
+### Agent Automation Steps (mandatory order)
+1. `--find-port --quiet` → get `FREE_PORT=XXXX` (do this BEFORE anything else)
+2. `--check --quiet` → verify cloudflared installed
+3. Start local server on `XXXX` (the free port from step 1)
+4. `--port XXXX --quiet` → start tunnel (background command)
 5. Parse `TUNNEL_URL=` from output → return to user
 
 ### Output Format (--quiet)
 | Output | Meaning |
 |--------|---------|
+| `FREE_PORT=XXXX` | Pre-flight: free port found |
 | `STATUS=installed` | cloudflared found |
 | `STATUS=not_installed` | Need to install |
 | `INSTALLED=/path` | Just installed |
 | `TUNNEL_URL=https://...` | Tunnel is live! |
+| `ERROR=port_busy` | Port is occupied |
 | `ERROR=message` | Something failed |
 
 ### Common Ports
-| Stack | Port | Command |
-|-------|------|---------|
-| React (Vite) | 5173 | `--port 5173` |
-| Next.js | 3000 | `--port 3000` |
-| Django | 8000 | `--port 8000` |
-| Flask | 5000 | `--port 5000` |
-| Express | 3000 | `--port 3000` |
-| PHP | 8080 | `--port 8080` |
+| Stack | Default Port | Note |
+|-------|-------------|------|
+| React (Vite) | 5173 | Always use --find-port first |
+| Next.js | 3000 | May conflict with other Node apps |
+| Django | 8000 | Often used by other services |
+| Flask | 5000 | macOS AirPlay uses 5000 |
 
 ## Requirements
 - Python 3.9+ (stdlib only — zero pip dependencies)
