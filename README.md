@@ -273,6 +273,15 @@ python .agent/skills/template-marketplace/scripts/template_engine.py --action sh
 
 ## 📋 Changelog
 
+### v2.8.0
+- 🚀 **Deployment Wizard** — Deploy local websites to the internet via Cloudflare Tunnel. Zero hosting, zero domain, zero config.
+  - `--find-port` pre-flight scan, `--serve-cmd` per-stack lookup (13 stacks)
+  - `--quiet` agent mode with machine-parseable output
+- 🎯 **Token-Optimized Deploy** — "Textbook switching" pattern: devops.md points to compact recipe only when deploying
+  - `deploy_recipe.md` (30 lines) replaces 70-line inline instructions
+  - `deploy_templates.json` with per-stack serve commands
+- 📦 **Tech Stack Advisor** expanded — 10 categories, 56+ technologies, 25 full-stack combos
+
 ### v2.7.0
 - ⚡ **Parallel Agent Delegation** — Leader calls multiple agents simultaneously. Up to **4x faster** builds.
 - 🔍 **Researcher Agent + DuckDuckGo Web Search** — Live web search using only Python stdlib (no pip, no API key). `--compact` mode for token-efficient output.
