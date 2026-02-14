@@ -1,7 +1,7 @@
 # 🌌 VibeGravityKit
 
 > **The AI-Native Software House in a Box.**
-> *Build enterprise-grade software with a team of 17 AI Agents — with **parallel delegation** for maximum speed and minimum token costs.*
+> *Build enterprise-grade software with a team of 18 AI Agents — with **parallel delegation** for maximum speed and minimum token costs.*
 
 ---
 
@@ -9,9 +9,41 @@
 
 VibeGravityKit gives you **two powerful work modes** to build software with your AI team:
 
-### Mode 1: `@[/leader]` — Smart Delegation (Recommended)
+### Mode 1: `@[/quickstart]` — Instant Build (Recommended)
 
-> **You are the Boss. The Leader is your right hand.**
+> **Nói ý tưởng → Nhận sản phẩm hoàn chỉnh.** Đồ ăn liền cho mọi người.
+
+```
+You → Leader confirms plan → Auto-build → ♻️ Verify Loop → Deploy → Done!
+```
+
+**Perfect for:** MVPs, prototypes, demos, non-tech users who just want results.
+
+**How it works:**
+1. Describe your idea — even vague is fine ("tôi muốn làm web bán hàng").
+2. Leader auto-detects tech stack + checks template marketplace (saves ~70% tokens if match).
+3. **Leader shows you a simple checklist** — you approve/edit before building.
+4. Build runs **fully automatic** with parallel agents.
+5. **♻️ Completion Loop (max 5)**: Leader scans codebase to verify EVERY feature in your checklist actually works. Missing or broken? → dispatches sub-agent to fix → loops until all ✅.
+6. **Auto-deploys** via Cloudflare Tunnel → you get a live link immediately.
+
+**Example:**
+```
+You: "Tạo web rút gọn link đơn giản"
+Quickstart:
+  📋 Plan: [Trang chủ ✓] [Rút gọn URL ✓] [Redirect ✓] [Copy link ✓]
+  "Bạn muốn thêm/bớt gì không?"
+You: "OK ✅"
+Quickstart:
+  🔥 Đang thiết kế... → 💻 Đang code... → ♻️ Kiểm tra tính năng (2/5)...
+  🚀 Xong! https://xxx.trycloudflare.com
+```
+
+---
+
+### Mode 2: `@[/leader]` — Smart Delegation
+
+> **You are the Boss. The Leader is your right hand.** Full control, approve each phase.
 
 ```
 You → Leader → Agents → Report back per phase → You approve → Next phase
@@ -32,8 +64,8 @@ You → Leader → Agents → Report back per phase → You approve → Next pha
 | 🚀 Launch | `@[/devops]` + `@[/security]` + `@[/seo]` + `@[/docs]` | Deploy, audit, SEO, docs — all at once | ⚡ **PARALLEL** |
 
 5. **After each phase**, Leader reports results and waits for your approval.
-6. **⚡ Parallel Delegation**: Architecture + Design run at the same time. Frontend + Backend run at the same time. Security + SEO + DevOps + Docs run at the same time. **Up to 4x faster** than sequential.
-7. **QA Smart Loop**: If a bug can't be fixed, Leader calls `@[/meta-thinker]` + `@[/planner]` to rethink the approach. Max **3 retries** — then reports to you with analysis.
+6. **⚡ Parallel Delegation**: Architecture + Design run at the same time. Frontend + Backend run at the same time. **Up to 4x faster.**
+7. **QA Smart Loop**: If a bug can't be fixed, Leader calls `@[/meta-thinker]` + `@[/planner]` to rethink the approach. Max **3 retries**.
 
 **Example:**
 ```
@@ -46,41 +78,16 @@ Leader: [Auto-delegates to Planner → Architect → Designer → Dev → QA →
 
 ---
 
-### Mode 2: `@[/quickstart]` — Full Autopilot
-
-> **One command. Complete project. No approvals needed.**
-
-```
-You → Quickstart → [Auto-runs ALL agents] → Delivers complete project
-```
-
-**Perfect for:** MVPs, prototypes, hackathons, or when you just want results fast.
-
-**How it works:**
-1. Describe your idea.
-2. Quickstart runs **every phase automatically** — no checkpoints.
-3. Built-in **QA Auto-Fix Loop**: finds bugs → fixes them → retests. If stuck, calls `@[/meta-thinker]` + `@[/planner]` to rethink. Max **5 retries** per bug.
-4. Delivers a **complete report** at the end: what was built, test results, unresolved issues (if any), and how to run it.
-
-**Example:**
-```
-You: "@[/quickstart] Build a task management app with React + Express + PostgreSQL"
-Quickstart: [Runs everything automatically...]
-Quickstart: "✅ Done! Here's your report: 12 features built, 47/50 tests passing,
-             3 unresolved edge cases documented. Run `npm run dev` to start."
-```
-
----
-
 ### Mode Comparison
 
-| | `@[/leader]` | `@[/quickstart]` |
+| | `@[/quickstart]` | `@[/leader]` |
 |---|---|---|
-| **User involvement** | Approve each phase | None (fully auto) |
-| **Parallel agents** | ⚡ Yes (up to 4x faster) | ⚡ Yes |
-| **Bug fix retries** | 3 max | 5 max |
-| **Smart rethinking** | ✅ Meta Thinker + Planner | ✅ Meta Thinker + Planner |
-| **Best for** | Production apps, critical projects | MVPs, prototypes, demos |
+| **User involvement** | Approve plan only | Approve each phase |
+| **Parallel agents** | ⚡ Yes | ⚡ Yes |
+| **Completion verification** | ♻️ Loop max 5 (codebase scan) | Manual per phase |
+| **Auto-deploy** | ✅ Cloudflare Tunnel | Manual |
+| **Template-first** | ✅ Auto-detect | Manual |
+| **Best for** | MVPs, demos, non-tech users | Production apps, critical projects |
 
 ---
 
