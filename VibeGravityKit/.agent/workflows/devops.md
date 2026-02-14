@@ -35,3 +35,14 @@ python .agent/skills/ci-cd-setup/scripts/ci_gen.py --type node --platform github
     ```bash
     python .agent/skills/readme-generator/scripts/readme_gen.py --name "My App" > README.md
     ```
+
+### Step 4: Quick Deploy (Cloudflare Tunnel)
+If user needs to share/demo their local site without hosting or domain:
+```bash
+# Expose local dev server to the internet instantly
+python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000
+
+# Auto-install cloudflared if not found
+python .agent/skills/deployment-wizard/scripts/tunnel.py --port 3000 --install
+```
+> Generates a public `*.trycloudflare.com` URL. No account, no config needed.

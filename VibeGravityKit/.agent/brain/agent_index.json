@@ -107,7 +107,8 @@
             "skills": [
                 "docker-wizard",
                 "ci-cd-setup",
-                "reliability-engineer"
+                "reliability-engineer",
+                "deployment-wizard"
             ]
         },
         "qa-engineer": {
