@@ -519,16 +519,7 @@ python .agent/skills/template-marketplace/scripts/template_engine.py --action sh
 - **Meta Thinker expanded** — 45 industries, 15 frameworks, 25 archetypes, 16 monetization models, 300+ feature ideas
 - **18 agents** total (was 17)
 
-### v2.6.0
-- **Smart Context Protocol** — Universal data query router across 34+ data sources (saves ~70% tokens)
-- **Code Reviewer Agent** (`@[/code-reviewer]`) — Regex-based code quality scanner with 20 rules
-- **Release Manager Agent** (`@[/release-manager]`) — Auto changelog, semver bumping, release notes
-- **Template Marketplace** — 7 pre-built templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile)
-
-### v2.5.0
-- **Leader Orchestration Mode** — Leader auto-delegates to agents, reports per phase, QA loop with smart retries (max 3)
-- **Quickstart Autopilot Mode** — Fully automated end-to-end project build, QA auto-fix (max 5 retries)
-- **Smart Bug Fix Rethinking** — Failed fixes trigger Meta Thinker + Planner to brainstorm alternative approaches
+> 📄 **[View full changelog →](CHANGELOG.md)**
 
 ## ❤️ Credits
 Special thanks to **[ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** for pioneering the data-driven approach to UI/UX generation.
