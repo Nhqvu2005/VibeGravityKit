@@ -494,6 +494,16 @@ python .agent/skills/template-marketplace/scripts/template_engine.py --action sh
 
 ## 📋 Changelog
 
+### v2.9.0
+- 🧬 **Team Profiles** — Persistent coding style, rules, and knowledge across projects
+  - `team create`, `team scan`, `team learn`, `team inject`, `team sync`, `team export/import`
+  - **Code Scanner** — auto-detects stack, naming, architecture from source files
+  - **Team DNA** — compact 1-line profile (~50 tokens) for token efficiency
+  - **3-Tier Memory** (Hot/Warm/Cold) with TF-IDF search
+  - **Auto-Learn** — leader passively scans code + records directives at plan/phase triggers
+  - **Rule Deduplication** — Jaccard similarity + stemming prevents file bloat, auto-promotes at freq ≥ 3
+  - `init --team <name>` to inject team profile on project setup
+
 ### v2.8.0
 - 🚀 **Deployment Wizard** — Deploy local websites to the internet via Cloudflare Tunnel. Zero hosting, zero domain, zero config.
   - `--find-port` pre-flight scan, `--serve-cmd` per-stack lookup (13 stacks)
