@@ -3,6 +3,29 @@
 All notable changes to **VibeGravityKit** will be documented in this file.
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [3.0.0] - 2025-02-15
+
+### Added
+- **Team Profiles** — Persistent coding style, rules, and knowledge across projects
+  - **Code Scanner**: Auto-detect stack, naming, comments, error handling, architecture, quotes, indent
+  - **Team DNA**: 1-line compact format (~50 tokens) — injected into every agent
+  - **3-Tier Memory**: Hot (always loaded) / Warm (TF-IDF search) / Cold (archived)
+  - **Per-agent rule routing**: Each agent only loads its relevant rules
+  - **Journal sync**: Bug fix knowledge transfers across projects — no agent hits the same bug twice
+  - **Auto-learn**: Agents detect repeated directives → auto-add to team rules
+  - **TF-IDF dedup**: Similar journal entries auto-merge instead of duplicating
+  - **Frequency decay**: Unused rules auto-demote, frequently used rules auto-promote
+- **CLI**: `vibegravity team create/list/show/delete/sync/export/import`
+- **CLI**: `vibegravity team rule add/list/remove`
+- **CLI**: `vibegravity init --team <name>` flag for team injection
+- **Workflow integration**: Leader and Quickstart auto-read team DNA and rules
+
+### Changed
+- Quickstart intro rewritten in English (was Vietnamese)
+- README restructured: new Team Profiles section with detailed documentation
+- CLI commands section converted to table format
+- Agent count: 18 agents + 1 new skill (team-manager)
+
 ## [2.8.0] - 2025-02-15
 
 ### Added

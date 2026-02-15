@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import click
+import json
 import os
 import shutil
+import sys
 from pathlib import Path
 
 # Get the absolute path to the VibeGravityKit source directory
@@ -15,10 +17,12 @@ def main():
 
 @main.command()
 @click.argument('ide', default='all', required=False)
-def init(ide):
+@click.option('--team', default=None, help='Team profile to inject (from ~/.vibegravity/teams/)')
+def init(ide, team):
     """Initialize VibeGravityKit in the current directory.
     
     Supported: all (default), antigravity, cursor, windsurf, cline
+    Use --team to inject a persistent team profile.
     """
     package_dir = Path(__file__).resolve().parent
     
@@ -79,6 +83,31 @@ def init(ide):
             click.echo(f"  ❌ {target_ide}: {str(e)}")
     
     click.echo(f"\n✨ Done! Installed for {installed} IDE(s).")
+
+    # Inject team profile if specified
+    if team:
+        scripts_dir = package_dir / ".agent" / "skills" / "team-manager" / "scripts"
+        sys.path.insert(0, str(scripts_dir))
+        try:
+            from team_manager import inject_team, get_team_dir
+            team_dir = get_team_dir(team)
+            if not team_dir.exists():
+                click.echo(f"\n⚠️  Team '{team}' not found. Skipping team injection.")
+                click.echo(f"   Create one: vibegravity team create {team} --scan ./your-project")
+            else:
+                if inject_team(team, str(Path.cwd())):
+                    click.echo(f"\n🧬 Team '{team}' injected!")
+                    dna_file = team_dir / "hot" / "team.dna"
+                    if dna_file.exists():
+                        click.echo(f"   DNA: {dna_file.read_text(encoding='utf-8').strip()[:80]}")
+        except ImportError:
+            click.echo(f"\n⚠️  team-manager skill not found. Team injection skipped.")
+        finally:
+            if str(scripts_dir) in sys.path:
+                sys.path.remove(str(scripts_dir))
+    else:
+        click.echo("\n💡 Tip: Use --team <name> to inject your coding style and knowledge.")
+
     click.echo("👉 Use @[/planner], @[/architect], etc. in your AI chat.")
 
 @main.command()
@@ -226,6 +255,132 @@ def journal(ctx):
         click.echo("❌ journal-manager skill not found. Run 'vibegravity init' first.")
         return
     sp.run(["python", str(script)] + ctx.args)
+
+@main.group(context_settings=dict(ignore_unknown_options=True, allow_extra_args=True))
+@click.pass_context
+def team(ctx):
+    """Manage persistent team profiles — style, rules, and knowledge."""
+    pass
+
+@team.command("create")
+@click.argument('name')
+@click.option('--scan', default=None, help='Path to existing project to scan')
+def team_create(name, scan):
+    """Create a new team profile."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    cmd = ["python", str(script), "create", name]
+    if scan:
+        cmd.extend(["--scan", scan])
+    sp.run(cmd)
+
+@team.command("list")
+def team_list():
+    """List all team profiles."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "list"])
+
+@team.command("show")
+@click.argument('name')
+def team_show(name):
+    """Show team profile details."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "show", name])
+
+@team.command("delete")
+@click.argument('name')
+def team_delete(name):
+    """Delete a team profile."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "delete", name])
+
+@team.command("sync")
+@click.argument('source')
+def team_sync(source):
+    """Merge another team's knowledge into active team."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "sync", source])
+
+@team.command("export")
+@click.argument('name')
+def team_export(name):
+    """Export team profile as zip file."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "export", name])
+
+@team.command("import")
+@click.argument('zip_path')
+def team_import(zip_path):
+    """Import team profile from zip file."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "import", zip_path])
+
+@team.group("rule")
+def team_rule():
+    """Manage team rules."""
+    pass
+
+@team_rule.command("add")
+@click.argument('rule_text')
+@click.option('--agent', default='global', help='Target agent (default: global)')
+def rule_add(rule_text, agent):
+    """Add a rule to the active team."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    cmd = ["python", str(script), "rule", "add", rule_text, "--agent", agent]
+    sp.run(cmd)
+
+@team_rule.command("list")
+def rule_list():
+    """List all rules in active team."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "rule", "list"])
+
+@team_rule.command("remove")
+@click.argument('rule_id', type=int)
+def rule_remove(rule_id):
+    """Remove a rule by ID."""
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not script.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    sp.run(["python", str(script), "rule", "remove", str(rule_id)])
+
 
 if __name__ == "__main__":
     main()
