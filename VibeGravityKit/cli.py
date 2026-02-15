@@ -264,17 +264,58 @@ def team(ctx):
 
 @team.command("create")
 @click.argument('name')
-@click.option('--scan', default=None, help='Path to existing project to scan')
-def team_create(name, scan):
-    """Create a new team profile."""
+def team_create(name):
+    """Create a new empty team profile (learns as you work)."""
     import subprocess as sp
     script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
     if not script.exists():
         click.echo("❌ team-manager skill not found.")
         return
-    cmd = ["python", str(script), "create", name]
-    if scan:
-        cmd.extend(["--scan", scan])
+    sp.run(["python", str(script), "create", name])
+
+@team.command("scan")
+@click.argument('name')
+@click.option('--path', required=True, help='Path to project to scan')
+def team_scan(name, path):
+    """Manually scan a project to learn coding style (optional — agents auto-scan)."""
+    import subprocess as sp
+    scanner = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_scanner.py"
+    manager = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_manager.py"
+    if not scanner.exists():
+        click.echo("❌ team-manager skill not found.")
+        return
+    click.echo(f"🔍 Scanning {path}...")
+    # Scan and output
+    sp.run(["python", str(scanner), "--path", path])
+    # Update team with scan data
+    sp.run(["python", str(scanner), "--path", path, "--output",
+            str(Path.home() / ".vibegravity" / "teams" / name / "team.json")])
+    # Regenerate DNA
+    result = sp.run(["python", str(scanner), "--path", path, "--dna", "--quiet"],
+                    capture_output=True, text=True)
+    dna_line = result.stdout.strip().replace("TEAM_DNA=", "")
+    if dna_line:
+        dna_file = Path.home() / ".vibegravity" / "teams" / name / "hot" / "team.dna"
+        dna_file.parent.mkdir(parents=True, exist_ok=True)
+        dna_file.write_text(dna_line, encoding="utf-8")
+        click.echo(f"🧬 DNA updated: {dna_line[:80]}")
+
+@team.command("learn")
+@click.option('--conversations', default=None, help='Path to conversation logs dir')
+def team_learn(conversations):
+    """Scan conversation logs to extract coding habits and preferences.
+    
+    Runs automatically by leader/quickstart at plan confirmation.
+    Can also be run manually to learn from past conversations.
+    """
+    import subprocess as sp
+    script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_learner.py"
+    if not script.exists():
+        click.echo("❌ team-learner script not found.")
+        return
+    cmd = ["python", str(script)]
+    if conversations:
+        cmd.extend(["--conversations", conversations])
     sp.run(cmd)
 
 @team.command("list")

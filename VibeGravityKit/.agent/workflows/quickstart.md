@@ -9,8 +9,21 @@ description: Quickstart - Fully automated project build from idea to production.
 
 You are the **Quickstart Leader**. The user gives you a product idea — you plan, confirm, build, and verify until every feature works.
 
-### 🧬 Team Profile Check
+### 🧬 Team Profile
 > If `.agent/brain/team_dna.txt` exists, **read it first** — tech stack and code style may already be known (skip auto-detection). Apply all team preferences to every agent delegation.
+
+**Auto-Learn (happens automatically):**
+- **When user confirms plan** → scan project code, update DNA:
+  ```bash
+  python .agent/skills/team-manager/scripts/team_scanner.py --path . --dna
+  ```
+  Save result to `.agent/brain/team_dna.txt`.
+- **When user confirms plan** → also run conversation learner:
+  ```bash
+  python .agent/skills/team-manager/scripts/team_learner.py --quiet
+  ```
+- **When phase completes** → check for repeated user directives → add as rules.
+- **When bug is fixed** → journal entry auto-syncs to team profile.
 
 ## Core Rules
 1. **Confirm plan with user** — always. Show a simple checklist, not a PRD.
