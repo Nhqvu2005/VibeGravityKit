@@ -301,12 +301,19 @@ def team_scan(name, path):
         click.echo(f"🧬 DNA updated: {dna_line[:80]}")
 
 @team.command("learn")
-@click.option('--conversations', default=None, help='Path to conversation logs dir')
-def team_learn(conversations):
-    """Scan conversation logs to extract coding habits and preferences.
+@click.option('--scan-project', default=None, help='Project path to scan code style')
+@click.option('--directive', default=None, help='Explicit directive to add as rule')
+@click.option('--agent', default='global', help='Agent tag for directive')
+def team_learn(scan_project, directive, agent):
+    """Learn coding habits from project code or explicit directives.
     
-    Runs automatically by leader/quickstart at plan confirmation.
-    Can also be run manually to learn from past conversations.
+    Runs automatically by leader/quickstart at plan/phase confirmation.
+    Can also be run manually.
+
+    Examples:
+      vibegravity team learn --scan-project .
+      vibegravity team learn --directive "write docs in English"
+      vibegravity team learn --directive "use Tailwind" --agent frontend-dev
     """
     import subprocess as sp
     script = Path(__file__).resolve().parent / ".agent" / "skills" / "team-manager" / "scripts" / "team_learner.py"
@@ -314,8 +321,13 @@ def team_learn(conversations):
         click.echo("❌ team-learner script not found.")
         return
     cmd = ["python", str(script)]
-    if conversations:
-        cmd.extend(["--conversations", conversations])
+    if scan_project:
+        cmd.extend(["--scan-project", scan_project])
+    if directive:
+        cmd.extend(["--directive", directive, "--agent", agent])
+    if not scan_project and not directive:
+        # Default: scan current project
+        cmd.extend(["--scan-project", "."])
     sp.run(cmd)
 
 @team.command("list")

@@ -13,16 +13,14 @@ You are the **Quickstart Leader**. The user gives you a product idea — you pla
 > If `.agent/brain/team_dna.txt` exists, **read it first** — tech stack and code style may already be known (skip auto-detection). Apply all team preferences to every agent delegation.
 
 **Auto-Learn (happens automatically):**
-- **When user confirms plan** → scan project code, update DNA:
+- **When user confirms plan** → scan project code, update team DNA:
   ```bash
-  python .agent/skills/team-manager/scripts/team_scanner.py --path . --dna
+  python .agent/skills/team-manager/scripts/team_learner.py --scan-project . --quiet
   ```
-  Save result to `.agent/brain/team_dna.txt`.
-- **When user confirms plan** → also run conversation learner:
+- **When phase completes** → pass observed user directives:
   ```bash
-  python .agent/skills/team-manager/scripts/team_learner.py --quiet
+  python .agent/skills/team-manager/scripts/team_learner.py --directive "<what user said>" --agent <agent>
   ```
-- **When phase completes** → check for repeated user directives → add as rules.
 - **When bug is fixed** → journal entry auto-syncs to team profile.
 
 ## Core Rules

@@ -11,21 +11,17 @@ You are the **Team Lead**. The Manager (user) describes a product idea — you o
 > If `.agent/brain/team_rules.md` exists, read it too — these are the user's explicit rules.
 
 **Auto-Learn (update team profile as you work):**
-1. **On plan confirmation** — run the team scanner to detect/update code style and DNA:
+1. **On plan confirmation** — scan project code to detect/update style and DNA:
    ```bash
-   python .agent/skills/team-manager/scripts/team_scanner.py --path . --dna
+   python .agent/skills/team-manager/scripts/team_learner.py --scan-project . --quiet
    ```
-   Save the output to `.agent/brain/team_dna.txt`.
-2. **On plan confirmation** — also run conversation learner to extract habits:
+   This auto-updates the team DNA file and `.agent/brain/team_dna.txt`.
+2. **On phase completion** — if user gave directives during this phase, pass each one:
    ```bash
-   python .agent/skills/team-manager/scripts/team_learner.py --quiet
+   python .agent/skills/team-manager/scripts/team_learner.py --directive "<what user said>" --agent <agent>
    ```
-   This scans recent conversation logs and auto-adds repeated directives as rules.
-3. **On phase completion** — if user gave repeated directives during this phase (e.g. "write in English", "always push"), note them as rules:
-   ```bash
-   python .agent/skills/team-manager/scripts/team_manager.py rule add "<directive>" --agent <agent>
-   ```
-4. **On bug fix** — ensure journal entry is created via journal-manager. It auto-syncs to team profile.
+   Examples: `--directive "write docs in English"`, `--directive "use Tailwind"  --agent frontend-dev`
+3. **On bug fix** — ensure journal entry is created via journal-manager. It auto-syncs to team profile.
 
 ## ⚡ Token Discipline — CRITICAL
 
