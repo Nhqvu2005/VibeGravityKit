@@ -327,10 +327,83 @@ def save_journal_back(name: str, project_path: str):
     print(f"✅ Synced {new_entries} new journal entries to team '{name}'.")
 
 
-# ── Rules Management ──────────────────────────────────────────────────
+def normalize_rule_text(text: str) -> str:
+    """Normalize rule text for comparison: lowercase, strip filler words, simple stemming."""
+    import re
+    text = text.lower().strip().rstrip(".,!;:")
+    # Remove ONLY pure filler/stop words (keep action verbs like write, use, prefer)
+    fillers = {"please", "always", "must", "should", "never", "the", "a", "an",
+               "to", "in", "for", "and", "or", "is", "be", "are", "it", "that",
+               "this", "with", "on", "at", "by", "of", "do", "don't", "dont",
+               "all", "every", "each", "any", "can", "will", "would", "could"}
+    tokens = re.split(r'\W+', text)
+    meaningful = [w for w in tokens if w and w not in fillers and len(w) > 1]
+
+    # Simple "stemming" — reduce common word endings to improve matching
+    # e.g. "documentation" → "document", "writing" → "writ"
+    stemmed = []
+    for w in meaningful:
+        if w.endswith("ation"):
+            w = w[:-5]
+        elif w.endswith("ment"):
+            w = w[:-4]
+        elif w.endswith("tion"):
+            w = w[:-4]
+        elif w.endswith("ing"):
+            w = w[:-3]
+        elif w.endswith("ly"):
+            w = w[:-2]
+        elif w.endswith("ness"):
+            w = w[:-4]
+        elif w.endswith("ful"):
+            w = w[:-3]
+        elif w.endswith("ous"):
+            w = w[:-3]
+        elif w.endswith("ive"):
+            w = w[:-3]
+        elif w.endswith("ed") and len(w) > 4:
+            w = w[:-2]
+        # Only keep if still meaningful
+        if len(w) > 1:
+            stemmed.append(w)
+    return " ".join(stemmed)
+
+
+def rule_similarity(text_a: str, text_b: str) -> float:
+    """Calculate Jaccard similarity between two rule texts (after normalization)."""
+    tokens_a = set(normalize_rule_text(text_a).split())
+    tokens_b = set(normalize_rule_text(text_b).split())
+    if not tokens_a or not tokens_b:
+        return 0.0
+
+    # Expand common abbreviations to improve matching
+    abbrevs = {"docs": "document", "doc": "document", "js": "javascript",
+               "ts": "typescript", "py": "python", "css": "css",
+               "env": "environment", "config": "configur", "repo": "reposit"}
+    tokens_a = {abbrevs.get(t, t) for t in tokens_a}
+    tokens_b = {abbrevs.get(t, t) for t in tokens_b}
+
+    intersection = tokens_a & tokens_b
+    union = tokens_a | tokens_b
+    return len(intersection) / len(union) if union else 0.0
+
+
+def find_similar_rule(rules: list[dict], new_text: str, threshold: float = 0.5) -> dict | None:
+    """Find the most similar existing rule above threshold. Returns the rule dict or None."""
+    best_match = None
+    best_score = 0.0
+    for rule in rules:
+        score = rule_similarity(new_text, rule.get("text", ""))
+        if score > best_score:
+            best_score = score
+            best_match = rule
+    if best_score >= threshold:
+        return best_match
+    return None
+
 
 def add_rule(name: str, rule_text: str, agent: str = "global"):
-    """Add a rule to the team."""
+    """Add a rule to the team. If a semantically similar rule exists, increment its frequency instead."""
     team_dir = get_team_dir(name)
     if not team_dir.exists():
         print(f"❌ Team '{name}' not found.")
@@ -339,8 +412,27 @@ def add_rule(name: str, rule_text: str, agent: str = "global"):
     rules_file = team_dir / "warm" / "rules.json"
     rules_data = json.loads(rules_file.read_text(encoding="utf-8")) if rules_file.exists() else {"global": [], "rules": []}
 
+    # Dedup check: find semantically similar rule
+    existing_rules = rules_data.get("rules", [])
+    similar = find_similar_rule(existing_rules, rule_text)
+
+    if similar:
+        # Rule already exists (or very similar) → increment frequency
+        similar["frequency"] = similar.get("frequency", 1) + 1
+        similar["last_used"] = datetime.now().isoformat()
+        rules_file.write_text(json.dumps(rules_data, indent=2, ensure_ascii=False), encoding="utf-8")
+        freq = similar["frequency"]
+        print(f"  🔄 Similar rule exists: \"{similar['text']}\" → frequency={freq}")
+
+        # Auto-promote to Hot if frequency >= 3
+        if freq >= 3:
+            promote_hot_rules(name, min_frequency=3)
+            print(f"  🔥 Auto-promoted to Hot tier!")
+        return
+
+    # New rule
     rule_entry = {
-        "id": len(rules_data.get("rules", [])) + 1,
+        "id": max([r.get("id", 0) for r in existing_rules], default=0) + 1,
         "text": rule_text,
         "agent": agent,
         "frequency": 1,
@@ -349,7 +441,7 @@ def add_rule(name: str, rule_text: str, agent: str = "global"):
     }
 
     if agent == "global":
-        rules_data["global"].append(rule_text)
+        rules_data.setdefault("global", []).append(rule_text)
     rules_data.setdefault("rules", []).append(rule_entry)
 
     rules_file.write_text(json.dumps(rules_data, indent=2, ensure_ascii=False), encoding="utf-8")

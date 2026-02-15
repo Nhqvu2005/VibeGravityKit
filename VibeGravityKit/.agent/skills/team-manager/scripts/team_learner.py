@@ -135,38 +135,15 @@ def learn_from_project(project_path: str, quiet: bool = False) -> dict:
 
 
 def add_directive(directive: str, agent: str = "global", quiet: bool = False):
-    """Add an observed directive as a rule."""
+    """Add an observed directive as a rule. Dedup is handled by add_rule automatically."""
     active_team = get_active_team()
     if not active_team:
         if not quiet:
             print("❌ No active team.")
         return
 
-    team_dir = get_team_dir(active_team)
-    if not team_dir.exists():
-        return
-
-    # Check if rule already exists
-    rules_file = team_dir / "warm" / "rules.json"
-    if rules_file.exists():
-        rules_data = json.loads(rules_file.read_text(encoding="utf-8"))
-        existing = {r.get("text", "").lower() for r in rules_data.get("rules", [])}
-        if directive.lower() in existing:
-            # Increment frequency instead
-            for r in rules_data.get("rules", []):
-                if r.get("text", "").lower() == directive.lower():
-                    r["frequency"] = r.get("frequency", 1) + 1
-                    from datetime import datetime
-                    r["last_used"] = datetime.now().isoformat()
-                    break
-            rules_file.write_text(json.dumps(rules_data, indent=2, ensure_ascii=False), encoding="utf-8")
-            if not quiet:
-                print(f"  📝 Frequency++ for: \"{directive}\"")
-            return
-
+    # add_rule handles dedup (Jaccard similarity check + frequency increment)
     add_rule(active_team, directive, agent)
-    if not quiet:
-        print(f"  ✅ New rule: \"{directive}\" (agent: {agent})")
 
 
 def main():
