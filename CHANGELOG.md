@@ -3,7 +3,7 @@
 All notable changes to **VibeGravityKit** will be documented in this file.
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
-## [3.0.0] - 2025-02-15
+## [2.9.0] - 2025-02-15
 
 ### Added
 - **Team Profiles** — Persistent coding style, rules, and knowledge across projects
