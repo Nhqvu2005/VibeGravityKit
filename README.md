@@ -107,12 +107,12 @@ Leader: [Auto-delegates to Planner → Architect → Designer → Dev → QA →
 | **Best for** | MVPs, demos, non-tech users | Production apps, critical projects |
 ---
 
-## 🧬 Team Profiles — Carry Your Style Across Projects
+## 🧬 Team Profiles — Carry Your Style Across Projects (v2.9.0)
 
 > **Problem:** Every `vibegravity init` starts fresh — agents forget your coding style, tech preferences, and hard-won bug fixes.
 > **Solution:** Persistent team profiles that **learn from you automatically** as you work, and carry that knowledge to every new project.
 
-### How It Works
+### Quick Start
 
 ```bash
 # Step 1: Create an empty team
@@ -123,57 +123,100 @@ vibegravity init antigravity --team my-team
 
 # Step 3: Just work normally with @[/leader] or @[/quickstart]
 # → The agents AUTO-LEARN your coding style every time you:
-#    ✅ Confirm a plan
-#    ✅ Complete a work phase
-#    ✅ Fix a bug (journal entry)
+#    ✅ Confirm a plan  → code scanned, DNA updated
+#    ✅ Complete a phase → directives you said become rules
+#    ✅ Fix a bug        → journal entry synced to team
 ```
 
-**That's it.** You don't need to configure anything. The team profile learns passively as you work. Over time, it builds a complete picture of your coding style, preferences, and lessons learned.
+**That's it.** No config files, no manual setup. The team learns passively.
 
-### The Learning Lifecycle
+### How Auto-Learn Actually Works
+
+The **leader/quickstart** agent acts as the observer. At each trigger point, it calls `team_learner.py`:
+
+| Trigger | What Happens | Command Agent Runs |
+|---------|-------------|-------------------|
+| 🔵 **Plan confirmed** | Scans project source code → detects stack, naming style, architecture → generates/updates Team DNA | `team_learner.py --scan-project .` |
+| 🟢 **Phase completed** | Leader observed your directives (e.g. "write in English") → passes each one as a rule | `team_learner.py --directive "write in English"` |
+| 🔴 **Bug fixed** | Journal entry auto-syncs to team profile | `team_manager.py save-back` |
+| 🟡 **Manual scan** | You force-scan an existing codebase (optional) | `vibegravity team scan my-team --path ./project` |
+| 🟣 **Manual learn** | You ask team to learn from current project | `vibegravity team learn` |
+
+### Data Storage
+
+All team data is stored **globally** (survives across projects):
 
 ```
-┌──────────────┐     ┌──────────────────┐     ┌────────────────┐
-│  team create │────▶│  init --team     │────▶│  Work with     │
-│  (empty)     │     │  (inject DNA)    │     │  leader/QS     │
-└──────────────┘     └──────────────────┘     └───────┬────────┘
-                                                      │
-                              ┌────────────────────────┘
-                              ▼
-                     ┌──────────────────┐
-                     │  AUTO-LEARN      │◀── happens at plan confirmation
-                     │  • Scan code     │◀── happens at phase completion
-                     │  • Detect style  │◀── happens on bug fix
-                     │  • Update DNA    │
-                     │  • Save rules    │
-                     └───────┬──────────┘
-                             │
-                             ▼
-                     ┌──────────────────┐     ┌───────────────┐
-                     │  Team DNA grows  │────▶│  Next project │
-                     │  with every      │     │  inherits ALL │
-                     │  project         │     │  the knowledge│
-                     └──────────────────┘     └───────────────┘
+~/.vibegravity/teams/<name>/
+├── team.json               ← Main metadata (name, created_at, stack, code_style)
+├── hot/                     ← ALWAYS loaded (~50 tokens)
+│   ├── team.dna             ← 1-line DNA string (auto-generated)
+│   └── top_rules.md         ← Auto-promoted rules (frequency ≥ 3)
+├── warm/                    ← Loaded on demand (TF-IDF search)
+│   ├── rules.json           ← ALL rules with dedup tracking
+│   └── journal/
+│       ├── index.json       ← Bug fix entries (title, tags, frequency)
+│       └── entries/*.md     ← Full journal entries
+└── cold/                    ← Archived (0 tokens unless requested)
+    └── history/             ← Old DNA versions for rollback
 ```
 
-### What Happens at Each Stage
+When injected into a project (`init --team`), DNA and rules are copied to `.agent/brain/`:
+```
+.agent/brain/
+├── team_dna.txt             ← DNA string for agents to read
+├── team_rules.md            ← Hot rules (always applied)
+├── team_rules/              ← Per-agent rules
+│   ├── global.md
+│   └── frontend-dev.md
+└── team_meta.json           ← Which team, injected when
+```
 
-| When | What Gets Learned |
-|------|-------------------|
-| 🔵 **Plan confirmation** | Stack auto-detected, code scanned, DNA generated/updated |
-| 🟢 **Phase completion** | Rules extracted from user directives, coding patterns reinforced |
-| 🔴 **Bug fix** | Journal entry created and synced to team — no agent hits same bug twice |
-| 🟡 **Manual scan** (optional) | `vibegravity team scan my-team --path ./project` — force-learn from existing code |
+### Rule Deduplication (Prevents File Bloat)
+
+When a directive is added (manually or by the leader), the system checks if a **similar rule already exists** before creating a new one:
+
+1. **Normalize** — strips filler words ("please", "always", "must", "should"...)
+2. **Stem** — reduces suffixes: "documentation" → "document", "writing" → "writ"
+3. **Abbreviation expand** — "docs" → "document", "ts" → "typescript"
+4. **Jaccard similarity** — compares token overlap (threshold ≥ 50%)
+5. **If match found** → increments `frequency` instead of creating duplicate
+6. **If frequency ≥ 3** → auto-promoted to Hot tier (loaded every session)
+
+```
+Example:
+  Existing rule: "write docs in English"           (freq: 2)
+  New directive:  "always write documentation in English"
+  → Normalized:   "write document english" = "write document english"
+  → Similarity:   1.0 (exact match after normalization)
+  → Result:       frequency → 3, auto-promoted to Hot 🔥
+```
+
+### rules.json Format
+
+```json
+{
+  "global": ["write docs in English"],
+  "rules": [
+    {
+      "id": 1,
+      "text": "write docs in English",
+      "agent": "global",
+      "frequency": 3,
+      "created_at": "2026-02-15T10:00:00",
+      "last_used": "2026-02-15T10:28:00"
+    }
+  ]
+}
+```
 
 ### 3-Tier Memory System
-
-Your team knowledge is organized into 3 tiers for maximum token efficiency:
 
 | Tier | What's Stored | Token Cost | When Loaded |
 |------|--------------|------------|-------------|
 | 🔴 **Hot** | Team DNA (1 line) + top rules | ~50 tokens | Always — every session |
 | 🟡 **Warm** | Full rules + journal index | ~200 tokens | On demand — TF-IDF search |
-| 🔵 **Cold** | Archived entries + history | 0 tokens | Only when you ask |
+| 🔵 **Cold** | Archived entries + DNA history | 0 tokens | Only when you ask |
 
 ### Team DNA — Your Style in One Line
 
@@ -183,7 +226,7 @@ naming:camelCase|comments:minimal|lang:typescript+python|fe:react|be:fastapi|css
 
 This compact format (~50 tokens) tells every agent exactly how you like your code. It grows automatically as you work — you never need to write it manually.
 
-### What Gets Detected
+### What Gets Detected (by Code Scanner)
 
 | Category | Detected From |
 |----------|--------------|
@@ -193,7 +236,6 @@ This compact format (~50 tokens) tells every agent exactly how you like your cod
 | Error handling | try/catch frequency per function |
 | Architecture | Folder structure: feature-based vs layer-based |
 | Quotes, semicolons, indent | Source file analysis |
-| User preferences | Repeated directives in conversations |
 
 ### CLI Commands
 
@@ -204,8 +246,10 @@ vibegravity team list                         # List all teams
 vibegravity team show <name>                  # Show DNA + stats
 vibegravity team delete <name>                # Delete team
 
-# Manual scan (optional — agents auto-scan during work)
-vibegravity team scan <name> --path <project> # Force-learn from existing code
+# Learning
+vibegravity team scan <name> --path <project> # Manually scan code into team (optional)
+vibegravity team learn                        # Scan current project code style
+vibegravity team learn --directive "text"     # Add a specific directive as rule
 
 # Rules — explicitly teach your team
 vibegravity team rule add "Always write docs in English"
@@ -219,14 +263,39 @@ vibegravity team export <name>                # Share as .zip
 vibegravity team import team-file.zip         # Import from .zip
 ```
 
-### Auto-Learn Examples
-
-After working on several projects, your team profile might look like:
+### The Learning Lifecycle
 
 ```
-Session 1: You tell leader "write all comments in English" → added to rules
-Session 2: You tell leader "write comments in English" again → frequency +1
-Session 3: Third time → auto-promoted to Hot rules (always applied)
+┌──────────────┐     ┌──────────────────┐     ┌────────────────┐
+│  team create │────▶│  init --team     │────▶│  Work with     │
+│  (empty)     │     │  (inject DNA)    │     │  leader/QS     │
+└──────────────┘     └──────────────────┘     └───────┬────────┘
+                                                      │
+                              ┌────────────────────────┘
+                              ▼
+                     ┌──────────────────┐
+                     │  AUTO-LEARN      │◀── plan confirmed → scan code
+                     │  • Scan code     │◀── phase done → save directives
+                     │  • Detect style  │◀── bug fixed → sync journal
+                     │  • Update DNA    │
+                     │  • Save rules    │
+                     │  • Dedup check   │
+                     └───────┬──────────┘
+                             │
+                             ▼
+                     ┌──────────────────┐     ┌───────────────┐
+                     │  Team DNA grows  │────▶│  Next project │
+                     │  with every      │     │  inherits ALL │
+                     │  project         │     │  the knowledge│
+                     └──────────────────┘     └───────────────┘
+```
+
+### Auto-Learn Examples
+
+```
+Session 1: You tell leader "write all comments in English" → added to rules (freq: 1)
+Session 2: You say "write comments in English" again → dedup match → freq: 2
+Session 3: Third time → freq: 3 → auto-promoted to Hot rules (always applied)
 
 Project A: Fixed "CORS issue with Vite proxy" → journal entry saved
 Project B: Agent encounters CORS → searches journal → finds fix → applies instantly
