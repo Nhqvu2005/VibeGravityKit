@@ -12,28 +12,94 @@
         "component_test": {
             "description": "Test React/Vue components",
             "react_template": "describe('{ComponentName}', () => {\n  it('renders correctly', () => {\n    render(<{ComponentName} />);\n    expect(screen.getByText('{expectedText}')).toBeInTheDocument();\n  });\n\n  it('handles click event', () => {\n    const onClick = jest.fn();\n    render(<{ComponentName} onClick={onClick} />);\n    fireEvent.click(screen.getByRole('button'));\n    expect(onClick).toHaveBeenCalledTimes(1);\n  });\n});"
+        },
+        "security_test": {
+            "description": "Test for common security vulnerabilities",
+            "xss_test": "it('should sanitize user input against XSS', () => {\n  const malicious = '<script>alert(\"xss\")</script>';\n  const result = sanitize(malicious);\n  expect(result).not.toContain('<script>');\n  expect(result).not.toContain('javascript:');\n});",
+            "sql_injection_test": "it('should prevent SQL injection', async () => {\n  const malicious = \"'; DROP TABLE users; --\";\n  const res = await request(app)\n    .get(`/api/users?search=${malicious}`)\n    .expect(200);\n  // Table should still exist\n  const users = await db.query('SELECT COUNT(*) FROM users');\n  expect(users.rows[0].count).toBeGreaterThan(0);\n});",
+            "csrf_test": "it('should reject request without CSRF token', async () => {\n  const res = await request(app)\n    .post('/api/users')\n    .send({ email: 'test@test.com' })\n    .expect(403);\n});",
+            "auth_bypass_test": "it('should reject unauthenticated request', async () => {\n  const res = await request(app)\n    .get('/api/admin/users')\n    .expect(401);\n});\n\nit('should reject expired token', async () => {\n  const expiredToken = generateExpiredToken();\n  const res = await request(app)\n    .get('/api/admin/users')\n    .set('Authorization', `Bearer ${expiredToken}`)\n    .expect(401);\n});",
+            "idor_test": "it('should prevent IDOR — user cannot access another users data', async () => {\n  const res = await request(app)\n    .get('/api/users/999')\n    .set('Authorization', `Bearer ${userAToken}`)\n    .expect(403);\n});",
+            "path_traversal_test": "it('should prevent path traversal', async () => {\n  const res = await request(app)\n    .get('/api/files?path=../../etc/passwd')\n    .expect(400);\n});"
+        },
+        "performance_test": {
+            "description": "Test performance and load handling",
+            "response_time_test": "it('should respond within 200ms', async () => {\n  const start = Date.now();\n  await request(app).get('/api/users').expect(200);\n  const duration = Date.now() - start;\n  expect(duration).toBeLessThan(200);\n});",
+            "concurrent_test": "it('should handle 100 concurrent requests', async () => {\n  const requests = Array.from({ length: 100 }, () =>\n    request(app).get('/api/users')\n  );\n  const results = await Promise.all(requests);\n  const failures = results.filter(r => r.status !== 200);\n  expect(failures.length).toBe(0);\n});",
+            "memory_test": "it('should not leak memory on large input', () => {\n  const before = process.memoryUsage().heapUsed;\n  processLargeData(new Array(100000).fill('data'));\n  global.gc && global.gc();\n  const after = process.memoryUsage().heapUsed;\n  const diff = after - before;\n  expect(diff).toBeLessThan(50 * 1024 * 1024); // Less than 50MB growth\n});",
+            "pagination_test": "it('should paginate large result sets', async () => {\n  const res = await request(app)\n    .get('/api/users?page=1&limit=10')\n    .expect(200);\n  expect(res.body.data.length).toBeLessThanOrEqual(10);\n  expect(res.body.meta).toHaveProperty('total');\n  expect(res.body.meta).toHaveProperty('page');\n});",
+            "locust_template": "from locust import HttpUser, task, between\n\nclass LoadTest(HttpUser):\n    wait_time = between(1, 3)\n\n    @task(3)\n    def get_users(self):\n        self.client.get('/api/users')\n\n    @task(1)\n    def create_user(self):\n        self.client.post('/api/users', json={\n            'email': f'user_{self.environment.runner.user_count}@test.com',\n            'password': 'Test123!'\n        })"
+        },
+        "e2e_browser_test": {
+            "description": "End-to-end browser tests using Playwright",
+            "login_flow": "test('user can login', async ({ page }) => {\n  await page.goto('/login');\n  await page.fill('#email', 'user@test.com');\n  await page.fill('#password', 'Pass123!');\n  await page.click('#submit-btn');\n  await expect(page).toHaveURL('/dashboard');\n  await expect(page.locator('.welcome-msg')).toContainText('Welcome');\n});",
+            "form_validation": "test('form shows validation errors', async ({ page }) => {\n  await page.goto('/register');\n  await page.click('#submit-btn');\n  await expect(page.locator('.error')).toBeVisible();\n  await expect(page.locator('#email-error')).toContainText('required');\n});",
+            "navigation_test": "test('navigation works correctly', async ({ page }) => {\n  await page.goto('/');\n  await page.click('nav >> text=Products');\n  await expect(page).toHaveURL('/products');\n  await page.goBack();\n  await expect(page).toHaveURL('/');\n});",
+            "responsive_test": "test('layout adapts to mobile', async ({ page }) => {\n  await page.setViewportSize({ width: 375, height: 667 });\n  await page.goto('/');\n  await expect(page.locator('.mobile-menu')).toBeVisible();\n  await expect(page.locator('.desktop-nav')).toBeHidden();\n});",
+            "accessibility_test": "test('page is accessible', async ({ page }) => {\n  await page.goto('/');\n  const violations = await new AxeBuilder({ page }).analyze();\n  expect(violations.violations).toHaveLength(0);\n});"
+        },
+        "database_test": {
+            "description": "Test database operations and data integrity",
+            "migration_test": "it('should run migrations without errors', async () => {\n  await expect(runMigrations()).resolves.not.toThrow();\n  const tables = await db.query(\"SELECT tablename FROM pg_tables WHERE schemaname='public'\");\n  expect(tables.rows.length).toBeGreaterThan(0);\n});",
+            "constraint_test": "it('should enforce unique email constraint', async () => {\n  await createUser({ email: 'test@test.com' });\n  await expect(createUser({ email: 'test@test.com' })).rejects.toThrow(/unique/);\n});",
+            "transaction_test": "it('should rollback on failure', async () => {\n  const beforeCount = await getUserCount();\n  try {\n    await db.transaction(async (trx) => {\n      await trx('users').insert({ email: 'test@test.com' });\n      throw new Error('Simulated failure');\n    });\n  } catch (e) {}\n  const afterCount = await getUserCount();\n  expect(afterCount).toBe(beforeCount);\n});",
+            "cascade_test": "it('should cascade delete related records', async () => {\n  const user = await createUser();\n  await createPost({ userId: user.id });\n  await deleteUser(user.id);\n  const posts = await getPostsByUser(user.id);\n  expect(posts).toHaveLength(0);\n});",
+            "index_performance_test": "it('should use index for common queries', async () => {\n  const explain = await db.raw('EXPLAIN ANALYZE SELECT * FROM users WHERE email = ?', ['test@test.com']);\n  expect(explain.rows[0]['QUERY PLAN']).toContain('Index Scan');\n});"
+        },
+        "error_handling_test": {
+            "description": "Test error paths and failure recovery",
+            "network_failure": "it('should handle network timeout gracefully', async () => {\n  jest.spyOn(axios, 'get').mockRejectedValue(new Error('TIMEOUT'));\n  const result = await fetchData();\n  expect(result).toEqual({ error: 'Network error', data: null });\n});",
+            "retry_logic": "it('should retry on transient failure', async () => {\n  const spy = jest.spyOn(axios, 'get')\n    .mockRejectedValueOnce(new Error('500'))\n    .mockRejectedValueOnce(new Error('500'))\n    .mockResolvedValue({ data: 'success' });\n  const result = await fetchWithRetry();\n  expect(spy).toHaveBeenCalledTimes(3);\n  expect(result).toBe('success');\n});",
+            "graceful_degradation": "it('should show fallback UI when API fails', async ({ page }) => {\n  await page.route('/api/data', route => route.abort());\n  await page.goto('/');\n  await expect(page.locator('.error-fallback')).toBeVisible();\n  await expect(page.locator('.retry-btn')).toBeVisible();\n});",
+            "validation_error": "it('should return structured validation errors', async () => {\n  const res = await request(app)\n    .post('/api/users')\n    .send({ email: 'bad' })\n    .expect(400);\n  expect(res.body.errors).toBeDefined();\n  expect(res.body.errors[0]).toHaveProperty('field');\n  expect(res.body.errors[0]).toHaveProperty('message');\n});"
         }
     },
     "coverage_targets": {
-        "minimum": "60% — acceptable for startups",
+        "minimum": "60% — acceptable for MVPs/prototypes",
         "good": "80% — recommended for production apps",
-        "excellent": "90%+ — critical systems (fintech, healthcare)"
+        "excellent": "90%+ — critical systems (fintech, healthcare, auth)"
     },
     "testing_pyramid": {
         "unit": {
             "percentage": "70%",
-            "speed": "fast",
-            "cost": "low"
+            "speed": "fast (<100ms each)",
+            "cost": "low",
+            "focus": "individual functions, edge cases, error handling"
         },
         "integration": {
             "percentage": "20%",
-            "speed": "medium",
-            "cost": "medium"
+            "speed": "medium (<1s each)",
+            "cost": "medium",
+            "focus": "API endpoints, DB queries, service interactions"
         },
         "e2e": {
             "percentage": "10%",
-            "speed": "slow",
-            "cost": "high"
+            "speed": "slow (2-10s each)",
+            "cost": "high",
+            "focus": "critical user flows, login, checkout, signup"
         }
+    },
+    "test_severity_matrix": {
+        "critical_always_test": [
+            "Authentication and authorization",
+            "Payment processing",
+            "Data creation and deletion",
+            "User registration and login",
+            "Input validation on public endpoints"
+        ],
+        "high_should_test": [
+            "CRUD operations",
+            "Search and filtering",
+            "Pagination",
+            "File upload and download",
+            "Email/notification sending"
+        ],
+        "medium_nice_to_test": [
+            "Sorting",
+            "UI animations and transitions",
+            "Caching behavior",
+            "Logging output",
+            "Admin-only features"
+        ]
     }
 }
