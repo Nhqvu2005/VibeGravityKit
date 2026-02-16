@@ -1,3 +1,0 @@
-[console_scripts]
-vibe = VibeGravityKit.cli:main
-vibegravity = VibeGravityKit.cli:main
