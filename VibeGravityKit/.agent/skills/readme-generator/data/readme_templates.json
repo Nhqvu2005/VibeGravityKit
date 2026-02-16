@@ -1,22 +1,92 @@
 {
-    "badge_providers": {
-        "shields_io": {
-            "base_url": "https://img.shields.io/badge/",
-            "common_badges": [
-                "![License](https://img.shields.io/badge/license-MIT-blue)",
-                "![Version](https://img.shields.io/badge/version-{version}-green)",
-                "![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)",
-                "![Python](https://img.shields.io/badge/python-3.12-blue)",
-                "![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)"
-            ]
-        },
-        "github_actions": "![CI](https://github.com/{owner}/{repo}/actions/workflows/ci.yml/badge.svg)"
+    "badge_map": {
+        "python": "[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)",
+        "node": "[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)",
+        "typescript": "[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)",
+        "react": "[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)",
+        "nextjs": "[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)",
+        "vue": "[![Vue](https://img.shields.io/badge/Vue-3-4FC08D?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org/)",
+        "docker": "[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)",
+        "mit": "[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)",
+        "apache": "[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square)](LICENSE)",
+        "gpl": "[![License](https://img.shields.io/badge/License-GPL_3.0-red?style=flat-square)](LICENSE)"
     },
-    "readme_template": "# {project_name}\n\n{badges}\n\n> {tagline}\n\n## ✨ Features\n\n- {feature_1}\n- {feature_2}\n- {feature_3}\n\n## 🚀 Quick Start\n\n```bash\n{install_commands}\n```\n\n## 📖 Usage\n\n```{language}\n{usage_example}\n```\n\n## 🔧 Configuration\n\n| Variable | Description | Default |\n|----------|-------------|---------|\n| {var} | {desc} | {default} |\n\n## 📁 Project Structure\n\n```\n{tree}\n```\n\n## 🤝 Contributing\n\n1. Fork the repository\n2. Create your feature branch (`git checkout -b feature/amazing`)\n3. Commit your changes (`git commit -m 'feat: add amazing feature'`)\n4. Push to the branch (`git push origin feature/amazing`)\n5. Open a Pull Request\n\n## 📄 License\n\n{license} © [{author}]({author_url})",
-    "section_library": {
-        "demo": "## 🎬 Demo\n\n![Demo]({demo_gif_url})\n\n[Live Demo]({demo_url})",
-        "docker": "## 🐳 Docker\n\n```bash\ndocker compose up -d\n```",
-        "api_docs": "## 📚 API Documentation\n\nFull API docs available at [{docs_url}]({docs_url})",
-        "tech_stack": "## 🛠️ Tech Stack\n\n| Technology | Purpose |\n|------------|---------|"
+    "dynamic_badges": {
+        "version": "[![Version](https://img.shields.io/badge/Version-{version}-blue?style=flat-square)]({repo_url})",
+        "stars": "[![Stars](https://img.shields.io/github/stars/{owner}/{repo}?style=flat-square&logo=github)]({repo_url}/stargazers)",
+        "issues": "[![Issues](https://img.shields.io/github/issues/{owner}/{repo}?style=flat-square)]({repo_url}/issues)",
+        "prs": "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)"
+    },
+    "section_order": {
+        "minimal": [
+            "hero",
+            "install",
+            "usage",
+            "license"
+        ],
+        "standard": [
+            "hero",
+            "features",
+            "install",
+            "usage",
+            "cli",
+            "contributing",
+            "license"
+        ],
+        "detailed": [
+            "hero",
+            "features",
+            "install",
+            "usage",
+            "cli",
+            "config",
+            "structure",
+            "tech_stack",
+            "contributing",
+            "changelog",
+            "license"
+        ]
+    },
+    "copy_patterns": {
+        "hero_tagline": [
+            "{name} — {one_liner}",
+            "Build {thing} with {adjective} simplicity.",
+            "The {adjective} way to {verb} {thing}.",
+            "{verb} {thing}. No {pain_point}."
+        ],
+        "feature_format": "| {emoji} **{feature}** | {one_line_desc} |",
+        "install_max_lines": 5,
+        "section_max_sentences": 3
+    },
+    "section_templates": {
+        "features_table_header": "| Feature | Description |\n| :--- | :--- |",
+        "cli_table_header": "| Command | Description |\n| :--- | :--- |",
+        "config_table_header": "| Variable | Description | Default |\n| :--- | :--- | :--- |",
+        "tech_stack_header": "| Technology | Purpose |\n| :--- | :--- |",
+        "contributing": "1. Fork → `git checkout -b feature/amazing` → Commit → PR\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md) for details.",
+        "docker_usage": "```bash\ndocker compose up -d\n```"
+    },
+    "brevity_rules": {
+        "max_section_lines": 15,
+        "max_total_lines_minimal": 60,
+        "max_total_lines_standard": 120,
+        "max_total_lines_detailed": 180,
+        "banned_phrases": [
+            "In this section we will",
+            "As mentioned above",
+            "Please note that",
+            "It is important to note",
+            "In order to",
+            "The purpose of this",
+            "This section explains",
+            "Let's take a look at"
+        ],
+        "replacement_rules": {
+            "In order to": "To",
+            "It is important to note that": "",
+            "Please note that": "",
+            "As mentioned above": "",
+            "The purpose of this section is to": ""
+        }
     }
 }
