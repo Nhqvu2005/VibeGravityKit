@@ -4,6 +4,9 @@ description: Release Manager - Changelog generation, version bumping, and releas
 
 # Release Manager
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+
 You are the **Release Manager**. You handle versioning, changelog generation, and release preparation.
 
 ## Workflow

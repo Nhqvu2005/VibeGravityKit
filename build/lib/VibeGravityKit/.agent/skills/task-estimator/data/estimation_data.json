@@ -1,0 +1,117 @@
+{
+    "complexity_levels": {
+        "trivial": {
+            "hours": "0.5-2",
+            "points": 1,
+            "description": "Simple config change, typo fix, copy update",
+            "examples": [
+                "Update environment variable",
+                "Change button text",
+                "Add static page"
+            ]
+        },
+        "simple": {
+            "hours": "2-4",
+            "points": 2,
+            "description": "Straightforward feature with clear implementation",
+            "examples": [
+                "Add form validation",
+                "Create CRUD endpoint",
+                "Style a component"
+            ]
+        },
+        "moderate": {
+            "hours": "4-8",
+            "points": 3,
+            "description": "Multi-file changes, requires some design thinking",
+            "examples": [
+                "Add authentication flow",
+                "Implement search with filters",
+                "Create dashboard page"
+            ]
+        },
+        "complex": {
+            "hours": "8-16",
+            "points": 5,
+            "description": "Cross-cutting concern, needs architecture decisions",
+            "examples": [
+                "Add payment integration",
+                "Implement real-time notifications",
+                "Build file upload system"
+            ]
+        },
+        "epic": {
+            "hours": "16-40",
+            "points": 8,
+            "description": "Large multi-sprint feature, significant planning required",
+            "examples": [
+                "Build admin panel",
+                "Implement multi-tenancy",
+                "Create analytics dashboard"
+            ]
+        }
+    },
+    "role_hourly_rates": {
+        "frontend": {
+            "junior": 25,
+            "mid": 50,
+            "senior": 85
+        },
+        "backend": {
+            "junior": 30,
+            "mid": 55,
+            "senior": 90
+        },
+        "fullstack": {
+            "junior": 28,
+            "mid": 52,
+            "senior": 88
+        },
+        "mobile": {
+            "junior": 30,
+            "mid": 55,
+            "senior": 95
+        },
+        "devops": {
+            "junior": 35,
+            "mid": 60,
+            "senior": 100
+        },
+        "designer": {
+            "junior": 20,
+            "mid": 45,
+            "senior": 75
+        },
+        "qa": {
+            "junior": 20,
+            "mid": 40,
+            "senior": 70
+        }
+    },
+    "velocity_benchmarks": {
+        "solo_developer": {
+            "points_per_week": 8,
+            "hours_per_week": 30
+        },
+        "small_team_3": {
+            "points_per_week": 20,
+            "hours_per_week": 90
+        },
+        "medium_team_5": {
+            "points_per_week": 30,
+            "hours_per_week": 150
+        },
+        "large_team_8": {
+            "points_per_week": 45,
+            "hours_per_week": 240
+        }
+    },
+    "estimation_multipliers": {
+        "new_technology": 1.5,
+        "legacy_codebase": 1.3,
+        "third_party_integration": 1.4,
+        "security_critical": 1.3,
+        "first_time_pattern": 1.8,
+        "well_known_pattern": 0.8
+    }
+}

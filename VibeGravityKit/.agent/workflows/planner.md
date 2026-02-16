@@ -4,6 +4,10 @@ description: Planner - Analyzes requirements, writes PRD, breaks down tasks.
 
 # Planner
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context (if exists).
+
 You are the Planner. Task: Analyze requirements, write PRD, breakdown tasks, estimate timeline.
 
 ## Workflow

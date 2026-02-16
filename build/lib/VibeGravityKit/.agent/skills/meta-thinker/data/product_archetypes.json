@@ -1,0 +1,998 @@
+[
+    {
+        "id": "marketplace",
+        "name": "Marketplace",
+        "description": "Platform connecting buyers and sellers",
+        "examples": [
+            "Shopee",
+            "Tiki",
+            "Airbnb",
+            "Fiverr",
+            "Etsy"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Product listing",
+            "Search & Filter",
+            "Cart/Checkout",
+            "Reviews",
+            "Seller dashboard",
+            "Payment gateway"
+        ],
+        "monetization": [
+            "Commission per sale",
+            "Listing fees",
+            "Premium placement",
+            "Subscription for sellers"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "e-commerce",
+            "services",
+            "real-estate",
+            "jobs",
+            "freelance"
+        ]
+    },
+    {
+        "id": "saas",
+        "name": "SaaS (Software as a Service)",
+        "description": "Cloud-based software with recurring subscription",
+        "examples": [
+            "Notion",
+            "Slack",
+            "Figma",
+            "Linear",
+            "Vercel"
+        ],
+        "platforms": [
+            "web",
+            "desktop"
+        ],
+        "core_features": [
+            "Auth & RBAC",
+            "Dashboard",
+            "Team/Workspace",
+            "Billing",
+            "API",
+            "Integrations",
+            "Analytics"
+        ],
+        "monetization": [
+            "Monthly subscription",
+            "Per-seat pricing",
+            "Usage-based",
+            "Freemium"
+        ],
+        "complexity": "hard",
+        "time_estimate": "3-6 months",
+        "domains": [
+            "productivity",
+            "devtools",
+            "marketing",
+            "hr",
+            "finance",
+            "project-management"
+        ]
+    },
+    {
+        "id": "social-network",
+        "name": "Social Network / Community",
+        "description": "Platform for connecting users and sharing content",
+        "examples": [
+            "Facebook",
+            "Twitter/X",
+            "Reddit",
+            "Discord",
+            "Threads"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Profile",
+            "Feed",
+            "Follow/Friend",
+            "Messaging",
+            "Notifications",
+            "Content creation",
+            "Reactions"
+        ],
+        "monetization": [
+            "Advertising",
+            "Premium features",
+            "Virtual currency",
+            "Data insights"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "general",
+            "professional",
+            "interest-based",
+            "local",
+            "dating"
+        ]
+    },
+    {
+        "id": "content-platform",
+        "name": "Content Platform",
+        "description": "Platform for creating, sharing, and consuming content",
+        "examples": [
+            "Medium",
+            "YouTube",
+            "Substack",
+            "Dev.to",
+            "TikTok"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Content editor",
+            "Feed/Discovery",
+            "Comments",
+            "Bookmarks",
+            "Categories/Tags",
+            "Creator analytics"
+        ],
+        "monetization": [
+            "Subscription",
+            "Tips/Donations",
+            "Ads",
+            "Paywall",
+            "Affiliate links"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "blogging",
+            "video",
+            "podcast",
+            "courses",
+            "newsletters"
+        ]
+    },
+    {
+        "id": "utility-tool",
+        "name": "Utility / Tool",
+        "description": "Tool that solves a specific problem quickly",
+        "examples": [
+            "Canva",
+            "Remove.bg",
+            "TinyPNG",
+            "JSON Formatter",
+            "Excalidraw"
+        ],
+        "platforms": [
+            "web",
+            "desktop",
+            "mobile"
+        ],
+        "core_features": [
+            "Core function",
+            "Export/Download",
+            "History",
+            "Presets/Templates",
+            "Share"
+        ],
+        "monetization": [
+            "Freemium",
+            "One-time purchase",
+            "Credits/Usage",
+            "Premium features"
+        ],
+        "complexity": "easy",
+        "time_estimate": "1-2 months",
+        "domains": [
+            "image-editing",
+            "pdf",
+            "conversion",
+            "calculator",
+            "generator",
+            "developer-tools"
+        ]
+    },
+    {
+        "id": "on-demand",
+        "name": "On-Demand / Gig Economy",
+        "description": "Service on demand connecting providers and consumers",
+        "examples": [
+            "Grab",
+            "Uber",
+            "GrabFood",
+            "TaskRabbit",
+            "GoJek"
+        ],
+        "platforms": [
+            "mobile",
+            "web"
+        ],
+        "core_features": [
+            "Real-time matching",
+            "Map/GPS tracking",
+            "Payment",
+            "Rating",
+            "Driver/Provider app",
+            "Order management"
+        ],
+        "monetization": [
+            "Service fee",
+            "Surge pricing",
+            "Subscription pass",
+            "Delivery fee"
+        ],
+        "complexity": "hard",
+        "time_estimate": "5-10 months",
+        "domains": [
+            "transport",
+            "food-delivery",
+            "cleaning",
+            "repair",
+            "healthcare",
+            "beauty"
+        ]
+    },
+    {
+        "id": "edtech",
+        "name": "EdTech / Learning Platform",
+        "description": "Online learning platform",
+        "examples": [
+            "Coursera",
+            "Duolingo",
+            "Udemy",
+            "Khan Academy",
+            "Codecademy"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Courses/Lessons",
+            "Progress tracking",
+            "Quizzes/Exercises",
+            "Certificates",
+            "Discussion forum",
+            "Video player"
+        ],
+        "monetization": [
+            "Course sales",
+            "Subscription",
+            "Freemium",
+            "B2B/Enterprise licensing"
+        ],
+        "complexity": "medium",
+        "time_estimate": "3-5 months",
+        "domains": [
+            "language",
+            "coding",
+            "academic",
+            "professional",
+            "creative-skills"
+        ]
+    },
+    {
+        "id": "fintech",
+        "name": "FinTech / Payment",
+        "description": "Finance, payment, money management app",
+        "examples": [
+            "MoMo",
+            "ZaloPay",
+            "Wise",
+            "Revolut",
+            "Robinhood"
+        ],
+        "platforms": [
+            "mobile",
+            "web"
+        ],
+        "core_features": [
+            "Wallet",
+            "P2P transfer",
+            "Bill payment",
+            "QR code",
+            "Transaction history",
+            "KYC",
+            "Security"
+        ],
+        "monetization": [
+            "Transaction fees",
+            "Premium account",
+            "Interest on deposits",
+            "Cross-sell insurance/investment"
+        ],
+        "complexity": "hard",
+        "time_estimate": "6-12 months",
+        "domains": [
+            "payment",
+            "banking",
+            "investment",
+            "insurance",
+            "crypto",
+            "personal-finance"
+        ]
+    },
+    {
+        "id": "healthtech",
+        "name": "HealthTech / Wellness",
+        "description": "Health, medical, wellness app",
+        "examples": [
+            "MyFitnessPal",
+            "Calm",
+            "Headspace",
+            "Flo",
+            "Doctor Anywhere"
+        ],
+        "platforms": [
+            "mobile",
+            "web",
+            "wearable"
+        ],
+        "core_features": [
+            "Health tracking",
+            "Reminders",
+            "Data visualization",
+            "AI insights",
+            "Appointments",
+            "Telemedicine"
+        ],
+        "monetization": [
+            "Subscription",
+            "Freemium",
+            "B2B for corporates",
+            "Insurance partnership"
+        ],
+        "complexity": "medium",
+        "time_estimate": "3-6 months",
+        "domains": [
+            "fitness",
+            "mental-health",
+            "nutrition",
+            "telemedicine",
+            "chronic-disease",
+            "women-health"
+        ]
+    },
+    {
+        "id": "ai-powered",
+        "name": "AI-Powered Product",
+        "description": "Product with AI as core value",
+        "examples": [
+            "ChatGPT",
+            "Midjourney",
+            "GitHub Copilot",
+            "Grammarly",
+            "Notion AI"
+        ],
+        "platforms": [
+            "web",
+            "desktop",
+            "mobile",
+            "api"
+        ],
+        "core_features": [
+            "AI model integration",
+            "Prompt/Input UI",
+            "Output display",
+            "History",
+            "Custom instructions",
+            "API access"
+        ],
+        "monetization": [
+            "Usage-based (tokens/credits)",
+            "Subscription",
+            "API pricing",
+            "Freemium"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "writing",
+            "coding",
+            "design",
+            "analytics",
+            "customer-service",
+            "research"
+        ]
+    },
+    {
+        "id": "gaming",
+        "name": "Game / Gamification",
+        "description": "Game or app with gamification elements",
+        "examples": [
+            "Wordle",
+            "Duolingo",
+            "Pokemon GO",
+            "Among Us",
+            "Habitica"
+        ],
+        "platforms": [
+            "mobile",
+            "web",
+            "desktop"
+        ],
+        "core_features": [
+            "Game loop",
+            "Leaderboard",
+            "Achievements",
+            "Social features",
+            "Levels/XP",
+            "Daily rewards"
+        ],
+        "monetization": [
+            "In-app purchases",
+            "Ads",
+            "Battle pass",
+            "Cosmetic items",
+            "Premium version"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-6 months",
+        "domains": [
+            "casual",
+            "puzzle",
+            "educational",
+            "social",
+            "fitness",
+            "productivity"
+        ]
+    },
+    {
+        "id": "iot-smart",
+        "name": "IoT / Smart Home",
+        "description": "Smart device control app",
+        "examples": [
+            "Google Home",
+            "Tuya Smart",
+            "Home Assistant",
+            "SmartThings"
+        ],
+        "platforms": [
+            "mobile",
+            "web",
+            "desktop",
+            "embedded"
+        ],
+        "core_features": [
+            "Device pairing",
+            "Remote control",
+            "Automation/Scenes",
+            "Scheduling",
+            "Sensor data",
+            "Alerts"
+        ],
+        "monetization": [
+            "Hardware sales",
+            "Cloud subscription",
+            "Premium features",
+            "Data analytics"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "home-automation",
+            "agriculture",
+            "industrial",
+            "healthcare",
+            "energy"
+        ]
+    },
+    {
+        "id": "crm-erp",
+        "name": "CRM / ERP / Business Tool",
+        "description": "Business management software",
+        "examples": [
+            "Salesforce",
+            "HubSpot",
+            "Odoo",
+            "Monday.com",
+            "Zoho"
+        ],
+        "platforms": [
+            "web",
+            "desktop"
+        ],
+        "core_features": [
+            "Contacts/Leads",
+            "Pipeline",
+            "Reports",
+            "Automation",
+            "Integrations",
+            "Team management"
+        ],
+        "monetization": [
+            "Per-seat subscription",
+            "Tiered plans",
+            "Onboarding fees",
+            "Custom development"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "sales",
+            "marketing",
+            "hr",
+            "accounting",
+            "inventory",
+            "project-management"
+        ]
+    },
+    {
+        "id": "booking-reservation",
+        "name": "Booking / Reservation",
+        "description": "Booking and reservation system",
+        "examples": [
+            "Booking.com",
+            "OpenTable",
+            "Calendly",
+            "ClassPass"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Calendar",
+            "Availability",
+            "Booking flow",
+            "Confirmation/Reminders",
+            "Payment",
+            "Reviews"
+        ],
+        "monetization": [
+            "Booking commission",
+            "Subscription for providers",
+            "Premium features",
+            "Advertising"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "hotel",
+            "restaurant",
+            "salon",
+            "clinic",
+            "sport",
+            "event",
+            "coworking"
+        ]
+    },
+    {
+        "id": "aggregator",
+        "name": "Aggregator / Comparison",
+        "description": "Aggregates and compares info from multiple sources",
+        "examples": [
+            "Google Flights",
+            "Trivago",
+            "NerdWallet",
+            "Product Hunt"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Data scraping/API",
+            "Search/Filter",
+            "Comparison table",
+            "Price alerts",
+            "Reviews aggregation"
+        ],
+        "monetization": [
+            "Affiliate commission",
+            "Ads",
+            "Lead generation",
+            "Premium access"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "travel",
+            "insurance",
+            "finance",
+            "shopping",
+            "jobs",
+            "real-estate"
+        ]
+    },
+    {
+        "id": "subscription-box",
+        "name": "Subscription / D2C",
+        "description": "Recurring delivery or direct-to-consumer sales",
+        "examples": [
+            "Dollar Shave Club",
+            "HelloFresh",
+            "Birchbox",
+            "Glossier"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Product catalog",
+            "Subscription management",
+            "Personalization quiz",
+            "Shipping tracking",
+            "Referral program"
+        ],
+        "monetization": [
+            "Recurring subscription",
+            "One-time purchase",
+            "Upsell/Cross-sell",
+            "Referral bonus"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "food",
+            "beauty",
+            "fashion",
+            "books",
+            "pet",
+            "wellness"
+        ]
+    },
+    {
+        "id": "browser-extension",
+        "name": "Browser Extension",
+        "description": "Browser plugin optimizing web experience",
+        "examples": [
+            "uBlock Origin",
+            "Grammarly",
+            "Honey",
+            "Wappalyzer",
+            "Dark Reader"
+        ],
+        "platforms": [
+            "desktop"
+        ],
+        "core_features": [
+            "Popup UI",
+            "Content script injection",
+            "Background service",
+            "Storage",
+            "Cross-site communication"
+        ],
+        "monetization": [
+            "Freemium",
+            "One-time purchase",
+            "Subscription",
+            "Affiliate"
+        ],
+        "complexity": "easy",
+        "time_estimate": "1-2 months",
+        "domains": [
+            "productivity",
+            "shopping",
+            "privacy",
+            "developer-tools",
+            "accessibility"
+        ]
+    },
+    {
+        "id": "desktop-app",
+        "name": "Desktop Application",
+        "description": "Native or cross-platform app for PC/Mac",
+        "examples": [
+            "VS Code",
+            "Obsidian",
+            "Figma Desktop",
+            "Discord",
+            "Notion"
+        ],
+        "platforms": [
+            "desktop"
+        ],
+        "core_features": [
+            "Native UI",
+            "File system access",
+            "Offline mode",
+            "System tray",
+            "Auto-update",
+            "Keyboard shortcuts"
+        ],
+        "monetization": [
+            "One-time purchase",
+            "Subscription",
+            "Freemium",
+            "License key"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-5 months",
+        "domains": [
+            "productivity",
+            "creative",
+            "communication",
+            "developer-tools",
+            "media"
+        ]
+    },
+    {
+        "id": "cli-tool",
+        "name": "CLI Tool / DevTool",
+        "description": "Command-line tool for developers",
+        "examples": [
+            "npm",
+            "Vite",
+            "Prisma CLI",
+            "gh (GitHub CLI)",
+            "Vercel CLI"
+        ],
+        "platforms": [
+            "desktop"
+        ],
+        "core_features": [
+            "Commands/Subcommands",
+            "Config file",
+            "Interactive mode",
+            "Colorful output",
+            "Plugin system"
+        ],
+        "monetization": [
+            "Open source + Premium Cloud",
+            "Sponsorship",
+            "Enterprise license",
+            "Hosted service"
+        ],
+        "complexity": "easy",
+        "time_estimate": "1-3 months",
+        "domains": [
+            "build-tools",
+            "deployment",
+            "testing",
+            "database",
+            "code-generation"
+        ]
+    },
+    {
+        "id": "api-service",
+        "name": "API-as-a-Service",
+        "description": "API provider for developers to integrate",
+        "examples": [
+            "Stripe",
+            "Twilio",
+            "SendGrid",
+            "Algolia",
+            "Cloudinary"
+        ],
+        "platforms": [
+            "api"
+        ],
+        "core_features": [
+            "RESTful/GraphQL API",
+            "Dashboard",
+            "API keys",
+            "Rate limiting",
+            "Webhooks",
+            "SDK",
+            "Documentation"
+        ],
+        "monetization": [
+            "Pay-per-use",
+            "Tiered plans",
+            "Free tier + paid",
+            "Enterprise custom"
+        ],
+        "complexity": "medium",
+        "time_estimate": "2-4 months",
+        "domains": [
+            "payment",
+            "communication",
+            "search",
+            "media",
+            "ai",
+            "authentication"
+        ]
+    },
+    {
+        "id": "data-platform",
+        "name": "Data Platform / Analytics",
+        "description": "Collect, process, and visualize data for business insights",
+        "examples": [
+            "Mixpanel",
+            "Amplitude",
+            "Tableau",
+            "Metabase",
+            "PostHog"
+        ],
+        "platforms": [
+            "web",
+            "api"
+        ],
+        "core_features": [
+            "Data ingestion (API/SDK)",
+            "Real-time dashboards",
+            "Funnel analysis",
+            "Cohort analysis",
+            "A/B testing",
+            "Custom reports",
+            "Data export",
+            "Team collaboration"
+        ],
+        "monetization": [
+            "Usage-based (events/month)",
+            "Tiered plans",
+            "Enterprise custom",
+            "Self-hosted option"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "analytics",
+            "business-intelligence",
+            "marketing",
+            "product"
+        ]
+    },
+    {
+        "id": "creator-economy",
+        "name": "Creator Economy Platform",
+        "description": "Tools for creators to monetize content, build audience, and manage their business",
+        "examples": [
+            "Patreon",
+            "Gumroad",
+            "Ko-fi",
+            "Substack",
+            "Teachable",
+            "Linktree"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Creator profile/storefront",
+            "Digital product sales",
+            "Subscription/membership tiers",
+            "Fan communication (DM, broadcast)",
+            "Analytics dashboard",
+            "Payout management",
+            "Landing page builder",
+            "Email list management"
+        ],
+        "monetization": [
+            "Platform fee (5-10% of creator revenue)",
+            "Premium creator tools",
+            "Transaction fees",
+            "White-label for enterprises"
+        ],
+        "complexity": "medium",
+        "time_estimate": "3-5 months",
+        "domains": [
+            "content",
+            "education",
+            "art",
+            "music",
+            "writing",
+            "video"
+        ]
+    },
+    {
+        "id": "web3-dapp",
+        "name": "Web3 / Decentralized App",
+        "description": "Blockchain-based application with smart contracts and token economics",
+        "examples": [
+            "Uniswap",
+            "OpenSea",
+            "Aave",
+            "Mirror.xyz",
+            "Lens Protocol"
+        ],
+        "platforms": [
+            "web",
+            "mobile"
+        ],
+        "core_features": [
+            "Wallet connection (MetaMask, WalletConnect)",
+            "Smart contract interaction",
+            "Token/NFT management",
+            "On-chain transactions",
+            "Decentralized identity",
+            "Governance (DAO voting)",
+            "Gas fee estimation"
+        ],
+        "monetization": [
+            "Transaction fees",
+            "Token appreciation",
+            "Protocol fees",
+            "NFT royalties",
+            "Premium features"
+        ],
+        "complexity": "hard",
+        "time_estimate": "3-6 months",
+        "domains": [
+            "defi",
+            "nft",
+            "social",
+            "gaming",
+            "identity",
+            "governance"
+        ]
+    },
+    {
+        "id": "automation-workflow",
+        "name": "Automation / Workflow Builder",
+        "description": "Visual tool for creating automated workflows connecting multiple services",
+        "examples": [
+            "Zapier",
+            "Make (Integromat)",
+            "n8n",
+            "Pipedream",
+            "Power Automate"
+        ],
+        "platforms": [
+            "web"
+        ],
+        "core_features": [
+            "Visual workflow editor (drag & drop)",
+            "Trigger/Action nodes",
+            "3rd-party integrations (API connectors)",
+            "Conditional logic (if/else/loop)",
+            "Scheduling (cron)",
+            "Error handling & retry",
+            "Execution logs",
+            "Template library"
+        ],
+        "monetization": [
+            "Task-based pricing",
+            "Tiered plans by complexity",
+            "Premium connectors",
+            "Enterprise (self-hosted)"
+        ],
+        "complexity": "hard",
+        "time_estimate": "4-8 months",
+        "domains": [
+            "productivity",
+            "marketing",
+            "devops",
+            "data",
+            "crm"
+        ]
+    },
+    {
+        "id": "micro-saas",
+        "name": "Micro-SaaS (Single Feature Tool)",
+        "description": "Small, focused tool solving ONE specific problem extremely well. Often built and run by 1-2 people.",
+        "examples": [
+            "Plausible Analytics",
+            "Buttondown",
+            "Bannerbear",
+            "Cron (calendar)",
+            "Lemon Squeezy"
+        ],
+        "platforms": [
+            "web"
+        ],
+        "core_features": [
+            "One killer feature (the ONLY reason users sign up)",
+            "Simple onboarding (< 2 minutes)",
+            "Clean dashboard",
+            "API for power users",
+            "Webhook notifications",
+            "Export data"
+        ],
+        "monetization": [
+            "Simple subscription ($9-49/mo)",
+            "Lifetime deal (AppSumo launch)",
+            "Usage-based",
+            "Free tier + paid"
+        ],
+        "complexity": "easy",
+        "time_estimate": "1-3 months",
+        "domains": [
+            "any — pick a niche pain point",
+            "developer-tools",
+            "marketing",
+            "analytics",
+            "productivity"
+        ]
+    }
+]

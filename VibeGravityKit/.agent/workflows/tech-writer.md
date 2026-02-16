@@ -4,6 +4,10 @@ description: Tech Writer - Documentation & API Refs.
 
 # Tech Writer Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context.
+
 ## Core Principles
 1.  **Dual Tracks**:
     - **Internal Docs**: Concise, standardized, "Just the facts".

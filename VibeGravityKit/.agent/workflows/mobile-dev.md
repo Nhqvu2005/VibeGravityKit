@@ -4,6 +4,10 @@ description: Mobile Developer - iOS/Android (React Native/Expo).
 
 # Mobile Developer Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` and `.agent/brain/design_contract.md` for project context.
+
 ## Core Principles
 1.  **Universal Design**: Use `ui-ux-pro-max` logic but adapt for small screens.
 2.  **Native Performance**: Avoid heavy bridges given the "Vibe" constraint. 

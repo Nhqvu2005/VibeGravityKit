@@ -1,0 +1,107 @@
+{
+    "api_patterns": {
+        "rest": {
+            "conventions": {
+                "naming": "Use plural nouns: /users, /orders, /products",
+                "versioning": "URL prefix: /api/v1/...",
+                "pagination": "?page=1&limit=20 or cursor-based",
+                "filtering": "?status=active&category=electronics",
+                "sorting": "?sort=created_at&order=desc",
+                "search": "?q=search+term"
+            },
+            "http_methods": {
+                "GET": "Read resource(s) — idempotent",
+                "POST": "Create resource — not idempotent",
+                "PUT": "Full update — idempotent",
+                "PATCH": "Partial update — idempotent",
+                "DELETE": "Remove resource — idempotent"
+            },
+            "status_codes": {
+                "200": "OK — success",
+                "201": "Created — resource created",
+                "204": "No Content — success, no body",
+                "400": "Bad Request — validation error",
+                "401": "Unauthorized — authentication required",
+                "403": "Forbidden — insufficient permissions",
+                "404": "Not Found — resource doesn't exist",
+                "409": "Conflict — duplicate or state conflict",
+                "422": "Unprocessable Entity — semantic error",
+                "429": "Too Many Requests — rate limited",
+                "500": "Internal Server Error — unexpected failure"
+            },
+            "response_envelope": {
+                "success": {
+                    "data": {},
+                    "meta": {
+                        "page": 1,
+                        "total": 100
+                    }
+                },
+                "error": {
+                    "error": {
+                        "code": "VALIDATION_ERROR",
+                        "message": "...",
+                        "details": []
+                    }
+                }
+            }
+        },
+        "graphql": {
+            "conventions": {
+                "naming": "camelCase for fields, PascalCase for types",
+                "pagination": "Relay-style cursor pagination (edges/nodes)",
+                "errors": "Return in errors array with extensions"
+            },
+            "best_practices": [
+                "Use DataLoader for N+1 prevention",
+                "Limit query depth (max 10)",
+                "Implement query complexity analysis",
+                "Use persisted queries in production"
+            ]
+        }
+    },
+    "auth_patterns": {
+        "jwt": {
+            "flow": "Login → Get access+refresh tokens → Use access in Authorization header → Refresh when expired",
+            "access_token_ttl": "15 minutes",
+            "refresh_token_ttl": "7 days",
+            "storage": "httpOnly cookie (secure) or memory (SPA)"
+        },
+        "oauth2": {
+            "flows": {
+                "authorization_code": "Web apps (most secure)",
+                "pkce": "SPAs and mobile apps",
+                "client_credentials": "Server-to-server"
+            },
+            "providers": [
+                "Google",
+                "GitHub",
+                "Apple",
+                "Facebook",
+                "Microsoft"
+            ]
+        },
+        "api_key": {
+            "use_case": "Server-to-server, webhooks, public APIs",
+            "best_practices": [
+                "Prefix keys (e.g., sk_live_xxx)",
+                "Hash stored keys",
+                "Support key rotation"
+            ]
+        }
+    },
+    "rate_limiting": {
+        "strategies": {
+            "fixed_window": "Simple counter per time window",
+            "sliding_window": "Weighted average of current and previous window",
+            "token_bucket": "Tokens replenish at fixed rate",
+            "leaky_bucket": "Requests processed at fixed rate"
+        },
+        "common_limits": {
+            "public_api": "60 req/min",
+            "authenticated_api": "600 req/min",
+            "admin_api": "6000 req/min",
+            "webhook": "10 req/sec"
+        }
+    }
+}

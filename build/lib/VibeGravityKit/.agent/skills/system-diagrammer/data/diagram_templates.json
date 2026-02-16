@@ -1,0 +1,69 @@
+{
+    "diagram_templates": {
+        "c4_context": {
+            "type": "C4 Context Diagram",
+            "mermaid_template": "C4Context\n  title System Context Diagram - {system_name}\n  Person(user, \"{user_name}\", \"{user_desc}\")\n  System(system, \"{system_name}\", \"{system_desc}\")\n  System_Ext(ext, \"{external_name}\", \"{external_desc}\")\n  Rel(user, system, \"Uses\")\n  Rel(system, ext, \"Calls API\")",
+            "use_case": "Show how the system fits into the world"
+        },
+        "c4_container": {
+            "type": "C4 Container Diagram",
+            "mermaid_template": "C4Container\n  title Container Diagram - {system_name}\n  Person(user, \"User\")\n  Container(web, \"Web App\", \"React\", \"SPA frontend\")\n  Container(api, \"API Server\", \"Node.js\", \"REST API\")\n  ContainerDb(db, \"Database\", \"PostgreSQL\", \"Stores data\")\n  Rel(user, web, \"Uses\", \"HTTPS\")\n  Rel(web, api, \"Calls\", \"JSON/HTTPS\")\n  Rel(api, db, \"Reads/Writes\", \"SQL\")",
+            "use_case": "Show containers within the system"
+        },
+        "sequence": {
+            "type": "Sequence Diagram",
+            "mermaid_template": "sequenceDiagram\n  actor User\n  participant Frontend\n  participant API\n  participant DB\n  User->>Frontend: {action}\n  Frontend->>API: {request}\n  API->>DB: {query}\n  DB-->>API: {result}\n  API-->>Frontend: {response}\n  Frontend-->>User: {display}",
+            "use_case": "Show interaction flow between components"
+        },
+        "er_diagram": {
+            "type": "Entity Relationship Diagram",
+            "mermaid_template": "erDiagram\n  USERS ||--o{ ORDERS : places\n  ORDERS ||--|{ ORDER_ITEMS : contains\n  PRODUCTS ||--o{ ORDER_ITEMS : \"included in\"",
+            "use_case": "Show database relationships"
+        },
+        "flowchart": {
+            "type": "Process Flowchart",
+            "mermaid_template": "flowchart TD\n  A[Start] --> B{Condition?}\n  B -->|Yes| C[Action 1]\n  B -->|No| D[Action 2]\n  C --> E[End]\n  D --> E",
+            "use_case": "Show process or decision flow"
+        },
+        "state_diagram": {
+            "type": "State Machine",
+            "mermaid_template": "stateDiagram-v2\n  [*] --> Draft\n  Draft --> Published: Publish\n  Published --> Archived: Archive\n  Archived --> Draft: Restore\n  Published --> Draft: Unpublish",
+            "use_case": "Show state transitions (order status, user lifecycle)"
+        },
+        "deployment": {
+            "type": "Deployment Architecture",
+            "mermaid_template": "graph LR\n  subgraph CDN\n    CF[CloudFront]\n  end\n  subgraph Compute\n    ECS[ECS/Fargate]\n  end\n  subgraph Data\n    RDS[(RDS PostgreSQL)]\n    Redis[(ElastiCache)]\n    S3[S3 Bucket]\n  end\n  CF --> ECS\n  ECS --> RDS\n  ECS --> Redis\n  ECS --> S3",
+            "use_case": "Show cloud infrastructure layout"
+        }
+    },
+    "icon_sets": {
+        "aws": [
+            "EC2",
+            "ECS",
+            "Lambda",
+            "RDS",
+            "S3",
+            "CloudFront",
+            "SQS",
+            "SNS",
+            "DynamoDB"
+        ],
+        "gcp": [
+            "GCE",
+            "GKE",
+            "Cloud Run",
+            "Cloud SQL",
+            "GCS",
+            "Pub/Sub",
+            "BigQuery"
+        ],
+        "azure": [
+            "App Service",
+            "AKS",
+            "Functions",
+            "SQL Database",
+            "Blob Storage",
+            "Service Bus"
+        ]
+    }
+}

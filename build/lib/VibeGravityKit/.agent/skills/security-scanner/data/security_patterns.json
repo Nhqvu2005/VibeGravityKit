@@ -1,0 +1,101 @@
+{
+    "vulnerability_patterns": {
+        "hardcoded_secrets": {
+            "severity": "critical",
+            "patterns": [
+                "password\\s*=\\s*['\"][^'\"]+['\"]",
+                "api[_-]?key\\s*=\\s*['\"][^'\"]+['\"]",
+                "secret\\s*=\\s*['\"][^'\"]+['\"]",
+                "token\\s*=\\s*['\"][^'\"]+['\"]",
+                "AWS_ACCESS_KEY_ID\\s*=\\s*['\"]AKI[A-Z0-9]{16}['\"]",
+                "PRIVATE[_-]KEY"
+            ],
+            "fix": "Move to environment variables or secret manager"
+        },
+        "sql_injection": {
+            "severity": "critical",
+            "patterns": [
+                "f\".*SELECT.*{.*}\"",
+                "f\".*INSERT.*{.*}\"",
+                "f\".*DELETE.*{.*}\"",
+                "\".*SELECT.*\" \\+ ",
+                "\".*INSERT.*\" \\+ ",
+                "query\\(.*\\$\\{",
+                "execute\\(.*%s"
+            ],
+            "fix": "Use parameterized queries or ORM"
+        },
+        "xss": {
+            "severity": "high",
+            "patterns": [
+                "innerHTML\\s*=",
+                "dangerouslySetInnerHTML",
+                "document\\.write\\(",
+                "eval\\(",
+                "v-html="
+            ],
+            "fix": "Sanitize user input, use textContent instead of innerHTML"
+        },
+        "insecure_dependencies": {
+            "severity": "medium",
+            "patterns": [
+                "http://",
+                "require\\('crypto'\\).createCipher\\(",
+                "md5\\(",
+                "sha1\\("
+            ],
+            "fix": "Use HTTPS, use modern crypto algorithms (SHA-256+)"
+        }
+    },
+    "owasp_top_10_2023": {
+        "A01": {
+            "name": "Broken Access Control",
+            "check": "Verify authorization on every endpoint"
+        },
+        "A02": {
+            "name": "Cryptographic Failures",
+            "check": "Use TLS, strong hashing, no hardcoded secrets"
+        },
+        "A03": {
+            "name": "Injection",
+            "check": "Parameterized queries, input validation"
+        },
+        "A04": {
+            "name": "Insecure Design",
+            "check": "Threat modeling, secure design patterns"
+        },
+        "A05": {
+            "name": "Security Misconfiguration",
+            "check": "Remove defaults, disable debug, set headers"
+        },
+        "A06": {
+            "name": "Vulnerable Components",
+            "check": "Regular dependency updates, SCA scanning"
+        },
+        "A07": {
+            "name": "Auth Failures",
+            "check": "MFA, rate limiting, secure session management"
+        },
+        "A08": {
+            "name": "Data Integrity Failures",
+            "check": "Verify signatures, use SRI for CDN resources"
+        },
+        "A09": {
+            "name": "Logging Failures",
+            "check": "Log auth events, detect active attacks"
+        },
+        "A10": {
+            "name": "SSRF",
+            "check": "Validate/sanitize URLs, restrict outbound requests"
+        }
+    },
+    "security_headers": {
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "0",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+}

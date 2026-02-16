@@ -1,0 +1,74 @@
+{
+    "scope_limits": {
+        "mvp": {
+            "max_features": 5,
+            "max_duration_weeks": 4,
+            "description": "MVP should focus on core value only. If features > 5, cut nice-to-haves."
+        },
+        "v1": {
+            "max_features": 15,
+            "max_duration_weeks": 12,
+            "description": "V1 includes core + secondary features. Ensure robust testing."
+        }
+    },
+    "risks": {
+        "tech": [
+            {
+                "keyword": "ai",
+                "risk": "Model hallucination & latency",
+                "mitigation": "Human-in-the-loop, caching, streaming responses"
+            },
+            {
+                "keyword": "realtime",
+                "risk": "WebSocket scalability issues",
+                "mitigation": "Use managed services (Pusher/Supabase) or heavy load testing"
+            },
+            {
+                "keyword": "payment",
+                "risk": "Compliance & fraudulent transactions",
+                "mitigation": "Use Stripe/PayPal/VietQR handling, implement logging"
+            },
+            {
+                "keyword": "blockchain",
+                "risk": "Smart contract bugs & gas fees",
+                "mitigation": "Audit contracts, use L2 networks"
+            }
+        ],
+        "process": [
+            {
+                "condition": "team_size > 5",
+                "risk": "Communication breakdown",
+                "mitigation": "Daily standups, strict documentation"
+            },
+            {
+                "condition": "timeline < 2 weeks",
+                "risk": "Burnout & poor quality",
+                "mitigation": "Cut scope, focus on happy path only"
+            }
+        ]
+    },
+    "milestone_templates": {
+        "standard": [
+            {
+                "phase": "Phase 1: Foundation",
+                "duration_ratio": 0.2,
+                "focus": "Setup, Architect, DB Schema, Auth"
+            },
+            {
+                "phase": "Phase 2: Core Features",
+                "duration_ratio": 0.4,
+                "focus": "Main user flows (CRUD), Business Logic"
+            },
+            {
+                "phase": "Phase 3: Polish & UI",
+                "duration_ratio": 0.2,
+                "focus": "UI/UX refinements, responsive fix, animations"
+            },
+            {
+                "phase": "Phase 4: QA & Launch",
+                "duration_ratio": 0.2,
+                "focus": "Testing, Bug fix, Deployment, Docs"
+            }
+        ]
+    }
+}

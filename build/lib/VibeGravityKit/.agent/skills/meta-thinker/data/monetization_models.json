@@ -1,0 +1,570 @@
+[
+    {
+        "id": "freemium",
+        "name": "Freemium",
+        "description": "Free for basic use, pay for advanced features",
+        "how_it_works": "User uses free version → loves it → upgrades to paid for features, storage, or higher limits",
+        "examples": [
+            "Spotify",
+            "Notion",
+            "Canva",
+            "Zoom",
+            "Slack"
+        ],
+        "pros": [
+            "Low barrier to entry, easy user acquisition",
+            "Viral growth via free tier",
+            "Natural upsell path"
+        ],
+        "cons": [
+            "Low conversion rate (2-5%)",
+            "Hard to balance free vs paid",
+            "Server cost for free users"
+        ],
+        "best_for": [
+            "SaaS",
+            "Tool",
+            "Content platform",
+            "Mobile app"
+        ],
+        "metrics": [
+            "Free-to-paid conversion rate",
+            "ARPU",
+            "Time to upgrade"
+        ],
+        "pricing_tips": "Free tier must be valuable enough to keep users, but limited enough to drive upgrades"
+    },
+    {
+        "id": "subscription",
+        "name": "Subscription (Monthly/Yearly)",
+        "description": "Recurring fee for service access",
+        "how_it_works": "User subscribes to monthly/yearly plan. Usually 2-3 tiers (Basic, Pro, Enterprise)",
+        "examples": [
+            "Netflix",
+            "ChatGPT Plus",
+            "GitHub Copilot",
+            "Adobe CC",
+            "Duolingo Plus"
+        ],
+        "pros": [
+            "Stable recurring revenue (MRR)",
+            "Predictable forecasting",
+            "High LTV"
+        ],
+        "cons": [
+            "Churn risk",
+            "Must continuously ship value",
+            "Price sensitivity"
+        ],
+        "best_for": [
+            "SaaS",
+            "Content platform",
+            "EdTech",
+            "AI product"
+        ],
+        "metrics": [
+            "MRR/ARR",
+            "Churn rate",
+            "LTV:CAC ratio",
+            "Net revenue retention"
+        ],
+        "pricing_tips": "Yearly plan 20% discount vs monthly → better lock-in + cash flow"
+    },
+    {
+        "id": "per-seat",
+        "name": "Per-Seat / Per-User",
+        "description": "Charge per user in a team",
+        "how_it_works": "More users = more fee. Often has minimum seats and volume discounts",
+        "examples": [
+            "Slack",
+            "Jira",
+            "Figma",
+            "Linear",
+            "Monday.com"
+        ],
+        "pros": [
+            "Revenue scales with adoption",
+            "Natural upsell as team grows",
+            "Transparent pricing"
+        ],
+        "cons": [
+            "Seat sharing/abuse",
+            "Barrier for large teams",
+            "Hard for B2C"
+        ],
+        "best_for": [
+            "B2B SaaS",
+            "Team collaboration tool",
+            "CRM",
+            "Project management"
+        ],
+        "metrics": [
+            "Seats per account",
+            "Expansion revenue",
+            "Net dollar retention"
+        ],
+        "pricing_tips": "Offer free seats for small teams (3-5) to hook, then charge when scaling"
+    },
+    {
+        "id": "usage-based",
+        "name": "Usage-Based / Pay-as-you-go",
+        "description": "Pay for what you use",
+        "how_it_works": "Charge by API calls, tokens, storage, bandwidth, or transactions",
+        "examples": [
+            "AWS",
+            "OpenAI API",
+            "Twilio",
+            "Stripe",
+            "Vercel"
+        ],
+        "pros": [
+            "Fair pricing",
+            "Low barrier to start",
+            "Revenue aligns with value"
+        ],
+        "cons": [
+            "Unpredictable revenue",
+            "Hard to forecast",
+            "Billing complexity"
+        ],
+        "best_for": [
+            "API service",
+            "Cloud/Infra",
+            "AI product",
+            "Communication platform"
+        ],
+        "metrics": [
+            "Usage growth rate",
+            "Revenue per unit",
+            "Gross margin"
+        ],
+        "pricing_tips": "Give free tier (1000 calls/month) for devs to test, charge for production"
+    },
+    {
+        "id": "marketplace-commission",
+        "name": "Marketplace Commission",
+        "description": "Take % fee on each transaction",
+        "how_it_works": "Platform connects buyer-seller, takes 10-30% commission per transaction",
+        "examples": [
+            "Shopee (10-15%)",
+            "Airbnb (3% host + 14% guest)",
+            "Uber (25%)",
+            "Fiverr (20%)",
+            "App Store (30%)"
+        ],
+        "pros": [
+            "Revenue scales with GMV",
+            "No inventory risk",
+            "Network effects"
+        ],
+        "cons": [
+            "Chicken-and-egg problem",
+            "Disintermediation risk",
+            "Race to bottom fees"
+        ],
+        "best_for": [
+            "Marketplace",
+            "On-demand",
+            "Freelance platform",
+            "Booking"
+        ],
+        "metrics": [
+            "GMV",
+            "Take rate",
+            "Liquidity",
+            "Repeat rate"
+        ],
+        "pricing_tips": "Start with low commission (5-10%) to attract both sides, increase gradually"
+    },
+    {
+        "id": "advertising",
+        "name": "Advertising / Ads",
+        "description": "Free for users, monetize via ads",
+        "how_it_works": "Build audience → sell ad space. Models: CPM, CPC, CPA, sponsored content",
+        "examples": [
+            "Google",
+            "Facebook",
+            "YouTube",
+            "TikTok",
+            "Reddit"
+        ],
+        "pros": [
+            "Free for user → massive scale",
+            "Data-driven targeting",
+            "High margin at scale"
+        ],
+        "cons": [
+            "Need millions of users",
+            "Ad blockers",
+            "Privacy concerns",
+            "User experience trade-off"
+        ],
+        "best_for": [
+            "Social network",
+            "Content platform",
+            "Search engine",
+            "Free tools"
+        ],
+        "metrics": [
+            "DAU/MAU",
+            "CPM/CPC",
+            "Ad revenue per user (ARPU)",
+            "Time on platform"
+        ],
+        "pricing_tips": "Niche audiences have higher CPM (developer, finance > general)"
+    },
+    {
+        "id": "one-time-purchase",
+        "name": "One-Time Purchase",
+        "description": "Buy once, use forever",
+        "how_it_works": "User pays once for lifetime license. Can charge for major updates (v2, v3)",
+        "examples": [
+            "Sketch (formerly)",
+            "Sublime Text",
+            "Things 3",
+            "Affinity Designer",
+            "Raycast Pro"
+        ],
+        "pros": [
+            "Simple pricing",
+            "Appealing to cost-conscious users",
+            "Lower refund pressure"
+        ],
+        "cons": [
+            "No recurring revenue",
+            "Must constantly acquire new users",
+            "Hard to sustain long-term"
+        ],
+        "best_for": [
+            "Desktop app",
+            "Mobile app",
+            "Browser extension",
+            "Digital asset"
+        ],
+        "metrics": [
+            "Units sold",
+            "AOV",
+            "Refund rate",
+            "Version upgrade rate"
+        ],
+        "pricing_tips": "Combine with optional 'update plan' for ongoing revenue after purchase"
+    },
+    {
+        "id": "in-app-purchase",
+        "name": "In-App Purchase (IAP)",
+        "description": "Buy items, credits, or features inside the app",
+        "how_it_works": "App free download, monetize via virtual goods, cosmetics, power-ups, content",
+        "examples": [
+            "Duolingo (Super)",
+            "Tinder (Boost)",
+            "Pokemon GO",
+            "Candy Crush",
+            "YouTube Premium"
+        ],
+        "pros": [
+            "Low barrier to install",
+            "Whales drive revenue",
+            "Flexible monetization"
+        ],
+        "cons": [
+            "Low conversion (2-5%)",
+            "Regulatory scrutiny",
+            "Pay-to-win criticism"
+        ],
+        "best_for": [
+            "Mobile game",
+            "Social app",
+            "Dating app",
+            "Utility app"
+        ],
+        "metrics": [
+            "ARPPU",
+            "Conversion to payer",
+            "Purchase frequency",
+            "Whale ratio"
+        ],
+        "pricing_tips": "Offer starter pack at low price point ($0.99-$2.99) to break payment barrier"
+    },
+    {
+        "id": "affiliate",
+        "name": "Affiliate / Referral Revenue",
+        "description": "Earn commission by referring users to other products",
+        "how_it_works": "Affiliate link → user buys from partner → earn 5-30% commission",
+        "examples": [
+            "NerdWallet",
+            "The Wirecutter",
+            "Honey",
+            "Bankrate",
+            "PCPartPicker"
+        ],
+        "pros": [
+            "No product needed",
+            "Passive revenue",
+            "Low risk"
+        ],
+        "cons": [
+            "Dependent on partner",
+            "Trust issues",
+            "Commission changes"
+        ],
+        "best_for": [
+            "Review site",
+            "Comparison tool",
+            "Content platform",
+            "Browser extension"
+        ],
+        "metrics": [
+            "Click-through rate",
+            "Conversion rate",
+            "Revenue per click",
+            "Partner diversity"
+        ],
+        "pricing_tips": "Diversify partners to reduce risk and increase relevant recommendations"
+    },
+    {
+        "id": "data-licensing",
+        "name": "Data Licensing / Insights",
+        "description": "Sell aggregated data or insights",
+        "how_it_works": "Aggregate anonymized data → sell reports, benchmarks, or API access to businesses",
+        "examples": [
+            "LinkedIn (Talent Insights)",
+            "SEMrush",
+            "SimilarWeb",
+            "Crunchbase",
+            "Glassdoor"
+        ],
+        "pros": [
+            "High margin",
+            "Recurring B2B revenue",
+            "Unique competitive moat"
+        ],
+        "cons": [
+            "Privacy regulations (GDPR)",
+            "Data quality requirement",
+            "Ethical concerns"
+        ],
+        "best_for": [
+            "Platform with rich data",
+            "Analytics tool",
+            "Job/HR platform",
+            "Market research"
+        ],
+        "metrics": [
+            "Data freshness",
+            "Coverage",
+            "Accuracy",
+            "Client retention"
+        ],
+        "pricing_tips": "Start with reports, evolve to real-time API access as data matures"
+    },
+    {
+        "id": "white-label",
+        "name": "White-Label / Licensing",
+        "description": "Sell software for others to rebrand and resell",
+        "how_it_works": "Build once → license to multiple clients → they rebrand and sell to their customers",
+        "examples": [
+            "Sharetribe (marketplace)",
+            "Teachable (courses)",
+            "Shopify (e-commerce infra)",
+            "Vonage (comms)"
+        ],
+        "pros": [
+            "Multiple revenue streams",
+            "Low marginal cost",
+            "Enterprise pricing"
+        ],
+        "cons": [
+            "Support complexity",
+            "Less control over brand",
+            "Feature requests chaos"
+        ],
+        "best_for": [
+            "Platform",
+            "SaaS",
+            "API service",
+            "CMS"
+        ],
+        "metrics": [
+            "License revenue",
+            "Client retention",
+            "Customization requests"
+        ],
+        "pricing_tips": "Base fee + usage fee hybrid works well for white-label"
+    },
+    {
+        "id": "donation-sponsorship",
+        "name": "Donation / Sponsorship / Open Source",
+        "description": "Monetize via donations, sponsorships, or premium support",
+        "how_it_works": "Free product, revenue via GitHub Sponsors, Patreon, Open Collective, or enterprise support",
+        "examples": [
+            "Vue.js",
+            "Wikipedia",
+            "curl",
+            "Webpack",
+            "Homebrew"
+        ],
+        "pros": [
+            "Community goodwill",
+            "No paywall",
+            "Brand building"
+        ],
+        "cons": [
+            "Unpredictable income",
+            "Sustainability risk",
+            "Burnout"
+        ],
+        "best_for": [
+            "Open source",
+            "Developer tool",
+            "Non-profit",
+            "Community project"
+        ],
+        "metrics": [
+            "Monthly sponsors",
+            "Total donations",
+            "GitHub stars (proxy for reach)"
+        ],
+        "pricing_tips": "Combine with consulting/enterprise support for sustainable income"
+    },
+    {
+        "id": "pay-per-result",
+        "name": "Pay-Per-Result / Success Fee",
+        "description": "Charge only when the product delivers measurable outcomes",
+        "how_it_works": "User pays based on results achieved (leads generated, sales closed, problems solved), not usage or time",
+        "examples": [
+            "Upwork (escrow + milestone)",
+            "Performance marketing platforms",
+            "AI-powered recruiting (pay per hire)",
+            "Legal tech (pay if case won)"
+        ],
+        "pros": [
+            "Low risk for customer = easy to sell",
+            "High perceived value",
+            "Aligns incentives (you win when they win)"
+        ],
+        "cons": [
+            "Revenue unpredictability",
+            "Hard to define 'result' precisely",
+            "Requires tracking and attribution"
+        ],
+        "best_for": [
+            "AI/ML products",
+            "Lead generation",
+            "Recruiting platform",
+            "Marketing tools"
+        ],
+        "metrics": [
+            "Cost per result",
+            "Result delivery rate",
+            "Customer satisfaction",
+            "Revenue per customer"
+        ],
+        "pricing_tips": "Define 'result' clearly in contract. Offer a base fee + success bonus for predictable revenue."
+    },
+    {
+        "id": "reverse-trial",
+        "name": "Reverse Trial (Premium First)",
+        "description": "Give users FULL premium access first, then downgrade to free. Users experience the best version before deciding.",
+        "how_it_works": "14-30 day premium trial → auto-downgrade to free tier → user upgrades when they miss premium features",
+        "examples": [
+            "Ahrefs (7-day trial)",
+            "Toggl Track",
+            "Grammarly",
+            "Loom"
+        ],
+        "pros": [
+            "Higher conversion than freemium (users experience full value)",
+            "Users build habits with premium features",
+            "Loss aversion drives upgrades"
+        ],
+        "cons": [
+            "Higher initial server costs",
+            "Users may game trials (new accounts)",
+            "Must have significant premium-vs-free gap"
+        ],
+        "best_for": [
+            "SaaS tools",
+            "Productivity apps",
+            "Analytics platforms",
+            "Design tools"
+        ],
+        "metrics": [
+            "Trial-to-paid conversion",
+            "Feature adoption during trial",
+            "Time-to-first-value",
+            "Trial duration optimization"
+        ],
+        "pricing_tips": "14 days is the sweet spot for most SaaS. Require credit card to reduce tire-kickers by 60%."
+    },
+    {
+        "id": "tokenization",
+        "name": "Tokenization / Credits",
+        "description": "Users buy tokens/credits to use features. Flexible, granular pricing without commitment.",
+        "how_it_works": "Buy credit packs → spend credits per action (AI generation, API call, export). Credits never expire or expire yearly.",
+        "examples": [
+            "ChatGPT (message credits)",
+            "Midjourney (image credits)",
+            "Adobe Stock (download credits)",
+            "AWS Lambda (invocation credits)"
+        ],
+        "pros": [
+            "Users pay exactly for what they use",
+            "No commitment anxiety",
+            "Upsell to subscription for heavy users"
+        ],
+        "cons": [
+            "Complex pricing communication",
+            "Users may be uncertain about costs",
+            "Harder to predict revenue"
+        ],
+        "best_for": [
+            "AI-powered tools",
+            "API services",
+            "Design/Media tools",
+            "Game platforms"
+        ],
+        "metrics": [
+            "Credits purchased",
+            "Credits consumed",
+            "Credit balance at churn",
+            "Average credits per user per month"
+        ],
+        "pricing_tips": "Offer a free credit pack for onboarding. Bundle subscriptions with monthly credit allowances."
+    },
+    {
+        "id": "bundling",
+        "name": "Product Bundling / Suite",
+        "description": "Offer multiple products as a single package at a discounted price",
+        "how_it_works": "Individual products sold separately, or as a bundle at 30-50% discount. Bundle drives adoption across product line.",
+        "examples": [
+            "Microsoft 365",
+            "Adobe Creative Cloud",
+            "Apple One",
+            "JetBrains All Products Pack",
+            "Setapp"
+        ],
+        "pros": [
+            "Higher ARPU via cross-sell",
+            "Reduces churn (switching one tool = losing all)",
+            "Competitors can't match the value"
+        ],
+        "cons": [
+            "Need multiple good products first",
+            "Complex pricing matrix",
+            "Cannibalizes individual product sales"
+        ],
+        "best_for": [
+            "Enterprise software suite",
+            "Creative tools",
+            "Productivity Suite",
+            "Streaming services"
+        ],
+        "metrics": [
+            "Bundle adoption rate",
+            "Products used per user",
+            "Bundle vs individual revenue",
+            "Cross-product retention"
+        ],
+        "pricing_tips": "Price bundle at 60-70% of individual sum. Free trial individual products to hook users, then offer bundle upgrade."
+    }
+]

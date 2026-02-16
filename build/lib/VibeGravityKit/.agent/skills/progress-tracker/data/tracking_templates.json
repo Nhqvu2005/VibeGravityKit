@@ -1,0 +1,60 @@
+{
+    "status_template": {
+        "project_name": "",
+        "report_date": "",
+        "overall_status": "green|yellow|red",
+        "summary": "",
+        "phases": [],
+        "blockers": [],
+        "risks": [],
+        "next_week_goals": []
+    },
+    "status_definitions": {
+        "green": "On track, no blockers",
+        "yellow": "At risk, needs attention",
+        "red": "Blocked or significantly behind schedule"
+    },
+    "milestone_types": {
+        "kickoff": "Project started, team aligned",
+        "design_complete": "UI/UX designs approved",
+        "mvp_ready": "Core features functional",
+        "beta_launch": "Internal/limited external testing",
+        "production_launch": "Public release",
+        "post_launch": "Monitoring, bug fixes, iteration"
+    },
+    "burndown_tracking": {
+        "fields": [
+            "sprint",
+            "planned_points",
+            "completed_points",
+            "remaining_points",
+            "velocity"
+        ],
+        "health_indicators": {
+            "on_track": "completed >= 80% of planned",
+            "at_risk": "completed 50-79% of planned",
+            "behind": "completed < 50% of planned"
+        }
+    },
+    "report_formats": {
+        "daily_standup": [
+            "What I did yesterday",
+            "What I'm doing today",
+            "Any blockers"
+        ],
+        "weekly_report": [
+            "Accomplishments",
+            "In Progress",
+            "Planned Next Week",
+            "Risks & Blockers",
+            "Metrics"
+        ],
+        "sprint_review": [
+            "Sprint Goal",
+            "Completed Stories",
+            "Incomplete Stories",
+            "Demo Notes",
+            "Retrospective Items"
+        ]
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "seo_checklist": {
+        "meta_tags": {
+            "required": [
+                {
+                    "tag": "title",
+                    "max_length": 60,
+                    "description": "Page title, unique per page"
+                },
+                {
+                    "tag": "meta description",
+                    "max_length": 160,
+                    "description": "Page summary for search results"
+                },
+                {
+                    "tag": "meta viewport",
+                    "value": "width=device-width, initial-scale=1",
+                    "description": "Mobile responsiveness"
+                },
+                {
+                    "tag": "meta charset",
+                    "value": "UTF-8",
+                    "description": "Character encoding"
+                },
+                {
+                    "tag": "link canonical",
+                    "description": "Preferred URL for duplicate content"
+                }
+            ],
+            "open_graph": [
+                {
+                    "property": "og:title",
+                    "description": "Social share title"
+                },
+                {
+                    "property": "og:description",
+                    "description": "Social share description"
+                },
+                {
+                    "property": "og:image",
+                    "description": "Social share image (1200x630px)"
+                },
+                {
+                    "property": "og:url",
+                    "description": "Canonical URL"
+                },
+                {
+                    "property": "og:type",
+                    "description": "website, article, product"
+                }
+            ],
+            "twitter_card": [
+                {
+                    "name": "twitter:card",
+                    "value": "summary_large_image"
+                },
+                {
+                    "name": "twitter:title",
+                    "description": "Tweet title"
+                },
+                {
+                    "name": "twitter:description",
+                    "description": "Tweet description"
+                },
+                {
+                    "name": "twitter:image",
+                    "description": "Tweet image"
+                }
+            ]
+        },
+        "content": [
+            "Single H1 per page",
+            "Proper heading hierarchy (H1 > H2 > H3)",
+            "Alt text on all images",
+            "Internal links between related pages",
+            "External links to authoritative sources",
+            "Minimum 300 words for content pages"
+        ],
+        "technical": [
+            "SSL/HTTPS enabled",
+            "XML Sitemap submitted",
+            "robots.txt configured",
+            "Page load time < 3 seconds",
+            "Mobile-friendly (responsive)",
+            "No broken links (404s)",
+            "Structured data (Schema.org JSON-LD)"
+        ]
+    },
+    "schema_org_templates": {
+        "organization": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "{org_name}",
+            "url": "{url}",
+            "logo": "{logo_url}",
+            "sameAs": [
+                "{social_url_1}",
+                "{social_url_2}"
+            ]
+        },
+        "product": {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "{product_name}",
+            "image": "{image_url}",
+            "description": "{description}",
+            "offers": {
+                "@type": "Offer",
+                "price": "{price}",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+            }
+        },
+        "article": {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{title}",
+            "author": {
+                "@type": "Person",
+                "name": "{author}"
+            },
+            "datePublished": "{date}",
+            "image": "{image_url}"
+        }
+    },
+    "performance_targets": {
+        "LCP": {
+            "good": "<2.5s",
+            "needs_improvement": "2.5-4s",
+            "poor": ">4s"
+        },
+        "FID": {
+            "good": "<100ms",
+            "needs_improvement": "100-300ms",
+            "poor": ">300ms"
+        },
+        "CLS": {
+            "good": "<0.1",
+            "needs_improvement": "0.1-0.25",
+            "poor": ">0.25"
+        },
+        "TTFB": {
+            "good": "<800ms",
+            "needs_improvement": "800-1800ms",
+            "poor": ">1800ms"
+        }
+    }
+}

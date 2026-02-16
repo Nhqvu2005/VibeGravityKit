@@ -1,0 +1,85 @@
+{
+    "personas": {
+        "generic": {
+            "name": "Alex (General User)",
+            "goals": [
+                "Get tasks done quickly",
+                "Easy navigation",
+                "Mobile access"
+            ],
+            "pain_points": [
+                "Slow loading",
+                "Confusing menus",
+                "Too many steps"
+            ]
+        },
+        "power_user": {
+            "name": "Sarah (Pro)",
+            "goals": [
+                "Keyboard shortcuts",
+                "Advanced filters",
+                "Data export"
+            ],
+            "pain_points": [
+                "Lack of customization",
+                "Basic interface limits"
+            ]
+        },
+        "mobile_shopper": {
+            "name": "Mike (On-the-go)",
+            "goals": [
+                "One-thumb interaction",
+                "Quick checkout",
+                "Save for later"
+            ],
+            "pain_points": [
+                "Small hit targets",
+                "Unoptimized images",
+                "complex forms"
+            ]
+        }
+    },
+    "usability_heuristics": [
+        "Visibility of system status (Loader/Feedback)",
+        "Match between system and real world (Language)",
+        "User control and freedom (Undo/Exit)",
+        "Consistency and standards (Platform guidelines)",
+        "Error prevention (Confirmations)",
+        "Recognition rather than recall (Visible menu)",
+        "Flexibility and efficiency of use (Shortcuts)",
+        "Aesthetic and minimalist design (No clutter)",
+        "Help users recognize, diagnose, and recover from errors (Clear messages)",
+        "Help and documentation (Onboarding)"
+    ],
+    "handoff_checklist": {
+        "web": [
+            "Responsive states (Mobile, Tablet, Desktop)",
+            "Hover/Focus/Active states for all buttons",
+            "Empty states (No data)",
+            "Loading states (Skeletons)",
+            "Error states (Form validation)",
+            "Favicon & OG Tags",
+            "Asset export (SVG/WebP)"
+        ],
+        "mobile_app": [
+            "Touch targets >= 44x44px (iOS) / 48x48dp (Android)",
+            "Safe areas (Notch constraint)",
+            "Dark mode support",
+            "Offline mode UI",
+            "App Icon variants",
+            "Splash screen"
+        ]
+    },
+    "tech_constraints": {
+        "mobile": [
+            "Limited screen real estate",
+            "Unstable network",
+            "Battery consumption"
+        ],
+        "web": [
+            "Browser compatibility",
+            "SEO requirements",
+            "Initial load time"
+        ]
+    }
+}

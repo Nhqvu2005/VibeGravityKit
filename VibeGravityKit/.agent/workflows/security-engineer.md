@@ -4,6 +4,10 @@ description: Security Engineer - Security Workflow (Audit/Pen-Test/Incident).
 
 # Security Engineer Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context.
+
 ## Core Principles
 1.  **Shift Left**: Audit code *during* development, not after.
 2.  **Standards**: Use `checklist_gen.py` for consistent review (OWASP).

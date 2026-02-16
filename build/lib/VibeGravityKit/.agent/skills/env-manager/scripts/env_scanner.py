@@ -1,0 +1,181 @@
+#!/usr/bin/env python3
+"""
+env_scanner.py — Scan project for environment variable usage
+and generate a .env.example file.
+"""
+
+import os
+import re
+import argparse
+from pathlib import Path
+from collections import defaultdict
+
+# Patterns to detect env var usage
+ENV_PATTERNS = [
+    # JavaScript/TypeScript: process.env.VAR_NAME
+    re.compile(r'process\.env\.([A-Z][A-Z0-9_]+)'),
+    # Python: os.environ["VAR"], os.environ.get("VAR"), os.getenv("VAR")
+    re.compile(r'os\.environ(?:\.get)?\s*\[\s*["\']([A-Z][A-Z0-9_]+)["\']\s*\]'),
+    re.compile(r'os\.(?:environ\.get|getenv)\s*\(\s*["\']([A-Z][A-Z0-9_]+)["\']'),
+    # Generic: ${VAR_NAME} in config files
+    re.compile(r'\$\{([A-Z][A-Z0-9_]+)\}'),
+    # Docker/Shell: ENV VAR_NAME or export VAR_NAME
+    re.compile(r'(?:^|\s)(?:ENV|export)\s+([A-Z][A-Z0-9_]+)\s*='),
+]
+
+# File extensions to scan
+SCAN_EXTENSIONS = {
+    '.js', '.ts', '.jsx', '.tsx', '.py', '.env', '.yaml', '.yml',
+    '.toml', '.cfg', '.ini', '.sh', '.bash', '.dockerfile',
+}
+
+SKIP_DIRS = {'node_modules', '.git', '__pycache__', '.next', 'dist', 'venv', '.venv'}
+
+# Common env var descriptions
+COMMON_VARS = {
+    'DATABASE_URL': 'Database connection string',
+    'DB_HOST': 'Database host',
+    'DB_PORT': 'Database port',
+    'DB_USER': 'Database username',
+    'DB_PASSWORD': 'Database password',
+    'DB_NAME': 'Database name',
+    'REDIS_URL': 'Redis connection URL',
+    'SECRET_KEY': 'Application secret key',
+    'JWT_SECRET': 'JWT signing secret',
+    'API_KEY': 'API key',
+    'PORT': 'Server port',
+    'HOST': 'Server host',
+    'NODE_ENV': 'Node environment (development/production)',
+    'DEBUG': 'Debug mode flag',
+    'LOG_LEVEL': 'Logging level',
+    'SMTP_HOST': 'Email server host',
+    'SMTP_PORT': 'Email server port',
+    'SMTP_USER': 'Email username',
+    'SMTP_PASS': 'Email password',
+    'AWS_ACCESS_KEY_ID': 'AWS access key',
+    'AWS_SECRET_ACCESS_KEY': 'AWS secret key',
+    'AWS_REGION': 'AWS region',
+    'S3_BUCKET': 'S3 bucket name',
+    'STRIPE_SECRET_KEY': 'Stripe secret key',
+    'STRIPE_PUBLISHABLE_KEY': 'Stripe publishable key',
+    'GOOGLE_CLIENT_ID': 'Google OAuth client ID',
+    'GOOGLE_CLIENT_SECRET': 'Google OAuth client secret',
+    'GITHUB_CLIENT_ID': 'GitHub OAuth client ID',
+    'GITHUB_CLIENT_SECRET': 'GitHub OAuth client secret',
+    'NEXT_PUBLIC_API_URL': 'Public API URL (Next.js)',
+    'VITE_API_URL': 'API URL (Vite)',
+}
+
+
+def scan_file(filepath):
+    """Scan a single file for env var references."""
+    found = set()
+    try:
+        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            for pattern in ENV_PATTERNS:
+                matches = pattern.findall(content)
+                found.update(matches)
+    except Exception:
+        pass
+    return found
+
+
+def scan_project(path):
+    """Scan entire project directory."""
+    env_vars = defaultdict(set)  # var_name -> set of files
+    root = Path(path)
+
+    for dirpath, dirnames, filenames in os.walk(root):
+        # Skip ignored directories
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+
+        for filename in filenames:
+            filepath = Path(dirpath) / filename
+            if filepath.suffix.lower() in SCAN_EXTENSIONS:
+                found = scan_file(filepath)
+                for var in found:
+                    rel_path = filepath.relative_to(root)
+                    env_vars[var].add(str(rel_path))
+
+    return env_vars
+
+
+def generate_env_example(env_vars, output_path='.env.example'):
+    """Generate .env.example file."""
+    # Categorize variables
+    categories = {
+        'Database': [],
+        'Authentication': [],
+        'API Keys': [],
+        'Email': [],
+        'Cloud (AWS/GCP)': [],
+        'Application': [],
+        'Other': [],
+    }
+
+    for var in sorted(env_vars.keys()):
+        if any(k in var for k in ['DB_', 'DATABASE', 'POSTGRES', 'MYSQL', 'MONGO', 'REDIS']):
+            categories['Database'].append(var)
+        elif any(k in var for k in ['SECRET', 'JWT', 'AUTH', 'TOKEN', 'CLIENT_ID', 'CLIENT_SECRET', 'PASSWORD', 'PASS']):
+            categories['Authentication'].append(var)
+        elif any(k in var for k in ['API_KEY', 'API_URL', 'STRIPE', 'SENDGRID', 'TWILIO']):
+            categories['API Keys'].append(var)
+        elif any(k in var for k in ['SMTP', 'MAIL', 'EMAIL']):
+            categories['Email'].append(var)
+        elif any(k in var for k in ['AWS', 'GCP', 'AZURE', 'S3_', 'CLOUD']):
+            categories['Cloud (AWS/GCP)'].append(var)
+        elif any(k in var for k in ['PORT', 'HOST', 'NODE_ENV', 'DEBUG', 'LOG', 'APP_']):
+            categories['Application'].append(var)
+        else:
+            categories['Other'].append(var)
+
+    lines = [
+        '# ============================================',
+        '# Environment Variables',
+        '# Generated by VibeGravityKit env-manager',
+        '# ============================================',
+        '',
+    ]
+
+    for category, vars_list in categories.items():
+        if not vars_list:
+            continue
+        lines.append(f'# --- {category} ---')
+        for var in vars_list:
+            desc = COMMON_VARS.get(var, 'TODO: Add description')
+            sources = ', '.join(sorted(env_vars[var]))
+            lines.append(f'# {desc} (used in: {sources})')
+            lines.append(f'{var}=')
+            lines.append('')
+        lines.append('')
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+
+    return output_path
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Scan project for env vars and generate .env.example')
+    parser.add_argument('--path', default='.', help='Project path to scan')
+    parser.add_argument('--output', default='.env.example', help='Output file path')
+    args = parser.parse_args()
+
+    print(f'🔍 Scanning {args.path} for environment variables...')
+    env_vars = scan_project(args.path)
+
+    if not env_vars:
+        print('No environment variables found.')
+        return
+
+    print(f'📦 Found {len(env_vars)} unique environment variables:')
+    for var in sorted(env_vars.keys()):
+        print(f'  • {var}')
+
+    output = generate_env_example(env_vars, args.output)
+    print(f'\n✅ Generated {output} with {len(env_vars)} variables.')
+
+
+if __name__ == '__main__':
+    main()

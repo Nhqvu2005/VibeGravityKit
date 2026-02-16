@@ -1,0 +1,614 @@
+[
+    {
+        "id": "scamper",
+        "name": "SCAMPER",
+        "description": "7 thought-sparking questions to transform existing products/ideas",
+        "steps": [
+            {
+                "letter": "S",
+                "action": "Substitute",
+                "question": "What component can be substituted?",
+                "example": "Uber: substitute traditional taxis with private cars"
+            },
+            {
+                "letter": "C",
+                "action": "Combine",
+                "question": "What can be combined?",
+                "example": "Grab: ride + food + payment in one app"
+            },
+            {
+                "letter": "A",
+                "action": "Adapt",
+                "question": "What can be adapted from another industry?",
+                "example": "Tinder: swipe from mobile UX → dating"
+            },
+            {
+                "letter": "M",
+                "action": "Modify",
+                "question": "What can be magnified/minified/modified?",
+                "example": "Twitter/X: limit 280 chars → concise content"
+            },
+            {
+                "letter": "P",
+                "action": "Put to other use",
+                "question": "Can it be used for something else?",
+                "example": "Slack: game chat tool → business communication"
+            },
+            {
+                "letter": "E",
+                "action": "Eliminate",
+                "question": "What can be eliminated?",
+                "example": "Notion: eliminate multiple apps → all-in-one workspace"
+            },
+            {
+                "letter": "R",
+                "action": "Reverse",
+                "question": "Can the process be reversed?",
+                "example": "Priceline: customer names price → hotel accepts"
+            }
+        ],
+        "best_for": [
+            "Improving existing products",
+            "Finding new angles for old markets"
+        ]
+    },
+    {
+        "id": "lean-canvas",
+        "name": "Lean Canvas",
+        "description": "1-page business model for startups, focused on problem-solution fit",
+        "sections": [
+            {
+                "name": "Problem",
+                "prompt": "Top 3 problems customers are facing?"
+            },
+            {
+                "name": "Customer Segments",
+                "prompt": "Who are the early adopters? Be specific."
+            },
+            {
+                "name": "Unique Value Proposition",
+                "prompt": "Single, clear, compelling message that turns an unknowing visitor into an interested prospect."
+            },
+            {
+                "name": "Solution",
+                "prompt": "Top 3 features to solve the top 3 problems?"
+            },
+            {
+                "name": "Channels",
+                "prompt": "Path to customers? (SEO, Ads, Referral, Content...)"
+            },
+            {
+                "name": "Revenue Streams",
+                "prompt": "Revenue model + Life Time Value + Revenue + Gross Margin"
+            },
+            {
+                "name": "Cost Structure",
+                "prompt": "Customer Acquisition Cost, Distribution Cost, Hosting, People, etc."
+            },
+            {
+                "name": "Key Metrics",
+                "prompt": "Key activities you measure (DAU, MRR, Retention...)"
+            },
+            {
+                "name": "Unfair Advantage",
+                "prompt": "Something that cannot be easily copied or bought."
+            }
+        ],
+        "best_for": [
+            "Early-stage startups",
+            "Validating ideas fast"
+        ]
+    },
+    {
+        "id": "5w1h",
+        "name": "5W1H Analysis",
+        "description": "Basic framework to analyze an idea comprehensively",
+        "questions": [
+            {
+                "w": "What",
+                "question": "What is the product? What problem does it solve?"
+            },
+            {
+                "w": "Who",
+                "question": "Who uses it? Who pays? Who decides?"
+            },
+            {
+                "w": "Why",
+                "question": "Why do they need it? Why now? Why you?"
+            },
+            {
+                "w": "When",
+                "question": "When do they use it? How often?"
+            },
+            {
+                "w": "Where",
+                "question": "Where is it used? Online/Offline? Mobile/Desktop?"
+            },
+            {
+                "w": "How",
+                "question": "How does it work? What tech? How to monetize?"
+            }
+        ],
+        "best_for": [
+            "Initial analysis",
+            "Understanding context"
+        ]
+    },
+    {
+        "id": "blue-ocean",
+        "name": "Blue Ocean Strategy",
+        "description": "Find a new market (blue ocean) instead of competing in a crowded one (red ocean)",
+        "canvas": [
+            {
+                "action": "Eliminate",
+                "question": "Which factors that the industry takes for granted should be eliminated?",
+                "example": "Southwest Airlines: eliminate meals, assigned seating"
+            },
+            {
+                "action": "Reduce",
+                "question": "Which factors should be reduced well below the industry's standard?",
+                "example": "IKEA: reduce staff service, assembly service"
+            },
+            {
+                "action": "Raise",
+                "question": "Which factors should be raised well above the industry's standard?",
+                "example": "Dyson: raise design and technology standards"
+            },
+            {
+                "action": "Create",
+                "question": "Which factors should be created that the industry has never offered?",
+                "example": "Tesla: create charging network, OTA updates"
+            }
+        ],
+        "best_for": [
+            "High competition markets",
+            "Differentiation strategy"
+        ]
+    },
+    {
+        "id": "jobs-to-be-done",
+        "name": "Jobs To Be Done (JTBD)",
+        "description": "Understand the 'job' customers hire the product to do",
+        "framework": {
+            "template": "When [SITUATION], I want to [MOTIVATION], so I can [EXPECTED OUTCOME]",
+            "examples": [
+                "When [waiting for the bus], I want to [pass time productively], so I can [feel like I didn't waste time] → TikTok, Duolingo",
+                "When [sending money to a friend], I want to [do it instantly for free], so I can [avoid going to the bank] → MoMo, ZaloPay",
+                "When [learning to code], I want to [practice in browser], so I can [skip complex IDE setup] → Replit, CodeSandbox"
+            ],
+            "job_types": [
+                {
+                    "type": "Functional",
+                    "desc": "Complete a specific task",
+                    "example": "Send money, order food"
+                },
+                {
+                    "type": "Emotional",
+                    "desc": "How they want to feel",
+                    "example": "Secure, confident, entertained"
+                },
+                {
+                    "type": "Social",
+                    "desc": "How they want to be perceived",
+                    "example": "Professional, savvy, responsible"
+                }
+            ]
+        },
+        "best_for": [
+            "Understanding true user motivation",
+            "Deep user insights"
+        ]
+    },
+    {
+        "id": "value-proposition-canvas",
+        "name": "Value Proposition Canvas",
+        "description": "Map customer profile to value proposition",
+        "customer_profile": [
+            {
+                "element": "Customer Jobs",
+                "prompt": "What jobs are customers trying to get done?"
+            },
+            {
+                "element": "Pains",
+                "prompt": "Pains, risks, obstacles related to jobs?"
+            },
+            {
+                "element": "Gains",
+                "prompt": "Outcomes and benefits they want?"
+            }
+        ],
+        "value_map": [
+            {
+                "element": "Products & Services",
+                "prompt": "What products/services do you offer?"
+            },
+            {
+                "element": "Pain Relievers",
+                "prompt": "How do you relieve their pains?"
+            },
+            {
+                "element": "Gain Creators",
+                "prompt": "How do you create gains?"
+            }
+        ],
+        "best_for": [
+            "Product-market fit",
+            "Refining value proposition"
+        ]
+    },
+    {
+        "id": "design-sprint",
+        "name": "Design Sprint (Google Ventures)",
+        "description": "5-day process for answering critical business questions through design, prototyping, and testing",
+        "days": [
+            {
+                "day": 1,
+                "name": "Understand",
+                "activities": [
+                    "Map the problem",
+                    "Expert interviews",
+                    "How Might We notes"
+                ]
+            },
+            {
+                "day": 2,
+                "name": "Diverge",
+                "activities": [
+                    "Lightning demos",
+                    "Sketch solutions",
+                    "Crazy 8s"
+                ]
+            },
+            {
+                "day": 3,
+                "name": "Decide",
+                "activities": [
+                    "Vote on solutions",
+                    "Create storyboard",
+                    "Choose prototype plan"
+                ]
+            },
+            {
+                "day": 4,
+                "name": "Prototype",
+                "activities": [
+                    "Build realistic prototype",
+                    "Prepare interview script"
+                ]
+            },
+            {
+                "day": 5,
+                "name": "Test",
+                "activities": [
+                    "5 user interviews",
+                    "Observe and learn",
+                    "Plan next steps"
+                ]
+            }
+        ],
+        "best_for": [
+            "Fast validation",
+            "Team collaboration"
+        ]
+    },
+    {
+        "id": "swot",
+        "name": "SWOT Analysis",
+        "description": "Analyze 4 aspects: Strengths, Weaknesses, Opportunities, Threats",
+        "quadrants": [
+            {
+                "name": "Strengths",
+                "prompt": "Internal strengths? (tech, team, expertise, network)",
+                "internal": true
+            },
+            {
+                "name": "Weaknesses",
+                "prompt": "Internal weaknesses? (budget, experience, resources)",
+                "internal": true
+            },
+            {
+                "name": "Opportunities",
+                "prompt": "External opportunities? (trends, unserved market, regulation)",
+                "internal": false
+            },
+            {
+                "name": "Threats",
+                "prompt": "External threats? (competitors, tech changes, economy)",
+                "internal": false
+            }
+        ],
+        "best_for": [
+            "Overall assessment",
+            "Comparing strategic directions"
+        ]
+    },
+    {
+        "id": "crazy-8s",
+        "name": "Crazy 8s",
+        "description": "Sketch 8 ideas in 8 minutes — speed over perfection",
+        "rules": [
+            "Fold paper into 8 sections",
+            "1 minute per section = 1 idea",
+            "Quantity over quality",
+            "Don't judge ideas yet",
+            "Vote for top 2-3 afterwards"
+        ],
+        "best_for": [
+            "Breaking creative blocks",
+            "Team brainstorming"
+        ]
+    },
+    {
+        "id": "first-principles",
+        "name": "First Principles Thinking",
+        "description": "Break problems down to basic truths and rebuild from there",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Identify assumptions",
+                "prompt": "What are the common assumptions?"
+            },
+            {
+                "step": 2,
+                "action": "Break down",
+                "prompt": "Break down the problem to its fundamental truths."
+            },
+            {
+                "step": 3,
+                "action": "Rebuild",
+                "prompt": "Rebuild the solution from scratch without assumptions."
+            }
+        ],
+        "examples": [
+            {
+                "problem": "Electric cars are too expensive",
+                "assumption": "Batteries must be expensive",
+                "first_principle": "Batteries = raw materials (metal + chemicals) → buy materials + manufacture in-house",
+                "result": "Tesla Gigafactory"
+            },
+            {
+                "problem": "Learning to code is hard",
+                "assumption": "Must learn theory first",
+                "first_principle": "Humans learn by doing → provide immediate coding environment, explain later",
+                "result": "freeCodeCamp, Codecademy"
+            }
+        ],
+        "best_for": [
+            "Disruption",
+            "Finding breakthrough solutions"
+        ]
+    },
+    {
+        "id": "six-thinking-hats",
+        "name": "Six Thinking Hats",
+        "description": "6 different perspectives to evaluate any idea or decision comprehensively",
+        "hats": [
+            {
+                "color": "White",
+                "focus": "Facts & Data",
+                "question": "What do we know? What data do we need?",
+                "example": "Market size is $4.2B, growing 12% YoY"
+            },
+            {
+                "color": "Red",
+                "focus": "Feelings & Intuition",
+                "question": "What's your gut feeling? What excites or worries you?",
+                "example": "This feels like it could be huge, but the timing worries me"
+            },
+            {
+                "color": "Black",
+                "focus": "Risks & Caution",
+                "question": "What could go wrong? What are the dangers?",
+                "example": "Competitors have 10x our budget. Regulation could kill us."
+            },
+            {
+                "color": "Yellow",
+                "focus": "Optimism & Benefits",
+                "question": "What's the best case? What opportunities exist?",
+                "example": "If we get 1% of the market, that's $42M ARR"
+            },
+            {
+                "color": "Green",
+                "focus": "Creativity & Alternatives",
+                "question": "What new ideas can we generate? What if we did it differently?",
+                "example": "What if we flip the business model and make the tool free?"
+            },
+            {
+                "color": "Blue",
+                "focus": "Process & Control",
+                "question": "What's our next step? How do we organize this thinking?",
+                "example": "Let's test this with 50 users in 2 weeks before committing"
+            }
+        ],
+        "best_for": [
+            "Team decision-making",
+            "Evaluating ideas from multiple angles",
+            "Reducing bias in discussions"
+        ]
+    },
+    {
+        "id": "reverse-brainstorm",
+        "name": "Reverse Brainstorming",
+        "description": "Instead of solving the problem, brainstorm ways to CAUSE or WORSEN it — then reverse those ideas into solutions",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Reverse the problem",
+                "prompt": "How could we make this problem WORSE?",
+                "example": "How to make onboarding MORE confusing?"
+            },
+            {
+                "step": 2,
+                "action": "Generate bad ideas",
+                "prompt": "List 10+ ways to cause or worsen the problem.",
+                "example": "Add 20 form fields, use jargon, hide the skip button"
+            },
+            {
+                "step": 3,
+                "action": "Reverse each bad idea",
+                "prompt": "Flip each bad idea into a positive solution.",
+                "example": "→ 2 fields max, plain language, prominent skip button"
+            },
+            {
+                "step": 4,
+                "action": "Prioritize solutions",
+                "prompt": "Which reversed ideas are most impactful and feasible?"
+            }
+        ],
+        "best_for": [
+            "Breaking creative blocks",
+            "UX improvement",
+            "Finding non-obvious solutions"
+        ]
+    },
+    {
+        "id": "triz",
+        "name": "TRIZ (40 Inventive Principles)",
+        "description": "Systematic innovation method — identify contradictions and apply proven inventive principles to resolve them",
+        "key_principles": [
+            {
+                "id": 1,
+                "name": "Segmentation",
+                "description": "Divide an object or system into independent parts",
+                "example": "Modular furniture, microservices architecture"
+            },
+            {
+                "id": 2,
+                "name": "Taking out / Extraction",
+                "description": "Remove a problematic part or extract the useful part",
+                "example": "Noise-canceling headphones extract and invert ambient noise"
+            },
+            {
+                "id": 10,
+                "name": "Prior Action",
+                "description": "Perform the required action in advance (pre-compute, pre-load)",
+                "example": "CDN pre-caches content. Apps pre-download for offline use."
+            },
+            {
+                "id": 13,
+                "name": "The Other Way Round / Inversion",
+                "description": "Invert the action or make the moving part fixed (and vice versa)",
+                "example": "Instead of user going to store → store comes to user (delivery apps)"
+            },
+            {
+                "id": 15,
+                "name": "Dynamism",
+                "description": "Make an object or process adaptive, flexible, or adjustable",
+                "example": "Dynamic pricing, adaptive difficulty in games, responsive design"
+            },
+            {
+                "id": 25,
+                "name": "Self-Service",
+                "description": "Make the object serve itself — perform supplementary functions automatically",
+                "example": "Self-checkout, auto-scaling servers, self-healing infrastructure"
+            },
+            {
+                "id": 28,
+                "name": "Replace Mechanical System",
+                "description": "Replace mechanical interaction with sensory, digital, or AI-based systems",
+                "example": "Physical key → biometric login. Manual moderating → AI moderation."
+            },
+            {
+                "id": 35,
+                "name": "Parameter Change",
+                "description": "Change an object's physical or digital state (format, interface, model)",
+                "example": "Newspaper → digital news. Desktop software → SaaS."
+            }
+        ],
+        "best_for": [
+            "Technical problem-solving",
+            "Resolving trade-offs (speed vs quality, cost vs features)",
+            "Hardware and software innovation"
+        ]
+    },
+    {
+        "id": "disney-method",
+        "name": "Disney Creative Strategy",
+        "description": "Walt Disney's 3-room method: Dream → Plan → Critique. Each role thinks separately to avoid killing ideas too early.",
+        "rooms": [
+            {
+                "role": "Dreamer",
+                "mindset": "Everything is possible. No constraints.",
+                "question": "If there were NO limitations — budget, time, technology — what would we build?",
+                "output": "Wild vision, ambitious features, blue-sky ideas",
+                "example": "A personal AI tutor that adapts to your mood and teaches through games"
+            },
+            {
+                "role": "Realist",
+                "mindset": "How do we actually build this?",
+                "question": "What's the MVP? What resources do we need? What's the timeline?",
+                "output": "Concrete plan, tech stack, milestones, resource requirements",
+                "example": "Phase 1: quiz app with GPT-4 backend. Phase 2: mood detection via camera. Budget: $5K."
+            },
+            {
+                "role": "Critic",
+                "mindset": "What will go wrong? What are we missing?",
+                "question": "What are the weaknesses? What would competitors do? What would make users leave?",
+                "output": "Risk list, potential failures, competitive threats, mitigation strategies",
+                "example": "Risk: GPT API costs at scale. Mitigation: cache common responses, use smaller model for simple tasks."
+            }
+        ],
+        "process": "Cycle through all 3 rooms multiple times until the idea is refined.",
+        "best_for": [
+            "Early-stage ideation",
+            "Balancing creativity with practicality",
+            "Solo brainstorming when you need multiple perspectives"
+        ]
+    },
+    {
+        "id": "10x-moonshot",
+        "name": "10x Moonshot Thinking",
+        "description": "Don't improve by 10% — improve by 10X. Forces radical rethinking of the problem and solution space.",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Define the 1x (current state)",
+                "prompt": "What does the current solution look like? What are its limitations?",
+                "example": "Current: Users manually track expenses in spreadsheets"
+            },
+            {
+                "step": 2,
+                "action": "Imagine the 10x",
+                "prompt": "What would a 10X BETTER solution look like? (Not incremental — transformational)",
+                "example": "10x: AI reads all your bank transactions, categorizes automatically, predicts future spend, suggests savings"
+            },
+            {
+                "step": 3,
+                "action": "Identify the technology gap",
+                "prompt": "What technology or capability is needed to close the gap between 1x and 10x?",
+                "example": "Need: Open Banking API + ML categorization + predictive model"
+            },
+            {
+                "step": 4,
+                "action": "Find the stepping stone",
+                "prompt": "What's the realistic 3x that moves toward the 10x vision?",
+                "example": "3x: Connect bank API → auto-categorize → monthly report. (Build toward prediction later)"
+            }
+        ],
+        "examples": [
+            {
+                "domain": "Education",
+                "current_1x": "Online video courses (Udemy)",
+                "moonshot_10x": "AI tutor that adapts in real-time to your learning style, pace, and mistakes",
+                "stepping_stone_3x": "Quiz-based learning with AI-generated explanations"
+            },
+            {
+                "domain": "E-commerce",
+                "current_1x": "Search → browse → add to cart → checkout",
+                "moonshot_10x": "AI personal shopper that knows your style, budget, and needs — auto-curates",
+                "stepping_stone_3x": "Style quiz → personalized recommendations → 1-click reorder"
+            },
+            {
+                "domain": "Healthcare",
+                "current_1x": "Call clinic → wait → book appointment → wait more",
+                "moonshot_10x": "AI triage that diagnoses, prescribes, and dispatches care within minutes",
+                "stepping_stone_3x": "Symptom checker → instant video call with doctor → e-prescription"
+            }
+        ],
+        "best_for": [
+            "Visionary product thinking",
+            "Startup differentiation",
+            "Avoiding incremental thinking traps"
+        ]
+    }
+]

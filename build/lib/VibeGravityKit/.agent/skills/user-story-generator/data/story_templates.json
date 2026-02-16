@@ -1,0 +1,135 @@
+{
+    "story_templates": {
+        "authentication": [
+            {
+                "title": "User Registration",
+                "story": "As a new user, I want to create an account so that I can access the platform.",
+                "acceptance_criteria": [
+                    "User can enter email and password",
+                    "Email validation (format + uniqueness)",
+                    "Password must be 8+ chars with 1 uppercase, 1 number",
+                    "Confirmation email sent after registration",
+                    "User redirected to onboarding after email verification"
+                ],
+                "priority": "must-have",
+                "points": 3
+            },
+            {
+                "title": "User Login",
+                "story": "As a registered user, I want to log in so that I can access my account.",
+                "acceptance_criteria": [
+                    "User can login with email/password",
+                    "Invalid credentials show error message",
+                    "Session persists across page refreshes",
+                    "\"Remember me\" option available",
+                    "Account locks after 5 failed attempts"
+                ],
+                "priority": "must-have",
+                "points": 2
+            },
+            {
+                "title": "OAuth Social Login",
+                "story": "As a user, I want to log in with Google/GitHub so that registration is faster.",
+                "acceptance_criteria": [
+                    "Google OAuth button displayed",
+                    "GitHub OAuth button displayed",
+                    "New account created if first login",
+                    "Existing account linked if email matches",
+                    "Profile picture imported from provider"
+                ],
+                "priority": "should-have",
+                "points": 3
+            },
+            {
+                "title": "Password Reset",
+                "story": "As a user, I want to reset my password so that I can regain access if I forget it.",
+                "acceptance_criteria": [
+                    "\"Forgot password\" link on login page",
+                    "Reset email sent within 30 seconds",
+                    "Reset link expires after 1 hour",
+                    "New password must differ from previous 3",
+                    "Confirmation shown after successful reset"
+                ],
+                "priority": "must-have",
+                "points": 2
+            }
+        ],
+        "e-commerce": [
+            {
+                "title": "Product Listing",
+                "story": "As a shopper, I want to browse products so that I can find items to purchase.",
+                "acceptance_criteria": [
+                    "Products displayed in grid/list view",
+                    "Each product shows image, name, price, rating",
+                    "Pagination or infinite scroll (20 items/page)",
+                    "Sort by price, popularity, newest",
+                    "Filter by category, price range, rating"
+                ],
+                "priority": "must-have",
+                "points": 5
+            },
+            {
+                "title": "Shopping Cart",
+                "story": "As a shopper, I want to add items to a cart so that I can purchase multiple items.",
+                "acceptance_criteria": [
+                    "Add to cart button on product page",
+                    "Cart icon shows item count in header",
+                    "Adjust quantity in cart",
+                    "Remove items from cart",
+                    "Cart persists across sessions",
+                    "Show subtotal and estimated total"
+                ],
+                "priority": "must-have",
+                "points": 5
+            },
+            {
+                "title": "Checkout Flow",
+                "story": "As a shopper, I want to complete a purchase so that I receive my items.",
+                "acceptance_criteria": [
+                    "Multi-step checkout (address → payment → review)",
+                    "Address validation",
+                    "Multiple payment methods (card, PayPal)",
+                    "Order summary before confirmation",
+                    "Order confirmation email sent",
+                    "Order ID displayed after purchase"
+                ],
+                "priority": "must-have",
+                "points": 8
+            }
+        ],
+        "dashboard": [
+            {
+                "title": "Analytics Overview",
+                "story": "As an admin, I want to see key metrics so that I can monitor business health.",
+                "acceptance_criteria": [
+                    "KPI cards: revenue, users, orders, conversion rate",
+                    "Charts: line (trends), bar (comparisons), pie (distribution)",
+                    "Date range picker (7d, 30d, 90d, custom)",
+                    "Real-time or near-real-time updates",
+                    "Export data as CSV"
+                ],
+                "priority": "must-have",
+                "points": 5
+            },
+            {
+                "title": "User Management",
+                "story": "As an admin, I want to manage users so that I can control access.",
+                "acceptance_criteria": [
+                    "List all users with search/filter",
+                    "View user details and activity",
+                    "Assign/revoke roles",
+                    "Suspend/activate accounts",
+                    "Bulk actions (export, email, delete)"
+                ],
+                "priority": "must-have",
+                "points": 5
+            }
+        ]
+    },
+    "priority_framework": {
+        "must-have": "Core functionality, app doesn't work without it (MVP)",
+        "should-have": "Important but not critical, can launch without",
+        "could-have": "Nice to have, improves UX but not essential",
+        "wont-have": "Future scope, explicitly excluded from this release"
+    }
+}

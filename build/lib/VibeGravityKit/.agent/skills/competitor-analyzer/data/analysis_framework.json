@@ -1,0 +1,94 @@
+{
+    "analysis_framework": {
+        "dimensions": [
+            "Features & Functionality",
+            "Pricing & Monetization",
+            "User Experience (UX/UI)",
+            "Performance & Speed",
+            "Market Positioning",
+            "Technology Stack",
+            "Community & Support",
+            "Integrations & Ecosystem"
+        ],
+        "scoring": {
+            "1": "Very Weak",
+            "2": "Weak",
+            "3": "Average",
+            "4": "Strong",
+            "5": "Very Strong"
+        }
+    },
+    "competitor_categories": {
+        "direct": "Same product, same market (e.g., Uber vs Lyft)",
+        "indirect": "Different product, same need (e.g., Uber vs public transit)",
+        "potential": "Could enter the market (e.g., Google entering ride-sharing)"
+    },
+    "report_template": {
+        "sections": [
+            "Executive Summary",
+            "Competitor Profiles",
+            "Feature Comparison Matrix",
+            "Pricing Analysis",
+            "SWOT for Each Competitor",
+            "Market Gaps & Opportunities",
+            "Recommended USP (Unique Selling Point)",
+            "Go-to-Market Strategy Suggestions"
+        ]
+    },
+    "common_app_categories": {
+        "saas": {
+            "key_competitors_to_check": [
+                "market leader",
+                "fastest growing",
+                "cheapest alternative"
+            ],
+            "key_metrics": [
+                "MRR",
+                "churn rate",
+                "CAC",
+                "LTV",
+                "NPS"
+            ]
+        },
+        "e-commerce": {
+            "key_competitors_to_check": [
+                "marketplace leader",
+                "niche specialist",
+                "D2C brand"
+            ],
+            "key_metrics": [
+                "GMV",
+                "conversion rate",
+                "AOV",
+                "return rate",
+                "CAC"
+            ]
+        },
+        "mobile-app": {
+            "key_competitors_to_check": [
+                "app store #1",
+                "most downloaded",
+                "highest rated"
+            ],
+            "key_metrics": [
+                "DAU/MAU",
+                "retention D1/D7/D30",
+                "session length",
+                "rating"
+            ]
+        },
+        "fintech": {
+            "key_competitors_to_check": [
+                "incumbent bank",
+                "neobank leader",
+                "crypto alternative"
+            ],
+            "key_metrics": [
+                "AUM",
+                "transaction volume",
+                "user growth",
+                "compliance status"
+            ]
+        }
+    }
+}

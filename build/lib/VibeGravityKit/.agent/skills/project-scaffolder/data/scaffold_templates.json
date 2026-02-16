@@ -1,0 +1,150 @@
+{
+    "templates": {
+        "nextjs-fullstack": {
+            "name": "Next.js Full-Stack",
+            "stack": [
+                "Next.js",
+                "TypeScript",
+                "Prisma",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ],
+            "structure": {
+                "src/app": "App Router pages",
+                "src/components": "React components",
+                "src/lib": "Utilities & helpers",
+                "prisma": "Database schema & migrations",
+                "public": "Static assets"
+            },
+            "scripts": {
+                "dev": "next dev",
+                "build": "next build",
+                "lint": "next lint"
+            },
+            "config_files": [
+                ".env.local",
+                ".eslintrc.json",
+                "tsconfig.json",
+                "tailwind.config.ts"
+            ]
+        },
+        "express-api": {
+            "name": "Express REST API",
+            "stack": [
+                "Express.js",
+                "TypeScript",
+                "Prisma",
+                "PostgreSQL"
+            ],
+            "structure": {
+                "src/routes": "API route handlers",
+                "src/controllers": "Business logic",
+                "src/middleware": "Auth, validation, error handling",
+                "src/services": "Data access layer",
+                "src/utils": "Helpers & utilities",
+                "prisma": "Database schema"
+            },
+            "scripts": {
+                "dev": "tsx watch src/index.ts",
+                "build": "tsc",
+                "start": "node dist/index.js"
+            }
+        },
+        "vite-react": {
+            "name": "Vite + React SPA",
+            "stack": [
+                "Vite",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "React Router"
+            ],
+            "structure": {
+                "src/pages": "Page components",
+                "src/components": "Reusable UI components",
+                "src/hooks": "Custom React hooks",
+                "src/store": "State management",
+                "src/api": "API client functions",
+                "src/assets": "Images, fonts"
+            }
+        },
+        "expo-mobile": {
+            "name": "Expo Mobile App",
+            "stack": [
+                "Expo",
+                "React Native",
+                "TypeScript",
+                "Expo Router",
+                "NativeWind"
+            ],
+            "structure": {
+                "app": "File-based routing",
+                "components": "Shared components",
+                "hooks": "Custom hooks",
+                "constants": "Theme, config",
+                "assets": "Images, fonts"
+            }
+        },
+        "python-fastapi": {
+            "name": "Python FastAPI",
+            "stack": [
+                "FastAPI",
+                "SQLAlchemy",
+                "Alembic",
+                "PostgreSQL",
+                "Pydantic"
+            ],
+            "structure": {
+                "app/api": "Route handlers",
+                "app/models": "SQLAlchemy models",
+                "app/schemas": "Pydantic schemas",
+                "app/services": "Business logic",
+                "app/core": "Config, security, deps",
+                "alembic": "Database migrations"
+            }
+        },
+        "django-fullstack": {
+            "name": "Django Full-Stack",
+            "stack": [
+                "Django",
+                "Django REST Framework",
+                "PostgreSQL",
+                "Celery",
+                "Redis"
+            ],
+            "structure": {
+                "apps/": "Django apps",
+                "config/": "Settings & URLs",
+                "templates/": "HTML templates",
+                "static/": "CSS, JS, images",
+                "requirements/": "base.txt, dev.txt, prod.txt"
+            }
+        }
+    },
+    "common_configs": {
+        ".gitignore": [
+            "node_modules/",
+            ".env",
+            ".env.local",
+            "dist/",
+            "__pycache__/",
+            ".next/",
+            "*.pyc"
+        ],
+        ".editorconfig": {
+            "root": true,
+            "indent_style": "space",
+            "indent_size": 2,
+            "end_of_line": "lf",
+            "charset": "utf-8",
+            "trim_trailing_whitespace": true
+        },
+        "prettier": {
+            "semi": true,
+            "singleQuote": true,
+            "tabWidth": 2,
+            "trailingComma": "es5",
+            "printWidth": 100
+        }
+    }
+}

@@ -2,6 +2,7 @@
     "agents": {
         "leader": {
             "role": "Team Lead — Orchestrates the entire team with per-phase reporting",
+            "workflow": ".agent/workflows/leader.md",
             "when_to_call": "Complex tasks that need multiple agents. User approves each phase before proceeding.",
             "output": "Delegates tasks to specialized agents, reports per phase, manages QA loop (max 3 retries)",
             "skills": [
@@ -26,6 +27,7 @@
         },
         "quickstart": {
             "role": "Autopilot — Fully automated project build from idea to production",
+            "workflow": ".agent/workflows/quickstart.md",
             "when_to_call": "Quick MVPs, prototypes, or when user wants zero-approval fast build",
             "output": "Complete project with QA, security audit, docs. Final report with all results.",
             "skills": [],
@@ -47,6 +49,7 @@
         },
         "planner": {
             "role": "Analyzes requirements, writes PRD, breaks down tasks",
+            "workflow": ".agent/workflows/planner.md",
             "when_to_call": "New features, project kickoff, requirement analysis",
             "output": "PRD.md, task breakdown, user stories, estimation",
             "skills": [
@@ -58,6 +61,7 @@
         },
         "architect": {
             "role": "Systems Design — Database, API, Architecture",
+            "workflow": ".agent/workflows/architect.md",
             "when_to_call": "Database schema, API design, system diagrams, tech decisions",
             "output": "schema.sql, api_spec.yaml, architecture diagrams",
             "skills": [
@@ -70,8 +74,9 @@
         },
         "designer": {
             "role": "UI/UX Design System and Assets",
+            "workflow": ".agent/workflows/designer.md",
             "when_to_call": "UI components, color palette, typography, wireframes, responsive design",
-            "output": "Design system, component specs, color palette, wireframes",
+            "output": "design_contract.md, design system, component specs",
             "skills": [
                 "ui-ux-pro-max",
                 "color-palette-generator",
@@ -80,12 +85,16 @@
         },
         "frontend-dev": {
             "role": "Frontend Developer — Component, Layout, State Management",
+            "workflow": ".agent/workflows/frontend-dev.md",
             "when_to_call": "React/Vue/Tailwind components, pages, state logic, responsive layout",
             "output": "Components, pages, hooks, styles, state management code",
-            "skills": []
+            "skills": [
+                "ui-ux-pro-max"
+            ]
         },
         "backend-dev": {
             "role": "Backend Developer — API, DB Queries, Business Logic",
+            "workflow": ".agent/workflows/backend-dev.md",
             "when_to_call": "API endpoints, database queries, authentication, server logic",
             "output": "API routes, controllers, models, middleware, services",
             "skills": [
@@ -94,6 +103,7 @@
         },
         "mobile-dev": {
             "role": "Mobile Developer — iOS/Android (React Native/Expo)",
+            "workflow": ".agent/workflows/mobile-dev.md",
             "when_to_call": "Mobile screens, native features, navigation, app store deployment",
             "output": "React Native/Expo screens, navigation config, native module setup",
             "skills": [
@@ -102,6 +112,7 @@
         },
         "devops": {
             "role": "DevOps — Docker, CI/CD, Cloud Deployment",
+            "workflow": ".agent/workflows/devops.md",
             "when_to_call": "Docker setup, CI/CD pipelines, deployment, cloud config",
             "output": "Dockerfile, docker-compose.yml, GitHub Actions, deploy scripts",
             "skills": [
@@ -112,15 +123,18 @@
             ]
         },
         "qa-engineer": {
-            "role": "QA — Test Cases, Automation, Performance, Bug Reporting",
+            "role": "QA — Index-First Testing, Edge Cases, Security, Performance, Bug Reporting",
+            "workflow": ".agent/workflows/qa-engineer.md",
             "when_to_call": "Test writing, test automation, performance testing, bug triage",
-            "output": "Test suites, test reports, bug reports",
+            "output": "Test suites, coverage reports, bug reports with scoped routing",
             "skills": [
-                "test-generator"
+                "test-generator",
+                "codebase-navigator"
             ]
         },
         "security-engineer": {
             "role": "Security — Audit, Pen-Test, Vulnerability Scanning",
+            "workflow": ".agent/workflows/security-engineer.md",
             "when_to_call": "Security audit, vulnerability scan, OWASP check, secret detection",
             "output": "Security report, vulnerability list, fix recommendations",
             "skills": [
@@ -129,6 +143,7 @@
         },
         "tech-writer": {
             "role": "Documentation & API Refs",
+            "workflow": ".agent/workflows/tech-writer.md",
             "when_to_call": "README, API docs, user guides, changelog",
             "output": "README.md, API documentation, user guides",
             "skills": [
@@ -138,6 +153,7 @@
         },
         "seo-specialist": {
             "role": "SEO — Search Engine Optimization",
+            "workflow": ".agent/workflows/seo-specialist.md",
             "when_to_call": "Meta tags, Schema.org, sitemap, performance, Core Web Vitals",
             "output": "SEO audit report, meta tag fixes, schema markup",
             "skills": [
@@ -146,6 +162,7 @@
         },
         "meta-thinker": {
             "role": "Creative Advisor — Ideas, Brainstorming, Vision",
+            "workflow": ".agent/workflows/meta-thinker.md",
             "when_to_call": "Brainstorming, product vision, monetization, competitive analysis",
             "output": "Idea reports, strategy docs, competitor analysis",
             "skills": [
@@ -156,6 +173,7 @@
         },
         "knowledge-guide": {
             "role": "Code Explainer, Note Taker, Handoff Specialist",
+            "workflow": ".agent/workflows/knowledge-guide.md",
             "when_to_call": "Explain codebase to new team members, capture notes, handoff docs",
             "output": "Code explanations, handoff documents, context summaries",
             "skills": [
@@ -166,6 +184,7 @@
         },
         "code-reviewer": {
             "role": "Code Reviewer — Automated code quality review",
+            "workflow": ".agent/workflows/code-reviewer.md",
             "when_to_call": "Code quality check, naming review, security scan, performance audit",
             "output": "Review report with issues (critical/warning/info) and quality score (A-F)",
             "skills": [
@@ -174,6 +193,7 @@
         },
         "release-manager": {
             "role": "Release Manager — Changelog, versioning, release notes",
+            "workflow": ".agent/workflows/release-manager.md",
             "when_to_call": "Version bump, changelog generation, release preparation, tagging",
             "output": "CHANGELOG.md, version bump, release notes, git tags",
             "skills": [
@@ -182,6 +202,7 @@
         },
         "researcher": {
             "role": "Researcher — Market analysis, web search, trend discovery",
+            "workflow": ".agent/workflows/researcher.md",
             "when_to_call": "Research competitors, validate ideas, discover trends, find best practices, gather information",
             "output": "research_report.md, market-analysis.md, competitor data, web search results",
             "skills": [
@@ -201,9 +222,11 @@
     },
     "infrastructure": {
         "context-router": "Universal data query router — use before reading raw data files. Saves tokens by returning only matching entries.",
-        "template-marketplace": "Pre-built project templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile). Used by quickstart and leader."
+        "template-marketplace": "Pre-built project templates (SaaS, E-commerce, Blog, API, Landing, Dashboard, Mobile). Used by quickstart and leader.",
+        "phase-context": ".agent/brain/phase_context.md — shared context board updated by leader after each phase. ALL agents must read this before starting work."
     },
     "handoff_template": {
-        "format": "## Handoff to {agent}\nContext: {one_line_summary}\nTask: {specific_task}\nFiles: {relevant_files_from_codebase_index}\nConstraints: {tech_stack_and_rules}\nExpected Output: {what_to_produce}"
+        "format": "## Handoff to {agent}\n⚠️ READ FIRST: {agent.workflow} (follow steps in order)\nContext: .agent/brain/phase_context.md\nTask: {specific_task}\nFiles: {relevant_files}\nConstraints: {tech_stack_and_rules}\nExpected Output: {what_to_produce}",
+        "bug_fix_format": "## Bug Fix → {agent}\n⚠️ READ FIRST: {agent.workflow}\nBug: {bug_description}\nFile: {exact_file_and_line}\nExpected: {expected_behavior}\nActual: {actual_behavior}\nScope: ONLY fix this bug. Do NOT modify other files or features."
     }
 }

@@ -1,0 +1,84 @@
+{
+    "commit_conventions": {
+        "conventional_commits": {
+            "format": "<type>(<scope>): <description>",
+            "types": {
+                "feat": "New feature",
+                "fix": "Bug fix",
+                "docs": "Documentation only",
+                "style": "Formatting, no code change",
+                "refactor": "Code restructuring, no behavior change",
+                "perf": "Performance improvement",
+                "test": "Adding or updating tests",
+                "build": "Build system or dependencies",
+                "ci": "CI/CD configuration",
+                "chore": "Maintenance tasks",
+                "revert": "Revert a previous commit"
+            },
+            "examples": [
+                "feat(auth): add Google OAuth login",
+                "fix(cart): prevent duplicate items",
+                "docs: update API endpoint documentation",
+                "refactor(db): migrate from callbacks to async/await"
+            ]
+        }
+    },
+    "branch_strategies": {
+        "github_flow": {
+            "branches": [
+                "main",
+                "feature/*"
+            ],
+            "flow": "main → feature branch → PR → review → merge → deploy",
+            "best_for": "Small teams, continuous deployment"
+        },
+        "git_flow": {
+            "branches": [
+                "main",
+                "develop",
+                "feature/*",
+                "release/*",
+                "hotfix/*"
+            ],
+            "flow": "develop → feature → develop → release → main",
+            "best_for": "Large teams, scheduled releases"
+        },
+        "trunk_based": {
+            "branches": [
+                "main",
+                "short-lived feature branches"
+            ],
+            "flow": "main → short branch (max 2 days) → merge → deploy",
+            "best_for": "CI/CD-heavy teams, rapid iteration"
+        }
+    },
+    "pr_template": "## What\n\nBrief description of changes.\n\n## Why\n\nMotivation and context.\n\n## How\n\nImplementation approach.\n\n## Testing\n\n- [ ] Unit tests added/updated\n- [ ] Manual testing done\n- [ ] No regressions\n\n## Screenshots\n\n(if applicable)",
+    "gitignore_templates": {
+        "node": [
+            "node_modules/",
+            "dist/",
+            ".next/",
+            ".env",
+            ".env.local",
+            "coverage/",
+            "*.log"
+        ],
+        "python": [
+            "__pycache__/",
+            "*.pyc",
+            ".venv/",
+            "venv/",
+            ".env",
+            "dist/",
+            "*.egg-info/"
+        ],
+        "general": [
+            ".DS_Store",
+            "Thumbs.db",
+            ".idea/",
+            ".vscode/",
+            "*.swp",
+            "*.swo"
+        ]
+    }
+}

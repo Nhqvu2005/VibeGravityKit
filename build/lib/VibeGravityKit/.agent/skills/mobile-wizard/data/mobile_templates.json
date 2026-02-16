@@ -1,0 +1,127 @@
+{
+    "expo_templates": {
+        "tabs": {
+            "name": "Tabs Navigation",
+            "packages": [
+                "expo-router",
+                "nativewind",
+                "@expo/vector-icons"
+            ],
+            "structure": {
+                "app/(tabs)": "Tab screens",
+                "app/(tabs)/_layout.tsx": "Tab bar configuration",
+                "app/_layout.tsx": "Root layout",
+                "components/": "Shared components",
+                "constants/": "Colors, fonts, config"
+            }
+        },
+        "drawer": {
+            "name": "Drawer Navigation",
+            "packages": [
+                "expo-router",
+                "@react-navigation/drawer",
+                "react-native-gesture-handler"
+            ],
+            "structure": {
+                "app/(drawer)": "Drawer screens",
+                "app/(drawer)/_layout.tsx": "Drawer configuration"
+            }
+        },
+        "auth_flow": {
+            "name": "Auth + Main Flow",
+            "packages": [
+                "expo-router",
+                "expo-secure-store",
+                "nativewind"
+            ],
+            "structure": {
+                "app/(auth)": "Login, Register, Forgot Password",
+                "app/(app)": "Main app screens",
+                "app/_layout.tsx": "Auth guard logic",
+                "contexts/AuthContext.tsx": "Auth state management"
+            }
+        }
+    },
+    "native_modules": {
+        "camera": {
+            "package": "expo-camera",
+            "permissions": [
+                "CAMERA"
+            ]
+        },
+        "location": {
+            "package": "expo-location",
+            "permissions": [
+                "ACCESS_FINE_LOCATION"
+            ]
+        },
+        "notifications": {
+            "package": "expo-notifications",
+            "permissions": [
+                "NOTIFICATIONS"
+            ]
+        },
+        "image_picker": {
+            "package": "expo-image-picker",
+            "permissions": [
+                "MEDIA_LIBRARY",
+                "CAMERA"
+            ]
+        },
+        "file_system": {
+            "package": "expo-file-system",
+            "permissions": []
+        },
+        "secure_store": {
+            "package": "expo-secure-store",
+            "permissions": []
+        },
+        "haptics": {
+            "package": "expo-haptics",
+            "permissions": []
+        },
+        "biometrics": {
+            "package": "expo-local-authentication",
+            "permissions": [
+                "USE_BIOMETRIC"
+            ]
+        },
+        "maps": {
+            "package": "react-native-maps",
+            "permissions": [
+                "ACCESS_FINE_LOCATION"
+            ]
+        },
+        "payments": {
+            "package": "@stripe/stripe-react-native",
+            "permissions": []
+        }
+    },
+    "performance_tips": [
+        "Use FlatList/FlashList instead of ScrollView for lists",
+        "Memoize expensive components with React.memo",
+        "Use useCallback for event handlers passed to children",
+        "Optimize images with expo-image (blurhash placeholder)",
+        "Avoid inline styles, use StyleSheet.create",
+        "Use Reanimated for 60fps animations",
+        "Lazy load screens with React.lazy + Suspense"
+    ],
+    "app_store_checklist": {
+        "ios": [
+            "App icon (1024x1024)",
+            "Screenshots (6.5\", 5.5\")",
+            "Privacy Policy URL",
+            "App description",
+            "Keywords",
+            "Support URL"
+        ],
+        "android": [
+            "App icon (512x512)",
+            "Feature graphic (1024x500)",
+            "Screenshots",
+            "Short description (80 chars)",
+            "Full description (4000 chars)",
+            "Privacy Policy URL"
+        ]
+    }
+}

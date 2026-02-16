@@ -1,0 +1,93 @@
+{
+    "dockerfile_templates": {
+        "node": {
+            "base": "node:20-alpine",
+            "stages": [
+                "deps",
+                "build",
+                "runner"
+            ],
+            "template": "FROM node:20-alpine AS deps\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\n\nFROM node:20-alpine AS build\nWORKDIR /app\nCOPY --from=deps /app/node_modules ./node_modules\nCOPY . .\nRUN npm run build\n\nFROM node:20-alpine AS runner\nWORKDIR /app\nENV NODE_ENV=production\nCOPY --from=build /app/dist ./dist\nCOPY --from=deps /app/node_modules ./node_modules\nEXPOSE 3000\nCMD [\"node\", \"dist/index.js\"]"
+        },
+        "python": {
+            "base": "python:3.12-slim",
+            "template": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY . .\nEXPOSE 8000\nCMD [\"uvicorn\", \"app.main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]"
+        },
+        "nextjs": {
+            "base": "node:20-alpine",
+            "template": "FROM node:20-alpine AS deps\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\n\nFROM node:20-alpine AS build\nWORKDIR /app\nCOPY --from=deps /app/node_modules ./node_modules\nCOPY . .\nRUN npm run build\n\nFROM node:20-alpine AS runner\nWORKDIR /app\nENV NODE_ENV=production\nCOPY --from=build /app/.next/standalone ./\nCOPY --from=build /app/.next/static ./.next/static\nCOPY --from=build /app/public ./public\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]"
+        },
+        "go": {
+            "base": "golang:1.22-alpine",
+            "template": "FROM golang:1.22-alpine AS build\nWORKDIR /app\nCOPY go.* ./\nRUN go mod download\nCOPY . .\nRUN CGO_ENABLED=0 go build -o /app/server ./cmd/server\n\nFROM alpine:3.19\nCOPY --from=build /app/server /server\nEXPOSE 8080\nCMD [\"/server\"]"
+        }
+    },
+    "compose_services": {
+        "postgres": {
+            "image": "postgres:16-alpine",
+            "ports": [
+                "5432:5432"
+            ],
+            "environment": {
+                "POSTGRES_DB": "app",
+                "POSTGRES_USER": "postgres",
+                "POSTGRES_PASSWORD": "password"
+            },
+            "volumes": [
+                "pgdata:/var/lib/postgresql/data"
+            ]
+        },
+        "redis": {
+            "image": "redis:7-alpine",
+            "ports": [
+                "6379:6379"
+            ],
+            "volumes": [
+                "redisdata:/data"
+            ]
+        },
+        "mongodb": {
+            "image": "mongo:7",
+            "ports": [
+                "27017:27017"
+            ],
+            "environment": {
+                "MONGO_INITDB_ROOT_USERNAME": "root",
+                "MONGO_INITDB_ROOT_PASSWORD": "password"
+            },
+            "volumes": [
+                "mongodata:/data/db"
+            ]
+        },
+        "rabbitmq": {
+            "image": "rabbitmq:3-management-alpine",
+            "ports": [
+                "5672:5672",
+                "15672:15672"
+            ]
+        },
+        "minio": {
+            "image": "minio/minio",
+            "ports": [
+                "9000:9000",
+                "9001:9001"
+            ],
+            "command": "server /data --console-address ':9001'"
+        },
+        "mailhog": {
+            "image": "mailhog/mailhog",
+            "ports": [
+                "1025:1025",
+                "8025:8025"
+            ]
+        }
+    },
+    "best_practices": [
+        "Use multi-stage builds to reduce image size",
+        "Pin base image versions (don't use :latest)",
+        "Use .dockerignore to exclude node_modules, .git, etc.",
+        "Run as non-root user in production",
+        "Use HEALTHCHECK for container orchestration",
+        "Order Dockerfile layers by change frequency (least → most)"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "pipeline_templates": {
+        "node_ci": {
+            "name": "Node.js CI/CD",
+            "trigger": "push to main, pull_request",
+            "steps": [
+                "checkout",
+                "setup-node",
+                "npm ci",
+                "npm run lint",
+                "npm run test",
+                "npm run build"
+            ],
+            "yaml": "name: CI\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: npm\n      - run: npm ci\n      - run: npm run lint\n      - run: npm test\n      - run: npm run build"
+        },
+        "python_ci": {
+            "name": "Python CI/CD",
+            "trigger": "push to main, pull_request",
+            "yaml": "name: CI\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n      - run: pip install -r requirements.txt\n      - run: python -m pytest\n      - run: python -m flake8 ."
+        },
+        "docker_deploy": {
+            "name": "Docker Build & Push",
+            "trigger": "push tag v*",
+            "yaml": "name: Deploy\non:\n  push:\n    tags: ['v*']\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: docker/login-action@v3\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n      - uses: docker/build-push-action@v5\n        with:\n          push: true\n          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}"
+        }
+    },
+    "common_actions": {
+        "checkout": "actions/checkout@v4",
+        "setup_node": "actions/setup-node@v4",
+        "setup_python": "actions/setup-python@v5",
+        "docker_login": "docker/login-action@v3",
+        "docker_build": "docker/build-push-action@v5",
+        "cache": "actions/cache@v4",
+        "upload_artifact": "actions/upload-artifact@v4"
+    },
+    "deploy_strategies": {
+        "rolling": "Replace instances one by one (zero downtime)",
+        "blue_green": "Run two environments, switch traffic",
+        "canary": "Route small percentage to new version first",
+        "recreate": "Stop all old, start all new (has downtime)"
+    }
+}

@@ -1,0 +1,577 @@
+{
+  "files": {
+    ".agent\\skills\\api-designer\\scripts\\api_gen.py": [
+      {
+        "name": "generate_endpoints",
+        "line": 12,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 45,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\architecture-auditor\\scripts\\auditor.py": [
+      {
+        "name": "load_data",
+        "line": 20,
+        "type": "function"
+      },
+      {
+        "name": "run_check",
+        "line": 26,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 61,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\codebase-navigator\\scripts\\navigator.py": [
+      {
+        "name": "load_index",
+        "line": 63,
+        "type": "function"
+      },
+      {
+        "name": "save_index",
+        "line": 72,
+        "type": "function"
+      },
+      {
+        "name": "index_codebase",
+        "line": 77,
+        "type": "function"
+      },
+      {
+        "name": "search_index",
+        "line": 154,
+        "type": "function"
+      },
+      {
+        "name": "show_map",
+        "line": 179,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 191,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\color-palette-generator\\scripts\\palette.py": [
+      {
+        "name": "load_data",
+        "line": 17,
+        "type": "function"
+      },
+      {
+        "name": "generate_palette",
+        "line": 23,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 49,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\competitor-analyzer\\scripts\\analyzer.py": [
+      {
+        "name": "parse_args",
+        "line": 235,
+        "type": "function"
+      },
+      {
+        "name": "find_best_template",
+        "line": 243,
+        "type": "function"
+      },
+      {
+        "name": "analyze",
+        "line": 267,
+        "type": "function"
+      },
+      {
+        "name": "print_readable",
+        "line": 287,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\db-designer\\scripts\\sql_gen.py": [
+      {
+        "name": "generate_schema",
+        "line": 98,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 135,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\market-trend-analyst\\scripts\\trends.py": [
+      {
+        "name": "load_data",
+        "line": 18,
+        "type": "function"
+      },
+      {
+        "name": "analyze",
+        "line": 27,
+        "type": "function"
+      },
+      {
+        "name": "print_analysis",
+        "line": 38,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 69,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\product-designer\\scripts\\ux_tools.py": [
+      {
+        "name": "load_data",
+        "line": 20,
+        "type": "function"
+      },
+      {
+        "name": "generate_persona",
+        "line": 26,
+        "type": "function"
+      },
+      {
+        "name": "generate_flow",
+        "line": 50,
+        "type": "function"
+      },
+      {
+        "name": "check_usability",
+        "line": 63,
+        "type": "function"
+      },
+      {
+        "name": "check_handoff",
+        "line": 74,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 95,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\progress-tracker\\scripts\\tracker.py": [
+      {
+        "name": "parse_args",
+        "line": 16,
+        "type": "function"
+      },
+      {
+        "name": "parse_task_file",
+        "line": 23,
+        "type": "function"
+      },
+      {
+        "name": "print_readable",
+        "line": 77,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\project-management-assistant\\scripts\\pm_assistant.py": [
+      {
+        "name": "load_data",
+        "line": 20,
+        "type": "function"
+      },
+      {
+        "name": "check_scope",
+        "line": 26,
+        "type": "function"
+      },
+      {
+        "name": "assess_risk",
+        "line": 51,
+        "type": "function"
+      },
+      {
+        "name": "create_milestone_plan",
+        "line": 77,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 105,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\project-scaffolder\\scripts\\scaffold.py": [
+      {
+        "name": "parse_args",
+        "line": 135,
+        "type": "function"
+      },
+      {
+        "name": "generate_scaffold",
+        "line": 144,
+        "type": "function"
+      },
+      {
+        "name": "print_readable",
+        "line": 205,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\reliability-engineer\\scripts\\sre.py": [
+      {
+        "name": "load_data",
+        "line": 19,
+        "type": "function"
+      },
+      {
+        "name": "show_observability",
+        "line": 25,
+        "type": "function"
+      },
+      {
+        "name": "create_incident_report",
+        "line": 46,
+        "type": "function"
+      },
+      {
+        "name": "suggest_performance",
+        "line": 61,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 78,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\strategic-planning-advisor\\scripts\\strategy.py": [
+      {
+        "name": "load_data",
+        "line": 18,
+        "type": "function"
+      },
+      {
+        "name": "get_advice",
+        "line": 27,
+        "type": "function"
+      },
+      {
+        "name": "print_strategy",
+        "line": 56,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 93,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\system-diagrammer\\scripts\\diagram.py": [
+      {
+        "name": "generate_c4",
+        "line": 13,
+        "type": "function"
+      },
+      {
+        "name": "generate_sequence",
+        "line": 42,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 58,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\system-strategist\\scripts\\strategist.py": [
+      {
+        "name": "load_data",
+        "line": 19,
+        "type": "function"
+      },
+      {
+        "name": "show_tradeoff",
+        "line": 25,
+        "type": "function"
+      },
+      {
+        "name": "plan_scalability",
+        "line": 59,
+        "type": "function"
+      },
+      {
+        "name": "plan_migration",
+        "line": 81,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 110,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\task-estimator\\scripts\\estimator.py": [
+      {
+        "name": "parse_args",
+        "line": 113,
+        "type": "function"
+      },
+      {
+        "name": "find_matching_tasks",
+        "line": 121,
+        "type": "function"
+      },
+      {
+        "name": "estimate",
+        "line": 143,
+        "type": "function"
+      },
+      {
+        "name": "print_readable",
+        "line": 212,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\tech-stack-advisor\\scripts\\advisor.py": [
+      {
+        "name": "load_data",
+        "line": 18,
+        "type": "function"
+      },
+      {
+        "name": "filter_stacks",
+        "line": 27,
+        "type": "function"
+      },
+      {
+        "name": "print_comparison",
+        "line": 61,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 90,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\tech-stack-advisor\\scripts\\scanner.py": [
+      {
+        "name": "scan_codebase",
+        "line": 38,
+        "type": "function"
+      },
+      {
+        "name": "main",
+        "line": 94,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\core.py": [
+      {
+        "name": "BM25",
+        "line": 96,
+        "type": "class"
+      },
+      {
+        "name": "__init__",
+        "line": 99,
+        "type": "function"
+      },
+      {
+        "name": "tokenize",
+        "line": 109,
+        "type": "function"
+      },
+      {
+        "name": "fit",
+        "line": 114,
+        "type": "function"
+      },
+      {
+        "name": "score",
+        "line": 133,
+        "type": "function"
+      },
+      {
+        "name": "_load_csv",
+        "line": 159,
+        "type": "function"
+      },
+      {
+        "name": "_search_csv",
+        "line": 165,
+        "type": "function"
+      },
+      {
+        "name": "detect_domain",
+        "line": 190,
+        "type": "function"
+      },
+      {
+        "name": "search",
+        "line": 212,
+        "type": "function"
+      },
+      {
+        "name": "search_stack",
+        "line": 234,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\design_system.py": [
+      {
+        "name": "DesignSystemGenerator",
+        "line": 37,
+        "type": "class"
+      },
+      {
+        "name": "__init__",
+        "line": 40,
+        "type": "function"
+      },
+      {
+        "name": "_load_reasoning",
+        "line": 43,
+        "type": "function"
+      },
+      {
+        "name": "_multi_domain_search",
+        "line": 51,
+        "type": "function"
+      },
+      {
+        "name": "_find_reasoning_rule",
+        "line": 64,
+        "type": "function"
+      },
+      {
+        "name": "_apply_reasoning",
+        "line": 88,
+        "type": "function"
+      },
+      {
+        "name": "_select_best_match",
+        "line": 122,
+        "type": "function"
+      },
+      {
+        "name": "_extract_results",
+        "line": 159,
+        "type": "function"
+      },
+      {
+        "name": "generate",
+        "line": 163,
+        "type": "function"
+      },
+      {
+        "name": "format_ascii_box",
+        "line": 242,
+        "type": "function"
+      },
+      {
+        "name": "wrap_text",
+        "line": 252,
+        "type": "function"
+      },
+      {
+        "name": "format_markdown",
+        "line": 367,
+        "type": "function"
+      },
+      {
+        "name": "generate_design_system",
+        "line": 462,
+        "type": "function"
+      },
+      {
+        "name": "persist_design_system",
+        "line": 491,
+        "type": "function"
+      },
+      {
+        "name": "format_master_md",
+        "line": 542,
+        "type": "function"
+      },
+      {
+        "name": "format_page_override_md",
+        "line": 805,
+        "type": "function"
+      },
+      {
+        "name": "_generate_intelligent_overrides",
+        "line": 914,
+        "type": "function"
+      },
+      {
+        "name": "_detect_page_type",
+        "line": 1020,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\search.py": [
+      {
+        "name": "format_output",
+        "line": 30,
+        "type": "function"
+      }
+    ],
+    ".agent\\skills\\user-story-generator\\scripts\\generator.py": [
+      {
+        "name": "parse_args",
+        "line": 233,
+        "type": "function"
+      },
+      {
+        "name": "find_matching_template",
+        "line": 241,
+        "type": "function"
+      },
+      {
+        "name": "generate_stories",
+        "line": 259,
+        "type": "function"
+      },
+      {
+        "name": "print_readable",
+        "line": 305,
+        "type": "function"
+      }
+    ]
+  },
+  "metadata": {
+    ".agent\\skills\\api-designer\\scripts\\api_gen.py": 1770885416.6302876,
+    ".agent\\skills\\architecture-auditor\\scripts\\auditor.py": 1770885768.5294034,
+    ".agent\\skills\\codebase-navigator\\scripts\\navigator.py": 1770891060.366691,
+    ".agent\\skills\\color-palette-generator\\scripts\\palette.py": 1770885543.397608,
+    ".agent\\skills\\competitor-analyzer\\scripts\\analyzer.py": 1770883376.296571,
+    ".agent\\skills\\db-designer\\scripts\\sql_gen.py": 1770885412.594486,
+    ".agent\\skills\\market-trend-analyst\\scripts\\trends.py": 1770884727.205288,
+    ".agent\\skills\\product-designer\\scripts\\ux_tools.py": 1770890093.8633084,
+    ".agent\\skills\\progress-tracker\\scripts\\tracker.py": 1770883160.0046077,
+    ".agent\\skills\\project-management-assistant\\scripts\\pm_assistant.py": 1770884941.7454138,
+    ".agent\\skills\\project-scaffolder\\scripts\\scaffold.py": 1770883157.9974573,
+    ".agent\\skills\\reliability-engineer\\scripts\\sre.py": 1770885797.9459352,
+    ".agent\\skills\\strategic-planning-advisor\\scripts\\strategy.py": 1770884687.9547222,
+    ".agent\\skills\\system-diagrammer\\scripts\\diagram.py": 1770885467.4961033,
+    ".agent\\skills\\system-strategist\\scripts\\strategist.py": 1770885717.4491324,
+    ".agent\\skills\\task-estimator\\scripts\\estimator.py": 1770883428.754472,
+    ".agent\\skills\\tech-stack-advisor\\scripts\\advisor.py": 1770883692.0905988,
+    ".agent\\skills\\tech-stack-advisor\\scripts\\scanner.py": 1770890599.2391596,
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\core.py": 1770870226.6293972,
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\design_system.py": 1770870226.6309032,
+    ".agent\\skills\\ui-ux-pro-max\\scripts\\search.py": 1770870226.631942,
+    ".agent\\skills\\user-story-generator\\scripts\\generator.py": 1770883426.8223865
+  }
+}

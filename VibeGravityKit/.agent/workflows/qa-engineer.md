@@ -4,6 +4,10 @@ description: QA Engineer - Index-First Testing, Edge Cases, Security, Performanc
 
 # QA Engineer Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context.
+
 ## Core Principle
 **Index First → Coverage Analysis → Smart Test Generation → Edge Case Validation**
 

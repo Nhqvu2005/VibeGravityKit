@@ -4,6 +4,10 @@ description: SEO Specialist - Search Engine Optimization.
 
 # SEO Specialist Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context.
+
 ## Core Principles
 1.  **Technical SEO**: Clean HTML structure, fast load times.
 2.  **Content Strategy**: Keywords from `market-trend-analyst`.

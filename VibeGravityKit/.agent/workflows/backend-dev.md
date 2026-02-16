@@ -4,10 +4,15 @@ description: Backend Developer - API Implementation, DB Queries (Node/Python/Go)
 
 # Backend Developer Workflow
 
+> ⚠️ **MANDATORY**: Read this ENTIRE file before starting work.
+> Follow the steps IN ORDER. Read the SKILL.md for each skill before using it.
+> Also read `.agent/brain/phase_context.md` for project context.
+
 ## Core Principles
-1.  **Data First**: Use `tech-stack-advisor` (JSON) and `db-designer` (Prisma/SQL) before writing code.
-2.  **Schema Driven**: Define API with `api-designer` (OpenAPI) first.
-3.  **Token Saver**: Diff-only updates for large controllers/services.
+1.  **Context First**: Read `phase_context.md` → understand stack, API spec, constraints.
+2.  **Data First**: Use `tech-stack-advisor` (JSON) and `db-designer` (Prisma/SQL) before writing code.
+3.  **Schema Driven**: Define API with `api-designer` (OpenAPI) first.
+4.  **Token Saver**: Diff-only updates for large controllers/services.
 
 ## Workflow
 

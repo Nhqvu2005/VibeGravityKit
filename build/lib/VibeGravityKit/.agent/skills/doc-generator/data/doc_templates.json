@@ -1,0 +1,40 @@
+{
+    "doc_templates": {
+        "mkdocs": {
+            "config": "site_name: '{project_name}'\nsite_description: '{description}'\ntheme:\n  name: material\n  palette:\n    primary: indigo\n    accent: indigo\n  features:\n    - navigation.tabs\n    - navigation.sections\n    - search.suggest\n    - content.code.copy\nplugins:\n  - search\n  - mkdocstrings\nnav:\n  - Home: index.md\n  - Getting Started: getting-started.md\n  - API Reference: api/\n  - Guides: guides/",
+            "structure": [
+                "docs/index.md",
+                "docs/getting-started.md",
+                "docs/api/",
+                "docs/guides/",
+                "mkdocs.yml"
+            ]
+        },
+        "docusaurus": {
+            "config": "module.exports = {\n  title: '{project_name}',\n  tagline: '{description}',\n  url: 'https://{org}.github.io',\n  baseUrl: '/{repo}/',\n  themeConfig: {\n    navbar: { title: '{project_name}' },\n  },\n};",
+            "structure": [
+                "docs/intro.md",
+                "docs/getting-started.md",
+                "docs/api/",
+                "docs/guides/",
+                "docusaurus.config.js"
+            ]
+        }
+    },
+    "page_templates": {
+        "getting_started": "# Getting Started\n\n## Prerequisites\n\n- {prereq_1}\n- {prereq_2}\n\n## Installation\n\n```bash\n{install_command}\n```\n\n## Quick Start\n\n```bash\n{quick_start_command}\n```\n\n## Configuration\n\nCreate a `.env` file:\n\n```env\n{env_vars}\n```",
+        "api_endpoint": "# {method} {path}\n\n{description}\n\n## Request\n\n### Headers\n\n| Name | Type | Required | Description |\n|------|------|----------|-------------|\n| Authorization | Bearer token | Yes | JWT token |\n\n### Parameters\n\n| Name | Type | Required | Description |\n|------|------|----------|-------------|\n| {param} | {type} | {required} | {desc} |\n\n## Response\n\n```json\n{response_example}\n```\n\n## Errors\n\n| Code | Description |\n|------|-------------|\n| 400 | Bad Request |\n| 401 | Unauthorized |"
+    },
+    "readme_sections": [
+        "Project Title & Badges",
+        "Description",
+        "Features",
+        "Demo / Screenshots",
+        "Installation",
+        "Usage / Quick Start",
+        "Configuration",
+        "API Reference",
+        "Contributing",
+        "License"
+    ]
+}
