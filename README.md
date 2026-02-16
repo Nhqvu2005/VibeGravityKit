@@ -13,6 +13,10 @@
 [![Stars](https://img.shields.io/github/stars/Nhqvu2005/VibeGravityKit?style=flat-square&logo=github)](https://github.com/Nhqvu2005/VibeGravityKit/stargazers)
 [![PayPal](https://img.shields.io/badge/PayPal-Support_Development-0070ba?style=flat-square&logo=paypal&logoColor=white)](https://paypal.me/Nhqvu2005)
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Nhqvu2005/VibeGravityKit/main/Web.png" alt="VibeGravityKit Documentation Site" width="100%">
+</p>
+
 > **The AI-Native Software House in a Box.**
 > *Build enterprise-grade software with a team of 18 AI Agents — with **parallel delegation** for maximum speed and minimum token costs.*
 
