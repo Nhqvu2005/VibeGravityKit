@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeGravityKit — AI-Native Software House in a Box</title>
+    <meta name="description"
+        content="Build enterprise-grade software with a team of 18 AI Agents. Parallel delegation, maximum speed, minimum token costs.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="logo">⚡ <span>VibeGravityKit</span></a>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#modes" class="nav-link" data-i18n="nav.modes">How It Works</a>
+                <a href="#team" class="nav-link" data-i18n="nav.team">Team</a>
+                <a href="#install" class="nav-link" data-i18n="nav.install">Install</a>
+                <a href="#agents" class="nav-link" data-i18n="nav.agents">Agents</a>
+                <a href="#changelog" class="nav-link" data-i18n="nav.changelog">Changelog</a>
+                <a href="https://github.com/Nhqvu2005/VibeGravityKit" target="_blank" class="nav-link nav-gh">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+            <button class="lang-btn" id="lang-toggle" aria-label="Switch language">VI</button>
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon" id="theme-icon">🌙</span>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="badge" data-i18n="hero.badge">Open Source · 18 AI Agents · 4 IDEs</div>
+            <h1 data-i18n="hero.title" data-i18n-html="true">The AI-Native<br><span class="gradient-text">Software
+                    House</span> in a Box</h1>
+            <p class="hero-sub" data-i18n="hero.sub" data-i18n-html="true">Build enterprise-grade software with a
+                coordinated team of 18 specialized AI agents.
+                Parallel delegation for <strong>maximum speed</strong> and <strong>minimum token costs</strong>.</p>
+            <div class="hero-actions">
+                <a href="#install" class="btn btn-primary" data-i18n="hero.cta">Get Started →</a>
+                <a href="https://github.com/Nhqvu2005/VibeGravityKit" target="_blank" class="btn btn-outline"
+                    data-i18n="hero.github">View on GitHub</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">18</span><span class="stat-label" data-i18n="hero.stat1">AI
+                        Agents</span></div>
+                <div class="stat"><span class="stat-num">34+</span><span class="stat-label" data-i18n="hero.stat2">Data
+                        Sources</span></div>
+                <div class="stat"><span class="stat-num">4</span><span class="stat-label" data-i18n="hero.stat3">IDE
+                        Support</span></div>
+                <div class="stat"><span class="stat-num">~90%</span><span class="stat-label"
+                        data-i18n="hero.stat4">Token Savings</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">🎩 What is VibeGravityKit?</h2>
+            <p class="section-desc" data-i18n="about.desc" data-i18n-html="true">Imagine having a <strong>full-stack
+                    engineering team</strong> living inside your IDE.</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Context Manager</h3>
+                    <p data-i18n="about.f1">Minifies your code before AI sees it.</p>
+                    <span class="feature-badge green" data-i18n="about.f1b">Saves ~50% tokens</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Context Router</h3>
+                    <p data-i18n="about.f2">Queries only relevant data from 34+ sources.</p>
+                    <span class="feature-badge blue" data-i18n="about.f2b">Saves ~70% tokens</span>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Diff Applier</h3>
+                    <p data-i18n="about.f3">Applies surgical patches instead of rewriting files.</p>
+                    <span class="feature-badge purple" data-i18n="about.f3b">Saves ~90% tokens</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-alt" id="modes">
+        <div class="container">
+            <h2 class="section-title" data-i18n="modes.title">🚀 Two Ways to Build</h2>
+            <p class="section-desc" data-i18n="modes.desc">Choose your workflow style — from instant autopilot to full
+                control.</p>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-header">
+                        <span class="mode-emoji">🍜</span>
+                        <h3 data-i18n="modes.q.title">Quickstart Mode</h3>
+                        <code>@[/quickstart]</code>
+                    </div>
+                    <p class="mode-desc" data-i18n="modes.q.desc">Full autopilot. One prompt → complete project. The AI
+                        team handles everything end-to-end.</p>
+                    <div class="mode-example">
+                        <strong>Example prompt:</strong>
+                        <div class="code-block">"Build me a task management app with React and Express."</div>
+                    </div>
+                    <ul class="mode-features">
+                        <li>✅ Zero config needed</li>
+                        <li>✅ Auto selects tech stack</li>
+                        <li>✅ QA loop included</li>
+                        <li>✅ Delivers complete project</li>
+                    </ul>
+                </div>
+                <div class="mode-card mode-card-highlight">
+                    <div class="mode-header">
+                        <span class="mode-emoji">🍲</span>
+                        <h3 data-i18n="modes.l.title">Leader Mode</h3>
+                        <code>@[/leader]</code>
+                    </div>
+                    <p class="mode-desc" data-i18n="modes.l.desc">Phase-by-phase orchestration. You approve each step.
+                        Maximum control over quality &amp; direction.</p>
+                    <div class="mode-example">
+                        <strong>Example prompt:</strong>
+                        <div class="code-block">"I want to build a Spotify clone. Orchestrate the entire plan."</div>
+                    </div>
+                    <ul class="mode-features">
+                        <li>✅ User approval per phase</li>
+                        <li>✅ Parallel agent delegation</li>
+                        <li>✅ Phase Context Board</li>
+                        <li>✅ Scoped bug routing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Profiles -->
+    <section class="section" id="team">
+        <div class="container">
+            <h2 class="section-title" data-i18n="team.title">🧬 Team Profiles</h2>
+            <p class="section-desc" data-i18n="team.desc" data-i18n-html="true">Carry your coding style across projects.
+                The team <strong>learns from you automatically</strong> — zero config needed.</p>
+
+            <!-- Problem/Solution -->
+            <div class="callout">
+                <div class="callout-problem" data-i18n="team.problem" data-i18n-html="true">
+                    <strong>❌ Problem:</strong> Every <code>vibegravity init</code> starts fresh — agents forget your
+                    coding style, tech preferences, and bug fixes.
+                </div>
+                <div class="callout-solution" data-i18n="team.solution" data-i18n-html="true">
+                    <strong>✅ Solution:</strong> Persistent team profiles that learn passively as you work, and carry
+                    that knowledge to every new project.
+                </div>
+            </div>
+
+            <!-- Quick Start -->
+            <div class="subsection">
+                <h3 data-i18n="team.qs">⚡ Quick Start</h3>
+                <div class="install-steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4 data-i18n="team.qs1">Create an empty team</h4>
+                            <pre class="code-block"><code>vibegravity team create my-team</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4 data-i18n="team.qs2">Init your project with that team</h4>
+                            <pre class="code-block"><code>vibegravity init antigravity --team my-team</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4 data-i18n="team.qs3">Just work normally</h4>
+                            <pre class="code-block"><code># Work with @[/leader] or @[/quickstart] as usual
+# The agents AUTO-LEARN your coding style every time you:
+#   ✅ Confirm a plan  → code scanned, DNA updated
+#   ✅ Complete a phase → directives become rules
+#   ✅ Fix a bug        → journal entry synced to team</code></pre>
+                            <p class="step-note" data-i18n="team.qs.note">No config files, no manual setup. The team
+                                learns passively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-Learn Triggers -->
+            <div class="subsection">
+                <h3 data-i18n="team.auto">🔄 How Auto-Learn Works</h3>
+                <div class="trigger-grid">
+                    <div class="trigger-card">
+                        <span class="trigger-dot blue"></span>
+                        <div>
+                            <strong data-i18n="team.t1.title">Plan Confirmed</strong>
+                            <p data-i18n="team.t1.desc">Scans project source → detects stack, naming style, architecture
+                                → updates Team DNA</p>
+                        </div>
+                    </div>
+                    <div class="trigger-card">
+                        <span class="trigger-dot green"></span>
+                        <div>
+                            <strong data-i18n="team.t2.title">Phase Completed</strong>
+                            <p data-i18n="team.t2.desc">Leader observed your directives (e.g. "write in English") →
+                                saves as rule</p>
+                        </div>
+                    </div>
+                    <div class="trigger-card">
+                        <span class="trigger-dot red"></span>
+                        <div>
+                            <strong data-i18n="team.t3.title">Bug Fixed</strong>
+                            <p data-i18n="team.t3.desc">Journal entry auto-syncs to team profile → available in future
+                                projects</p>
+                        </div>
+                    </div>
+                    <div class="trigger-card">
+                        <span class="trigger-dot yellow"></span>
+                        <div>
+                            <strong data-i18n="team.t4.title">Manual Scan</strong>
+                            <p data-i18n="team.t4.desc" data-i18n-html="true">Force-scan existing codebase:
+                                <code>vibegravity team scan my-team --path ./project</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team DNA -->
+            <div class="subsection">
+                <h3 data-i18n="team.dna">🧬 Team DNA — Your Style in One Line</h3>
+                <pre
+                    class="code-block"><code>naming:camelCase|comments:minimal|lang:typescript+python|fe:react|be:fastapi|css:tailwind|arch:feature|indent:2</code></pre>
+                <p class="step-note" data-i18n="team.dna.note">This compact format (~50 tokens) tells every agent
+                    exactly how you like your code. It grows automatically.</p>
+
+                <div class="detect-grid">
+                    <div class="detect-item"><strong>Tech stack</strong><span>package.json, requirements.txt</span>
+                    </div>
+                    <div class="detect-item"><strong>Naming</strong><span>camelCase vs snake_case</span></div>
+                    <div class="detect-item"><strong>Comments</strong><span>Lines ratio analysis</span></div>
+                    <div class="detect-item"><strong>Error handling</strong><span>try/catch frequency</span></div>
+                    <div class="detect-item"><strong>Architecture</strong><span>Feature vs layer-based</span></div>
+                    <div class="detect-item"><strong>Code style</strong><span>Quotes, semicolons, indent</span></div>
+                </div>
+            </div>
+
+            <!-- 3-Tier Memory -->
+            <div class="subsection">
+                <h3 data-i18n="team.mem">📦 3-Tier Memory System</h3>
+                <div class="memory-grid">
+                    <div class="memory-card hot">
+                        <div class="memory-tier">🔴 Hot</div>
+                        <h4 data-i18n="team.mem.hot">Always Loaded</h4>
+                        <p data-i18n="team.mem.hot.desc">Team DNA (1 line) + top rules</p>
+                        <span class="memory-cost">~50 tokens</span>
+                    </div>
+                    <div class="memory-card warm">
+                        <div class="memory-tier">🟡 Warm</div>
+                        <h4 data-i18n="team.mem.warm">On Demand</h4>
+                        <p data-i18n="team.mem.warm.desc">Full rules + journal index (TF-IDF search)</p>
+                        <span class="memory-cost">~200 tokens</span>
+                    </div>
+                    <div class="memory-card cold">
+                        <div class="memory-tier">🔵 Cold</div>
+                        <h4 data-i18n="team.mem.cold">Archived</h4>
+                        <p data-i18n="team.mem.cold.desc">Old DNA versions + history for rollback</p>
+                        <span class="memory-cost">0 tokens</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rule Dedup -->
+            <div class="subsection">
+                <h3 data-i18n="team.dedup">🔁 Rule Deduplication</h3>
+                <p class="subsection-desc" data-i18n="team.dedup.desc">Prevents file bloat. Similar rules auto-merge
+                    instead of duplicating.</p>
+                <div class="dedup-flow">
+                    <div class="dedup-step">Normalize<span>strip filler words</span></div>
+                    <div class="dedup-arrow">→</div>
+                    <div class="dedup-step">Stem<span>"documentation" → "document"</span></div>
+                    <div class="dedup-arrow">→</div>
+                    <div class="dedup-step">Compare<span>Jaccard similarity ≥ 50%</span></div>
+                    <div class="dedup-arrow">→</div>
+                    <div class="dedup-step">Merge<span>increment frequency</span></div>
+                </div>
+                <div class="dedup-example code-block">
+                    Existing rule: "write docs in English" (freq: 2)
+                    New directive: "always write documentation in English"
+                    → Normalized match → frequency: 3 → auto-promoted to Hot 🔥</div>
+            </div>
+
+            <!-- CLI -->
+            <div class="subsection">
+                <h3 data-i18n="team.cli">🛠️ Team CLI Commands</h3>
+                <pre class="code-block"><code># Team management
+vibegravity team create &lt;name&gt;                # Create empty team
+vibegravity team list                         # List all teams
+vibegravity team show &lt;name&gt;                  # Show DNA + stats
+vibegravity team delete &lt;name&gt;                # Delete team
+
+# Learning
+vibegravity team scan &lt;name&gt; --path &lt;project&gt; # Manually scan code
+vibegravity team learn                        # Scan current project
+vibegravity team rule add "Always write docs in English"
+
+# Knowledge sharing
+vibegravity team sync &lt;other-team&gt;            # Merge another team
+vibegravity team export &lt;name&gt;                # Share as .zip
+vibegravity team import team-file.zip         # Import from .zip</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="section" id="install">
+        <div class="container">
+            <h2 class="section-title" data-i18n="install.title">⚙️ Installation</h2>
+            <p class="section-desc" data-i18n="install.desc">Get started in 3 steps. Requires Python 3.9+ &amp; Node.js
+                18+.</p>
+            <div class="install-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4 data-i18n="install.s1">Clone &amp; Install</h4>
+                        <pre class="code-block"><code>git clone https://github.com/Nhqvu2005/VibeGravityKit.git
+cd VibeGravityKit
+pip install .</code></pre>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4 data-i18n="install.s2">Initialize in Your Project</h4>
+                        <pre class="code-block"><code>cd my-project
+vibegravity init</code></pre>
+                        <p class="step-note" data-i18n="install.s2.note">This installs all 18 agents for your IDE
+                            automatically.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4 data-i18n="install.s3">Start Building</h4>
+                        <pre
+                            class="code-block"><code>@[/quickstart] Build me a blog with Next.js and Prisma</code></pre>
+                        <p class="step-note">Or use <code>@[/leader]</code> for phase-by-phase control.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ide-support">
+                <h3 data-i18n="install.ide">🌐 Multi-IDE Support</h3>
+                <div class="ide-grid">
+                    <div class="ide-card"><strong>Antigravity</strong><code>vibegravity init antigravity</code></div>
+                    <div class="ide-card"><strong>Cursor</strong><code>vibegravity init cursor</code></div>
+                    <div class="ide-card"><strong>Windsurf</strong><code>vibegravity init windsurf</code></div>
+                    <div class="ide-card"><strong>Cline</strong><code>vibegravity init cline</code></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents -->
+    <section class="section section-alt" id="agents">
+        <div class="container">
+            <h2 class="section-title" data-i18n="agents.title">🎮 The 18 Agents</h2>
+            <p class="section-desc" data-i18n="agents.desc" data-i18n-html="true">You are the Boss. Just chat with your
+                agents using <code>@</code> mentions.</p>
+
+            <div class="team-section">
+                <h3 class="team-title" data-i18n="agents.strategy">🧠 Strategy &amp; Vision Team</h3>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">@[/leader]</div>
+                        <div class="agent-role">The Boss's Right Hand</div>
+                        <p>"I want to build a Spotify clone. Orchestrate the entire plan."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/quickstart]</div>
+                        <div class="agent-role">Full Autopilot</div>
+                        <p>"Build me a task management app with React and Express."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/meta-thinker]</div>
+                        <div class="agent-role">Creative Advisor</div>
+                        <p>"I want to build a food delivery app but make it unique."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/planner]</div>
+                        <div class="agent-role">Project Manager</div>
+                        <p>"Break down the 'User Profile' feature into user stories."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/researcher]</div>
+                        <div class="agent-role">Web Researcher</div>
+                        <p>"Search for AI SaaS trends 2025 and top competitors."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 class="team-title" data-i18n="agents.design">🎨 Design &amp; Product Team</h3>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">@[/architect]</div>
+                        <div class="agent-role">System Architect</div>
+                        <p>"Design a Prisma schema for a multi-tenant SaaS."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/designer]</div>
+                        <div class="agent-role">UI/UX Expert</div>
+                        <p>"Create a dark-mode palette for a crypto dashboard."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/mobile-dev]</div>
+                        <div class="agent-role">Mobile Lead</div>
+                        <p>"Scaffold a new Expo Router project with TypeScript."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 class="team-title" data-i18n="agents.eng">💻 Engineering Team</h3>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">@[/frontend-dev]</div>
+                        <div class="agent-role">Web Developer</div>
+                        <p>"Implement the Login with Google button using NextAuth."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/backend-dev]</div>
+                        <div class="agent-role">API Developer</div>
+                        <p>"Create a POST /api/orders endpoint with Zod validation."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/devops]</div>
+                        <div class="agent-role">Infra Engineer</div>
+                        <p>"Generate a Dockerfile for this Next.js + Postgres app."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 class="team-title" data-i18n="agents.quality">🛡️ Quality &amp; Support Team</h3>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">@[/qa-engineer]</div>
+                        <div class="agent-role">Tester</div>
+                        <p>"Generate unit tests for the calculateTax function."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/security-engineer]</div>
+                        <div class="agent-role">Security Officer</div>
+                        <p>"Scan the project for hardcoded secrets and OWASP issues."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/code-reviewer]</div>
+                        <div class="agent-role">Code Quality</div>
+                        <p>"Scan src/ for anti-patterns and naming problems."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/tech-writer]</div>
+                        <div class="agent-role">Docs Specialist</div>
+                        <p>"Write RELEASE_NOTES.md for version 1.0."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/seo-specialist]</div>
+                        <div class="agent-role">Growth Hacker</div>
+                        <p>"Check index.html for missing meta tags."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/release-manager]</div>
+                        <div class="agent-role">Release Engineer</div>
+                        <p>"Generate changelog since v2.0.0 and bump version."</p>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">@[/knowledge-guide]</div>
+                        <div class="agent-role">Code Explainer</div>
+                        <p>"Explain how the auth flow works in this project."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Changelog -->
+    <section class="section" id="changelog">
+        <div class="container">
+            <h2 class="section-title" data-i18n="cl.title">📋 Changelog</h2>
+            <p class="section-desc" data-i18n="cl.desc">Latest updates and releases.</p>
+            <div id="changelog-content" class="changelog-timeline">
+                <div class="loading">Loading changelog...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <strong>⚡ VibeGravityKit</strong>
+                <p><span data-i18n="footer.made">Made with ❤️ by</span> <a href="https://github.com/Nhqvu2005"
+                        target="_blank">Nhqvu2005</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Nhqvu2005/VibeGravityKit" target="_blank">GitHub</a>
+                <span>·</span>
+                <span>MIT License</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
