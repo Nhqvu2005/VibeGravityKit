@@ -1,9 +1,23 @@
 # 🌌 VibeGravityKit
 
+[![Release](https://img.shields.io/badge/Release-v2.9.0-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit/releases)
+[![Agents](https://img.shields.io/badge/AI_Agents-18-blueviolet?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![Reasoning Rules](https://img.shields.io/badge/Reasoning_Rules-101-brightgreen?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![UI Styles](https://img.shields.io/badge/UI_Styles-68-orange?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit/blob/main/LICENSE)
+
+[![CLI](https://img.shields.io/badge/CLI-v2.9.0-blue?style=flat-square&logo=gnubash&logoColor=white)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![Skills](https://img.shields.io/badge/Skills-42-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![Workflows](https://img.shields.io/badge/Workflows-18-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
+[![Stars](https://img.shields.io/github/stars/Nhqvu2005/VibeGravityKit?style=flat-square&logo=github)](https://github.com/Nhqvu2005/VibeGravityKit/stargazers)
+[![PayPal](https://img.shields.io/badge/PayPal-Support_Development-0070ba?style=flat-square&logo=paypal&logoColor=white)](https://paypal.me/Nhqvu2005)
+
 > **The AI-Native Software House in a Box.**
 > *Build enterprise-grade software with a team of 18 AI Agents — with **parallel delegation** for maximum speed and minimum token costs.*
 
 ---
+
 
 ## 🎩 What is VibeGravityKit?
 
