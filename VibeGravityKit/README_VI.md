@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🌌 VibeGravityKit
 
 [![Release](https://img.shields.io/badge/Release-v2.9.0-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit/releases)
@@ -6,19 +8,20 @@
 [![UI Styles](https://img.shields.io/badge/UI_Styles-68-orange?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit/blob/main/LICENSE)
-
+<br>
 [![CLI](https://img.shields.io/badge/CLI-v2.9.0-blue?style=flat-square&logo=gnubash&logoColor=white)](https://github.com/Nhqvu2005/VibeGravityKit)
 [![Skills](https://img.shields.io/badge/Skills-42-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
 [![Workflows](https://img.shields.io/badge/Workflows-18-blue?style=flat-square)](https://github.com/Nhqvu2005/VibeGravityKit)
 [![Stars](https://img.shields.io/github/stars/Nhqvu2005/VibeGravityKit?style=flat-square&logo=github)](https://github.com/Nhqvu2005/VibeGravityKit/stargazers)
 [![PayPal](https://img.shields.io/badge/PayPal-Support_Development-0070ba?style=flat-square&logo=paypal&logoColor=white)](https://paypal.me/Nhqvu2005)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Nhqvu2005/VibeGravityKit/main/Web.png" alt="VibeGravityKit Documentation Site" width="100%">
-</p>
+<img src="https://raw.githubusercontent.com/Nhqvu2005/VibeGravityKit/main/Web.png" alt="VibeGravityKit Documentation Site" width="100%">
 
-> **Công Ty Phần Mềm AI-Native Trong Một Hộp.**
-> *Xây dựng phần mềm cấp doanh nghiệp với đội ngũ 18 Agent AI — **giao việc song song** để đạt tốc độ tối đa và tiết kiệm tối đa chi phí token.*
+**Công Ty Phần Mềm AI-Native Trong Một Hộp.**
+<br>
+*Xây dựng phần mềm cấp doanh nghiệp với đội ngũ 18 Agent AI — <b>giao việc song song</b> để đạt tốc độ tối đa và tiết kiệm tối đa chi phí token.*
+
+</div>
 
 ---
 
