@@ -1,0 +1,17 @@
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Brain/memory (local only)
+.agent/brain/
